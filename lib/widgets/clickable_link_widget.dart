@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ClickableLink extends StatelessWidget {
   String clickableLinkText;
@@ -8,11 +9,11 @@ class ClickableLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
   //portrait mode
   Row _portraitModeOnly(BuildContext context){
@@ -77,7 +78,8 @@ class ClickableLink extends StatelessWidget {
   }
 
   //landscape mode
-  Row _landscapeModeOnly(BuildContext context){
+  /*
+    Row _landscapeModeOnly(BuildContext context){
     return Row(
       children: [
         Container(
@@ -137,4 +139,6 @@ class ClickableLink extends StatelessWidget {
       ],
     );
   }
+   */
+
 }
