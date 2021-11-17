@@ -36,7 +36,8 @@ class ButtonWidget extends StatelessWidget {
         child: Text(
           buttonText,
           style: TextStyle(
-            fontSize: 14
+            fontSize: 14,
+            fontWeight: FontWeight.w400
           ),
         ),
       ),
