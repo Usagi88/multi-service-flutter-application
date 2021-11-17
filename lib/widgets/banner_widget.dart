@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/services.dart';
 
 final value = new NumberFormat("#,##0.00", "en_US");
 
@@ -15,11 +16,11 @@ class BannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 
   //portrait
@@ -111,7 +112,8 @@ class BannerWidget extends StatelessWidget {
   }
 
   //landscape
-  Positioned _landscapeModeOnly(BuildContext context){
+  /*
+    Positioned _landscapeModeOnly(BuildContext context){
     return Positioned(
       left: 260,
       right: 0,
@@ -197,4 +199,6 @@ class BannerWidget extends StatelessWidget {
       ),
     );
   }
+   */
+
 }
