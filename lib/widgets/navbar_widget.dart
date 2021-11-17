@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart';
 
 class Navbar extends StatelessWidget with PreferredSizeWidget{
   const Navbar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 
+  //portrait
   AppBar _portraitModeOnly(BuildContext context){
     return AppBar(
       backgroundColor: Colors.white,
@@ -59,6 +61,9 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
       ],
     );
   }
+
+  //landscape
+  /*
   AppBar _landscapeModeOnly(BuildContext context){
     return AppBar(
       backgroundColor: Colors.white,
@@ -105,6 +110,8 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
       ],
     );
   }
+   */
+  
 
   @override
   // TODO: implement preferredSize
