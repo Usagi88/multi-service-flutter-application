@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SocialMediaButton extends StatelessWidget {
   IconData socialMediaIcon;
@@ -8,11 +9,11 @@ class SocialMediaButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 
   //portrait
@@ -38,7 +39,8 @@ class SocialMediaButton extends StatelessWidget {
   }
 
   //landscape
-  Container _landscapeModeOnly(BuildContext context) {
+  /*
+    Container _landscapeModeOnly(BuildContext context) {
     return Container(
       width: 63,
       height: 63,
@@ -58,4 +60,6 @@ class SocialMediaButton extends StatelessWidget {
       ),
     );
   }
+   */
+
 }
