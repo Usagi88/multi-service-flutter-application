@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/services.dart';
 
 final value = new NumberFormat("#,##0.00", "en_US");
 
@@ -20,11 +21,11 @@ class FPCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 
   //portrait
@@ -104,7 +105,8 @@ class FPCard extends StatelessWidget {
   }
 
   //landscape
-  Container _landscapeModeOnly(BuildContext context){
+  /*
+    Container _landscapeModeOnly(BuildContext context){
     return Container(
         alignment: Alignment.center,
         constraints: BoxConstraints(
@@ -178,5 +180,7 @@ class FPCard extends StatelessWidget {
 
     );
   }
+   */
+
 }
 
