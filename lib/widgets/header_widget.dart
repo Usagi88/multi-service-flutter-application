@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:flutter/services.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
   //portrait
   Stack _portraitModeOnly(BuildContext context){
@@ -50,7 +50,8 @@ class Header extends StatelessWidget {
   }
 
   //landscape
-  Stack _landscapeModeOnly(BuildContext context){
+  /*
+    Stack _landscapeModeOnly(BuildContext context){
     return Stack(
         children: <Widget>[
           Container(
@@ -84,5 +85,7 @@ class Header extends StatelessWidget {
         ]
     );
   }
+   */
+
 }
 
