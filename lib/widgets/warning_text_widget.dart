@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class WarningText extends StatelessWidget {
   String warningText;
@@ -10,13 +11,14 @@ class WarningText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 
+  //portrait
   Column _portraitModeOnly(BuildContext context){
     return Column(
       children: [
@@ -46,7 +48,9 @@ class WarningText extends StatelessWidget {
     );
   }
 
-  Column _landscapeModeOnly(BuildContext context){
+  //landscape
+  /*
+    Column _landscapeModeOnly(BuildContext context){
     return Column(
       children: [
         Container(
@@ -74,4 +78,6 @@ class WarningText extends StatelessWidget {
       ],
     );
   }
+   */
+
 }
