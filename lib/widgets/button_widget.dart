@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 /*
   input field which takes text, can give different text to this button
@@ -11,11 +12,11 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 
   //portrait mode
@@ -43,7 +44,8 @@ class ButtonWidget extends StatelessWidget {
   }
 
   //landscape mode
-  Container _landscapeModeOnly(BuildContext context){
+  /*
+    Container _landscapeModeOnly(BuildContext context){
     return Container(
       height: MediaQuery.of(context).size.height * 0.110,
       width: double.infinity,
@@ -65,4 +67,6 @@ class ButtonWidget extends StatelessWidget {
       ),
     );
   }
+   */
+
 }
