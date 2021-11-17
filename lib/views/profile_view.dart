@@ -3,17 +3,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/header_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
+import 'package:flutter/services.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 }
 
@@ -159,7 +160,8 @@ Scaffold _portraitModeOnly(BuildContext context) {
 }
 
 //landscape
-Scaffold _landscapeModeOnly(BuildContext context) {
+/*
+  Scaffold _landscapeModeOnly(BuildContext context) {
   return Scaffold(
     appBar: Navbar(),
     drawer: SideMenu(),
@@ -298,6 +300,8 @@ Scaffold _landscapeModeOnly(BuildContext context) {
     ),
   );
 }
+ */
+
 
 //class that makes icons have gradient. Used in ListTile
 class GradientIcon extends StatelessWidget {
