@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fpapp/widgets/button_widget.dart';
 import 'package:fpapp/widgets/clickable_link_widget.dart';
 import '/widgets/textfield_number_widget.dart';
+import 'package:flutter/services.dart';
 
 class ResetPasswordView extends StatelessWidget {
   const ResetPasswordView({Key? key}) : super(key: key);
@@ -9,11 +10,11 @@ class ResetPasswordView extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-      if (MediaQuery.of(context).orientation == Orientation.portrait){
-        return _portraitModeOnly(context);
-      }else{
-        return _landscapeModeOnly(context);
-      }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 }
 
@@ -155,7 +156,8 @@ Scaffold _portraitModeOnly(BuildContext context) {
 }
 
 //landscape mode
-Scaffold _landscapeModeOnly(BuildContext context) {
+/*
+  Scaffold _landscapeModeOnly(BuildContext context) {
   return Scaffold(
     body: SafeArea(
       child: SingleChildScrollView(
@@ -288,3 +290,4 @@ Scaffold _landscapeModeOnly(BuildContext context) {
     ),
   );
 }
+ */
