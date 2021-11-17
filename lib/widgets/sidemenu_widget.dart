@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart';
 
 class SideMenu extends StatelessWidget with PreferredSizeWidget{
   const SideMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
   //portrait mode
   Drawer _portraitModeOnly(BuildContext context){
@@ -176,7 +177,8 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
     );
   }
   //landscape mode
-  Drawer _landscapeModeOnly(BuildContext context){
+  /*
+    Drawer _landscapeModeOnly(BuildContext context){
     return Drawer(
       child: ListView(
         children: [
@@ -338,6 +340,8 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
       ),
     );
   }
+   */
+
 
   @override
   // TODO: implement preferredSize
