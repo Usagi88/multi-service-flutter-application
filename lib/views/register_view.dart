@@ -4,17 +4,18 @@ import 'package:fpapp/widgets/clickable_link_widget.dart';
 import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'package:fpapp/widgets/warning_text_widget.dart';
 import '/widgets/textfield_number_widget.dart';
+import 'package:flutter/services.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
-      return _portraitModeOnly(context);
-    }else{
-      return _landscapeModeOnly(context);
-    }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
   }
 }
 
@@ -174,7 +175,8 @@ Scaffold _portraitModeOnly(BuildContext context) {
 }
 
 //landscape mode
-Scaffold _landscapeModeOnly(BuildContext context) {
+/*
+  Scaffold _landscapeModeOnly(BuildContext context) {
   return Scaffold(
     body: SafeArea(
       child: SingleChildScrollView(
@@ -331,3 +333,4 @@ Scaffold _landscapeModeOnly(BuildContext context) {
     ),
   );
 }
+ */
