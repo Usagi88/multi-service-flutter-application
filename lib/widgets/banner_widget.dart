@@ -87,7 +87,7 @@ class BannerWidget extends StatelessWidget {
                           child: Container(
                             child: Align(
                               alignment: Alignment.centerLeft,
-                              child: Text("200",
+                              child: Text(bannerPoints.toString(),
                                   style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w700)),
                             ),
                           ),
