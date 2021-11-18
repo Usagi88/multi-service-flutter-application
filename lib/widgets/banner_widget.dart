@@ -72,7 +72,7 @@ class BannerWidget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left:2.0, top: 3.0),
                         child: Container(
-                          child: Text(bannerPoints.toString(),
+                          child: Text('MVR',
                               style: TextStyle(fontSize: 14, color: Color(0xff055A40), fontWeight: FontWeight.w400)),
                         ),
                       ),
@@ -87,7 +87,7 @@ class BannerWidget extends StatelessWidget {
                           child: Container(
                             child: Align(
                               alignment: Alignment.centerLeft,
-                              child: Text("MVR",
+                              child: Text("200",
                                   style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w700)),
                             ),
                           ),
