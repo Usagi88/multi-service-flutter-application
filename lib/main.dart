@@ -6,11 +6,11 @@ import 'package:fpapp/views/invite_friends_view.dart';
 import 'package:fpapp/views/profile_view.dart';
 import 'package:fpapp/views/register_view.dart';
 import 'package:fpapp/views/reset_password_view.dart';
+import 'package:fpapp/views/services_view.dart';
 
 void main() {
 
   runApp(MaterialApp(
-      home: const InviteFriendsView()
+      home: const ServicesView()
   ));
 }
-
