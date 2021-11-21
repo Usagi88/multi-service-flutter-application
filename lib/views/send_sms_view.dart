@@ -89,7 +89,7 @@ class SendSmsView extends StatelessWidget {
                               child: Container(
                                 width: 1,
                                 height: 44,
-                                color: Colors.grey.shade400,
+                                color: Colors.grey.shade300,
                               ),
                             ),
 

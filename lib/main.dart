@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fpapp/views/about_view.dart';
 import 'package:fpapp/views/contact_us_view.dart';
+import 'package:fpapp/views/gift_card_view.dart';
 import 'package:fpapp/views/home_view.dart';
 import 'package:fpapp/views/invite_friends_view.dart';
 import 'package:fpapp/views/profile_view.dart';
@@ -12,6 +13,6 @@ import 'package:fpapp/views/services_view.dart';
 void main() {
 
   runApp(MaterialApp(
-      home: const SendSmsView()
+      home: const GiftCardView()
   ));
 }
