@@ -8,11 +8,12 @@ import 'package:fpapp/views/profile_view.dart';
 import 'package:fpapp/views/register_view.dart';
 import 'package:fpapp/views/reset_password_view.dart';
 import 'package:fpapp/views/send_sms_view.dart';
+import 'package:fpapp/views/service_details_view.dart';
 import 'package:fpapp/views/services_view.dart';
 
 void main() {
 
   runApp(MaterialApp(
-      home: const GiftCardView()
+      home: const ServiceDetailsView()
   ));
 }

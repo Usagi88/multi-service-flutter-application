@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
-import 'package:fpapp/widgets/button_widget.dart';
-import 'package:fpapp/widgets/gift_card_button_widget.dart';
 import 'package:fpapp/widgets/gift_card_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
-import 'dart:math' as math;
 
 
 
@@ -41,6 +38,15 @@ class _GiftCardViewState extends State<GiftCardView> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return _portraitModeOnly(context);
+
+  }
+  //portrait
+  Scaffold _portraitModeOnly(BuildContext context) {
     return Scaffold(
         appBar: Navbar(),
         drawer: SideMenu(),
@@ -70,59 +76,59 @@ class _GiftCardViewState extends State<GiftCardView> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        height: 46,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                        child: DropdownButtonHideUnderline(
-                          child:DropdownButton<GiftCardClass>(
-                            value: _selectedGiftCard,
-                            onChanged: (GiftCardClass? newValue) {
-                              setState(() {
-                                _selectedGiftCard = newValue;
-                                print(newValue?.id);
-                              });
-                            },
-                            items: giftCards.map((GiftCardClass giftcard) {
-                              return new DropdownMenuItem<GiftCardClass>(
-                                value: giftcard,
-                                child: Container(
-                                  width:double.infinity,
-                                  alignment:Alignment.centerLeft,
-                                  padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
-                                  child:Text(
-                                    giftcard.name,
-                                    style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                  ),
-                                  decoration:BoxDecoration(
-                                      border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
-                                  )
-                                ),
-                              );
-                            }).toList(),
-                            isExpanded: true,
-                            icon: GradientIcon(
-                              FontAwesomeIcons.sortDown,
-                              22.0,
-                              LinearGradient(
-                                colors: <Color>[
-                                  Color(0xff3AC170),
-                                  Color(0xff25BFA3),
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                            ),
-                            hint:Text("Select gift card"),
-                            disabledHint:Text("Disabled"),
-                            iconDisabledColor: Colors.red,
-                            iconEnabledColor: Colors.green,
-                            style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
-                            elevation: 2,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          height: 46,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(10)
                           ),
-                        )
+                          child: DropdownButtonHideUnderline(
+                            child:DropdownButton<GiftCardClass>(
+                              value: _selectedGiftCard,
+                              onChanged: (GiftCardClass? newValue) {
+                                setState(() {
+                                  _selectedGiftCard = newValue;
+                                  print(newValue?.id);
+                                });
+                              },
+                              items: giftCards.map((GiftCardClass giftcard) {
+                                return new DropdownMenuItem<GiftCardClass>(
+                                  value: giftcard,
+                                  child: Container(
+                                      width:double.infinity,
+                                      alignment:Alignment.centerLeft,
+                                      padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
+                                      child:Text(
+                                        giftcard.name,
+                                        style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                      ),
+                                      decoration:BoxDecoration(
+                                          border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
+                                      )
+                                  ),
+                                );
+                              }).toList(),
+                              isExpanded: true,
+                              icon: GradientIcon(
+                                FontAwesomeIcons.sortDown,
+                                22.0,
+                                LinearGradient(
+                                  colors: <Color>[
+                                    Color(0xff3AC170),
+                                    Color(0xff25BFA3),
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ),
+                              ),
+                              hint:Text("Select gift card"),
+                              disabledHint:Text("Disabled"),
+                              iconDisabledColor: Colors.red,
+                              iconEnabledColor: Colors.green,
+                              style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
+                              elevation: 2,
+                            ),
+                          )
                       ),
                     ),
                     SizedBox(

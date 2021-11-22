@@ -347,7 +347,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
   // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
-//class that makes icons have gradient. Used in sidemenu
+//class that makes icons have gradient
 class GradientIcon extends StatelessWidget {
   GradientIcon(
       this.icon,
