@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
+import 'package:fpapp/views/about_view.dart';
 
 class SideMenu extends StatelessWidget with PreferredSizeWidget{
   const SideMenu({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+
     return _portraitModeOnly(context);
   }
   //portrait mode
@@ -41,6 +43,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text("My Profile"),
+            onTap: () => Navigator.of(context).pushNamed('/profile'),
           ),
           ListTile(
             leading: GradientIcon(
@@ -71,6 +74,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text("Change Password"),
+            onTap: () => Navigator.of(context).pushNamed('/reset-password'),
           ),
           ListTile(
             leading: GradientIcon(
@@ -86,6 +90,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text("Invite Friends"),
+            onTap: () => Navigator.of(context).pushNamed('/invite-friends'),
           ),
           ListTile(
             leading: GradientIcon(
@@ -101,6 +106,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text("Contact Us"),
+            onTap: () => Navigator.of(context).pushNamed('/contact-us'),
           ),
           ListTile(
             leading: GradientIcon(
@@ -116,6 +122,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text("About"),
+            onTap: () => Navigator.of(context).pushNamed('/about'),
           ),
           ListTile(
             leading: GradientIcon(
@@ -347,6 +354,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
   // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
+
 //class that makes icons have gradient
 class GradientIcon extends StatelessWidget {
   GradientIcon(

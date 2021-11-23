@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
+import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/service_card_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 
@@ -21,7 +22,7 @@ class ServicesView extends StatelessWidget {
 //portrait
 Scaffold _portraitModeOnly(BuildContext context) {
   return Scaffold(
-      appBar: Navbar(),
+      appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
       body: SafeArea(
           child: SingleChildScrollView(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
+import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
@@ -23,7 +24,7 @@ class AboutView extends StatelessWidget {
 //portrait
 Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
   return Scaffold(
-      appBar: Navbar(),
+      appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
       body: SafeArea(
           child: SingleChildScrollView(

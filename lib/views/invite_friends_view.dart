@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/clickable_link_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
+import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
 
@@ -21,7 +22,7 @@ class InviteFriendsView extends StatelessWidget {
 //portrait mode
 Scaffold _portraitModeOnly(BuildContext context){
   return Scaffold(
-      appBar: Navbar(),
+      appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
       body: SafeArea(
           child: SingleChildScrollView(

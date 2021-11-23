@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/gift_card_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
+import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 
 
@@ -48,7 +49,7 @@ class _GiftCardViewState extends State<GiftCardView> {
   //portrait
   Scaffold _portraitModeOnly(BuildContext context) {
     return Scaffold(
-        appBar: Navbar(),
+        appBar: NavbarWithBackButton(),
         drawer: SideMenu(),
         body: SafeArea(
             child: SingleChildScrollView(
