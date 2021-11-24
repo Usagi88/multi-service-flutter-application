@@ -22,7 +22,7 @@ class ButtonWidget extends StatelessWidget {
   //portrait mode
   Container _portraitModeOnly(BuildContext context){
     return Container(
-      height: MediaQuery.of(context).size.height * 0.053,
+      height: 46,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
