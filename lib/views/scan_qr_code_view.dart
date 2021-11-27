@@ -40,17 +40,13 @@ Scaffold _portraitModeOnly(BuildContext context,safePadding) {
                   width: double.infinity,
                   height: 317,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.3),
-                        spreadRadius: 1,
-                        blurRadius: 4,
-                        offset: Offset(0, 2), // changes position of shadow
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 8
                       ),
-                    ],
+                      borderRadius: BorderRadius.all(Radius.circular(20))
                   ),
+
                 ),
               ),
               SizedBox(
