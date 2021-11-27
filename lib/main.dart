@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fpapp/views/about_view.dart';
 import 'package:fpapp/views/contact_us_view.dart';
+import 'package:fpapp/views/fahisend_view.dart';
 import 'package:fpapp/views/gift_card_view.dart';
 import 'package:fpapp/views/home_view.dart';
 import 'package:fpapp/views/invite_friends_view.dart';
@@ -18,7 +19,7 @@ import 'package:fpapp/views/transaction_history_full.dart';
 void main() {
 
   runApp(MaterialApp(
-    home: const ScanQRCodeView(),
+    home: const FahisendView(),
     routes: <String, WidgetBuilder>{
       '/about': (BuildContext context) => new AboutView(),
       '/contact-us': (BuildContext context) => new ContactUsView(),

@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:fpapp/widgets/banner_widget.dart';
-import 'package:fpapp/widgets/fp_card_widget.dart';
-import 'package:fpapp/widgets/navbar_widget.dart';
-import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
 
@@ -45,11 +40,16 @@ Scaffold _portraitModeOnly(BuildContext context,safePadding) {
                   width: double.infinity,
                   height: 317,
                   decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 6,
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: Offset(0, 2), // changes position of shadow
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))
+                    ],
                   ),
                 ),
               ),
