@@ -5,7 +5,6 @@ import 'package:fpapp/widgets/fp_card_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
-import 'dart:math' as math;
 import 'package:flutter/services.dart';
 
 

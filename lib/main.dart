@@ -8,6 +8,7 @@ import 'package:fpapp/views/live_chat_view.dart';
 import 'package:fpapp/views/profile_view.dart';
 import 'package:fpapp/views/register_view.dart';
 import 'package:fpapp/views/reset_password_view.dart';
+import 'package:fpapp/views/scan_qr_code_view.dart';
 import 'package:fpapp/views/send_sms_view.dart';
 import 'package:fpapp/views/service_details_view.dart';
 import 'package:fpapp/views/services_view.dart';
@@ -17,7 +18,7 @@ import 'package:fpapp/views/transaction_history_full.dart';
 void main() {
 
   runApp(MaterialApp(
-    home: const TransactionHistoryFullView(),
+    home: const ScanQRCodeView(),
     routes: <String, WidgetBuilder>{
       '/about': (BuildContext context) => new AboutView(),
       '/contact-us': (BuildContext context) => new ContactUsView(),
