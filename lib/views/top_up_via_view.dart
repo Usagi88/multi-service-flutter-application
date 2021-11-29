@@ -6,7 +6,6 @@ import 'package:fpapp/widgets/button_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
-import 'package:fpapp/widgets/textfield_number_widget.dart';
 import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'dart:math' as math;
 
@@ -526,7 +525,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                           ),
                                                         ),
                                                       ),
-                                                      hint:Text("Select gift card"),
+                                                      hint:Text("Select User"),
                                                       disabledHint:Text("Disabled"),
                                                       iconDisabledColor: Colors.red,
                                                       iconEnabledColor: Colors.green,
