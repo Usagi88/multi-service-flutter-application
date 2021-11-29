@@ -110,16 +110,19 @@ class _GiftCardViewState extends State<GiftCardView> {
                                 );
                               }).toList(),
                               isExpanded: true,
-                              icon: GradientIcon(
-                                FontAwesomeIcons.sortDown,
-                                22.0,
-                                LinearGradient(
-                                  colors: <Color>[
-                                    Color(0xff3AC170),
-                                    Color(0xff25BFA3),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
+                              icon: Align(
+                                alignment: Alignment(0.0,-0.50),
+                                child: GradientIcon(
+                                  FontAwesomeIcons.sortDown,
+                                  22.0,
+                                  LinearGradient(
+                                    colors: <Color>[
+                                      Color(0xff3AC170),
+                                      Color(0xff25BFA3),
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
                                 ),
                               ),
                               hint:Text("Select gift card"),

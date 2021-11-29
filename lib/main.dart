@@ -14,13 +14,13 @@ import 'package:fpapp/views/send_sms_view.dart';
 import 'package:fpapp/views/service_details_view.dart';
 import 'package:fpapp/views/services_view.dart';
 import 'package:fpapp/views/slip_view.dart';
-import 'package:fpapp/views/top_up_via_mib_view.dart';
+import 'package:fpapp/views/top_up_via_view.dart';
 import 'package:fpapp/views/transaction_history_full.dart';
 
 void main() {
 
   runApp(MaterialApp(
-    home: const TopUpViaMIB(),
+    home: const TopUpViaView(),
     routes: <String, WidgetBuilder>{
       '/about': (BuildContext context) => new AboutView(),
       '/contact-us': (BuildContext context) => new ContactUsView(),
