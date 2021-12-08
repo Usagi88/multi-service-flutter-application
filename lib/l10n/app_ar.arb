@@ -1,0 +1,14 @@
+{
+    "language": "العربية",
+    "helloWorld": "!مرحبا بالعالم",
+    "profile": "الملف الشخصي",
+    "schedulePayment": "دفع الجدول الزمني",
+    "changePassword": "تغيير كلمة السر",
+    "inviteFriends": "ادعو أصدقاء",
+    "contactUs": "اتصل بنا",
+    "about": "حول",
+    "refreshApp": "تحديث التطبيق",
+    "logout": "تسجيل خروج",
+    "exitApp": "الخروج من التطبيق",
+    "changeLanguage": "تغيير اللغة"
+}

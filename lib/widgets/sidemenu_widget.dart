@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/views/about_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'language_picker_two.dart';
 
 class SideMenu extends StatelessWidget with PreferredSizeWidget{
   const SideMenu({Key? key}) : super(key: key);
@@ -42,7 +44,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("My Profile"),
+            title: Text(AppLocalizations.of(context)!.profile),
             onTap: () => Navigator.of(context).pushNamed('/profile'),
           ),
           ListTile(
@@ -58,7 +60,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("Schedule Payments"),
+            title: Text(AppLocalizations.of(context)!.schedulePayment),
           ),
           ListTile(
             leading: GradientIcon(
@@ -73,7 +75,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("Change Password"),
+            title: Text(AppLocalizations.of(context)!.helloWorld),
             onTap: () => Navigator.of(context).pushNamed('/reset-password'),
           ),
           ListTile(
@@ -89,7 +91,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("Invite Friends"),
+            title: Text(AppLocalizations.of(context)!.inviteFriends),
             onTap: () => Navigator.of(context).pushNamed('/invite-friends'),
           ),
           ListTile(
@@ -105,7 +107,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("Contact Us"),
+            title: Text(AppLocalizations.of(context)!.contactUs),
             onTap: () => Navigator.of(context).pushNamed('/contact-us'),
           ),
           ListTile(
@@ -121,7 +123,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("About"),
+            title: Text(AppLocalizations.of(context)!.about),
             onTap: () => Navigator.of(context).pushNamed('/about'),
           ),
           ListTile(
@@ -137,7 +139,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("Refresh App"),
+            title: Text(AppLocalizations.of(context)!.refreshApp),
           ),
           ListTile(
             leading: GradientIcon(
@@ -152,7 +154,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("Logout"),
+            title: Text(AppLocalizations.of(context)!.logout),
           ),
           ListTile(
             leading: GradientIcon(
@@ -167,7 +169,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text("Exit App"),
+            title: Text(AppLocalizations.of(context)!.exitApp),
           ),
           Align(
             alignment: Alignment.centerLeft,
@@ -177,7 +179,16 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             ),
           ),
           ListTile(
-            title: Text("Change Language"),
+            title: Text(AppLocalizations.of(context)!.changeLanguage),
+            onTap: () async {
+              // Show PopUp
+              await showDialog(context: context, builder: (BuildContext context) {
+                return LanguagePickerTwoWidget();
+              });
+
+              // Doesn't run
+              Navigator.pop(context);
+            },
           )
         ],
       ),

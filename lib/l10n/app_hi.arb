@@ -1,0 +1,14 @@
+{
+    "language": "मानक हिन्दी",
+    "helloWorld": "नमस्ते दुनिया!",
+    "profile": "प्रोफ़ाइल",
+    "schedulePayment": "भुगतान निर्धारित करें",
+    "changePassword": "पासवर्ड बदलें",
+    "inviteFriends": "मित्रों को आमंत्रित करें",
+    "contactUs": "संपर्क करें",
+    "about": "के बारे में",
+    "refreshApp": "रिफ्रेश ऐप",
+    "logout": "लॉग आउट",
+    "exitApp": "ऐप से बाहर निकलें",
+    "changeLanguage": "भाषा बदलें"
+}

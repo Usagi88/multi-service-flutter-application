@@ -1,0 +1,14 @@
+{
+    "language": "English",
+    "helloWorld": "Hello World!",
+    "profile": "Profile",
+    "schedulePayment": "Schedule Payment",
+    "changePassword": "Change Password",
+    "inviteFriends": "Invite Friends",
+    "contactUs": "Contact Us",
+    "about": "About",
+    "refreshApp": "Refresh App",
+    "logout": "Logout",
+    "exitApp": "Exit App",
+    "changeLanguage": "Change Language"
+}

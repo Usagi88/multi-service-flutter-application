@@ -1,0 +1,15 @@
+{
+  "@@locale": "ja",
+  "language": "Japanese",
+  "helloWorld": "ヘロー・ワールド",
+  "profile": "プロフィール",
+  "schedulePayment": "支払いスケジュール",
+  "changePassword": "パスワードを変更する",
+  "inviteFriends": "友達を招待",
+  "contactUs": "お問い合わせ",
+  "about": "アバウト",
+  "refreshApp": "アプリをレフレッシュ",
+  "logout": "ログアウト",
+  "exitApp": "アプリを終了します",
+  "changeLanguage": "言語を変更する"
+}

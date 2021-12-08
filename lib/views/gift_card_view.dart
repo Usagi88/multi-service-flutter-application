@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+//import 'package:fpapp/generated/l10n.dart';
+import 'package:fpapp/provider/locale_provider.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/gift_card_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 
 class GiftCardView extends StatefulWidget {
@@ -31,6 +35,8 @@ class _GiftCardViewState extends State<GiftCardView> {
     const GiftCardClass(3,'Playstation'),
     const GiftCardClass(4,'Netflix')
   ];
+
+  get child => null;
   @override
   // ignore: must_call_super
   void initState() {
@@ -39,15 +45,12 @@ class _GiftCardViewState extends State<GiftCardView> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
-    return _portraitModeOnly(context);
 
+    return _portraitModeOnly(context);
   }
   //portrait
   Scaffold _portraitModeOnly(BuildContext context) {
+
     return Scaffold(
         appBar: NavbarWithBackButton(),
         drawer: SideMenu(),
@@ -74,6 +77,7 @@ class _GiftCardViewState extends State<GiftCardView> {
                           ),
                         ]
                     ),
+                    if(AppLocalizations.of(context) != null) Text( AppLocalizations.of(context)!.helloWorld),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
