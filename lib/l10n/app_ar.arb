@@ -10,5 +10,16 @@
     "refreshApp": "تحديث التطبيق",
     "logout": "تسجيل خروج",
     "exitApp": "الخروج من التطبيق",
-    "changeLanguage": "تغيير اللغة"
+    "changeLanguage": "تغيير اللغة",
+
+    "points": "نقاط",
+    "support": "الدعم",
+    "services": "خدمات",
+    "addCash": "أضف نقودا",
+    "history": "التاريخ",
+    "refundedTransaction": "المعاملة المستردة",
+    "cashDeposit": "إيداع نقدي",
+    "serviceRecharge": "إعادة شحن الخدمة",
+    "dhiraaguReload": "إعادة تحميل dhiraagu"
+
 }

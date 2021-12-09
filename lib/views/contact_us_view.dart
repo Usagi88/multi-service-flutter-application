@@ -50,27 +50,33 @@ Scaffold _portraitModeOnly(BuildContext context) {
             SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                children:[
-                  Text(
+            Row(
+              children:[
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
                     'Contact Us',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Container(
-                      height: 1,
-                      width: MediaQuery.of(context).size.width * 0.62,
-                      color: Colors.grey.shade400,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: const SizedBox(
+                    height: 1.0,
+                    child: const DecoratedBox(
+                      decoration: const BoxDecoration(
+                          color: Color(0xffcccccc)
+                      ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  width: 20,
+                )
+              ],
             ),
             SizedBox(
               height: 20,
@@ -126,27 +132,33 @@ Scaffold _portraitModeOnly(BuildContext context) {
             SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                children:[
-                  Text(
+            Row(
+              children:[
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
                     'Social Media Handles',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Container(
-                      height: 1,
-                      width: MediaQuery.of(context).size.width * 0.40,
-                      color: Colors.grey.shade400,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: const SizedBox(
+                    height: 1.0,
+                    child: const DecoratedBox(
+                      decoration: const BoxDecoration(
+                          color: Color(0xffcccccc)
+                      ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  width: 20,
+                )
+              ],
             ),
             SizedBox(
               height: 25,

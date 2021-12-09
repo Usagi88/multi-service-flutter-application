@@ -10,5 +10,42 @@
     "refreshApp": "Refresh App",
     "logout": "Logout",
     "exitApp": "Exit App",
-    "changeLanguage": "Change Language"
+    "changeLanguage": "Change Language",
+
+    "points": "Points",
+    "@points": {
+        "description": "home view's banner points"
+    },
+    "support": "Support",
+    "@support": {
+        "description": "home view's support button"
+    },
+    "services": "Services",
+    "@services": {
+        "description": "home view's services button"
+    },
+    "addCash": "Add Cash",
+    "@addCash": {
+        "description": "home view's Add Cash button"
+    },
+    "history": "History",
+    "@history": {
+        "description": "home view's FP card's title"
+    },
+    "refundedTransaction": "Refunded Transaction",
+    "@refundedTransaction": {
+        "description": "home view's FP card's refunded transaction"
+    },
+    "cashDeposit": "Cash Deposit",
+    "@cashDeposit": {
+        "description": "home view's FP card's cash deposit"
+    },
+    "serviceRecharge": "Service Recharge",
+    "@serviceRecharge": {
+        "description": "home view's FP card's Service Recharge"
+    },
+    "dhiraaguReload": "Dhiraagu Reload",
+    "@dhiraaguReload": {
+        "description": "home view's FP card's Dhiraagu Reload"
+    }
 }

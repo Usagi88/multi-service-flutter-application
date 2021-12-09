@@ -65,6 +65,7 @@ class MyApp extends StatelessWidget {
                 '/service-details': (BuildContext context) => new ServiceDetailsView(),
                 '/services': (BuildContext context) => new ServicesView(),
                 '/scan-qr-code': (BuildContext context) => new ScanQRCodeView(),
+                '/transaction-history': (BuildContext context) => new TransactionHistoryFullView(),
               },
               home: HomeView(),
             );

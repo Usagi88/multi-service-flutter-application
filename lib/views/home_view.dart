@@ -5,6 +5,7 @@ import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -133,7 +134,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                                     Padding(
                                       padding: EdgeInsets.only(left:2.0, top: 3.0),
                                       child: Container(
-                                        child: Text("Points",
+                                        child: Text(AppLocalizations.of(context)!.points,
                                             style: TextStyle(fontSize: 14, color: Color(0xff055A40), fontWeight: FontWeight.w400)),
                                       ),
                                     ),
@@ -162,12 +163,12 @@ Scaffold _portraitModeOnly(BuildContext context) {
                               child: IconButton(
                                 icon: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
                                 onPressed: () {
-
+                                  Navigator.of(context).pushNamed('/live-chat');
                                 },
                               ),
                               onPressed: () {},
                             ),
-                            Text('Support',
+                            Text(AppLocalizations.of(context)!.support,
                               style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
                             )
                           ],
@@ -185,13 +186,13 @@ Scaffold _portraitModeOnly(BuildContext context) {
                                 child: IconButton(
                                   icon: Icon(FontAwesomeIcons.ticketAlt,size: 32,color: Color(0xff7B89F9),),
                                   onPressed: () {
-
+                                    Navigator.of(context).pushNamed('/services');
                                   },
                                 ),
                               ),
                               onPressed: () {},
                             ),
-                            Text('Services',
+                            Text(AppLocalizations.of(context)!.services,
                               style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
                             )
                           ],
@@ -212,7 +213,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                               ),
                               onPressed: () {},
                             ),
-                            Text('Add Cash',
+                            Text(AppLocalizations.of(context)!.addCash,
                               style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
                             )
                           ],
@@ -232,22 +233,28 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Row(
                 children:[
                   Text(
-                    'History',
+                    AppLocalizations.of(context)!.history,
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Container(
-                      height: 1,
-                      width: MediaQuery.of(context).size.width * 0.57,
-                      color: Colors.grey.shade400,
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: const SizedBox(
+                      height: 1.0,
+                      child: const DecoratedBox(
+                        decoration: const BoxDecoration(
+                          color: Color(0xffcccccc)
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     child: Container(
                       alignment: Alignment.center,
                       width: 45,
@@ -262,8 +269,13 @@ Scaffold _portraitModeOnly(BuildContext context) {
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(20))
                       ),
-                      child: Icon(FontAwesomeIcons.chevronUp,size: 14,color: Colors.white,),
-
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        icon: Icon(FontAwesomeIcons.chevronUp,size: 14,color: Colors.white,),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/transaction-history');
+                        },
+                      ),
                     ),
                   ),
 

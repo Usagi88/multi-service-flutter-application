@@ -55,15 +55,23 @@ class _LiveChatViewState extends State<LiveChatView> {
                                 fontWeight: FontWeight.w700
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                            child: Container(
-                              height: 1,
-                              width: MediaQuery.of(context).size.width * 0.53,
-                              color: Colors.grey.shade400,
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: const SizedBox(
+                              height: 1.0,
+                              child: const DecoratedBox(
+                                decoration: const BoxDecoration(
+                                    color: Color(0xffcccccc)
+                                ),
+                              ),
                             ),
                           ),
-
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             width: 46,
                             height: 46,

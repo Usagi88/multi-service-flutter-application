@@ -10,5 +10,15 @@
     "refreshApp": "އެޕްލިކޭޝަން ރިފރެޝް ކުރޭ",
     "logout": "ލޮގް އައުޓް",
     "exitApp": "އެޕްލިކޭޝަން ނިވާލާ",
-    "changeLanguage": "ލެންގުއޭޖް ބަދަލްކުރުން"
+    "changeLanguage": "ލެންގުއޭޖް ބަދަލްކުރުން",
+
+    "points": "ޕޮއިންޓް",
+    "support": "ސަޕޯޓް",
+    "services": "ޚިދުމަތްތައް",
+    "addCash": "ފައިސާ ޖަމާކުރުން",
+    "history": "ކުރީގެ މުއާމަލާތްތައް",
+    "refundedTransaction": "ރީފަންޑް ޓްރާންސެކްޝަން",
+    "cashDeposit": "ކޭޝް ދެޕޮސިޓް",
+    "serviceRecharge": "ސޭވިސް ރީޗާޖް",
+    "dhiraaguReload": "ދިރާގު ރީލޯޑް"
 }

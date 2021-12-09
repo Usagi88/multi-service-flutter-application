@@ -10,5 +10,15 @@
     "refreshApp": "रिफ्रेश ऐप",
     "logout": "लॉग आउट",
     "exitApp": "ऐप से बाहर निकलें",
-    "changeLanguage": "भाषा बदलें"
+    "changeLanguage": "भाषा बदलें",
+
+    "points": "अंक",
+    "support": "सहयोग",
+    "services": "सेवाएं",
+    "addCash": "कैश जोड़े",
+    "history": "इतिहास",
+    "refundedTransaction": "धनवापसी लेनदेन",
+    "cashDeposit": "नकद जमा",
+    "serviceRecharge": "सर्विस रिचार्ज",
+    "dhiraaguReload": "धीरागु रीलोड"
 }

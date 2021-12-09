@@ -11,5 +11,15 @@
   "refreshApp": "アプリをレフレッシュ",
   "logout": "ログアウト",
   "exitApp": "アプリを終了します",
-  "changeLanguage": "言語を変更する"
+  "changeLanguage": "言語を変更する",
+
+  "points": "ポイント",
+  "support": "サポート",
+  "services": "サービス",
+  "addCash": "現金を追加",
+  "history": "歴史",
+  "refundedTransaction": "返金された取引",
+  "cashDeposit": "現金デポジット",
+  "serviceRecharge": "サービスリチャージ ",
+  "dhiraaguReload": "ディラーグー・リーロード"
 }
