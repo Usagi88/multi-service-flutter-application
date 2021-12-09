@@ -64,6 +64,7 @@ class MyApp extends StatelessWidget {
                 '/send-sms': (BuildContext context) => new SendSmsView(),
                 '/service-details': (BuildContext context) => new ServiceDetailsView(),
                 '/services': (BuildContext context) => new ServicesView(),
+                '/scan-qr-code': (BuildContext context) => new ScanQRCodeView(),
               },
               home: HomeView(),
             );

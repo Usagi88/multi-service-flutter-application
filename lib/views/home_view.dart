@@ -63,9 +63,9 @@ Scaffold _portraitModeOnly(BuildContext context) {
                     ),
                   ),
                   Positioned(
-                    left: 70,
-                    right: 0,
                     top: 25,
+                    left: MediaQuery.of(context).size.width * 0.20,
+                    right: 0,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
                       crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
@@ -148,74 +148,80 @@ Scaffold _portraitModeOnly(BuildContext context) {
                   ),
                   Positioned(
                     top: 130,
-                    left: 63,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                      child: IconButton(
-                        icon: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
-                        onPressed: () {
+                    left: 0,
+                    right: 0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
+                      crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+                      children: [
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
+                              child: IconButton(
+                                icon: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
+                                onPressed: () {
 
-                        },
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Positioned(
-                      top: 220,
-                      left: 77,
-                      child: Text('Support',
-                        style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
-                      )
-                  ),
-                  Positioned(
-                    top: 130,
-                    left: 163,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                      child: Transform.rotate(
-                        angle: 180 * math.pi / 100,
-                        child: IconButton(
-                          icon: Icon(FontAwesomeIcons.ticketAlt,size: 32,color: Color(0xff7B89F9),),
-                          onPressed: () {
-
-                          },
+                                },
+                              ),
+                              onPressed: () {},
+                            ),
+                            Text('Support',
+                              style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                            )
+                          ],
                         ),
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Positioned(
-                      top: 220,
-                      left: 177,
-                      child: Text('Services',
-                        style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
-                      )
-                  ),
-                  Positioned(
-                    top: 130,
-                    left: 263,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                      child: IconButton(
-                        icon: Icon(FontAwesomeIcons.wallet,size: 32,color: Color(0xff0CAF39),),
-                        onPressed: () {
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
+                              child: Transform.rotate(
+                                angle: 180 * math.pi / 100,
+                                child: IconButton(
+                                  icon: Icon(FontAwesomeIcons.ticketAlt,size: 32,color: Color(0xff7B89F9),),
+                                  onPressed: () {
 
-                        },
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Positioned(
-                      top: 220,
-                      left: 274,
-                      child: Text('Add Cash',
-                        style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
-                      )
-                  ),
+                                  },
+                                ),
+                              ),
+                              onPressed: () {},
+                            ),
+                            Text('Services',
+                              style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
+                              child: IconButton(
+                                icon: Icon(FontAwesomeIcons.wallet,size: 32,color: Color(0xff0CAF39),),
+                                onPressed: () {
 
+                                },
+                              ),
+                              onPressed: () {},
+                            ),
+                            Text('Add Cash',
+                              style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        )
+
+                      ],
+                    ),
+
+                  ),
                 ]
             ),
             SizedBox(

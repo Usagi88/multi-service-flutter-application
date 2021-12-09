@@ -7,14 +7,14 @@ import 'package:fpapp/provider/locale_provider.dart';
 import 'package:provider/provider.dart';
 
 
-class LanguagePickerTwoWidget extends StatefulWidget {
-  const LanguagePickerTwoWidget({Key? key}) : super(key: key);
+class LanguagePickerWidget extends StatefulWidget {
+  const LanguagePickerWidget({Key? key}) : super(key: key);
 
   @override
   _LanguagePickerWidgetState createState() => _LanguagePickerWidgetState();
 }
 
-class _LanguagePickerWidgetState extends State<LanguagePickerTwoWidget> {
+class _LanguagePickerWidgetState extends State<LanguagePickerWidget> {
 
 
   @override

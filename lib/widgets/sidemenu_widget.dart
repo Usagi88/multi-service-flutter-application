@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/views/about_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'language_picker_two.dart';
+import 'language_picker.dart';
 
 class SideMenu extends StatelessWidget with PreferredSizeWidget{
   const SideMenu({Key? key}) : super(key: key);
@@ -75,7 +75,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 end: Alignment.bottomRight,
               ),
             ),
-            title: Text(AppLocalizations.of(context)!.helloWorld),
+            title: Text(AppLocalizations.of(context)!.changePassword),
             onTap: () => Navigator.of(context).pushNamed('/reset-password'),
           ),
           ListTile(
@@ -183,7 +183,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             onTap: () async {
               // Show PopUp
               await showDialog(context: context, builder: (BuildContext context) {
-                return LanguagePickerTwoWidget();
+                return LanguagePickerWidget();
               });
 
               // Doesn't run

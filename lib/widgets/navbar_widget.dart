@@ -46,7 +46,7 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
           child: IconButton(
             icon: Icon(FontAwesomeIcons.qrcode),
             onPressed: () {
-
+              Navigator.of(context).pushNamed('/scan-qr-code');
             },
           ),
         ),
@@ -54,7 +54,7 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
           child: IconButton(
             icon: Icon(FontAwesomeIcons.comment),
             onPressed: () {
-
+              Navigator.of(context).pushNamed('/live-chat');
             },
           ),
         ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
-import 'package:fpapp/widgets/language_picker_widget.dart';
 
 class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget{
   const NavbarWithBackButton({Key? key}) : super(key: key);
@@ -44,12 +43,11 @@ class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget{
             )),
       ),
       actions: [
-        LanguagePickerWidget(),
         RadiantGradientMask(
           child: IconButton(
             icon: Icon(FontAwesomeIcons.qrcode),
             onPressed: () {
-
+              Navigator.of(context).pushNamed('/scan-qr-code');
             },
           ),
         ),
@@ -57,7 +55,7 @@ class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget{
           child: IconButton(
             icon: Icon(FontAwesomeIcons.comment),
             onPressed: () {
-
+              Navigator.of(context).pushNamed('/live-chat');
             },
           ),
         ),
