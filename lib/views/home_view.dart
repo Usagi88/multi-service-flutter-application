@@ -290,10 +290,11 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Container(
                   height: MediaQuery.of(context).size.height * 0.30,
                   child: ListView(
+                    physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
                     children: [
                       FPCard(
                         fpCardColor: 0xffE03838,
-                        title: 'Refunded transaction',
+                        title: AppLocalizations.of(context)!.refundedTransaction,
                         date: '19 June 2021  -  17:30',
                         amount: 532,
                         currency: 'MVR',
@@ -303,7 +304,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                       ),
                       FPCard(
                         fpCardColor: 0xff0CAF39,
-                        title: 'Cash Deposit',
+                        title: AppLocalizations.of(context)!.cashDeposit,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
                         currency: 'MVR',
@@ -313,7 +314,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Service Recharge',
+                        title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 120.50,
                         currency: 'MVR',
@@ -323,7 +324,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Service Recharge',
+                        title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 520,
                         currency: 'MVR',
@@ -333,14 +334,20 @@ Scaffold _portraitModeOnly(BuildContext context) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Dhiraagu reload',
+                        title: AppLocalizations.of(context)!.dhiraaguReload,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
                         currency: 'MVR',
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   )
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
           ],
         ),
