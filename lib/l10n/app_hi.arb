@@ -11,6 +11,17 @@
     "logout": "लॉग आउट",
     "exitApp": "ऐप से बाहर निकलें",
     "changeLanguage": "भाषा बदलें",
+    "email": "ईमेल",
+    "mobileNumber": "मोबाइल नंबर",
+    "address": "पता",
+    "socialMediaHandles": "सोशल मीडिया हैंडल",
+    "qrScan": "क्यूआर स्कैन",
+    "pickContact": "संपर्क चुनें",
+    "emailOrContactNumber": "ईमेल या संपर्क नंबर",
+    "amount": "राशि",
+    "submit": "प्रस्तुत करना",
+    "disabled": "Disabled",
+
 
     "points": "अंक",
     "support": "सहयोग",
@@ -20,5 +31,10 @@
     "refundedTransaction": "धनवापसी लेनदेन",
     "cashDeposit": "नकद जमा",
     "serviceRecharge": "सर्विस रिचार्ज",
-    "dhiraaguReload": "धीरागु रीलोड"
+    "dhiraaguReload": "धीरागु रीलोड",
+
+
+    "fahiSendViewFirstText": "किसी अन्य उपयोगकर्ता को किसी भी राशि को स्थानांतरित करने के लिए, प्राप्तकर्ता का ईमेल या मोबाइल नंबर और वह राशि दर्ज करें जिसे आप भेजना चाहते हैं",
+
+    "selectGiftCardText": "उपहार कार्ड चुनें"
 }

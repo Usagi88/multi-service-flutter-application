@@ -11,6 +11,17 @@
     "logout": "ލޮގް އައުޓް",
     "exitApp": "އެޕްލިކޭޝަން ނިވާލާ",
     "changeLanguage": "ލެންގުއޭޖް ބަދަލްކުރުން",
+    "email": "އީ-މެއިލް",
+    "mobileNumber": "މޯބައިލް ނަންބަރ",
+    "address": "އެޑްރެސް",
+    "socialMediaHandles": "ސޯޝަލް މީޑިއާ ހޭންޑަލްސް",
+    "qrScan": "QR Scan",
+    "pickContact": "ކޮންޓެކްޓް ނެގުން",
+    "emailOrContactNumber": "އީމެއިލް ނުވަތަ މޯބައިލް ނަންބަރ",
+    "amount": "އަދަދު",
+    "submit": "ސަބްމިޓް",
+    "disabled": "Disabled",
+
 
     "points": "ޕޮއިންޓް",
     "support": "ސަޕޯޓް",
@@ -20,5 +31,10 @@
     "refundedTransaction": "ރީފަންޑް ޓްރާންސެކްޝަން",
     "cashDeposit": "ކޭޝް ދެޕޮސިޓް",
     "serviceRecharge": "ސޭވިސް ރީޗާޖް",
-    "dhiraaguReload": "ދިރާގު ރީލޯޑް"
+    "dhiraaguReload": "ދިރާގު ރީލޯޑް",
+
+
+    "fahiSendViewFirstText": "އެހެން ފަރާތްއަކަށް ޖަމާކުރަން ބޭނުންޥަންނާމު، އެފަރާތެއްގެ އީމެއިލް ނުވަތަ މޯބައިލް ނަންބަރ ޖެހުމަށްފަހު އަދަދު ޖަހާށެވެ.",
+
+    "selectGiftCardText": "ގިފްޓް ކާޑްއެށް ނަގާށެވެ"
 }

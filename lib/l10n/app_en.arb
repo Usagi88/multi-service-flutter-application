@@ -11,10 +11,23 @@
     "logout": "Logout",
     "exitApp": "Exit App",
     "changeLanguage": "Change Language",
+    "email": "Email",
+    "mobileNumber": "Mobile Number",
+    "address": "Address",
+    "socialMediaHandles": "Social Media Handles",
+
+    "qrScan": "QR Scan",
+    "pickContact": "Pick Contact",
+    "emailOrContactNumber": "Email or Contact Number",
+    "amount": "Amount",
+    "submit": "Submit",
+
+    "disabled": "Disabled",
+
 
     "points": "Points",
     "@points": {
-        "description": "home view's banner points"
+        "description": "banner widget points"
     },
     "support": "Support",
     "@support": {
@@ -47,5 +60,16 @@
     "dhiraaguReload": "Dhiraagu Reload",
     "@dhiraaguReload": {
         "description": "home view's FP card's Dhiraagu Reload"
+    },
+
+
+    "fahiSendViewFirstText": "To transfer any amount to another user , Enter receiver's email or mobile number and amount you wish to send",
+    "@fahiSendViewFirstText": {
+        "description": "fahi send view's first text seen"
+    },
+
+    "selectGiftCardText": "Select a gift card",
+    "@selectGiftCardText": {
+        "description": "Gift card view's select a gift card text"
     }
 }

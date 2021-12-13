@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-//import 'package:fpapp/generated/l10n.dart';
 import 'package:fpapp/provider/locale_provider.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/gift_card_widget.dart';
@@ -77,7 +76,6 @@ class _GiftCardViewState extends State<GiftCardView> {
                           ),
                         ]
                     ),
-                    if(AppLocalizations.of(context) != null) Text( AppLocalizations.of(context)!.helloWorld),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
@@ -129,8 +127,8 @@ class _GiftCardViewState extends State<GiftCardView> {
                                   ),
                                 ),
                               ),
-                              hint:Text("Select gift card"),
-                              disabledHint:Text("Disabled"),
+                              hint:Text(AppLocalizations.of(context)!.selectGiftCardText),
+                              disabledHint:Text(AppLocalizations.of(context)!.disabled),
                               iconDisabledColor: Colors.red,
                               iconEnabledColor: Colors.green,
                               style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),

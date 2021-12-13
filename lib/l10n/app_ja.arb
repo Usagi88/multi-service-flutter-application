@@ -12,6 +12,17 @@
   "logout": "ログアウト",
   "exitApp": "アプリを終了します",
   "changeLanguage": "言語を変更する",
+  "email": "Eメール",
+  "mobileNumber": "携帯電話番号",
+  "address": "住所",
+  "socialMediaHandles": "ソーシャルメディアハンドル",
+  "qrScan": "QRスキャン",
+  "pickContact": "連絡先を選択",
+  "emailOrContactNumber": "メールアドレス / 携帯電話番号",
+  "amount": "金額",
+  "submit": "提出する",
+  "disabled": "Disabled",
+
 
   "points": "ポイント",
   "support": "サポート",
@@ -21,5 +32,10 @@
   "refundedTransaction": "返金された取引",
   "cashDeposit": "現金デポジット",
   "serviceRecharge": "サービスリチャージ ",
-  "dhiraaguReload": "ディラーグー・リーロード"
+  "dhiraaguReload": "ディラーグー・リーロード",
+
+
+  "fahiSendViewFirstText": "金額を別のユーザーに転送するには、受信者のメールアドレスまたは携帯電話番号と送信したい金額を入力します",
+
+  "selectGiftCardText": "ギフトカードを選択"
 }

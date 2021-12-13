@@ -4,6 +4,7 @@ import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/service_card_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ServicesView extends StatelessWidget {
   const ServicesView({Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: Text(
-                          'Services',
+                          AppLocalizations.of(context)!.services,
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w700

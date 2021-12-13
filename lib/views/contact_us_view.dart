@@ -6,6 +6,7 @@ import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/social_media_button_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ContactUsView extends StatelessWidget {
   const ContactUsView({Key? key}) : super(key: key);
@@ -54,8 +55,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               children:[
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    'Contact Us',
+                  child: Text(AppLocalizations.of(context)!.contactUs,
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700
@@ -137,7 +137,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    'Social Media Handles',
+                    AppLocalizations.of(context)!.socialMediaHandles,
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700

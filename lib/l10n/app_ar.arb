@@ -11,6 +11,17 @@
     "logout": "تسجيل خروج",
     "exitApp": "الخروج من التطبيق",
     "changeLanguage": "تغيير اللغة",
+    "email": "البريد الإلكتروني",
+    "mobileNumber": "رقم الهاتف المحمول",
+    "address": "تبوك",
+    "socialMediaHandles": "مقابض وسائل التواصل الاجتماعي",
+    "qrScan": "مسح QR",
+    "pickContact": "اختر جهة اتصال",
+    "emailOrContactNumber": "البريد الإلكتروني أو رقم الاتصال",
+    "amount": "مقدار",
+    "submit": "إرسال",
+    "disabled": "Disabled",
+
 
     "points": "نقاط",
     "support": "الدعم",
@@ -20,6 +31,10 @@
     "refundedTransaction": "المعاملة المستردة",
     "cashDeposit": "إيداع نقدي",
     "serviceRecharge": "إعادة شحن الخدمة",
-    "dhiraaguReload": "إعادة تحميل dhiraagu"
+    "dhiraaguReload": "إعادة تحميل dhiraagu",
 
+
+    "fahiSendViewFirstText": "لتحويل أي مبلغ إلى مستخدم آخر ، أدخل البريد الإلكتروني أو رقم الهاتف المحمول للمستلم والمبلغ الذي ترغب في إرساله",
+
+    "selectGiftCardText": "اختر بطاقة هدايا"
 }

@@ -7,6 +7,8 @@ import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/widgets/textfield_number_widget.dart';
 import 'package:fpapp/widgets/textfield_text_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FahisendView extends StatelessWidget {
   const FahisendView({Key? key}) : super(key: key);
@@ -74,7 +76,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 60.0),
-              child: Text('To transfer any amount to another user , Enter receivers email or mobile number and amount you wish to send',
+              child: Text(AppLocalizations.of(context)!.fahiSendViewFirstText,
                 style: TextStyle(fontSize: 14, color: Colors.grey.shade600,fontWeight: FontWeight.w400),
               ),
             ),
@@ -96,7 +98,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                         gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                       ),
                       child: TextButton.icon(
-                          label: Text('QR Scan',style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
+                          label: Text(AppLocalizations.of(context)!.qrScan, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
                           icon: Icon(FontAwesomeIcons.qrcode, color: Colors.white, size: 22,),
                           onPressed: () {
 
@@ -115,7 +117,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                         gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                       ),
                       child: TextButton.icon(
-                          label: Text('Pick Contact',style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
+                          label: Text(AppLocalizations.of(context)!.pickContact, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
                           icon: Icon(FontAwesomeIcons.phoneAlt, color: Colors.white, size: 22),
                           onPressed: () {
 
@@ -130,7 +132,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: TextfieldTextWidget(hintText: 'Email or Contact Number'),
+              child: TextfieldTextWidget(hintText: AppLocalizations.of(context)!.emailOrContactNumber),
             ),
             SizedBox(
               height: 14,
@@ -138,7 +140,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextfieldNumberWidget(
-                hintText: 'Amount',
+                hintText: AppLocalizations.of(context)!.amount,
               ),
             ),
             SizedBox(
@@ -147,7 +149,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ButtonWidget(
-                buttonText: 'Submit',
+                buttonText: AppLocalizations.of(context)!.submit,
               ),
             ),
             SizedBox(

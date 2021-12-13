@@ -5,6 +5,7 @@ import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    'Profile',
+                    AppLocalizations.of(context)!.profile,
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700
@@ -64,7 +65,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               height: 10,
             ),
             ListTile(
-              title: Text('Email'),
+              title: Text(AppLocalizations.of(context)!.email),
               subtitle: Text('Hussain.shafiu@gmail.com'),
               trailing: GradientIcon(
                 FontAwesomeIcons.solidEdit,
@@ -80,7 +81,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               ),
             ),
             ListTile(
-              title: Text('Mobile Number'),
+              title: Text(AppLocalizations.of(context)!.mobileNumber,),
               subtitle: Text('Hussain.shafiu@gmail.com'),
               trailing: GradientIcon(
                 FontAwesomeIcons.solidEdit,
@@ -96,7 +97,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               ),
             ),
             ListTile(
-              title: Text('Address'),
+              title: Text(AppLocalizations.of(context)!.address),
               subtitle: Text('Hussain.shafiu@gmail.com'),
               trailing: GradientIcon(
                 FontAwesomeIcons.solidEdit,
@@ -112,7 +113,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               ),
             ),
             ListTile(
-              title: Text('Email'),
+              title: Text(AppLocalizations.of(context)!.email),
               subtitle: Text('Hussain.shafiu@gmail.com'),
               trailing: GradientIcon(
                 FontAwesomeIcons.solidEdit,
@@ -128,7 +129,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               ),
             ),
             ListTile(
-              title: Text('Email'),
+              title: Text(AppLocalizations.of(context)!.email),
               subtitle: Text('Hussain.shafiu@gmail.com'),
               trailing: GradientIcon(
                 FontAwesomeIcons.solidEdit,
@@ -144,7 +145,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               ),
             ),
             ListTile(
-              title: Text('Email'),
+              title: Text(AppLocalizations.of(context)!.email),
               subtitle: Text('Hussain.shafiu@gmail.com'),
               trailing: GradientIcon(
                 FontAwesomeIcons.solidEdit,

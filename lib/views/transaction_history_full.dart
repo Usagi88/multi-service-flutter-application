@@ -87,6 +87,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                 height: MediaQuery.of(context).size.height - (height + safePadding + 224),
                 width: MediaQuery.of(context).size.width,
                 child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                   child: Column(
                     children: [
                       FPCard(
