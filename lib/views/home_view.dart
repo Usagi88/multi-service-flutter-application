@@ -339,9 +339,15 @@ Scaffold _portraitModeOnly(BuildContext context) {
                         amount: 31912.29,
                         currency: 'MVR',
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   )
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
           ],
         ),

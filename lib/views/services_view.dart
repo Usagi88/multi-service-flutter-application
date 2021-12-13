@@ -11,17 +11,19 @@ class ServicesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double navBarHeight = Navbar().preferredSize.height;
+    var safePadding = MediaQuery.of(context).padding.top;
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context);
+    return _portraitModeOnly(context, navBarHeight, safePadding);
 
   }
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context) {
+Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
   return Scaffold(
       appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
@@ -73,105 +75,134 @@ Scaffold _portraitModeOnly(BuildContext context) {
                   SizedBox(
                     height: 30,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Container(
-                        height: MediaQuery.of(context).size.height * 0.58,
-                        child: ListView(
-                          children: [
-                            Row(
-                              children: [
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/dhiraagu-logo.png',
-                                  serviceCardText: 'Dhiraagu Reload',
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/ooredoo-logo.png',
-                                  serviceCardText: 'Ooredoo Raastas',
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/dhiraagu-logo.png',
-                                  serviceCardText: 'Dhiraagu Reload',
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/ooredoo-logo.png',
-                                  serviceCardText: 'Ooredoo Raastas',
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/dhiraagu-logo.png',
-                                  serviceCardText: 'Dhiraagu Reload',
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/ooredoo-logo.png',
-                                  serviceCardText: 'Ooredoo Raastas',
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/dhiraagu-logo.png',
-                                  serviceCardText: 'Dhiraagu Reload',
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/ooredoo-logo.png',
-                                  serviceCardText: 'Ooredoo Raastas',
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/dhiraagu-logo.png',
-                                  serviceCardText: 'Dhiraagu Reload',
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                ServiceCard(
-                                  serviceCardImage: 'assets/images/ooredoo-logo.png',
-                                  serviceCardText: 'Ooredoo Raastas',
-                                ),
-                              ],
-                            ),
-
-                          ],
-                        )
-                    ),
+                  Container(
+                      height: MediaQuery.of(context).size.height - 30 - 66 - 130 - navBarHeight - safePadding,
+                      child: ListView(
+                        physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                        children: [
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/dhiraagu-logo.png',
+                                serviceCardText: 'Dhiraagu Reload',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/ooredoo-logo.png',
+                                serviceCardText: 'Ooredoo Raastas',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/dhiraagu-logo.png',
+                                serviceCardText: 'Dhiraagu Reload',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/ooredoo-logo.png',
+                                serviceCardText: 'Ooredoo Raastas',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/dhiraagu-logo.png',
+                                serviceCardText: 'Dhiraagu Reload',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/ooredoo-logo.png',
+                                serviceCardText: 'Ooredoo Raastas',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/dhiraagu-logo.png',
+                                serviceCardText: 'Dhiraagu Reload',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/ooredoo-logo.png',
+                                serviceCardText: 'Ooredoo Raastas',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/dhiraagu-logo.png',
+                                serviceCardText: 'Dhiraagu Reload',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ServiceCard(
+                                serviceCardImage: 'assets/images/ooredoo-logo.png',
+                                serviceCardText: 'Ooredoo Raastas',
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                        ],
+                      )
                   ),
-
                 ],
               )
           )

@@ -99,6 +99,7 @@ class _LiveChatViewState extends State<LiveChatView> {
                         height: MediaQuery.of(context).size.height - 65 - 110 - navBarHeight - safePadding,
                         //color: Colors.grey,
                         child: SingleChildScrollView(
+                          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                           child: Column(
                             children: [
                               SizedBox(
@@ -122,27 +123,29 @@ class _LiveChatViewState extends State<LiveChatView> {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Row(
                         children: [
-                          Container(
-                            //height: MediaQuery.of(context).size.height * 0.053,
-                            height: 46,
-                            width: 318,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              color: Color(0xfff2f2f2),
-                            ),
-                            child: TextField(
+                          Expanded(
+                            child: Container(
+                              //height: MediaQuery.of(context).size.height * 0.053,
+                              height: 46,
+                              //width: 318,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                color: Color(0xfff2f2f2),
+                              ),
+                              child: TextField(
 
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(10.0),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.all(10.0),
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  suffixIcon: IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(FontAwesomeIcons.camera,color: Colors.grey.shade400,),
+                                  ),
+                                  // Only numbers can be entered
+                                  hintText: 'Type your message here',
                                 ),
-                                suffixIcon: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(FontAwesomeIcons.camera,color: Colors.grey.shade400,),
-                                ),
-                                // Only numbers can be entered
-                                hintText: 'Type your message here',
                               ),
                             ),
                           ),
