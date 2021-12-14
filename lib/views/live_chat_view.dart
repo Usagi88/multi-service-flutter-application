@@ -50,7 +50,7 @@ class _LiveChatViewState extends State<LiveChatView> {
                       child: Row(
                         children:[
                           Text(
-                            'Live Chat',
+                            AppLocalizations.of(context)!.liveChat,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700
@@ -145,7 +145,7 @@ class _LiveChatViewState extends State<LiveChatView> {
                                     icon: Icon(FontAwesomeIcons.camera,color: Colors.grey.shade400,),
                                   ),
                                   // Only numbers can be entered
-                                  hintText: 'Type your message here',
+                                  hintText: AppLocalizations.of(context)!.typeYourMessageHere,
                                 ),
                               ),
                             ),

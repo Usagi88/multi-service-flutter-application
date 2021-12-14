@@ -77,7 +77,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                               child: Row(
                                 children: [
-                                  Text('Status'),
+                                  Text(AppLocalizations.of(context)!.status),
                                   Spacer(),
                                   GradientText(
                                       text: 'Success',
@@ -109,7 +109,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                               child: Row(
                                 children: [
-                                  Text('Name', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                  Text(AppLocalizations.of(context)!.name, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                   Spacer(),
                                   Text('MediaNet BillPay', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                 ],
@@ -131,7 +131,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                               child: Row(
                                 children: [
-                                  Text('Details', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                  Text(AppLocalizations.of(context)!.details, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                   Spacer(),
                                   Text('Medianet BillPay  (158414) Local IPTV', textAlign:TextAlign.right, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                 ],
@@ -153,7 +153,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                               child: Row(
                                 children: [
-                                  Text('Amount', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                  Text(AppLocalizations.of(context)!.amount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                   Spacer(),
                                   Text('MVR -159', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                 ],
@@ -175,7 +175,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                               child: Row(
                                 children: [
-                                  Text('Reference', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                  Text(AppLocalizations.of(context)!.reference, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                   Spacer(),
                                   Text('F120687246110RK', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                 ],
@@ -197,7 +197,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                               child: Row(
                                 children: [
-                                  Text('Time', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                  Text(AppLocalizations.of(context)!.time, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                   Spacer(),
                                   Text('21st July 2021 - 19:24', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                 ],
@@ -227,7 +227,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                             gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                           ),
                           child: TextButton.icon(
-                              label: Text('Share Receipt',style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
+                              label: Text(AppLocalizations.of(context)!.shareReceipt,style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
                               icon: Icon(FontAwesomeIcons.shareSquare, color: Colors.white, size: 22,),
                               onPressed: () {
 
@@ -246,7 +246,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                             gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                           ),
                           child: TextButton.icon(
-                              label: Text('Save Receipt',style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
+                              label: Text(AppLocalizations.of(context)!.saveReceipt,style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
                               icon: Icon(FontAwesomeIcons.download, color: Colors.white, size: 22),
                               onPressed: () {
 

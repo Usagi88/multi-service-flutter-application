@@ -81,12 +81,12 @@ Scaffold _portraitModeOnly(BuildContext context) {
             SizedBox(
               height: 20,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left:20.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Reset Password',
+                  AppLocalizations.of(context)!.resetPassword,
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w700
@@ -97,12 +97,12 @@ Scaffold _portraitModeOnly(BuildContext context) {
             SizedBox(
               height: 20,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal:20.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Enter your registered mobile number to receive the password reset code',
+                  AppLocalizations.of(context)!.resetPasswordSecondText,
                   style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w400
@@ -130,7 +130,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: ButtonWidget(
-                    buttonText: 'Request reset'
+                    buttonText: AppLocalizations.of(context)!.requestReset,
                 ),
               ),
             ),
@@ -142,7 +142,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: ClickableLink(
-                    clickableLinkText: 'Click here if you already have the code'
+                    clickableLinkText: AppLocalizations.of(context)!.alreadyHaveCode,
                 ),
               ),
             ),

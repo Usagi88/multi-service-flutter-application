@@ -53,7 +53,7 @@ Scaffold _portraitModeOnly(BuildContext context,safePadding) {
               SizedBox(
                 height: 30,
               ),
-              Text('Aim the QR inside this Box',style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),),
+              Text(AppLocalizations.of(context)!.scanQrCodeText,style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),),
             ],
           )
         )

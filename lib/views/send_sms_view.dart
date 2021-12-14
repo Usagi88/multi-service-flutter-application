@@ -154,7 +154,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                           height: 68,
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            'Select a sender id, write reciever(s) numbers(s) and write the sms you wish to send',
+                              AppLocalizations.of(context)!.sendSmsFirstText,
                             style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w400),
 
                           ),
@@ -167,7 +167,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Align( alignment: Alignment.centerLeft, child: Text('Select Package',style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
+                    child: Align( alignment: Alignment.centerLeft, child: Text(AppLocalizations.of(context)!.selectPackage,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
                   ),
                   SizedBox(
                     height: 7,
@@ -194,14 +194,14 @@ Scaffold _portraitModeOnly(BuildContext context) {
                           ),
 
                         ),
-                        child: Text('Buy SMS',style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                        child: Text(AppLocalizations.of(context)!.buySMS,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
                       ),
                     ),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Align( alignment: Alignment.centerLeft, child: Text('Sender ID',style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
+                    child: Align( alignment: Alignment.centerLeft, child: Text(AppLocalizations.of(context)!.senderID,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
                   ),
                   SizedBox(
                     height: 7,
@@ -228,14 +228,14 @@ Scaffold _portraitModeOnly(BuildContext context) {
                           ),
 
                         ),
-                        child: Text('Get Sender ID',style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                        child: Text(AppLocalizations.of(context)!.getSenderID,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
                       ),
                     ),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Align( alignment: Alignment.centerLeft, child: Text('Recipient (s)',style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
+                    child: Align( alignment: Alignment.centerLeft, child: Text(AppLocalizations.of(context)!.recipients,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
                   ),
                   SizedBox(
                     height: 7,
@@ -262,14 +262,14 @@ Scaffold _portraitModeOnly(BuildContext context) {
                           ),
 
                         ),
-                        child: Text('Pick Contact',style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                        child: Text(AppLocalizations.of(context)!.pickContact,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
                       ),
                     ),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Align( alignment: Alignment.centerLeft, child: Text('Message',style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
+                    child: Align( alignment: Alignment.centerLeft, child: Text(AppLocalizations.of(context)!.message,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
                   ),
                   SizedBox(
                     height: 7,
@@ -287,7 +287,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                       keyboardType: TextInputType.multiline,
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
-                        hintText: "Message",
+                        hintText: AppLocalizations.of(context)!.message,
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey.shade200,),
                         ),
@@ -300,7 +300,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: ButtonWidget(
-                      buttonText: 'Login',
+                      buttonText: AppLocalizations.of(context)!.login,
                     ),
                   ),
                   SizedBox(
@@ -313,7 +313,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                       height: 77,
                       alignment: Alignment.center,
                       child: Text(
-                        'SMS operators charges price for each SMS being sent even if it fails to deliver. Delivery Failures can be caused  due to phone being switches off or not available in the network at the time sms being sent.',
+                        AppLocalizations.of(context)!.sendSMSLastText,
                         style: TextStyle(fontSize: 14,color: Colors.grey.shade600, fontWeight: FontWeight.w400),
                       ),
                     ),

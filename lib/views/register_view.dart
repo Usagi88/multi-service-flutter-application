@@ -85,14 +85,14 @@ Scaffold _portraitModeOnly(BuildContext context) {
             SizedBox(
               height: 20,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left:20.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Register',
+                  AppLocalizations.of(context)!.register,
                   style: TextStyle(
-                      fontSize: 20.0,
+                      fontSize: 20,
                       fontWeight: FontWeight.w700
                   ),
                 ),
@@ -106,7 +106,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: TextfieldTextWidget(
-                  hintText: 'ID Card Number',
+                  hintText: AppLocalizations.of(context)!.idCardNumber,
                 ),
               ),
             ),
@@ -118,7 +118,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: TextfieldTextWidget(
-                  hintText: 'Full Name',
+                  hintText: AppLocalizations.of(context)!.fullName,
                 ),
               ),
             ),
@@ -130,7 +130,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: TextfieldNumberWidget(
-                  hintText: 'Mobile Number',
+                  hintText: AppLocalizations.of(context)!.mobileNumber,
                 ),
               ),
             ),
@@ -142,7 +142,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: ButtonWidget(
-                    buttonText: 'Register'
+                    buttonText: AppLocalizations.of(context)!.register,
                 ),
               ),
             ),
@@ -154,19 +154,12 @@ Scaffold _portraitModeOnly(BuildContext context) {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: ClickableLink(
-                    clickableLinkText: 'Already have an account? Click here to go to login'
+                    clickableLinkText: AppLocalizations.of(context)!.alreadyHaveAccount,
                 ),
               ),
             ),
             SizedBox(
               height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal:20.0),
-              child: WarningText(
-                warningText: 'Already have an account? Click here to go to login',
-                warningTextBottomColor: 0xffE03838
-              ),
             ),
           ],
         ),

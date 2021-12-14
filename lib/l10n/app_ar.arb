@@ -49,5 +49,64 @@
     "joinAndUseTwo": "Your Friend gets MVR 10.00",
     "earnMoney": "Earn money!",
     "earnMoneyTwo": "You earn MVR 10.00",
-    "shareLink": "Share link"
+    "shareLink": "Share link",
+
+    "liveChat": "Live Chat",
+    "typeYourMessageHere": "Type your message here",
+
+    "register": "Register",
+    "idCardNumber": "ID Card Number",
+    "fullName": "Full Name",
+    "mobileNumber": "Mobile Number",
+    "alreadyHaveAccount": "Already have an account? Click here to go to login",
+
+    "resetPassword": "Reset Password",
+    "resetPasswordSecondText": "Enter your registered mobile number to receive the password reset code",
+    "requestReset": "Request Reset",
+    "alreadyHaveCode": "Click here if you already have the code",
+
+    "scanQrCodeText": "Aim the QR inside this Box",
+
+    "sendSmsFirstText": "Select a sender id, write receiver(s) numbers(s) and write the sms you wish to send",
+    "selectPackage": "Select Package",
+    "buySMS": "Buy SMS",
+    "senderID": "Sender ID",
+    "getSenderID": "Get Sender ID",
+    "recipients": "Recipient (s)",
+    "sendSMSLastText": "SMS operators charges price for each SMS being sent even if it fails to deliver. Delivery Failures can be caused  due to phone being switches off or not available in the network at the time sms being sent.",
+    "message": "Message",
+    "login": "Login",
+
+    "status": "Status",
+    "name": "Name",
+    "details": "Details",
+    "reference": "Reference",
+    "time": "Time",
+    "shareReceipt": "Share Receipt",
+    "saveReceipt": "Save Receipt",
+
+    "topUpViaBmlFirsText": "Enter the amount you wish to add to fahipay via BML payment gateway",
+    "processingFee": "Processing Fee",
+    "total": "Total",
+    "topUpViaBmlButtonText": "Proceed to BML Gateway",
+    "topUpViaBmlSecondText": "By clicking the proceed button, you agree to accept our terms of service agreement",
+    "topUpViaBmlThirdText": "No refunds are available for successful payments!",
+
+    "topUpViaViewBmlFirsText": "Transfer your amount to the following account via BML Internet banking",
+    "accountName": "Account Name",
+    "usdConversion": "USD conversion rate is 15",
+    "uploadTransferReceipt": "Upload Transfer Receipt",
+    "or": "OR",
+    "selectAccount": "Select Account",
+    "selectCurrency": "Select Currency",
+    "enterFullName": "Enter Full NAME as in your ID Card",
+    "transferredAmount": "Transferred Amount",
+    "claim": "Claim",
+    "topUpViaViewBmlSecondText": "Please do not transfer same amount twice in a single day only own BML account is allowed for adding cash. Please do not forget to save the transfer receipt. No refunds are available for successful payments!",
+    "topUpViaViewBmlThirdText": "New Users please send the BML transfer receipt to our FB page or live chat for verification",
+    "topUpViaViewBmlFourthText": "A processing fee will be charged for any withdrawals. Profile must be verified before requesting for withdrawal",
+
+    "topUpViaViewMIBFirsText": "Transfer your amount to the following account via MIB Internet banking",
+    "referenceNumberFirstText": "Reference Number (Minimum last 4 digits)",
+    "referenceNumber": "Reference Number"
 }

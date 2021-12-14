@@ -205,7 +205,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   padding: const EdgeInsets.only(left: 14.0, right: 20),
                                                   child: Container(
                                                     width: 238,
-                                                    child: Text('Transfer your amount to the following account via BML Internet banking',
+                                                    child: Text(AppLocalizations.of(context)!.topUpViaViewBmlFirsText,
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w400,
@@ -223,7 +223,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Account Name", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -270,7 +270,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Account Name", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -351,7 +351,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: WarningText(
-                                                warningText: 'USD conversion rate is 15',
+                                                warningText: AppLocalizations.of(context)!.usdConversion,
                                                 warningTextBottomColor: 0xffE03838,
                                               ),
                                             ),
@@ -435,7 +435,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                             ),
                                                             Padding(
                                                               padding: const EdgeInsets.symmetric(horizontal:20.0),
-                                                              child: Text("Upload Transfer Receipt", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                              child: Text(AppLocalizations.of(context)!.uploadTransferReceipt, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                             )
                                                           ],
                                                         ),
@@ -460,7 +460,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   ],
                                                 ),
                                               ),
-                                              child: Text("OR", style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
+                                              child: Text(AppLocalizations.of(context)!.or, style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
                                             ),
                                             SizedBox(
                                               height: 20,
@@ -526,8 +526,8 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                           ),
                                                         ),
                                                       ),
-                                                      hint:Text("Select User"),
-                                                      disabledHint:Text("Disabled"),
+                                                      hint:Text(AppLocalizations.of(context)!.selectAccount),
+                                                      disabledHint:Text(AppLocalizations.of(context)!.disabled),
                                                       iconDisabledColor: Colors.red,
                                                       iconEnabledColor: Colors.green,
                                                       style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
@@ -543,7 +543,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Transferred Amount", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.transferredAmount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -568,7 +568,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                           borderSide: BorderSide(color: Colors.white),
                                                         ),
                                                         // Only numbers can be entered
-                                                        hintText: 'Amount',
+                                                        hintText: AppLocalizations.of(context)!.amount,
 
                                                       ),
                                                     ),
@@ -625,8 +625,8 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                               ),
                                                             ),
                                                           ),
-                                                          hint:Text("Select Currency"),
-                                                          disabledHint:Text("Disabled"),
+                                                          hint:Text(AppLocalizations.of(context)!.selectCurrency),
+                                                          disabledHint:Text(AppLocalizations.of(context)!.disabled),
                                                           iconDisabledColor: Colors.red,
                                                           iconEnabledColor: Colors.green,
                                                           style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
@@ -644,7 +644,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: ButtonWidget(
-                                                  buttonText: 'Claim'
+                                                  buttonText: AppLocalizations.of(context)!.claim,
                                               ),
                                             ),
                                             SizedBox(
@@ -654,10 +654,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                child: Text('Please do not transfer same amount twice in a single day'
-                                                    ' only own BML  account is allowed for adding cash'
-                                                    ' Please do not forget to save the transfer receipt'
-                                                    ' No refunds are available for sucessfull payments!',
+                                                child: Text(AppLocalizations.of(context)!.topUpViaViewBmlSecondText,
                                                   style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xffE03838)),
                                                 ),
                                               ),
@@ -666,7 +663,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                child: Text('New Users please send the BML transfer receipt to our FB page or live chat for verification',
+                                                child: Text(AppLocalizations.of(context)!.topUpViaViewBmlThirdText,
                                                   style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),
                                                 ),
                                               ),
@@ -678,7 +675,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   Container(
                                                   alignment: Alignment.centerLeft,
                                                     child: Text(
-                                                      'A processing fee will be charged for any withdrawals. Profile must be verified before requesting for withdrawal',
+                                                        AppLocalizations.of(context)!.topUpViaViewBmlFourthText,
                                                       style: TextStyle(
                                                           fontSize: 14.0,
                                                           fontWeight: FontWeight.w400,
@@ -765,7 +762,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   padding: const EdgeInsets.only(left: 14.0, right: 20),
                                                   child: Container(
                                                     width: 238,
-                                                    child: Text('Transfer your amount to the following account via MIB Internet banking',
+                                                    child: Text(AppLocalizations.of(context)!.topUpViaViewMIBFirsText,
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w400,
@@ -783,7 +780,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Account Name", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -830,7 +827,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Account Name", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -986,7 +983,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                             ),
                                                             Padding(
                                                               padding: const EdgeInsets.symmetric(horizontal:20.0),
-                                                              child: Text("Upload Transfer Receipt", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                              child: Text(AppLocalizations.of(context)!.uploadTransferReceipt, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                             )
                                                           ],
                                                         ),
@@ -1011,7 +1008,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   ],
                                                 ),
                                               ),
-                                              child: Text("OR", style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
+                                              child: Text(AppLocalizations.of(context)!.or, style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
                                             ),
                                             SizedBox(
                                               height: 20,
@@ -1020,7 +1017,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Reference number (Minimum last 4 digits)", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.referenceNumberFirstText, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -1029,7 +1026,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: TextfieldTextWidget(
-                                                  hintText: 'Reference Number'
+                                                  hintText: AppLocalizations.of(context)!.referenceNumber
                                               ),
                                             ),
                                             SizedBox(
@@ -1039,7 +1036,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Transferred Amount", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.transferredAmount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -1048,7 +1045,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: TextfieldTextWidget(
-                                                  hintText: 'Transferred Amount'
+                                                  hintText: AppLocalizations.of(context)!.transferredAmount
                                               ),
                                             ),
                                             SizedBox(
@@ -1057,7 +1054,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: ButtonWidget(
-                                                  buttonText: 'Claim'
+                                                  buttonText: AppLocalizations.of(context)!.claim
                                               ),
                                             ),
                                             SizedBox(

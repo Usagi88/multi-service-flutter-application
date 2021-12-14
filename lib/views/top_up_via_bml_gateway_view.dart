@@ -61,7 +61,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                     Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'Enter the amount you wish to add to fahipay via BML payment gateway',
+                        AppLocalizations.of(context)!.topUpViaBmlFirsText,
                         style: TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.w400,
@@ -90,7 +90,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text("Amount", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                  child: Text(AppLocalizations.of(context)!.amount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                 )
             ),
             SizedBox(
@@ -99,7 +99,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextfieldTextWidget(
-                  hintText: 'Amount'
+                  hintText: AppLocalizations.of(context)!.amount
               ),
             ),
 
@@ -110,7 +110,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text("Processing Fee", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                  child: Text(AppLocalizations.of(context)!.processingFee, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                 )
             ),
             SizedBox(
@@ -119,7 +119,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextfieldTextWidget(
-                  hintText: 'Processing Fee'
+                  hintText: AppLocalizations.of(context)!.processingFee
               ),
             ),
 
@@ -130,7 +130,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text("Total", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                  child: Text(AppLocalizations.of(context)!.total, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                 )
             ),
             SizedBox(
@@ -139,7 +139,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextfieldTextWidget(
-                  hintText: 'Total'
+                  hintText: AppLocalizations.of(context)!.total
               ),
             ),
             SizedBox(
@@ -147,7 +147,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: ButtonWidget(buttonText: 'Proceed to BML Gateway'),
+              child: ButtonWidget(buttonText: AppLocalizations.of(context)!.topUpViaBmlButtonText),
             ),
             SizedBox(
               height: 10,
@@ -171,7 +171,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Text('By clicking the proceed button, you agree to accept our terms of service agreement',
+              child: Text(AppLocalizations.of(context)!.topUpViaBmlSecondText,
                   style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600)
               ),
             ),
@@ -181,7 +181,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: WarningText(
-                warningText: 'No refunds are available for successful payments!',
+                warningText: AppLocalizations.of(context)!.topUpViaBmlThirdText,
                 warningTextBottomColor: 0xff909090
               )
             ),
