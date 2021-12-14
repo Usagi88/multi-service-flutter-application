@@ -56,7 +56,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    'Transaction History',
+                    AppLocalizations.of(context)!.transactionHistory,
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700
@@ -93,7 +93,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                     children: [
                       FPCard(
                         fpCardColor: 0xffE03838,
-                        title: 'Refunded transaction',
+                        title: AppLocalizations.of(context)!.refundedTransaction,
                         date: '19 June 2021  -  17:30',
                         amount: 532,
                         currency: 'MVR',
@@ -103,7 +103,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xff0CAF39,
-                        title: 'Cash Deposit',
+                        title: AppLocalizations.of(context)!.cashDeposit,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
                         currency: 'MVR',
@@ -113,7 +113,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Service Recharge',
+                        title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 120.50,
                         currency: 'MVR',
@@ -123,7 +123,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Service Recharge',
+                        title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 520,
                         currency: 'MVR',
@@ -133,7 +133,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Dhiraagu reload',
+                        title: AppLocalizations.of(context)!.dhiraaguReload,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
                         currency: 'MVR',
@@ -143,7 +143,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xffE03838,
-                        title: 'Refunded transaction',
+                        title: AppLocalizations.of(context)!.refundedTransaction,
                         date: '19 June 2021  -  17:30',
                         amount: 532,
                         currency: 'MVR',
@@ -153,7 +153,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xff0CAF39,
-                        title: 'Cash Deposit',
+                        title: AppLocalizations.of(context)!.cashDeposit,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
                         currency: 'MVR',
@@ -163,7 +163,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Service Recharge',
+                        title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 120.50,
                         currency: 'MVR',
@@ -173,7 +173,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Service Recharge',
+                        title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 520,
                         currency: 'MVR',
@@ -183,7 +183,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
-                        title: 'Dhiraagu reload',
+                        title: AppLocalizations.of(context)!.dhiraaguReload,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
                         currency: 'MVR',

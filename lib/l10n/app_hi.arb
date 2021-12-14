@@ -107,5 +107,7 @@
 
     "topUpViaViewMIBFirsText": "Transfer your amount to the following account via MIB Internet banking",
     "referenceNumberFirstText": "Reference Number (Minimum last 4 digits)",
-    "referenceNumber": "Reference Number"
+    "referenceNumber": "Reference Number",
+
+    "transactionHistory": "Transaction History"
 }
