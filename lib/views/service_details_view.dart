@@ -8,6 +8,7 @@ import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:fpapp/widgets/textfield_number_widget.dart';
 import 'package:fpapp/widgets/textfield_text_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class ServiceDetailsView extends StatefulWidget {

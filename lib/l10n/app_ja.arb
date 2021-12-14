@@ -23,6 +23,9 @@
   "submit": "提出する",
   "disabled": "Disabled",
 
+  "termsAndConditions": "Terms and conditions",
+  "invite": "Invite",
+  "referrals": "Referrals",
 
   "points": "ポイント",
   "support": "サポート",
@@ -37,5 +40,14 @@
 
   "fahiSendViewFirstText": "金額を別のユーザーに転送するには、受信者のメールアドレスまたは携帯電話番号と送信したい金額を入力します",
 
-  "selectGiftCardText": "ギフトカードを選択"
+  "selectGiftCardText": "ギフトカードを選択",
+
+  "howItWorks": "How it works",
+  "inviteYourFriends": "Invite your friends!",
+  "inviteYourFriendsTwo": "Simply Share your referral link!",
+  "joinAndUse": "Your friends join and use FahiPay!",
+  "joinAndUseTwo": "Your Friend gets MVR 10.00",
+  "earnMoney": "Earn money!",
+  "earnMoneyTwo": "You earn MVR 10.00",
+  "shareLink": "Share link"
 }

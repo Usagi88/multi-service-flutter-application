@@ -8,6 +8,7 @@ import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'dart:math' as math;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:fpapp/widgets/warning_text_widget.dart';
 import 'package:provider/provider.dart';

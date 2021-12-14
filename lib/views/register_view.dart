@@ -5,6 +5,7 @@ import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'package:fpapp/widgets/warning_text_widget.dart';
 import '/widgets/textfield_number_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({Key? key}) : super(key: key);

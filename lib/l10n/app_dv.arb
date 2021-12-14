@@ -33,8 +33,21 @@
     "serviceRecharge": "ސޭވިސް ރީޗާޖް",
     "dhiraaguReload": "ދިރާގު ރީލޯޑް",
 
+    "termsAndConditions": "Terms and conditions",
+    "invite": "Invite",
+    "referrals": "Referrals",
+
 
     "fahiSendViewFirstText": "އެހެން ފަރާތްއަކަށް ޖަމާކުރަން ބޭނުންޥަންނާމު، އެފަރާތެއްގެ އީމެއިލް ނުވަތަ މޯބައިލް ނަންބަރ ޖެހުމަށްފަހު އަދަދު ޖަހާށެވެ.",
 
-    "selectGiftCardText": "ގިފްޓް ކާޑްއެށް ނަގާށެވެ"
+    "selectGiftCardText": "ގިފްޓް ކާޑްއެށް ނަގާށެވެ",
+
+    "howItWorks": "How it works",
+    "inviteYourFriends": "Invite your friends!",
+    "inviteYourFriendsTwo": "Simply Share your referral link!",
+    "joinAndUse": "Your friends join and use FahiPay!",
+    "joinAndUseTwo": "Your Friend gets MVR 10.00",
+    "earnMoney": "Earn money!",
+    "earnMoneyTwo": "You earn MVR 10.00",
+    "shareLink": "Share link"
 }

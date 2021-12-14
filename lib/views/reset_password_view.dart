@@ -3,6 +3,7 @@ import 'package:fpapp/widgets/button_widget.dart';
 import 'package:fpapp/widgets/clickable_link_widget.dart';
 import '/widgets/textfield_number_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ResetPasswordView extends StatelessWidget {
   const ResetPasswordView({Key? key}) : super(key: key);

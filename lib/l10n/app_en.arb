@@ -24,6 +24,10 @@
 
     "disabled": "Disabled",
 
+    "termsAndConditions": "Terms and conditions",
+    "invite": "Invite",
+    "referrals": "Referrals",
+
 
     "points": "Points",
     "@points": {
@@ -71,5 +75,17 @@
     "selectGiftCardText": "Select a gift card",
     "@selectGiftCardText": {
         "description": "Gift card view's select a gift card text"
-    }
+    },
+
+    "howItWorks": "How it works",
+    "@howItWorks": {
+        "description": "Invite friends view's first text"
+    },
+    "inviteYourFriends": "Invite your friends!",
+    "inviteYourFriendsTwo": "Simply Share your referral link!",
+    "joinAndUse": "Your friends join and use FahiPay!",
+    "joinAndUseTwo": "Your Friend gets MVR 10.00",
+    "earnMoney": "Earn money!",
+    "earnMoneyTwo": "You earn MVR 10.00",
+    "shareLink": "Share link"
 }

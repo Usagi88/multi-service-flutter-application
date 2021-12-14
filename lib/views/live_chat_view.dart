@@ -11,6 +11,7 @@ import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:fpapp/widgets/textfield_number_widget.dart';
 import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'dart:math' as math;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LiveChatView extends StatefulWidget {
   const LiveChatView({Key? key}) : super(key: key);

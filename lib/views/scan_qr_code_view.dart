@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ScanQRCodeView extends StatefulWidget {
   const ScanQRCodeView({Key? key}) : super(key: key);

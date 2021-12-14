@@ -22,6 +22,10 @@
     "submit": "إرسال",
     "disabled": "Disabled",
 
+    "termsAndConditions": "Terms and conditions",
+    "invite": "Invite",
+    "referrals": "Referrals",
+
 
     "points": "نقاط",
     "support": "الدعم",
@@ -36,5 +40,14 @@
 
     "fahiSendViewFirstText": "لتحويل أي مبلغ إلى مستخدم آخر ، أدخل البريد الإلكتروني أو رقم الهاتف المحمول للمستلم والمبلغ الذي ترغب في إرساله",
 
-    "selectGiftCardText": "اختر بطاقة هدايا"
+    "selectGiftCardText": "اختر بطاقة هدايا",
+
+    "howItWorks": "How it works",
+    "inviteYourFriends": "Invite your friends!",
+    "inviteYourFriendsTwo": "Simply Share your referral link!",
+    "joinAndUse": "Your friends join and use FahiPay!",
+    "joinAndUseTwo": "Your Friend gets MVR 10.00",
+    "earnMoney": "Earn money!",
+    "earnMoneyTwo": "You earn MVR 10.00",
+    "shareLink": "Share link"
 }

@@ -6,6 +6,7 @@ import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class InviteFriendsView extends StatelessWidget {
   const InviteFriendsView({Key? key}) : super(key: key);
@@ -90,13 +91,13 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding){
                                         Tab(
                                           child: Align(
                                             alignment: Alignment.center,
-                                            child: Text("Invite", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                            child: Text(AppLocalizations.of(context)!.invite, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                           ),
                                         ),
                                         Tab(
                                           child: Align(
                                             alignment: Alignment.center,
-                                            child: Text("Refferals", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                            child: Text(AppLocalizations.of(context)!.referrals, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                           ),
                                         ),
                                       ]
@@ -121,7 +122,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding){
                                             child: Align(
                                               alignment: Alignment.centerLeft,
                                               child: Text(
-                                                'How it works!',
+                                                AppLocalizations.of(context)!.howItWorks,
                                                 style: TextStyle(
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.w700
@@ -153,11 +154,11 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding){
                                                     children: [
                                                       Container(
                                                         width: MediaQuery.of(context).size.width * 0.6,
-                                                        child: Text('Invite your friends!',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                                        child: Text(AppLocalizations.of(context)!.inviteYourFriends,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                                       ),
                                                       Container(
                                                           width: MediaQuery.of(context).size.width * 0.6,
-                                                          child: Text('Simply Share your referral link!',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xff929292)))
+                                                          child: Text(AppLocalizations.of(context)!.inviteYourFriendsTwo,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xff929292)))
                                                       ),
                                                     ],
                                                   ),
@@ -190,11 +191,11 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding){
                                                     children: [
                                                       Container(
                                                         width: MediaQuery.of(context).size.width * 0.6,
-                                                        child: Text('Your friends join and use FahiPay!',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                                        child: Text(AppLocalizations.of(context)!.joinAndUse,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                                       ),
                                                       Container(
                                                           width: MediaQuery.of(context).size.width * 0.6,
-                                                          child: Text('Your Friend gets MVR 10.00',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xff929292)))
+                                                          child: Text(AppLocalizations.of(context)!.joinAndUseTwo,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xff929292)))
                                                       ),
                                                     ],
                                                   ),
@@ -226,11 +227,11 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding){
                                                     children: [
                                                       Container(
                                                         width: MediaQuery.of(context).size.width * 0.6,
-                                                        child: Text('Earn money!',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                                        child: Text(AppLocalizations.of(context)!.earnMoney,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                                                       ),
                                                       Container(
                                                           width: MediaQuery.of(context).size.width * 0.6,
-                                                          child: Text('You earn MVR 10.00',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xff929292)))
+                                                          child: Text(AppLocalizations.of(context)!.earnMoneyTwo,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xff929292)))
                                                       ),
                                                     ],
                                                   ),
@@ -287,7 +288,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding){
                                                   gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                                                 ),
                                                 child: TextButton.icon(
-                                                    label: Text('Share link',style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
+                                                    label: Text(AppLocalizations.of(context)!.shareLink,style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
                                                     icon: Icon(FontAwesomeIcons.share, color: Colors.white,),
                                                     onPressed: () {
 
@@ -303,7 +304,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding){
                                             child: Align(
                                               alignment: Alignment.centerLeft,
                                               child: ClickableLink(
-                                                  clickableLinkText: 'Terms and conditions'
+                                                  clickableLinkText: AppLocalizations.of(context)!.termsAndConditions
                                               ),
                                             ),
                                           ),

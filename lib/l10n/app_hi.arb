@@ -22,6 +22,9 @@
     "submit": "प्रस्तुत करना",
     "disabled": "Disabled",
 
+    "termsAndConditions": "Terms and conditions",
+    "invite": "Invite",
+    "referrals": "Referrals",
 
     "points": "अंक",
     "support": "सहयोग",
@@ -36,5 +39,14 @@
 
     "fahiSendViewFirstText": "किसी अन्य उपयोगकर्ता को किसी भी राशि को स्थानांतरित करने के लिए, प्राप्तकर्ता का ईमेल या मोबाइल नंबर और वह राशि दर्ज करें जिसे आप भेजना चाहते हैं",
 
-    "selectGiftCardText": "उपहार कार्ड चुनें"
+    "selectGiftCardText": "उपहार कार्ड चुनें",
+
+    "howItWorks": "How it works",
+    "inviteYourFriends": "Invite your friends!",
+    "inviteYourFriendsTwo": "Simply Share your referral link!",
+    "joinAndUse": "Your friends join and use FahiPay!",
+    "joinAndUseTwo": "Your Friend gets MVR 10.00",
+    "earnMoney": "Earn money!",
+    "earnMoneyTwo": "You earn MVR 10.00",
+    "shareLink": "Share link"
 }
