@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fpapp/classes/animated_count.dart';
 import 'package:fpapp/widgets/fp_card_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
@@ -18,12 +19,15 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin {
   AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
+  double _value = 0.0;
 
   @override
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500)
+      duration: Duration(milliseconds: 500),
+
     );
     Timer(Duration(milliseconds: 200), () => _animationController?.forward());
     _animationController?.forward();
@@ -42,11 +46,11 @@ class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, _animationController);
+    return _portraitModeOnly(context, _animationController, _tween, _value);
   }
 }
 //portrait
-Scaffold _portraitModeOnly(BuildContext context, _animationController) {
+Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, _value) {
   return Scaffold(
     appBar: Navbar(),
     drawer: SideMenu(),
@@ -54,24 +58,36 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController) {
       child: SingleChildScrollView(
         child: Column(//not putting padding on column because logo image requires different padding
           children: [
-            Container(
-              height: 130,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                      'assets/images/zakai.png'),
-                  fit: BoxFit.fill,
+            FadeTransition(
+              opacity: _animationController,
+              child: Container(
+                height: 130,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/images/zakai.png'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),
-            Container(
-              alignment: Alignment.center,
-              height: 33,
-              child: Text('K.Male - Fajr 04:47',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff666666),
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(0, 1),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 33,
+                  child: Text('K.Male - Fajr 04:47',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff666666),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -125,8 +141,9 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController) {
                                         child: Container(
                                           child: Align(
                                             alignment: Alignment.centerLeft,
-                                            child: Text("20,320.00",
-                                                style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w700)),
+                                            child: AnimatedCount(
+                                              count: 203200,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -181,43 +198,34 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController) {
                       children: [
                         Column(
                           children: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                              child: IconButton(
-                                icon: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
-                                onPressed: () {
-                                  Navigator.of(context).pushNamed('/live-chat');
-                                },
-                              ),
-                              onPressed: () {},
-                            ),
-                            Text(AppLocalizations.of(context)!.support,
-                              style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Column(
-                          children: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                              child: Transform.rotate(
-                                angle: 180 * math.pi / 100,
+                            ScaleTransition(
+                              scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
                                 child: IconButton(
-                                  icon: Icon(FontAwesomeIcons.ticketAlt,size: 32,color: Color(0xff7B89F9),),
+                                  icon: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
                                   onPressed: () {
-                                    Navigator.of(context).pushNamed('/services');
+                                    Navigator.of(context).pushNamed('/live-chat');
                                   },
                                 ),
+                                onPressed: () {},
                               ),
-                              onPressed: () {},
                             ),
-                            Text(AppLocalizations.of(context)!.services,
-                              style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(-1, 0),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: Text(AppLocalizations.of(context)!.support,
+                                  style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                                ),
+                              ),
                             )
                           ],
                         ),
@@ -226,19 +234,73 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController) {
                         ),
                         Column(
                           children: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                              child: IconButton(
-                                icon: Icon(FontAwesomeIcons.wallet,size: 32,color: Color(0xff0CAF39),),
-                                onPressed: () {
-                                  //Navigator.of(context).pushNamed('/fahi-send');
-                                },
+                            ScaleTransition(
+                              scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
+                                child: Transform.rotate(
+                                  angle: 180 * math.pi / 100,
+                                  child: IconButton(
+                                    icon: Icon(FontAwesomeIcons.ticketAlt,size: 32,color: Color(0xff7B89F9),),
+                                    onPressed: () {
+                                      Navigator.of(context).pushNamed('/services');
+                                    },
+                                  ),
+                                ),
+                                onPressed: () {},
                               ),
-                              onPressed: () {},
                             ),
-                            Text(AppLocalizations.of(context)!.addCash,
-                              style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(0, 1),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: Text(AppLocalizations.of(context)!.services,
+                                  style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          children: [
+                            ScaleTransition(
+                              scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
+                                child: IconButton(
+                                  icon: Icon(FontAwesomeIcons.wallet,size: 32,color: Color(0xff0CAF39),),
+                                  onPressed: () {
+                                    //Navigator.of(context).pushNamed('/fahi-send');
+                                  },
+                                ),
+                                onPressed: () {},
+                              ),
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(2, 0),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: Text(AppLocalizations.of(context)!.addCash,
+                                  style: TextStyle(color: Color(0xff797979), fontSize: 14, fontWeight: FontWeight.w400),
+                                ),
+                              ),
                             )
                           ],
                         )
@@ -250,7 +312,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController) {
                 ]
             ),
             SizedBox(
-              height: 10,
+              height: 16,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -277,37 +339,55 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController) {
                   ),
                   Expanded(
                     flex: 1,
-                    child: const SizedBox(
-                      height: 1.0,
-                      child: const DecoratedBox(
-                        decoration: const BoxDecoration(
-                          color: Color(0xffcccccc)
+                    child: SlideTransition(
+                      position: Tween<Offset>(
+                        begin: Offset(0, 10),
+                        end: Offset.zero,
+                      ).animate(_animationController),
+                      child: FadeTransition(
+                        opacity: _animationController,
+                        child: const SizedBox(
+                          height: 1.0,
+                          child: const DecoratedBox(
+                            decoration: const BoxDecoration(
+                              color: Color(0xffcccccc)
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 45,
-                      height: 23,
-                      decoration: BoxDecoration(
-                          color: Colors.green,
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color(0xff3AC170),
-                              Color(0xff25BFA3),
-                            ],
+                    child: SlideTransition(
+                      position: Tween<Offset>(
+                        begin: Offset(2, 0),
+                        end: Offset.zero,
+                      ).animate(_animationController),
+                      child: FadeTransition(
+                        opacity: _animationController,
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 45,
+                          height: 23,
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              gradient: LinearGradient(
+                                colors: <Color>[
+                                  Color(0xff3AC170),
+                                  Color(0xff25BFA3),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.all(Radius.circular(20))
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(20))
-                      ),
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        icon: Icon(FontAwesomeIcons.chevronUp,size: 14,color: Colors.white,),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/transaction-history');
-                        },
+                          child: IconButton(
+                            padding: EdgeInsets.zero,
+                            icon: Icon(FontAwesomeIcons.chevronUp,size: 14,color: Colors.white,),
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/transaction-history');
+                            },
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -397,6 +477,9 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController) {
     ),
   );
 }
+
+
+
 
 //landscape
 /*
