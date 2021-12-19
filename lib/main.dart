@@ -41,6 +41,13 @@ class MyApp extends StatelessWidget {
       child: Consumer<LocaleProvider>(
           builder: (context, locale, child) {
             return MaterialApp(
+              theme: ThemeData(
+                pageTransitionsTheme: PageTransitionsTheme(builders: {
+                    TargetPlatform.iOS: ZoomPageTransitionsBuilder(),
+                    TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+                }),
+                scaffoldBackgroundColor: Colors.white
+              ),
               localizationsDelegates: [
                 AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,
@@ -68,7 +75,7 @@ class MyApp extends StatelessWidget {
                 '/transaction-history': (BuildContext context) => new TransactionHistoryFullView(),
                 '/fahi-send': (BuildContext context) => new FahisendView(),
               },
-              home: TopUpViaView(),
+              home: HomeView(),
             );
           }
       ),

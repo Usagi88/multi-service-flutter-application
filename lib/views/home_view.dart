@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/fp_card_widget.dart';
@@ -7,8 +9,32 @@ import 'dart:math' as math;
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin {
+  AnimationController? _animationController;
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500)
+    );
+    Timer(Duration(milliseconds: 200), () => _animationController?.forward());
+    _animationController?.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +42,11 @@ class HomeView extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context);
+    return _portraitModeOnly(context, _animationController);
   }
-
-
 }
 //portrait
-Scaffold _portraitModeOnly(BuildContext context) {
+Scaffold _portraitModeOnly(BuildContext context, _animationController) {
   return Scaffold(
     appBar: Navbar(),
     drawer: SideMenu(),
@@ -232,11 +256,20 @@ Scaffold _portraitModeOnly(BuildContext context) {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 children:[
-                  Text(
-                    AppLocalizations.of(context)!.history,
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
+                  SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(
+                        AppLocalizations.of(context)!.history,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -287,63 +320,72 @@ Scaffold _portraitModeOnly(BuildContext context) {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Container(
-                  height: MediaQuery.of(context).size.height * 0.30,
-                  child: ListView(
-                    physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                    children: [
-                      FPCard(
-                        fpCardColor: 0xffE03838,
-                        title: AppLocalizations.of(context)!.refundedTransaction,
-                        date: '19 June 2021  -  17:30',
-                        amount: 532,
-                        currency: 'MVR',
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      FPCard(
-                        fpCardColor: 0xff0CAF39,
-                        title: AppLocalizations.of(context)!.cashDeposit,
-                        date: '19 June 2021  -  17:30',
-                        amount: 31912.29,
-                        currency: 'MVR',
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      FPCard(
-                        fpCardColor: 0xffFFA26B,
-                        title: AppLocalizations.of(context)!.serviceRecharge,
-                        date: '19 June 2021  -  17:30',
-                        amount: 120.50,
-                        currency: 'MVR',
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      FPCard(
-                        fpCardColor: 0xffFFA26B,
-                        title: AppLocalizations.of(context)!.serviceRecharge,
-                        date: '19 June 2021  -  17:30',
-                        amount: 520,
-                        currency: 'MVR',
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      FPCard(
-                        fpCardColor: 0xffFFA26B,
-                        title: AppLocalizations.of(context)!.dhiraaguReload,
-                        date: '19 June 2021  -  17:30',
-                        amount: 31912.29,
-                        currency: 'MVR',
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                    ],
-                  )
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(0, 1),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: Container(
+                      height: MediaQuery.of(context).size.height * 0.30,
+                      child: ListView(
+                        physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                        children: [
+                          FPCard(
+                            fpCardColor: 0xffE03838,
+                            title: AppLocalizations.of(context)!.refundedTransaction,
+                            date: '19 June 2021  -  17:30',
+                            amount: 532,
+                            currency: 'MVR',
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          FPCard(
+                            fpCardColor: 0xff0CAF39,
+                            title: AppLocalizations.of(context)!.cashDeposit,
+                            date: '19 June 2021  -  17:30',
+                            amount: 31912.29,
+                            currency: 'MVR',
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          FPCard(
+                            fpCardColor: 0xffFFA26B,
+                            title: AppLocalizations.of(context)!.serviceRecharge,
+                            date: '19 June 2021  -  17:30',
+                            amount: 120.50,
+                            currency: 'MVR',
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          FPCard(
+                            fpCardColor: 0xffFFA26B,
+                            title: AppLocalizations.of(context)!.serviceRecharge,
+                            date: '19 June 2021  -  17:30',
+                            amount: 520,
+                            currency: 'MVR',
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          FPCard(
+                            fpCardColor: 0xffFFA26B,
+                            title: AppLocalizations.of(context)!.dhiraaguReload,
+                            date: '19 June 2021  -  17:30',
+                            amount: 31912.29,
+                            currency: 'MVR',
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      )
+                  ),
+                ),
               ),
             ),
             SizedBox(
