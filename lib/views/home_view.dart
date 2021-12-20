@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:fpapp/classes/animated_count.dart';
+import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/fp_card_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
@@ -29,14 +29,14 @@ class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin
       duration: Duration(milliseconds: 500),
 
     );
-    Timer(Duration(milliseconds: 200), () => _animationController?.forward());
-    _animationController?.forward();
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
     super.initState();
   }
 
   @override
   void dispose() {
-    _animationController?.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 
@@ -103,91 +103,13 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, _
                       ),
                     ),
                   ),
-                  Positioned(
-                    top: 25,
-                    left: MediaQuery.of(context).size.width * 0.20,
-                    right: 0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
-                      crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
-                      children: [
-                        Container(
-                          //color: Colors.grey,
-                          width: 80,
-                          height: 100,
-                          child: IconButton(
-                            icon: Icon(FontAwesomeIcons.wallet, color: Colors.white, size: 50),
-                            onPressed: () {
-                            },
-                          ),
-                        ),
-                        Container(
-                          width: 1,
-                          height: 54,
-                          color: Color(0xff57cda5),
-                        ),
-                        Expanded(
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
-                              crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
-                              children: [
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(left:10.0),
-                                      child: Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Container(
-                                          child: Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: AnimatedCount(
-                                              count: 203200,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left:2.0, top: 3.0),
-                                      child: Container(
-                                        child: Text("MVR",
-                                            style: TextStyle(fontSize: 14, color: Color(0xff055A40), fontWeight: FontWeight.w400)),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(left:10.0),
-                                      child: Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Container(
-                                          child: Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Text("200",
-                                                style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w700)),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left:2.0, top: 3.0),
-                                      child: Container(
-                                        child: Text(AppLocalizations.of(context)!.points,
-                                            style: TextStyle(fontSize: 14, color: Color(0xff055A40), fontWeight: FontWeight.w400)),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  BannerWidget(
+                    bannerIcon: FontAwesomeIcons.wallet,
+                    bannerAmount: 20230.20,
+                    bannerPoints: 200,
+                    animationController: _animationController,
                   ),
+
                   Positioned(
                     top: 130,
                     left: 0,
