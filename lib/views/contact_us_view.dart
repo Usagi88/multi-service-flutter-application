@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
@@ -8,20 +10,47 @@ import 'package:fpapp/widgets/social_media_button_widget.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ContactUsView extends StatelessWidget {
+class ContactUsView extends StatefulWidget {
   const ContactUsView({Key? key}) : super(key: key);
+
+  @override
+  State<ContactUsView> createState() => _ContactUsViewState();
+}
+
+class _ContactUsViewState extends State<ContactUsView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context);
+    return _portraitModeOnly(context, _animationController, _tween);
   }
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context) {
+Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
   return Scaffold(
     appBar: NavbarWithBackButton(),
     drawer: SideMenu(),
@@ -45,6 +74,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
                     bannerIcon: FontAwesomeIcons.wallet,
                     bannerAmount: 20320.20,
                     bannerPoints: 200,
+                    animationController: _animationController,
                   ),
                 ]
             ),
@@ -55,20 +85,38 @@ Scaffold _portraitModeOnly(BuildContext context) {
               children:[
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(AppLocalizations.of(context)!.contactUs,
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(AppLocalizations.of(context)!.contactUs,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: const SizedBox(
-                    height: 1.0,
-                    child: const DecoratedBox(
-                      decoration: const BoxDecoration(
-                          color: Color(0xffcccccc)
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(2, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: const SizedBox(
+                        height: 1.0,
+                        child: const DecoratedBox(
+                          decoration: const BoxDecoration(
+                              color: Color(0xffcccccc)
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -83,51 +131,105 @@ Scaffold _portraitModeOnly(BuildContext context) {
             ),
             ListTile(
               minLeadingWidth: 10,
-              leading: GradientIcon(
-                FontAwesomeIcons.phoneAlt,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              leading: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.phoneAlt,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
-              title: Text("4007004",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(0, 1),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                    child: Text("4007004",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
+                ),
+              ),
             ),
             ListTile(
               minLeadingWidth: 10,
-              leading: GradientIcon(
-                FontAwesomeIcons.solidEnvelope,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              leading: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEnvelope,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
-              title: Text("info@fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(0, 1),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text("info@fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
+                ),
+              ),
             ),
             ListTile(
               minLeadingWidth: 10,
-              leading: GradientIcon(
-                FontAwesomeIcons.globe,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              leading: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.globe,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
-              title: Text("www.fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(0, 1),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text("www.fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
+                ),
+              ),
             ),
             SizedBox(
               height: 10,
@@ -136,21 +238,39 @@ Scaffold _portraitModeOnly(BuildContext context) {
               children:[
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    AppLocalizations.of(context)!.socialMediaHandles,
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(
+                        AppLocalizations.of(context)!.socialMediaHandles,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: const SizedBox(
-                    height: 1.0,
-                    child: const DecoratedBox(
-                      decoration: const BoxDecoration(
-                          color: Color(0xffcccccc)
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(2, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: const SizedBox(
+                        height: 1.0,
+                        child: const DecoratedBox(
+                          decoration: const BoxDecoration(
+                              color: Color(0xffcccccc)
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -167,26 +287,38 @@ Scaffold _portraitModeOnly(BuildContext context) {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 children:[
-                  SocialMediaButton(
-                    socialMediaIcon: FontAwesomeIcons.twitter,
+                  ScaleTransition(
+                    scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                    child: SocialMediaButton(
+                      socialMediaIcon: FontAwesomeIcons.twitter,
+                    ),
                   ),
                   SizedBox(
                     width: 15,
                   ),
-                  SocialMediaButton(
-                    socialMediaIcon: FontAwesomeIcons.telegramPlane,
+                  ScaleTransition(
+                    scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                    child: SocialMediaButton(
+                      socialMediaIcon: FontAwesomeIcons.telegramPlane,
+                    ),
                   ),
                   SizedBox(
                     width: 15,
                   ),
-                  SocialMediaButton(
-                    socialMediaIcon: FontAwesomeIcons.viber,
+                  ScaleTransition(
+                    scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                    child: SocialMediaButton(
+                      socialMediaIcon: FontAwesomeIcons.viber,
+                    ),
                   ),
                   SizedBox(
                     width: 15,
                   ),
-                  SocialMediaButton(
-                    socialMediaIcon: FontAwesomeIcons.facebookF,
+                  ScaleTransition(
+                    scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                    child: SocialMediaButton(
+                      socialMediaIcon: FontAwesomeIcons.facebookF,
+                    ),
                   )
 
                 ],

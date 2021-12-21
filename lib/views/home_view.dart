@@ -20,7 +20,6 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin {
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
-  double _value = 0.0;
 
   @override
   void initState() {
@@ -46,11 +45,11 @@ class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, _animationController, _tween, _value);
+    return _portraitModeOnly(context, _animationController, _tween);
   }
 }
 //portrait
-Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, _value) {
+Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
   return Scaffold(
     appBar: Navbar(),
     drawer: SideMenu(),
