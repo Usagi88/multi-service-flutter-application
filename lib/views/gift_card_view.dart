@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -25,7 +27,9 @@ class GiftCardClass {
   const GiftCardClass(this.id,this.name);
 }
 
-class _GiftCardViewState extends State<GiftCardView> {
+class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
 
   GiftCardClass? _selectedGiftCard;
   List<GiftCardClass> giftCards = <GiftCardClass>[
@@ -40,15 +44,29 @@ class _GiftCardViewState extends State<GiftCardView> {
   // ignore: must_call_super
   void initState() {
     _selectedGiftCard=giftCards[0];
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
 
-    return _portraitModeOnly(context);
+    return _portraitModeOnly(context, _animationController, _tween);
   }
   //portrait
-  Scaffold _portraitModeOnly(BuildContext context) {
+  Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
 
     return Scaffold(
         appBar: NavbarWithBackButton(),
@@ -73,68 +91,78 @@ class _GiftCardViewState extends State<GiftCardView> {
                             bannerIcon: FontAwesomeIcons.wallet,
                             bannerAmount: 20320.20,
                             bannerPoints: 200,
+                            animationController: _animationController,
                           ),
                         ]
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          height: 46,
-                          decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                          child: DropdownButtonHideUnderline(
-                            child:DropdownButton<GiftCardClass>(
-                              value: _selectedGiftCard,
-                              onChanged: (GiftCardClass? newValue) {
-                                setState(() {
-                                  _selectedGiftCard = newValue;
-                                  print(newValue?.id);
-                                });
-                              },
-                              items: giftCards.map((GiftCardClass giftcard) {
-                                return new DropdownMenuItem<GiftCardClass>(
-                                  value: giftcard,
-                                  child: Container(
-                                      width:double.infinity,
-                                      alignment:Alignment.centerLeft,
-                                      padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
-                                      child:Text(
-                                        giftcard.name,
-                                        style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                      ),
-                                      decoration:BoxDecoration(
-                                          border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
-                                      )
-                                  ),
-                                );
-                              }).toList(),
-                              isExpanded: true,
-                              icon: Align(
-                                alignment: Alignment(0.0,-0.50),
-                                child: GradientIcon(
-                                  FontAwesomeIcons.sortDown,
-                                  22.0,
-                                  LinearGradient(
-                                    colors: <Color>[
-                                      Color(0xff3AC170),
-                                      Color(0xff25BFA3),
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                  ),
-                                ),
+                      child: SlideTransition(
+                        position: Tween<Offset>(
+                          begin: Offset(-1, 0),
+                          end: Offset.zero,
+                        ).animate(_animationController),
+                        child: FadeTransition(
+                          opacity: _animationController,
+                          child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              height: 46,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.shade200,
+                                  borderRadius: BorderRadius.circular(10)
                               ),
-                              hint:Text(AppLocalizations.of(context)!.selectGiftCardText),
-                              disabledHint:Text(AppLocalizations.of(context)!.disabled),
-                              iconDisabledColor: Colors.red,
-                              iconEnabledColor: Colors.green,
-                              style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
-                              elevation: 2,
-                            ),
-                          )
+                              child: DropdownButtonHideUnderline(
+                                child:DropdownButton<GiftCardClass>(
+                                  value: _selectedGiftCard,
+                                  onChanged: (GiftCardClass? newValue) {
+                                    setState(() {
+                                      _selectedGiftCard = newValue;
+                                      print(newValue?.id);
+                                    });
+                                  },
+                                  items: giftCards.map((GiftCardClass giftcard) {
+                                    return new DropdownMenuItem<GiftCardClass>(
+                                      value: giftcard,
+                                      child: Container(
+                                          width:double.infinity,
+                                          alignment:Alignment.centerLeft,
+                                          padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
+                                          child:Text(
+                                            giftcard.name,
+                                            style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                          ),
+                                          decoration:BoxDecoration(
+                                              border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
+                                          )
+                                      ),
+                                    );
+                                  }).toList(),
+                                  isExpanded: true,
+                                  icon: Align(
+                                    alignment: Alignment(0.0,-0.50),
+                                    child: GradientIcon(
+                                      FontAwesomeIcons.sortDown,
+                                      22.0,
+                                      LinearGradient(
+                                        colors: <Color>[
+                                          Color(0xff3AC170),
+                                          Color(0xff25BFA3),
+                                        ],
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                      ),
+                                    ),
+                                  ),
+                                  hint:Text(AppLocalizations.of(context)!.selectGiftCardText),
+                                  disabledHint:Text(AppLocalizations.of(context)!.disabled),
+                                  iconDisabledColor: Colors.red,
+                                  iconEnabledColor: Colors.green,
+                                  style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
+                                  elevation: 2,
+                                ),
+                              )
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
