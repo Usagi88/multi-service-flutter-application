@@ -57,15 +57,21 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
       child: SingleChildScrollView(
         child: Column(//not putting padding on column because logo image requires different padding
           children: [
-            FadeTransition(
-              opacity: _animationController,
-              child: Container(
-                height: 130,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        'assets/images/zakai.png'),
-                    fit: BoxFit.fill,
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(0, -1),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: Container(
+                  height: 130,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/images/zakai.png'),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ),
