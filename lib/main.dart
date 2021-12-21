@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
                 '/transaction-history': (BuildContext context) => new TransactionHistoryFullView(),
                 '/fahi-send': (BuildContext context) => new FahisendView(),
               },
-              home: LiveChatView(),
+              home: ProfileView(),
             );
           }
       ),

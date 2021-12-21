@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/header_widget.dart';
@@ -7,8 +9,34 @@ import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
+
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +44,12 @@ class ProfileView extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context);
+    return _portraitModeOnly(context, _animationController, _tween);
   }
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context) {
+Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
   return Scaffold(
     appBar: NavbarWithBackButton(),
     drawer: SideMenu(),
@@ -29,7 +57,7 @@ Scaffold _portraitModeOnly(BuildContext context) {
       child: SingleChildScrollView(
         child: Column(//not putting padding on column because logo image requires different padding
           children: [
-            Header(),
+            Header(animationController: _animationController,),
             SizedBox(
               height: 10,
             ),
@@ -37,21 +65,39 @@ Scaffold _portraitModeOnly(BuildContext context) {
               children:[
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    AppLocalizations.of(context)!.profile,
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(
+                        AppLocalizations.of(context)!.profile,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: const SizedBox(
-                    height: 1.0,
-                    child: const DecoratedBox(
-                      decoration: const BoxDecoration(
-                          color: Color(0xffcccccc)
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(2, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: const SizedBox(
+                        height: 1.0,
+                        child: const DecoratedBox(
+                          decoration: const BoxDecoration(
+                              color: Color(0xffcccccc)
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -65,98 +111,260 @@ Scaffold _portraitModeOnly(BuildContext context) {
               height: 10,
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.email),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.email)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.mobileNumber,),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.mobileNumber)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.address),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.address)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.email),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.email)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.email),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.email)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.email),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.email)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
