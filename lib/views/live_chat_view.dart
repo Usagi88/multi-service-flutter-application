@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,7 +22,28 @@ class LiveChatView extends StatefulWidget {
   _LiveChatViewState createState() => _LiveChatViewState();
 }
 
-class _LiveChatViewState extends State<LiveChatView> {
+class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -30,11 +53,11 @@ class _LiveChatViewState extends State<LiveChatView> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, navBarHeight, safePadding);
+    return _portraitModeOnly(context, navBarHeight, safePadding, _animationController, _tween);
   }
 
   //portrait
-  Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
+  Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _animationController, _tween) {
     return Scaffold(
         appBar: NavbarWithBackButton(),
         drawer: SideMenu(),
@@ -49,23 +72,18 @@ class _LiveChatViewState extends State<LiveChatView> {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Row(
                         children:[
-                          Text(
-                            AppLocalizations.of(context)!.liveChat,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: const SizedBox(
-                              height: 1.0,
-                              child: const DecoratedBox(
-                                decoration: const BoxDecoration(
-                                    color: Color(0xffcccccc)
+                          SlideTransition(
+                            position: Tween<Offset>(
+                              begin: Offset(-1, 0),
+                              end: Offset.zero,
+                            ).animate(_animationController),
+                            child: FadeTransition(
+                              opacity: _animationController,
+                              child: Text(
+                                AppLocalizations.of(context)!.liveChat,
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700
                                 ),
                               ),
                             ),
@@ -73,19 +91,51 @@ class _LiveChatViewState extends State<LiveChatView> {
                           SizedBox(
                             width: 10,
                           ),
-                          Container(
-                            width: 46,
-                            height: 46,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                              gradient: LinearGradient(
-                                colors: [
-                                  const Color(0xff3AC170),
-                                  const Color(0xff25BFA3),
-                                ],
+                          Expanded(
+                            flex: 1,
+                            child: SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(2, 0),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: const SizedBox(
+                                  height: 1.0,
+                                  child: const DecoratedBox(
+                                    decoration: const BoxDecoration(
+                                        color: Color(0xffcccccc)
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                            child: Icon(FontAwesomeIcons.phoneAlt, size: 24,color: Colors.white,),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          SlideTransition(
+                            position: Tween<Offset>(
+                              begin: Offset(2, 0),
+                              end: Offset.zero,
+                            ).animate(_animationController),
+                            child: FadeTransition(
+                              opacity: _animationController,
+                              child: Container(
+                                width: 46,
+                                height: 46,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      const Color(0xff3AC170),
+                                      const Color(0xff25BFA3),
+                                    ],
+                                  ),
+                                ),
+                                child: Icon(FontAwesomeIcons.phoneAlt, size: 24,color: Colors.white,),
+                              ),
+                            ),
                           )
                         ],
                       ),
@@ -125,46 +175,64 @@ class _LiveChatViewState extends State<LiveChatView> {
                       child: Row(
                         children: [
                           Expanded(
-                            child: Container(
-                              //height: MediaQuery.of(context).size.height * 0.053,
-                              height: 46,
-                              //width: 318,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                color: Color(0xfff2f2f2),
-                              ),
-                              child: TextField(
+                            child: SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(-1, 0),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: Container(
+                                  //height: MediaQuery.of(context).size.height * 0.053,
+                                  height: 46,
+                                  //width: 318,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                    color: Color(0xfff2f2f2),
+                                  ),
+                                  child: TextField(
 
-                                decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.all(10.0),
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
+                                    decoration: InputDecoration(
+                                      contentPadding: EdgeInsets.all(10.0),
+                                      enabledBorder: UnderlineInputBorder(
+                                        borderSide: BorderSide(color: Colors.white),
+                                      ),
+                                      suffixIcon: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(FontAwesomeIcons.camera,color: Colors.grey.shade400,),
+                                      ),
+                                      // Only numbers can be entered
+                                      hintText: AppLocalizations.of(context)!.typeYourMessageHere,
+                                    ),
                                   ),
-                                  suffixIcon: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(FontAwesomeIcons.camera,color: Colors.grey.shade400,),
-                                  ),
-                                  // Only numbers can be entered
-                                  hintText: AppLocalizations.of(context)!.typeYourMessageHere,
                                 ),
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 6.0),
-                            child: Container(
-                              width: 46,
-                              height: 46,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    const Color(0xff3AC170),
-                                    const Color(0xff25BFA3),
-                                  ],
+                            child: SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(2, 0),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: Container(
+                                  width: 46,
+                                  height: 46,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        const Color(0xff3AC170),
+                                        const Color(0xff25BFA3),
+                                      ],
+                                    ),
+                                  ),
+                                  child: Icon(FontAwesomeIcons.locationArrow, size: 22,color: Colors.white,),
                                 ),
                               ),
-                              child: Icon(FontAwesomeIcons.locationArrow, size: 22,color: Colors.white,),
                             ),
                           )
                         ],
