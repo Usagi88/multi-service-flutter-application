@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
@@ -6,8 +8,34 @@ import 'package:fpapp/widgets/service_card_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ServicesView extends StatelessWidget {
+class ServicesView extends StatefulWidget {
   const ServicesView({Key? key}) : super(key: key);
+
+  @override
+  State<ServicesView> createState() => _ServicesViewState();
+}
+
+class _ServicesViewState extends State<ServicesView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +45,13 @@ class ServicesView extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, navBarHeight, safePadding);
+    return _portraitModeOnly(context, navBarHeight, safePadding, _animationController, _tween);
 
   }
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
+Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _animationController, _tween) {
   return Scaffold(
       appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
@@ -31,13 +59,22 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
           child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
-                    height: 130,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/zakai.png'),
-                        fit: BoxFit.fill,
+                  SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(0, -1),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Container(
+                        height: 130,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                'assets/images/zakai.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -48,21 +85,39 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                     children:[
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text(
-                          AppLocalizations.of(context)!.services,
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700
+                        child: SlideTransition(
+                          position: Tween<Offset>(
+                            begin: Offset(-1, 0),
+                            end: Offset.zero,
+                          ).animate(_animationController),
+                          child: FadeTransition(
+                            opacity: _animationController,
+                            child: Text(
+                              AppLocalizations.of(context)!.services,
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700
+                              ),
+                            ),
                           ),
                         ),
                       ),
                       Expanded(
                         flex: 1,
-                        child: const SizedBox(
-                          height: 1.0,
-                          child: const DecoratedBox(
-                            decoration: const BoxDecoration(
-                                color: Color(0xffcccccc)
+                        child: SlideTransition(
+                          position: Tween<Offset>(
+                            begin: Offset(2, 0),
+                            end: Offset.zero,
+                          ).animate(_animationController),
+                          child: FadeTransition(
+                            opacity: _animationController,
+                            child: const SizedBox(
+                              height: 1.0,
+                              child: const DecoratedBox(
+                                decoration: const BoxDecoration(
+                                    color: Color(0xffcccccc)
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -88,6 +143,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/dhiraagu-logo.png',
                                 serviceCardText: 'Dhiraagu Reload',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -95,6 +151,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/ooredoo-logo.png',
                                 serviceCardText: 'Ooredoo Raastas',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -112,6 +169,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/dhiraagu-logo.png',
                                 serviceCardText: 'Dhiraagu Reload',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -119,6 +177,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/ooredoo-logo.png',
                                 serviceCardText: 'Ooredoo Raastas',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -136,6 +195,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/dhiraagu-logo.png',
                                 serviceCardText: 'Dhiraagu Reload',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -143,6 +203,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/ooredoo-logo.png',
                                 serviceCardText: 'Ooredoo Raastas',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -160,6 +221,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/dhiraagu-logo.png',
                                 serviceCardText: 'Dhiraagu Reload',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -167,6 +229,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/ooredoo-logo.png',
                                 serviceCardText: 'Ooredoo Raastas',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -184,6 +247,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/dhiraagu-logo.png',
                                 serviceCardText: 'Dhiraagu Reload',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
@@ -191,6 +255,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding) {
                               ServiceCard(
                                 serviceCardImage: 'assets/images/ooredoo-logo.png',
                                 serviceCardText: 'Ooredoo Raastas',
+                                animationController: _animationController,
                               ),
                               SizedBox(
                                 width: 20,
