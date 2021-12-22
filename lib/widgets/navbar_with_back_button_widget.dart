@@ -3,7 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
 
 class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget{
-  const NavbarWithBackButton({Key? key}) : super(key: key);
+  bool? includeShadow;
+  NavbarWithBackButton({Key? key, this.includeShadow}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,51 +17,100 @@ class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget{
 
   //portrait
   AppBar _portraitModeOnly(BuildContext context){
-    return AppBar(
-      backgroundColor: Colors.white,
-      elevation: 0,
-      leading: Builder(
-        builder: (BuildContext context) {
-          return RadiantGradientMask(
+    if(includeShadow == true) {
+      return AppBar(
+        backgroundColor: Colors.white,
+        elevation: 1,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return RadiantGradientMask(
+              child: IconButton(
+                icon: Icon(FontAwesomeIcons.arrowLeft),
+                onPressed: () {
+                  //Scaffold.of(context).openDrawer();
+                  Navigator.of(context).pushNamed('/home');
+                },
+                //tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              ),
+            );
+          },
+        ),
+        centerTitle: true,
+        title: Container(
+          alignment: Alignment.center,
+          height: 26,
+          child: SizedBox(
+              child: Image.asset(
+                'assets/images/fahipay-logo.png',
+              )),
+        ),
+        actions: [
+          RadiantGradientMask(
             child: IconButton(
-              icon: Icon(FontAwesomeIcons.arrowLeft),
+              icon: Icon(FontAwesomeIcons.qrcode),
               onPressed: () {
-                //Scaffold.of(context).openDrawer();
-                Navigator.of(context).pushNamed('/home');
+                Navigator.of(context).pushNamed('/scan-qr-code');
               },
-              //tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             ),
-          );
-        },
-      ),
-      centerTitle: true,
-      title: Container(
-        alignment: Alignment.center,
-        height: 26,
-        child: SizedBox(
-            child: Image.asset(
-              'assets/images/fahipay-logo.png',
-            )),
-      ),
-      actions: [
-        RadiantGradientMask(
-          child: IconButton(
-            icon: Icon(FontAwesomeIcons.qrcode),
-            onPressed: () {
-              Navigator.of(context).pushNamed('/scan-qr-code');
-            },
           ),
-        ),
-        RadiantGradientMask(
-          child: IconButton(
-            icon: Icon(FontAwesomeIcons.comment),
-            onPressed: () {
-              Navigator.of(context).pushNamed('/live-chat');
-            },
+          RadiantGradientMask(
+            child: IconButton(
+              icon: Icon(FontAwesomeIcons.comment),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/live-chat');
+              },
+            ),
           ),
+        ],
+      );
+    }else {
+      return AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return RadiantGradientMask(
+              child: IconButton(
+                icon: Icon(FontAwesomeIcons.arrowLeft),
+                onPressed: () {
+                  //Scaffold.of(context).openDrawer();
+                  Navigator.of(context).pushNamed('/home');
+                },
+                //tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              ),
+            );
+          },
         ),
-      ],
-    );
+        centerTitle: true,
+        title: Container(
+          alignment: Alignment.center,
+          height: 26,
+          child: SizedBox(
+              child: Image.asset(
+                'assets/images/fahipay-logo.png',
+              )),
+        ),
+        actions: [
+          RadiantGradientMask(
+            child: IconButton(
+              icon: Icon(FontAwesomeIcons.qrcode),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/scan-qr-code');
+              },
+            ),
+          ),
+          RadiantGradientMask(
+            child: IconButton(
+              icon: Icon(FontAwesomeIcons.comment),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/live-chat');
+              },
+            ),
+          ),
+        ],
+      );
+    }
+
   }
 
   //landscape
