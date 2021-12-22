@@ -109,5 +109,16 @@
     "referenceNumberFirstText": "संदर्भ संख्या (न्यूनतम अंतिम 4 अंक)",
     "referenceNumber": "संदर्भ संख्या",
 
-    "transactionHistory": "ट्रांजेक्शन इतिहास"
+    "transactionHistory": "ट्रांजेक्शन इतिहास",
+
+    "serviceDetailsViewDhiraaguFirstText": "पुनः लोड भेजने के लिए धीरागु संख्या और राशि दर्ज करें।",
+    "serviceDetailsViewOoredooFirstText": "रास्ता भेजने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
+    "dhiraagu": "Dhiraagu",
+    "ooredoo": "Ooredoo",
+    "sendReload": "Send Reload",
+    "sendRaastas": "Send Raastas",
+    "keepInfoSaved": "जानकारी सहेज कर रखें",
+    "savedNumbers": "सहेजे गए नंबर",
+    "delete": "Delete",
+    "show": "Show"
 }

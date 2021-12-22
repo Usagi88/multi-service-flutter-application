@@ -148,5 +148,16 @@
     "referenceNumberFirstText": "Reference Number (Minimum last 4 digits)",
     "referenceNumber": "Reference Number",
 
-    "transactionHistory": "Transaction History"
+    "transactionHistory": "Transaction History",
+
+    "serviceDetailsViewDhiraaguFirstText": "Enter the dhiraagu number and amount to send reload.",
+    "serviceDetailsViewOoredooFirstText": "Enter the Ooredoo number and amount to send raastas.",
+    "dhiraagu": "Dhiraagu",
+    "ooredoo": "Ooredoo",
+    "sendReload": "Send Reload",
+    "sendRaastas": "Send Raastas",
+    "keepInfoSaved": "Keep info saved",
+    "savedNumbers": "Saved Numbers",
+    "delete": "Delete",
+    "show": "Show"
 }

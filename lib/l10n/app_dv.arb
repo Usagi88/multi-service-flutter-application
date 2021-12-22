@@ -111,5 +111,16 @@
     "referenceNumberFirstText": "ރިފަރެންސް ނަންބަރ (މަދުވެގެން ފަހު 4 އަކުރު)",
     "referenceNumber": "ރިފަރެންސް ނަންބަރ",
 
-    "transactionHistory": "ކުރީގެ މުއާމަލާތްތައް"
+    "transactionHistory": "ކުރީގެ މުއާމަލާތްތައް",
+
+    "serviceDetailsViewDhiraaguFirstText": "ރީޅޯޑް ކުރަން ދިރާގު ނަންބަރ އާއި އަދަދު ލިޔާށެވެ.",
+    "serviceDetailsViewOoredooFirstText": "ރާސްޓަސް ކުރަން އޫރިދޫ ނަންބަރ އާއި އަދަދު ލިޔާށެވެ.",
+    "dhiraagu": "Dhiraagu",
+    "ooredoo": "Ooredoo",
+    "sendReload": "Send Reload",
+    "sendRaastas": "Send Raastas",
+    "keepInfoSaved": "މައުލޫމާތު ސޭވް ކުރުން",
+    "savedNumbers": "ސޭވް ކޮށްފައި ނަންބަރ",
+    "delete": "Delete",
+    "show": "Show"
 }

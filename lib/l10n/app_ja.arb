@@ -110,5 +110,16 @@
   "referenceNumberFirstText": "参照番号（下4桁以上）",
   "referenceNumber": "参照番号",
 
-  "transactionHistory": "取引履歴"
+  "transactionHistory": "取引履歴",
+
+  "serviceDetailsViewDhiraaguFirstText": "リロードを送信するdhiraagu番号と金額を入力します。",
+  "serviceDetailsViewOoredooFirstText": "ラースタズを送信するOoredoo番号と金額を入力します。",
+  "dhiraagu": "Dhiraagu",
+  "ooredoo": "Ooredoo",
+  "sendReload": "リロードを送信",
+  "sendRaastas": "ラースタズを送信",
+  "keepInfoSaved": "情報を保存しておく",
+  "savedNumbers": "セーブされた番号",
+  "delete": "Delete",
+  "show": "Show"
 }

@@ -109,5 +109,16 @@
     "referenceNumberFirstText": "الرقم المرجعي (الحد الأدنى لآخر 4 أرقام)",
     "referenceNumber": "رقم المرجع",
 
-    "transactionHistory": "تاريخ المعاملات"
+    "transactionHistory": "تاريخ المعاملات",
+
+    "serviceDetailsViewDhiraaguFirstText": "أدخل رقم Dhiraagu والمبلغ لإرسال إعادة التحميل.",
+    "serviceDetailsViewOoredooFirstText": "أدخل رقم Ooredoo والمبلغ لإرسالها.",
+    "dhiraagu": "Dhiraagu",
+    "ooredoo": "Ooredoo",
+    "sendReload": "إرسال Reload",
+    "sendRaastas": "إرسال Raastas",
+    "keepInfoSaved": "حفظ المعلومات المحفوظة",
+    "savedNumbers": "الأرقام المحفوظة",
+    "delete": "حذف",
+    "show": "تبين"
 }
