@@ -360,10 +360,12 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Row(
                                               children: [
-                                                Padding(
-                                                  padding: const EdgeInsets.only(left: 20.0, right: 6),
+                                                Expanded(
                                                   child: Container(
-                                                    width: 68,
+                                                    //width: 68,
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: 68,
+                                                    ),
                                                     height: 68,
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
@@ -406,8 +408,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(left: 6.0, right: 20),
+                                                Expanded(
                                                   child: DottedBorder(
                                                     borderType: BorderType.RRect,
                                                     color: Color(0xff25bfa0),
@@ -416,7 +417,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                     child: ClipRRect(
                                                       borderRadius: BorderRadius.all(Radius.circular(12)),
                                                       child: Container(
-                                                        width: 282,
+                                                        //width: 282,
                                                         height: 62,
                                                         child: Row(
                                                           mainAxisAlignment: MainAxisAlignment.center,
