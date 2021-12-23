@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -31,7 +33,9 @@ class CurrencyClass {
   const CurrencyClass(this.id,this.name);
 }
 
-class _TopUpViaViewState extends State<TopUpViaView> {
+class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
 
   UsersClass? _selectedUser;
   List<UsersClass> users = <UsersClass>[
@@ -49,6 +53,20 @@ class _TopUpViaViewState extends State<TopUpViaView> {
   void initState() {
     _selectedUser=users[0];
     _selectedCurrency=currencies[0];
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
   }
 
   @override
@@ -59,10 +77,10 @@ class _TopUpViaViewState extends State<TopUpViaView> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, height, safePadding);
+    return _portraitModeOnly(context, height, safePadding, _animationController, _tween);
   }
   //portrait
-  Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
+  Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animationController, _tween) {
     return Scaffold (
         appBar: NavbarWithBackButton(),
         drawer: SideMenu(),
@@ -91,6 +109,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                 bannerIcon: FontAwesomeIcons.wallet,
                                 bannerAmount: 20320.20,
                                 bannerPoints: 200,
+                                animationController: _animationController,
                               ),
                               Positioned(
                                 left: 0,
@@ -98,42 +117,51 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                 top: 110,
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.3),
-                                          spreadRadius: 1,
-                                          blurRadius: 4,
-                                          offset: Offset(0, 2), // changes position of shadow
-                                        ),
-                                      ],
-                                    ),
-                                    child: TabBar(
-                                        labelColor: Colors.white,
-                                        unselectedLabelColor: Colors.black,
-                                        indicatorSize: TabBarIndicatorSize.label,
-                                        labelPadding: const EdgeInsets.all(0),
-                                        indicator: BoxDecoration(
-                                          borderRadius: BorderRadius.all(Radius.circular(10),),
-                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                        ),
-                                        tabs: [
-                                          Tab(
-                                            child: Align(
-                                              alignment: Alignment.center,
-                                              child: Text("BML", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                  child: SlideTransition(
+                                    position: Tween<Offset>(
+                                      begin: Offset(-1, 0),
+                                      end: Offset.zero,
+                                    ).animate(_animationController),
+                                    child: FadeTransition(
+                                      opacity: _animationController,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey.withOpacity(0.3),
+                                              spreadRadius: 1,
+                                              blurRadius: 4,
+                                              offset: Offset(0, 2), // changes position of shadow
                                             ),
-                                          ),
-                                          Tab(
-                                            child: Align(
-                                              alignment: Alignment.center,
-                                              child: Text("MIB", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                          ],
+                                        ),
+                                        child: TabBar(
+                                            labelColor: Colors.white,
+                                            unselectedLabelColor: Colors.black,
+                                            indicatorSize: TabBarIndicatorSize.label,
+                                            labelPadding: const EdgeInsets.all(0),
+                                            indicator: BoxDecoration(
+                                              borderRadius: BorderRadius.all(Radius.circular(10),),
+                                              gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                                             ),
-                                          ),
-                                        ]
+                                            tabs: [
+                                              Tab(
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Text("BML", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                ),
+                                              ),
+                                              Tab(
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Text("MIB", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                ),
+                                              ),
+                                            ]
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -157,47 +185,56 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                               children: [
                                                 Padding(
                                                   padding: const EdgeInsets.only(left: 20.0, right: 14),
-                                                  child: Container(
-                                                    width: 68,
-                                                    height: 68,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.grey.withOpacity(0.3),
-                                                          spreadRadius: 1,
-                                                          blurRadius: 4,
-                                                          offset: Offset(0, 2), // changes position of shadow
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: Container(
+                                                        width: 68,
+                                                        height: 68,
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: Colors.grey.withOpacity(0.3),
+                                                              spreadRadius: 1,
+                                                              blurRadius: 4,
+                                                              offset: Offset(0, 2), // changes position of shadow
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      children: [
-                                                        GradientText(
-                                                            text: '1',
-                                                            style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
+                                                        child: Column(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children: [
+                                                            GradientText(
+                                                                text: '1',
+                                                                style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
+                                                                gradient: const LinearGradient(
+                                                                    colors: [
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    transform: GradientRotation(math.pi * 0.50)
+                                                                )
+                                                            ),
+                                                            GradientText(
+                                                                text: AppLocalizations.of(context)!.step,
+                                                                style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
+                                                                gradient: const LinearGradient(
+                                                                    colors: [
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    transform: GradientRotation(math.pi * 0.50)
+                                                                )
+                                                            ),
+                                                          ],
                                                         ),
-                                                        GradientText(
-                                                            text: AppLocalizations.of(context)!.step,
-                                                            style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -205,424 +242,420 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   padding: const EdgeInsets.only(left: 14.0, right: 20),
                                                   child: Container(
                                                     width: 238,
-                                                    child: Text(AppLocalizations.of(context)!.topUpViaViewBmlFirsText,
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight: FontWeight.w400,
-                                                            color: Colors.grey.shade600
+                                                    child: SlideTransition(
+                                                      position: Tween<Offset>(
+                                                        begin: Offset(2, 0),
+                                                        end: Offset.zero,
+                                                      ).animate(_animationController),
+                                                      child: FadeTransition(
+                                                        opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.topUpViaViewBmlFirsText,
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight: FontWeight.w400,
+                                                                color: Colors.grey.shade600
+                                                            )
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
                                                         )
                                                     ),
                                                   ),
                                                 )
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Align(
-                                                alignment: Alignment.centerLeft,
-                                                child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
-                                                )
                                             ),
                                             SizedBox(
                                               height: 14,
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: Container(
-                                                height: MediaQuery.of(context).size.height * 0.053,
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                  color: Color(0xfff2f2f2),
-                                                ),
-                                                child: TextField(
-                                                  decoration: InputDecoration(
-                                                      contentPadding: EdgeInsets.all(10.0),
-                                                      enabledBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.white),
-                                                      ),
-                                                      // Only numbers can be entered
-                                                      hintText: 'Fahipay PVT LTD',
-                                                      suffixIcon: Container(
-                                                        width: 11,
-                                                        height: 46,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                                        ),
-                                                        child: IconButton(
-                                                          icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
-                                                          onPressed: () {
-                                                          },
-                                                        ),
-                                                      )
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Align(
-                                                alignment: Alignment.centerLeft,
-                                                child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
-                                                )
-                                            ),
-                                            SizedBox(
-                                              height: 14,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: Container(
-                                                height: MediaQuery.of(context).size.height * 0.053,
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                  color: Color(0xfff2f2f2),
-                                                ),
-                                                child: TextField(
-                                                  decoration: InputDecoration(
-                                                      contentPadding: EdgeInsets.all(10.0),
-                                                      enabledBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.white),
-                                                      ),
-                                                      // Only numbers can be entered
-                                                      hintText: '90101480013752000 (MVR)',
-                                                      suffixIcon: Container(
-                                                        width: 11,
-                                                        height: 46,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                                        ),
-                                                        child: IconButton(
-                                                          icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
-                                                          onPressed: () {
-                                                          },
-                                                        ),
-                                                      )
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: Container(
-                                                height: MediaQuery.of(context).size.height * 0.053,
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                  color: Color(0xfff2f2f2),
-                                                ),
-                                                child: TextField(
-                                                  decoration: InputDecoration(
-                                                      contentPadding: EdgeInsets.all(10.0),
-                                                      enabledBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.white),
-                                                      ),
-                                                      // Only numbers can be entered
-                                                      hintText: '90101480013752000 (USD)',
-                                                      suffixIcon: Container(
-                                                        width: 11,
-                                                        height: 46,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                                        ),
-                                                        child: IconButton(
-                                                          icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
-                                                          onPressed: () {
-                                                          },
-                                                        ),
-                                                      )
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: WarningText(
-                                                warningText: AppLocalizations.of(context)!.usdConversion,
-                                                warningTextBottomColor: 0xffE03838,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Row(
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
                                                   child: Container(
-                                                    width: 68,
-                                                    height: 68,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.grey.withOpacity(0.3),
-                                                          spreadRadius: 1,
-                                                          blurRadius: 4,
-                                                          offset: Offset(0, 2), // changes position of shadow
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      children: [
-                                                        GradientText(
-                                                            text: '2',
-                                                            style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
-                                                        ),
-                                                        GradientText(
-                                                            text: AppLocalizations.of(context)!.step,
-                                                            style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: DottedBorder(
-                                                    borderType: BorderType.RRect,
-                                                    color: Color(0xff25bfa0),
-                                                    radius: Radius.circular(12),
-                                                    //padding: const EdgeInsets.all(0),
-                                                    dashPattern: [16, 4],
-                                                    child: ClipRRect(
-                                                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                                                      child: Container(
-                                                        //width: 282,
-                                                        constraints: BoxConstraints(
-                                                          maxWidth: 282
-                                                        ),
-                                                        height: 62,
-                                                        child: Row(
-                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                          children: [
-                                                            SizedBox(
-                                                              width: 10,
-                                                            ),
-                                                            GradientIcon(
-                                                              FontAwesomeIcons.cloudDownloadAlt,
-                                                              24.0,
-                                                              LinearGradient(
-                                                                colors: <Color>[
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                //begin: Alignment.topLeft,
-                                                                //end: Alignment.bottomRight,
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              child: Container(
-                                                                //width: 200,
-                                                                padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                                                                alignment: Alignment.center,
-                                                                height: double.infinity,
-                                                                constraints: BoxConstraints(
-                                                                  maxWidth: 180,
-                                                                ),
-                                                                child: Text(
-                                                                    AppLocalizations.of(context)!.uploadTransferReceipt,
-                                                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
-                                                                )
-                                                              ),
-                                                            )
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 20,
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Container(
-                                              width: double.infinity,
-                                              height: 55,
-                                              alignment: Alignment.center,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    const Color(0xff3AC170),
-                                                    const Color(0xff25BFA3),
-                                                  ],
-                                                ),
-                                              ),
-                                              child: Text(AppLocalizations.of(context)!.or, style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Align(
-                                                alignment: Alignment.centerLeft,
-                                                child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.enterFullName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
-                                                )
-                                            ),
-                                            SizedBox(
-                                              height: 6,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: Container(
-                                                  padding: EdgeInsets.symmetric(horizontal: 20),
-                                                  height: 46,
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.grey.shade200,
-                                                      borderRadius: BorderRadius.circular(10)
-                                                  ),
-                                                  child: DropdownButtonHideUnderline(
-                                                    child:DropdownButton<UsersClass>(
-                                                      value: _selectedUser,
-                                                      onChanged: (UsersClass? newValue) {
-                                                        setState(() {
-                                                          _selectedUser = newValue;
-                                                          print(newValue?.id);
-                                                        });
-                                                      },
-                                                      items: users.map((UsersClass user) {
-                                                        return new DropdownMenuItem<UsersClass>(
-                                                          value: user,
-                                                          child: Container(
-                                                              width:double.infinity,
-                                                              alignment:Alignment.centerLeft,
-                                                              padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
-                                                              child:Text(
-                                                                user.name,
-                                                                style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                                              ),
-                                                              decoration:BoxDecoration(
-                                                                  border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
-                                                              )
-                                                          ),
-                                                        );
-                                                      }).toList(),
-                                                      isExpanded: true,
-                                                      icon: Align(
-                                                        alignment: Alignment(0.0,-0.50),
-                                                        child: GradientIcon(
-                                                          FontAwesomeIcons.sortDown,
-                                                          22.0,
-                                                          LinearGradient(
-                                                            colors: <Color>[
-                                                              Color(0xff3AC170),
-                                                              Color(0xff25BFA3),
-                                                            ],
-                                                            begin: Alignment.topLeft,
-                                                            end: Alignment.bottomRight,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      hint:Text(AppLocalizations.of(context)!.selectAccount),
-                                                      disabledHint:Text(AppLocalizations.of(context)!.disabled),
-                                                      iconDisabledColor: Colors.red,
-                                                      iconEnabledColor: Colors.green,
-                                                      style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
-                                                      elevation: 2,
-                                                    ),
-                                                  )
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Align(
-                                                alignment: Alignment.centerLeft,
-                                                child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.transferredAmount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
-                                                )
-                                            ),
-                                            SizedBox(
-                                              height: 6,
-                                            ),
-                                            Row(
-                                              children: [
-                                                SizedBox(
-                                                  width: 20,
-                                                ),
-                                                Expanded(
-                                                  child: Container(
-                                                    //height: MediaQuery.of(context).size.height * 0.053,
                                                     height: 46,
-                                                    //width: 281,
                                                     decoration: BoxDecoration(
                                                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                                       color: Color(0xfff2f2f2),
                                                     ),
                                                     child: TextField(
                                                       decoration: InputDecoration(
-                                                        contentPadding: EdgeInsets.all(10.0),
-                                                        enabledBorder: UnderlineInputBorder(
-                                                          borderSide: BorderSide(color: Colors.white),
-                                                        ),
-                                                        // Only numbers can be entered
-                                                        hintText: AppLocalizations.of(context)!.amount,
-
+                                                          contentPadding: EdgeInsets.all(13.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: 'Fahipay PVT LTD',
+                                                          suffixIcon: Container(
+                                                            width: 11,
+                                                            height: 46,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                              gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                            ),
+                                                            child: IconButton(
+                                                              icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
+                                                              onPressed: () {
+                                                              },
+                                                            ),
+                                                          )
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(right: 20.0, left: 10.0),
+                                              ),
+                                            ),
+
+                                            SizedBox(
+                                              height: 14,
+                                            ),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                        )
+                                                    ),
+                                                  ),
+                                                )
+                                            ),
+                                            SizedBox(
+                                              height: 14,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
                                                   child: Container(
-                                                      padding: EdgeInsets.only(left: 10),
+                                                    height: 46,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      color: Color(0xfff2f2f2),
+                                                    ),
+                                                    child: TextField(
+                                                      decoration: InputDecoration(
+                                                          contentPadding: EdgeInsets.all(13.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: '90101480013752000 (MVR)',
+                                                          suffixIcon: Container(
+                                                            width: 11,
+                                                            height: 46,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                              gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                            ),
+                                                            child: IconButton(
+                                                              icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
+                                                              onPressed: () {
+                                                              },
+                                                            ),
+                                                          )
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: Container(
+                                                    height: 46,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      color: Color(0xfff2f2f2),
+                                                    ),
+                                                    child: TextField(
+                                                      decoration: InputDecoration(
+                                                          contentPadding: EdgeInsets.all(13.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: '90101480013752000 (USD)',
+                                                          suffixIcon: Container(
+                                                            width: 11,
+                                                            height: 46,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                              gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                            ),
+                                                            child: IconButton(
+                                                              icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
+                                                              onPressed: () {
+                                                              },
+                                                            ),
+                                                          )
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(-1, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: WarningText(
+                                                    warningText: AppLocalizations.of(context)!.usdConversion,
+                                                    warningTextBottomColor: 0xffE03838,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                  child: ScaleTransition(
+                                                    scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                                    child: Container(
+                                                      width: 68,
+                                                      height: 68,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: Colors.grey.withOpacity(0.3),
+                                                            spreadRadius: 1,
+                                                            blurRadius: 4,
+                                                            offset: Offset(0, 2), // changes position of shadow
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        children: [
+                                                          GradientText(
+                                                              text: '2',
+                                                              style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
+                                                              gradient: const LinearGradient(
+                                                                  colors: [
+                                                                    Color(0xff3AC170),
+                                                                    Color(0xff25BFA3),
+                                                                  ],
+                                                                  transform: GradientRotation(math.pi * 0.50)
+                                                              )
+                                                          ),
+                                                          GradientText(
+                                                              text: AppLocalizations.of(context)!.step,
+                                                              style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
+                                                              gradient: const LinearGradient(
+                                                                  colors: [
+                                                                    Color(0xff3AC170),
+                                                                    Color(0xff25BFA3),
+                                                                  ],
+                                                                  transform: GradientRotation(math.pi * 0.50)
+                                                              )
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(2, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: DottedBorder(
+                                                        borderType: BorderType.RRect,
+                                                        color: Color(0xff25bfa0),
+                                                        radius: Radius.circular(12),
+                                                        //padding: const EdgeInsets.all(0),
+                                                        dashPattern: [16, 4],
+                                                        child: ClipRRect(
+                                                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                                                          child: Container(
+                                                            //width: 282,
+                                                            constraints: BoxConstraints(
+                                                              maxWidth: 282
+                                                            ),
+                                                            height: 62,
+                                                            child: Row(
+                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                              children: [
+                                                                SizedBox(
+                                                                  width: 10,
+                                                                ),
+                                                                GradientIcon(
+                                                                  FontAwesomeIcons.cloudDownloadAlt,
+                                                                  24.0,
+                                                                  LinearGradient(
+                                                                    colors: <Color>[
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    //begin: Alignment.topLeft,
+                                                                    //end: Alignment.bottomRight,
+                                                                  ),
+                                                                ),
+                                                                Expanded(
+                                                                  child: Container(
+                                                                    //width: 200,
+                                                                    padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                                                                    alignment: Alignment.center,
+                                                                    height: double.infinity,
+                                                                    constraints: BoxConstraints(
+                                                                      maxWidth: 180,
+                                                                    ),
+                                                                    child: Text(
+                                                                        AppLocalizations.of(context)!.uploadTransferReceipt,
+                                                                        style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                                    )
+                                                                  ),
+                                                                )
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            ScaleTransition(
+                                              scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 55,
+                                                alignment: Alignment.center,
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      const Color(0xff3AC170),
+                                                      const Color(0xff25BFA3),
+                                                    ],
+                                                  ),
+                                                ),
+                                                child: Text(AppLocalizations.of(context)!.or, style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.enterFullName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                        )
+                                                    ),
+                                                  ),
+                                                )
+                                            ),
+                                            SizedBox(
+                                              height: 6,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 20),
                                                       height: 46,
-                                                      width: 75,
                                                       decoration: BoxDecoration(
                                                           color: Colors.grey.shade200,
                                                           borderRadius: BorderRadius.circular(10)
                                                       ),
                                                       child: DropdownButtonHideUnderline(
-                                                        child:DropdownButton<CurrencyClass>(
-                                                          value: _selectedCurrency,
-                                                          onChanged: (CurrencyClass? newValue) {
+                                                        child:DropdownButton<UsersClass>(
+                                                          value: _selectedUser,
+                                                          onChanged: (UsersClass? newValue) {
                                                             setState(() {
-                                                              _selectedCurrency = newValue;
+                                                              _selectedUser = newValue;
+                                                              print(newValue?.id);
                                                             });
                                                           },
-                                                          items: currencies.map((CurrencyClass currency) {
-                                                            return new DropdownMenuItem<CurrencyClass>(
-                                                              value: currency,
+                                                          items: users.map((UsersClass user) {
+                                                            return new DropdownMenuItem<UsersClass>(
+                                                              value: user,
                                                               child: Container(
                                                                   width:double.infinity,
                                                                   alignment:Alignment.centerLeft,
                                                                   padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
                                                                   child:Text(
-                                                                    currency.name,
+                                                                    user.name,
                                                                     style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
                                                                   ),
                                                                   decoration:BoxDecoration(
@@ -647,7 +680,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                               ),
                                                             ),
                                                           ),
-                                                          hint:Text(AppLocalizations.of(context)!.selectCurrency),
+                                                          hint:Text(AppLocalizations.of(context)!.selectAccount),
                                                           disabledHint:Text(AppLocalizations.of(context)!.disabled),
                                                           iconDisabledColor: Colors.red,
                                                           iconEnabledColor: Colors.green,
@@ -655,6 +688,136 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                           elevation: 2,
                                                         ),
                                                       )
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.transferredAmount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                        )
+                                                    ),
+                                                  ),
+                                                )
+                                            ),
+                                            SizedBox(
+                                              height: 6,
+                                            ),
+                                            Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Expanded(
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: Container(
+                                                        height: 46,
+                                                        //width: 281,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                          color: Color(0xfff2f2f2),
+                                                        ),
+                                                        child: TextField(
+                                                          decoration: InputDecoration(
+                                                            contentPadding: EdgeInsets.all(13.0),
+                                                            enabledBorder: UnderlineInputBorder(
+                                                              borderSide: BorderSide(color: Colors.white),
+                                                            ),
+                                                            // Only numbers can be entered
+                                                            hintText: AppLocalizations.of(context)!.amount,
+
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(right: 20.0, left: 10.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(2, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: Container(
+                                                          padding: EdgeInsets.only(left: 10),
+                                                          height: 46,
+                                                          width: 75,
+                                                          decoration: BoxDecoration(
+                                                              color: Colors.grey.shade200,
+                                                              borderRadius: BorderRadius.circular(10)
+                                                          ),
+                                                          child: DropdownButtonHideUnderline(
+                                                            child:DropdownButton<CurrencyClass>(
+                                                              value: _selectedCurrency,
+                                                              onChanged: (CurrencyClass? newValue) {
+                                                                setState(() {
+                                                                  _selectedCurrency = newValue;
+                                                                });
+                                                              },
+                                                              items: currencies.map((CurrencyClass currency) {
+                                                                return new DropdownMenuItem<CurrencyClass>(
+                                                                  value: currency,
+                                                                  child: Container(
+                                                                      width:double.infinity,
+                                                                      alignment:Alignment.centerLeft,
+                                                                      padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
+                                                                      child:Text(
+                                                                        currency.name,
+                                                                        style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                                                      ),
+                                                                      decoration:BoxDecoration(
+                                                                          border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
+                                                                      )
+                                                                  ),
+                                                                );
+                                                              }).toList(),
+                                                              isExpanded: true,
+                                                              icon: Align(
+                                                                alignment: Alignment(0.0,-0.50),
+                                                                child: GradientIcon(
+                                                                  FontAwesomeIcons.sortDown,
+                                                                  22.0,
+                                                                  LinearGradient(
+                                                                    colors: <Color>[
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    begin: Alignment.topLeft,
+                                                                    end: Alignment.bottomRight,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              hint:Text(AppLocalizations.of(context)!.selectCurrency),
+                                                              disabledHint:Text(AppLocalizations.of(context)!.disabled),
+                                                              iconDisabledColor: Colors.red,
+                                                              iconEnabledColor: Colors.green,
+                                                              style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
+                                                              elevation: 2,
+                                                            ),
+                                                          )
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -665,8 +828,11 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: ButtonWidget(
-                                                  buttonText: AppLocalizations.of(context)!.claim,
+                                              child: ScaleTransition(
+                                                scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                                child: ButtonWidget(
+                                                    buttonText: AppLocalizations.of(context)!.claim,
+                                                ),
                                               ),
                                             ),
                                             SizedBox(
@@ -676,8 +842,17 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                child: Text(AppLocalizations.of(context)!.topUpViaViewBmlSecondText,
-                                                  style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xffE03838)),
+                                                child: SlideTransition(
+                                                  position: Tween<Offset>(
+                                                    begin: Offset(-1, 0),
+                                                    end: Offset.zero,
+                                                  ).animate(_animationController),
+                                                  child: FadeTransition(
+                                                    opacity: _animationController,
+                                                    child: Text(AppLocalizations.of(context)!.topUpViaViewBmlSecondText,
+                                                      style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xffE03838)),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -685,8 +860,17 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                child: Text(AppLocalizations.of(context)!.topUpViaViewBmlThirdText,
-                                                  style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),
+                                                child: SlideTransition(
+                                                  position: Tween<Offset>(
+                                                    begin: Offset(-1, 0),
+                                                    end: Offset.zero,
+                                                  ).animate(_animationController),
+                                                  child: FadeTransition(
+                                                    opacity: _animationController,
+                                                    child: Text(AppLocalizations.of(context)!.topUpViaViewBmlThirdText,
+                                                      style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -696,12 +880,21 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   children: [
                                                   Container(
                                                   alignment: Alignment.centerLeft,
-                                                    child: Text(
-                                                        AppLocalizations.of(context)!.topUpViaViewBmlFourthText,
-                                                      style: TextStyle(
-                                                          fontSize: 14.0,
-                                                          fontWeight: FontWeight.w400,
-                                                          color: Color(0xff909090)
+                                                    child: SlideTransition(
+                                                      position: Tween<Offset>(
+                                                        begin: Offset(2, 0),
+                                                        end: Offset.zero,
+                                                      ).animate(_animationController),
+                                                      child: FadeTransition(
+                                                        opacity: _animationController,
+                                                        child: Text(
+                                                            AppLocalizations.of(context)!.topUpViaViewBmlFourthText,
+                                                          style: TextStyle(
+                                                              fontSize: 14.0,
+                                                              fontWeight: FontWeight.w400,
+                                                              color: Color(0xff909090)
+                                                          ),
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -736,47 +929,56 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                               children: [
                                                 Padding(
                                                   padding: const EdgeInsets.only(left: 20.0, right: 14),
-                                                  child: Container(
-                                                    width: 68,
-                                                    height: 68,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.grey.withOpacity(0.3),
-                                                          spreadRadius: 1,
-                                                          blurRadius: 4,
-                                                          offset: Offset(0, 2), // changes position of shadow
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: Container(
+                                                        width: 68,
+                                                        height: 68,
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: Colors.grey.withOpacity(0.3),
+                                                              spreadRadius: 1,
+                                                              blurRadius: 4,
+                                                              offset: Offset(0, 2), // changes position of shadow
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      children: [
-                                                        GradientText(
-                                                            text: '1',
-                                                            style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
+                                                        child: Column(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children: [
+                                                            GradientText(
+                                                                text: '1',
+                                                                style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
+                                                                gradient: const LinearGradient(
+                                                                    colors: [
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    transform: GradientRotation(math.pi * 0.50)
+                                                                )
+                                                            ),
+                                                            GradientText(
+                                                                text: AppLocalizations.of(context)!.step,
+                                                                style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
+                                                                gradient: const LinearGradient(
+                                                                    colors: [
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    transform: GradientRotation(math.pi * 0.50)
+                                                                )
+                                                            ),
+                                                          ],
                                                         ),
-                                                        GradientText(
-                                                            text: AppLocalizations.of(context)!.step,
-                                                            style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -784,25 +986,44 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                   padding: const EdgeInsets.only(left: 14.0, right: 20),
                                                   child: Container(
                                                     width: 238,
-                                                    child: Text(AppLocalizations.of(context)!.topUpViaViewMIBFirsText,
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight: FontWeight.w400,
-                                                            color: Colors.grey.shade600
-                                                        )
+                                                    child: SlideTransition(
+                                                      position: Tween<Offset>(
+                                                        begin: Offset(2, 0),
+                                                        end: Offset.zero,
+                                                      ).animate(_animationController),
+                                                      child: FadeTransition(
+                                                        opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.topUpViaViewMIBFirsText,
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight: FontWeight.w400,
+                                                                color: Colors.grey.shade600
+                                                            )
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 )
                                               ],
                                             ),
                                             SizedBox(
-                                              height: 10,
+                                              height: 20,
                                             ),
                                             Align(
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                        )
+                                                    ),
+                                                  ),
                                                 )
                                             ),
                                             SizedBox(
@@ -810,46 +1031,64 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: Container(
-                                                height: MediaQuery.of(context).size.height * 0.053,
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                  color: Color(0xfff2f2f2),
-                                                ),
-                                                child: TextField(
-                                                  decoration: InputDecoration(
-                                                      contentPadding: EdgeInsets.all(10.0),
-                                                      enabledBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.white),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: Container(
+                                                    height: 46,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      color: Color(0xfff2f2f2),
+                                                    ),
+                                                    child: TextField(
+                                                      decoration: InputDecoration(
+                                                          contentPadding: EdgeInsets.all(13.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: 'Fahipay PVT LTD',
+                                                          suffixIcon: Container(
+                                                            width: 11,
+                                                            height: 46,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                              gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                            ),
+                                                            child: IconButton(
+                                                              icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
+                                                              onPressed: () {
+                                                              },
+                                                            ),
+                                                          )
                                                       ),
-                                                      // Only numbers can be entered
-                                                      hintText: 'Fahipay PVT LTD',
-                                                      suffixIcon: Container(
-                                                        width: 11,
-                                                        height: 46,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                                        ),
-                                                        child: IconButton(
-                                                          icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
-                                                          onPressed: () {
-                                                          },
-                                                        ),
-                                                      )
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             ),
 
                                             SizedBox(
-                                              height: 10,
+                                              height: 14,
                                             ),
                                             Align(
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.accountName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400))
+                                                    ),
+                                                  ),
                                                 )
                                             ),
                                             SizedBox(
@@ -857,33 +1096,42 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: Container(
-                                                height: MediaQuery.of(context).size.height * 0.053,
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                  color: Color(0xfff2f2f2),
-                                                ),
-                                                child: TextField(
-                                                  decoration: InputDecoration(
-                                                      contentPadding: EdgeInsets.all(10.0),
-                                                      enabledBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.white),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: Container(
+                                                    height: 46,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      color: Color(0xfff2f2f2),
+                                                    ),
+                                                    child: TextField(
+                                                      decoration: InputDecoration(
+                                                          contentPadding: EdgeInsets.all(13.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: '90101480013752000 (MVR)',
+                                                          suffixIcon: Container(
+                                                            width: 11,
+                                                            height: 46,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                              gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                            ),
+                                                            child: IconButton(
+                                                              icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
+                                                              onPressed: () {
+                                                              },
+                                                            ),
+                                                          )
                                                       ),
-                                                      // Only numbers can be entered
-                                                      hintText: '90101480013752000 (MVR)',
-                                                      suffixIcon: Container(
-                                                        width: 11,
-                                                        height: 46,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                                        ),
-                                                        child: IconButton(
-                                                          icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
-                                                          onPressed: () {
-                                                          },
-                                                        ),
-                                                      )
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -893,33 +1141,42 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: Container(
-                                                height: MediaQuery.of(context).size.height * 0.053,
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                  color: Color(0xfff2f2f2),
-                                                ),
-                                                child: TextField(
-                                                  decoration: InputDecoration(
-                                                      contentPadding: EdgeInsets.all(10.0),
-                                                      enabledBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.white),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: Container(
+                                                    height: 46,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      color: Color(0xfff2f2f2),
+                                                    ),
+                                                    child: TextField(
+                                                      decoration: InputDecoration(
+                                                          contentPadding: EdgeInsets.all(13.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: '90101480013752000 (USD)',
+                                                          suffixIcon: Container(
+                                                            width: 11,
+                                                            height: 46,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                              gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                            ),
+                                                            child: IconButton(
+                                                              icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
+                                                              onPressed: () {
+                                                              },
+                                                            ),
+                                                          )
                                                       ),
-                                                      // Only numbers can be entered
-                                                      hintText: '90101480013752000 (USD)',
-                                                      suffixIcon: Container(
-                                                        width: 11,
-                                                        height: 46,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                                        ),
-                                                        child: IconButton(
-                                                          icon: Icon(FontAwesomeIcons.solidClone, color: Colors.white, size: 16),
-                                                          onPressed: () {
-                                                          },
-                                                        ),
-                                                      )
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -932,99 +1189,117 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                               children: [
                                                 Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Container(
-                                                    width: 68,
-                                                    height: 68,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.grey.withOpacity(0.3),
-                                                          spreadRadius: 1,
-                                                          blurRadius: 4,
-                                                          offset: Offset(0, 2), // changes position of shadow
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: Container(
+                                                        width: 68,
+                                                        height: 68,
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: Colors.grey.withOpacity(0.3),
+                                                              spreadRadius: 1,
+                                                              blurRadius: 4,
+                                                              offset: Offset(0, 2), // changes position of shadow
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      children: [
-                                                        GradientText(
-                                                            text: '2',
-                                                            style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
+                                                        child: Column(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children: [
+                                                            GradientText(
+                                                                text: '2',
+                                                                style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
+                                                                gradient: const LinearGradient(
+                                                                    colors: [
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    transform: GradientRotation(math.pi * 0.50)
+                                                                )
+                                                            ),
+                                                            GradientText(
+                                                                text: AppLocalizations.of(context)!.step,
+                                                                style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
+                                                                gradient: const LinearGradient(
+                                                                    colors: [
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    transform: GradientRotation(math.pi * 0.50)
+                                                                )
+                                                            ),
+                                                          ],
                                                         ),
-                                                        GradientText(
-                                                            text: AppLocalizations.of(context)!.step,
-                                                            style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
-                                                            gradient: const LinearGradient(
-                                                                colors: [
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                transform: GradientRotation(math.pi * 0.50)
-                                                            )
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                                 Expanded(
-                                                  child: DottedBorder(
-                                                    borderType: BorderType.RRect,
-                                                    color: Color(0xff25bfa0),
-                                                    radius: Radius.circular(12),
-                                                    //padding: const EdgeInsets.all(0),
-                                                    dashPattern: [16, 4],
-                                                    child: ClipRRect(
-                                                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                                                      child: Container(
-                                                        //width: 282,
-                                                        constraints: BoxConstraints(
-                                                            maxWidth: 282
-                                                        ),
-                                                        height: 62,
-                                                        child: Row(
-                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                          children: [
-                                                            SizedBox(
-                                                              width: 10,
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(2, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: DottedBorder(
+                                                        borderType: BorderType.RRect,
+                                                        color: Color(0xff25bfa0),
+                                                        radius: Radius.circular(12),
+                                                        //padding: const EdgeInsets.all(0),
+                                                        dashPattern: [16, 4],
+                                                        child: ClipRRect(
+                                                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                                                          child: Container(
+                                                            //width: 282,
+                                                            constraints: BoxConstraints(
+                                                                maxWidth: 282
                                                             ),
-                                                            GradientIcon(
-                                                              FontAwesomeIcons.cloudDownloadAlt,
-                                                              24.0,
-                                                              LinearGradient(
-                                                                colors: <Color>[
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                //begin: Alignment.topLeft,
-                                                                //end: Alignment.bottomRight,
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              child: Container(
-                                                                //width: 200,
-                                                                  padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                                                                  alignment: Alignment.center,
-                                                                  height: double.infinity,
-                                                                  constraints: BoxConstraints(
-                                                                    maxWidth: 180,
+                                                            height: 62,
+                                                            child: Row(
+                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                              children: [
+                                                                SizedBox(
+                                                                  width: 10,
+                                                                ),
+                                                                GradientIcon(
+                                                                  FontAwesomeIcons.cloudDownloadAlt,
+                                                                  24.0,
+                                                                  LinearGradient(
+                                                                    colors: <Color>[
+                                                                      Color(0xff3AC170),
+                                                                      Color(0xff25BFA3),
+                                                                    ],
+                                                                    //begin: Alignment.topLeft,
+                                                                    //end: Alignment.bottomRight,
                                                                   ),
-                                                                  child: Text(
-                                                                      AppLocalizations.of(context)!.uploadTransferReceipt,
-                                                                      style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
-                                                                  )
-                                                              ),
-                                                            )
-                                                          ],
+                                                                ),
+                                                                Expanded(
+                                                                  child: Container(
+                                                                    //width: 200,
+                                                                      padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                                                                      alignment: Alignment.center,
+                                                                      height: double.infinity,
+                                                                      constraints: BoxConstraints(
+                                                                        maxWidth: 180,
+                                                                      ),
+                                                                      child: Text(
+                                                                          AppLocalizations.of(context)!.uploadTransferReceipt,
+                                                                          style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                                      )
+                                                                  ),
+                                                                )
+                                                              ],
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -1038,19 +1313,60 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             SizedBox(
                                               height: 20,
                                             ),
-                                            Container(
-                                              width: double.infinity,
-                                              height: 55,
-                                              alignment: Alignment.center,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    const Color(0xff3AC170),
-                                                    const Color(0xff25BFA3),
-                                                  ],
+                                            ScaleTransition(
+                                              scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 55,
+                                                alignment: Alignment.center,
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      const Color(0xff3AC170),
+                                                      const Color(0xff25BFA3),
+                                                    ],
+                                                  ),
+                                                ),
+                                                child: Text(AppLocalizations.of(context)!.or, style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.referenceNumberFirstText, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                        )
+                                                    ),
+                                                  ),
+                                                )
+                                            ),
+                                            SizedBox(
+                                              height: 6,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: TextfieldTextWidget(
+                                                      hintText: AppLocalizations.of(context)!.referenceNumber
+                                                  ),
                                                 ),
                                               ),
-                                              child: Text(AppLocalizations.of(context)!.or, style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Colors.white)),
                                             ),
                                             SizedBox(
                                               height: 20,
@@ -1059,7 +1375,16 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.referenceNumberFirstText, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                        child: Text(AppLocalizations.of(context)!.transferredAmount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400))
+                                                    ),
+                                                  ),
                                                 )
                                             ),
                                             SizedBox(
@@ -1067,27 +1392,17 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: TextfieldTextWidget(
-                                                  hintText: AppLocalizations.of(context)!.referenceNumber
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Align(
-                                                alignment: Alignment.centerLeft,
-                                                child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text(AppLocalizations.of(context)!.transferredAmount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
-                                                )
-                                            ),
-                                            SizedBox(
-                                              height: 6,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: TextfieldTextWidget(
-                                                  hintText: AppLocalizations.of(context)!.transferredAmount
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(2, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: TextfieldTextWidget(
+                                                      hintText: AppLocalizations.of(context)!.transferredAmount
+                                                  ),
+                                                ),
                                               ),
                                             ),
                                             SizedBox(
@@ -1095,8 +1410,11 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                              child: ButtonWidget(
-                                                  buttonText: AppLocalizations.of(context)!.claim
+                                              child: ScaleTransition(
+                                                scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                                child: ButtonWidget(
+                                                    buttonText: AppLocalizations.of(context)!.claim
+                                                ),
                                               ),
                                             ),
                                             SizedBox(
