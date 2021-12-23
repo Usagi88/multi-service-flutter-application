@@ -57,7 +57,6 @@
   "register": "登録",
   "idCardNumber": "IDカードナンバー",
   "fullName": "フルネーム",
-  "mobileNumber": "携帯電話番号",
   "alreadyHaveAccount": "すでにアカウントをお持ちですか？ ログインするには、ここをクリックしてください",
 
   "resetPassword": "リセットパスワード",
@@ -123,5 +122,11 @@
   "delete": "Delete",
   "show": "Show",
 
-  "step": "ステップ"
+  "step": "ステップ",
+
+  "islandCity": "島/市",
+  "country": "国",
+  "postCode": "郵便番号",
+
+  "transactionDetails": "取引の詳細"
 }

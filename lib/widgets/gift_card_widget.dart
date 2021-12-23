@@ -29,7 +29,7 @@ class GiftCardWidget extends StatelessWidget {
         overflow: Overflow.visible,
         children: <Widget>[
           Container(
-            width: 364,
+            width: MediaQuery.of(context).size.width > 320 ? 364 : 280,
             height: 193,
             padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0, bottom: 0.0),
             decoration: BoxDecoration(
@@ -78,58 +78,42 @@ class GiftCardWidget extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$2',
-                                available: true,
-                                selected: true,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$2',
+                              available: true,
+                              selected: true,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$5',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$5',
+                              available: false,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$10',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$10',
+                              available: false,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$15',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$15',
+                              available: false,
+                              selected: false,
                             ),
 
                           ],
@@ -141,44 +125,32 @@ class GiftCardWidget extends StatelessWidget {
                           //crossAxisAlignment: CrossAxisAlignment.center,
                           //mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$25',
-                                available: true,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$25',
+                              available: true,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$50',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$50',
+                              available: false,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$100',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$100',
+                              available: false,
+                              selected: false,
                             )
                           ],
                         ),
@@ -190,10 +162,10 @@ class GiftCardWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 210,
+            left: MediaQuery.of(context).size.width > 320 ? 210 : 170,
             top: 165,
             child: Container(
-              width: 133,
+              width: MediaQuery.of(context).size.width > 320 ? 133 : 90,
               height: 46,
               alignment: Alignment.center,
               decoration: BoxDecoration(
@@ -210,7 +182,7 @@ class GiftCardWidget extends StatelessWidget {
         overflow: Overflow.visible,
         children: <Widget>[
           Container(
-            width: 364,
+            width: MediaQuery.of(context).size.width > 320 ? 364 : 280,
             height: 193,
             padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0, bottom: 0.0),
             decoration: BoxDecoration(
@@ -259,58 +231,42 @@ class GiftCardWidget extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$10',
-                                available: true,
-                                selected: true,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$10',
+                              available: true,
+                              selected: true,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$20',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$20',
+                              available: false,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$24.99',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$24.99',
+                              available: false,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$25',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$25',
+                              available: false,
+                              selected: false,
                             ),
 
                           ],
@@ -320,44 +276,32 @@ class GiftCardWidget extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$50',
-                                available: true,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$50',
+                              available: true,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$59.99',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$59.99',
+                              available: false,
+                              selected: false,
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$100',
-                                available: false,
-                                selected: false,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$100',
+                              available: false,
+                              selected: false,
                             )
                           ],
                         ),
@@ -369,10 +313,10 @@ class GiftCardWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 210,
+            left: MediaQuery.of(context).size.width > 320 ? 210 : 170,
             top: 165,
             child: Container(
-              width: 133,
+              width: MediaQuery.of(context).size.width > 320 ? 133 : 90,
               height: 46,
               alignment: Alignment.center,
               decoration: BoxDecoration(
@@ -389,7 +333,7 @@ class GiftCardWidget extends StatelessWidget {
         overflow: Overflow.visible,
         children: <Widget>[
           Container(
-            width: 364,
+            width: MediaQuery.of(context).size.width > 320 ? 364 : 280,
             height: 193,
             padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0, bottom: 0.0),
             decoration: BoxDecoration(
@@ -438,16 +382,12 @@ class GiftCardWidget extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              width: 76,
-                              height: 28,
-                              child: GiftCardButtonWidget(
-                                buttonWidth: 76,
-                                buttonHeight: 28,
-                                buttonText: '\$30',
-                                available: true,
-                                selected: true,
-                              ),
+                            GiftCardButtonWidget(
+                              buttonWidth: MediaQuery.of(context).size.width > 320 ? 76 : 56,
+                              buttonHeight: 28,
+                              buttonText: '\$30',
+                              available: true,
+                              selected: true,
                             )
                           ],
                         )
@@ -459,10 +399,10 @@ class GiftCardWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 210,
+            left: MediaQuery.of(context).size.width > 320 ? 210 : 170,
             top: 165,
             child: Container(
-              width: 133,
+              width: MediaQuery.of(context).size.width > 320 ? 133 : 90,
               height: 46,
               alignment: Alignment.center,
               decoration: BoxDecoration(

@@ -31,7 +31,7 @@ class BannerWidget extends StatelessWidget {
   Positioned _portraitModeOnly(BuildContext context){
     return Positioned(
       top: 15,
-      left: MediaQuery.of(context).size.width * 0.20,
+      left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.20 : MediaQuery.of(context).size.width * 0.16,
       right: 0,
       //top: 15,
       child: Row(

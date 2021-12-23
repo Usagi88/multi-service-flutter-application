@@ -56,7 +56,6 @@
     "register": "रजिस्टर करें",
     "idCardNumber": "परिचय - पत्र संख्या",
     "fullName": "पूरा नाम",
-    "mobileNumber": "मोबाइल नंबर",
     "alreadyHaveAccount": "क्या आपके पास पहले से एक खाता मौजूद है? लॉग इन करने के लिए यहां क्लिक करें",
 
     "resetPassword": "पासवर्ड रीसेट",
@@ -122,5 +121,11 @@
     "delete": "Delete",
     "show": "Show",
 
-    "step": "कदम"
+    "step": "कदम",
+
+    "islandCity": "द्वीप/शहर",
+    "country": "देश",
+    "postCode": "पोस्ट कोड",
+
+    "transactionDetails": "लेनदेन का विवरण"
 }

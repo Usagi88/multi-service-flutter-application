@@ -387,7 +387,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                                               child: FadeTransition(
                                                 opacity: _animationController,
                                                 child: Container(
-                                                  height: MediaQuery.of(context).size.height * 0.053,
+                                                  height: 46,
                                                   decoration: BoxDecoration(
                                                     borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                                     color: Color(0xfff2f2f2),
@@ -432,7 +432,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                                               child: FadeTransition(
                                                 opacity: _animationController,
                                                 child: Container(
-                                                    height: MediaQuery.of(context).size.height * 0.053,
+                                                    height: 46,
                                                     width: double.infinity,
                                                     decoration: BoxDecoration(
                                                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -470,6 +470,9 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                                               ),
                                             ),
                                           ),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -477,7 +480,10 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                                     SingleChildScrollView(
                                       child: Column(
                                         children: [
-                                          Container()
+                                          Container(),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
                                         ],
                                       ),
                                     ),

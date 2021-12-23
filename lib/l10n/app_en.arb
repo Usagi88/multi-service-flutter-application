@@ -95,7 +95,6 @@
     "register": "Register",
     "idCardNumber": "ID Card Number",
     "fullName": "Full Name",
-    "mobileNumber": "Mobile Number",
     "alreadyHaveAccount": "Already have an account? Click here to go to login",
 
     "resetPassword": "Reset Password",
@@ -161,5 +160,11 @@
     "delete": "Delete",
     "show": "Show",
 
-    "step": "Step"
+    "step": "Step",
+
+    "islandCity": "Island/City",
+    "country": "Country",
+    "postCode": "Post Code",
+
+    "transactionDetails": "Transaction Details"
 }

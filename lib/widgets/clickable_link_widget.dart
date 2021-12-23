@@ -53,6 +53,9 @@ class ClickableLink extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 4,
+                ),
                 Padding(
                   padding: EdgeInsets.only(left:10.0),
                   child: Align(

@@ -122,5 +122,11 @@
     "delete": "حذف",
     "show": "تبين",
 
-    "step": "خطوة"
+    "step": "خطوة",
+
+    "islandCity": "الجزيرة / المدينة",
+    "country": "دولة",
+    "postCode": "الرمز البريدي",
+
+    "transactionDetails": "تفاصيل الصفقه"
 }

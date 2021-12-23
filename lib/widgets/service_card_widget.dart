@@ -49,8 +49,8 @@ class ServiceCard extends StatelessWidget {
                   width: 8,
                 ),
                 Container(
-                  height: 56,
-                  width: 56,
+                  height: MediaQuery.of(context).size.width > 320 ? 56 : 42,
+                  width: MediaQuery.of(context).size.width > 320 ? 56 : 42,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
@@ -75,7 +75,11 @@ class ServiceCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     serviceCardText,
-                    style: TextStyle(fontSize: 14, color: Colors.grey.shade600,fontWeight: FontWeight.w400),
+                    style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                        color: Colors.grey.shade600,
+                        fontWeight: FontWeight.w400
+                    ),
                   ),
                 ),
                 SizedBox(

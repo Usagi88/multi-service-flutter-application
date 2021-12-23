@@ -324,7 +324,9 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                 ],
               ),
             ),
-
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

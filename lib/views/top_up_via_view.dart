@@ -184,7 +184,7 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                             Row(
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(left: 20.0, right: 14),
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20),
                                                   child: SlideTransition(
                                                     position: Tween<Offset>(
                                                       begin: Offset(-1, 0),
@@ -238,10 +238,12 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(left: 14.0, right: 20),
+                                                Expanded(
                                                   child: Container(
-                                                    width: 238,
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: 238
+                                                    ),
+                                                    //width: MediaQuery.of(context).size.width > 320 ? 238 : 160,
                                                     child: SlideTransition(
                                                       position: Tween<Offset>(
                                                         begin: Offset(2, 0),

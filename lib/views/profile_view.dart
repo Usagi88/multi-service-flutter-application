@@ -57,7 +57,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
       child: SingleChildScrollView(
         child: Column(//not putting padding on column because logo image requires different padding
           children: [
-            Header(animationController: _animationController,),
+            Header(animationController: _animationController),
             SizedBox(
               height: 10,
             ),
@@ -247,7 +247,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                 ).animate(_animationController),
                 child: FadeTransition(
                     opacity: _animationController,
-                    child: Text(AppLocalizations.of(context)!.email)
+                    child: Text(AppLocalizations.of(context)!.islandCity)
                 ),
               ),
               subtitle: SlideTransition(
@@ -290,7 +290,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                 ).animate(_animationController),
                 child: FadeTransition(
                     opacity: _animationController,
-                    child: Text(AppLocalizations.of(context)!.email)
+                    child: Text(AppLocalizations.of(context)!.country)
                 ),
               ),
               subtitle: SlideTransition(
@@ -333,7 +333,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                 ).animate(_animationController),
                 child: FadeTransition(
                     opacity: _animationController,
-                    child: Text(AppLocalizations.of(context)!.email)
+                    child: Text(AppLocalizations.of(context)!.postCode)
                 ),
               ),
               subtitle: SlideTransition(

@@ -92,7 +92,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                           child: FadeTransition(
                             opacity: _animationController,
                             child: Container(
-                              width: 135,
+                              width: MediaQuery.of(context).size.width > 320 ? 135 : 100,
                               constraints: BoxConstraints(
                                   minHeight: 68
                               ),
@@ -113,31 +113,27 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                                   SizedBox(
                                     width: 8,
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                    child: Container(
-                                      child: GradientIcon(
-                                        FontAwesomeIcons.solidEnvelope,
-                                        31.0,
-                                        LinearGradient(
-                                          colors: <Color>[
-                                            Color(0xff3AC170),
-                                            Color(0xff25BFA3),
-                                          ],
-                                          begin: Alignment.topLeft,
-                                          end: Alignment.bottomRight,
-                                        ),
+                                  Container(
+                                    child: GradientIcon(
+                                      FontAwesomeIcons.solidEnvelope,
+                                      MediaQuery.of(context).size.width > 320 ? 31.0 : 24.0,
+                                      LinearGradient(
+                                        colors: <Color>[
+                                          Color(0xff3AC170),
+                                          Color(0xff25BFA3),
+                                        ],
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
                                       ),
                                     ),
                                   ),
-
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
-                                    child: Container(
-                                      width: 1,
-                                      height: 44,
-                                      color: Colors.grey.shade300,
-                                    ),
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width > 320 ? 16.0 : 12.0,
+                                  ),
+                                  Container(
+                                    width: 1,
+                                    height: 44,
+                                    color: Colors.grey.shade300,
                                   ),
 
                                   Expanded(
@@ -150,7 +146,10 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                                           width: 80,
                                           child: GradientText(
                                               text: '2',
-                                              style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: MediaQuery.of(context).size.width > 320 ? 26 : 20,
+                                                  fontWeight: FontWeight.w700),
                                               gradient: const LinearGradient(
                                                   colors: [
                                                     Color(0xff3AC170),
@@ -192,7 +191,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                           child: FadeTransition(
                             opacity: _animationController,
                             child: Container(
-                              width: 200,
+                              width: MediaQuery.of(context).size.width > 320 ? 200 : 160,
                               height: 68,
                               alignment: Alignment.centerLeft,
                               child: Text(
@@ -405,22 +404,30 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: Container(
-                        width: 364,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Expanded(
+                          child: Container(
+                            //width: MediaQuery.of(context).size.width > 320 ? 364 : 280,
+                            constraints: BoxConstraints(
+                              maxWidth: 364
+                            ),
+                            height: 120,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
 
-                        ),
-                        child: TextField(
-                          maxLines: null,
-                          keyboardType: TextInputType.multiline,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
-                            hintText: AppLocalizations.of(context)!.message,
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey.shade200,),
+                            ),
+                            child: TextField(
+                              maxLines: null,
+                              keyboardType: TextInputType.multiline,
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
+                                hintText: AppLocalizations.of(context)!.message,
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey.shade200,),
+                                ),
+                              ),
                             ),
                           ),
                         ),

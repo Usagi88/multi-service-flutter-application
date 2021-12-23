@@ -13,13 +13,14 @@ class SocialMediaButton extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    print(MediaQuery.of(context).size.width);
     return _portraitModeOnly(context);
   }
 
   //portrait
   Container _portraitModeOnly(BuildContext context) {
     return Container(
-      width: 63,
+      width:  MediaQuery.of(context).size.width > 320 ? 63 : 55,
       height: 63,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),

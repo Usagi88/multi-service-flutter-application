@@ -125,7 +125,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                       SizedBox(
                                         height: 6,
                                       ),
-                                      Text('Transaction Details', style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),)
+                                      Text(AppLocalizations.of(context)!.transactionDetails, style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),)
                                     ],
                                   )
                                 ),
@@ -136,11 +136,16 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                   child: Row(
                                     children: [
-                                      Text(AppLocalizations.of(context)!.status),
+                                      Text(AppLocalizations.of(context)!.status,
+                                        style: TextStyle(fontSize: MediaQuery.of(context).size.width > 320 ? 14: 12),
+                                      ),
                                       Spacer(),
                                       GradientText(
                                           text: 'Success',
-                                          style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w400),
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                              fontWeight: FontWeight.w400),
                                           gradient: const LinearGradient(
                                               colors: [
                                                 Color(0xff3AC170),
@@ -168,9 +173,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                   child: Row(
                                     children: [
-                                      Text(AppLocalizations.of(context)!.name, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                      Text(AppLocalizations.of(context)!.name, style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400),),
                                       Spacer(),
-                                      Text('MediaNet BillPay', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                                      Text('MediaNet BillPay', style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.grey.shade600),),
                                     ],
                                   ),
                                 ),
@@ -190,9 +200,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                   child: Row(
                                     children: [
-                                      Text(AppLocalizations.of(context)!.details, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                      Text(AppLocalizations.of(context)!.details, style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400),),
                                       Spacer(),
-                                      Text('Medianet BillPay  (158414) Local IPTV', textAlign:TextAlign.right, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                                      Text('Medianet BillPay  (158414) Local IPTV', textAlign:TextAlign.right, style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.grey.shade600),),
                                     ],
                                   ),
                                 ),
@@ -212,9 +227,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                   child: Row(
                                     children: [
-                                      Text(AppLocalizations.of(context)!.amount, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                      Text(AppLocalizations.of(context)!.amount, style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400),),
                                       Spacer(),
-                                      Text('MVR -159', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                                      Text('MVR -159', style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.grey.shade600),),
                                     ],
                                   ),
                                 ),
@@ -234,9 +254,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                   child: Row(
                                     children: [
-                                      Text(AppLocalizations.of(context)!.reference, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                      Text(AppLocalizations.of(context)!.reference, style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400),),
                                       Spacer(),
-                                      Text('F120687246110RK', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                                      Text('F120687246110RK', style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.grey.shade600),),
                                     ],
                                   ),
                                 ),
@@ -256,14 +281,19 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                   child: Row(
                                     children: [
-                                      Text(AppLocalizations.of(context)!.time, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                      Text(AppLocalizations.of(context)!.time, style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400),),
                                       Spacer(),
-                                      Text('21st July 2021 - 19:24', style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                                      Text('21st July 2021 - 19:24', style: TextStyle(
+                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.grey.shade600),),
                                     ],
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 10,
+                                  height: MediaQuery.of(context).size.width > 320 ? 10 : 30,
                                 ),
                               ]
                           ),
@@ -296,8 +326,15 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                                 ),
                                 child: TextButton.icon(
-                                    label: Text(AppLocalizations.of(context)!.shareReceipt,style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
-                                    icon: Icon(FontAwesomeIcons.shareSquare, color: Colors.white, size: 22,),
+                                    label: Text(AppLocalizations.of(context)!.shareReceipt,style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 11,
+                                        fontWeight: FontWeight.w400),),
+                                    icon: Icon(
+                                      FontAwesomeIcons.shareSquare,
+                                      color: Colors.white,
+                                      size: MediaQuery.of(context).size.width > 320 ? 22 : 16,
+                                    ),
                                     onPressed: () {
 
                                     }
@@ -328,8 +365,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                                 ),
                                 child: TextButton.icon(
-                                    label: Text(AppLocalizations.of(context)!.saveReceipt,style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
-                                    icon: Icon(FontAwesomeIcons.download, color: Colors.white, size: 22),
+                                    label: Text(AppLocalizations.of(context)!.saveReceipt,style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 11,
+                                        fontWeight: FontWeight.w400),),
+                                    icon: Icon(
+                                        FontAwesomeIcons.download,
+                                        color: Colors.white,
+                                        size: MediaQuery.of(context).size.width > 320 ? 22 : 16),
                                     onPressed: () {
 
                                     }

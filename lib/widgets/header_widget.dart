@@ -33,7 +33,7 @@ class Header extends StatelessWidget {
           ),
         if(animationController != null) ...[
           Positioned(
-            left: MediaQuery.of(context).size.width * 0.24,
+            left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.24 : MediaQuery.of(context).size.width * 0.20,
             right: 0,
             top: 30,
             child: ListTile(
@@ -73,7 +73,7 @@ class Header extends StatelessWidget {
           ),
         ] else ...[
           Positioned(
-            left: MediaQuery.of(context).size.width * 0.24,
+            left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.24 : MediaQuery.of(context).size.width * 0.20,
             right: 0,
             top: 30,
             child: ListTile(
