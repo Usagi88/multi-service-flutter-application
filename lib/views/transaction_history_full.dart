@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
@@ -9,8 +11,33 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
-class TransactionHistoryFullView extends StatelessWidget {
+class TransactionHistoryFullView extends StatefulWidget {
   const TransactionHistoryFullView({Key? key}) : super(key: key);
+
+  @override
+  State<TransactionHistoryFullView> createState() => _TransactionHistoryFullViewState();
+}
+
+class _TransactionHistoryFullViewState extends State<TransactionHistoryFullView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +47,11 @@ class TransactionHistoryFullView extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, height, safePadding);
+    return _portraitModeOnly(context, height, safePadding, _animationController, _tween);
   }
 }
 //portrait
-Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
+Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animationController, _tween) {
   return Scaffold(
     appBar: NavbarWithBackButton(),
     drawer: SideMenu(),
@@ -48,6 +75,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                     bannerIcon: FontAwesomeIcons.wallet,
                     bannerAmount: 20320.20,
                     bannerPoints: 200,
+                    animationController: _animationController,
                   ),
                 ]
             ),
@@ -55,21 +83,39 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
               children:[
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    AppLocalizations.of(context)!.transactionHistory,
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(
+                        AppLocalizations.of(context)!.transactionHistory,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: const SizedBox(
-                    height: 1.0,
-                    child: const DecoratedBox(
-                      decoration: const BoxDecoration(
-                          color: Color(0xffcccccc)
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(2, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: const SizedBox(
+                        height: 1.0,
+                        child: const DecoratedBox(
+                          decoration: const BoxDecoration(
+                              color: Color(0xffcccccc)
+                          ),
+                        ),
                       ),
                     ),
                   ),
