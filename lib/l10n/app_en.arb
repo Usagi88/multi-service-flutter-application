@@ -159,5 +159,7 @@
     "keepInfoSaved": "Keep info saved",
     "savedNumbers": "Saved Numbers",
     "delete": "Delete",
-    "show": "Show"
+    "show": "Show",
+
+    "step": "Step"
 }

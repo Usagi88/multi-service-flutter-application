@@ -121,5 +121,7 @@
   "keepInfoSaved": "情報を保存しておく",
   "savedNumbers": "セーブされた番号",
   "delete": "Delete",
-  "show": "Show"
+  "show": "Show",
+
+  "step": "ステップ"
 }

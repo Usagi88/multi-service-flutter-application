@@ -187,7 +187,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                             )
                                                         ),
                                                         GradientText(
-                                                            text: 'Step',
+                                                            text: AppLocalizations.of(context)!.step,
                                                             style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
                                                             gradient: const LinearGradient(
                                                                 colors: [
@@ -360,12 +360,10 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Row(
                                               children: [
-                                                Expanded(
+                                                Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                                   child: Container(
-                                                    //width: 68,
-                                                    constraints: BoxConstraints(
-                                                      maxWidth: 68,
-                                                    ),
+                                                    width: 68,
                                                     height: 68,
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
@@ -394,7 +392,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                             )
                                                         ),
                                                         GradientText(
-                                                            text: 'Step',
+                                                            text: AppLocalizations.of(context)!.step,
                                                             style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
                                                             gradient: const LinearGradient(
                                                                 colors: [
@@ -413,15 +411,22 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                     borderType: BorderType.RRect,
                                                     color: Color(0xff25bfa0),
                                                     radius: Radius.circular(12),
+                                                    //padding: const EdgeInsets.all(0),
                                                     dashPattern: [16, 4],
                                                     child: ClipRRect(
                                                       borderRadius: BorderRadius.all(Radius.circular(12)),
                                                       child: Container(
                                                         //width: 282,
+                                                        constraints: BoxConstraints(
+                                                          maxWidth: 282
+                                                        ),
                                                         height: 62,
                                                         child: Row(
                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                           children: [
+                                                            SizedBox(
+                                                              width: 10,
+                                                            ),
                                                             GradientIcon(
                                                               FontAwesomeIcons.cloudDownloadAlt,
                                                               24.0,
@@ -434,16 +439,30 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                                 //end: Alignment.bottomRight,
                                                               ),
                                                             ),
-                                                            Padding(
-                                                              padding: const EdgeInsets.symmetric(horizontal:20.0),
-                                                              child: Text(AppLocalizations.of(context)!.uploadTransferReceipt, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                            Expanded(
+                                                              child: Container(
+                                                                //width: 200,
+                                                                padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                                                                alignment: Alignment.center,
+                                                                height: double.infinity,
+                                                                constraints: BoxConstraints(
+                                                                  maxWidth: 180,
+                                                                ),
+                                                                child: Text(
+                                                                    AppLocalizations.of(context)!.uploadTransferReceipt,
+                                                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                                )
+                                                              ),
                                                             )
                                                           ],
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                )
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
                                               ],
                                             ),
                                             SizedBox(
@@ -470,7 +489,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                 alignment: Alignment.centerLeft,
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                                  child: Text("Enter Full NAME as in your ID Card", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                  child: Text(AppLocalizations.of(context)!.enterFullName, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
                                                 )
                                             ),
                                             SizedBox(
@@ -552,12 +571,14 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             ),
                                             Row(
                                               children: [
-                                                Padding(
-                                                  padding: const EdgeInsets.only(left: 20.0),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Expanded(
                                                   child: Container(
                                                     //height: MediaQuery.of(context).size.height * 0.053,
                                                     height: 46,
-                                                    width: 281,
+                                                    //width: 281,
                                                     decoration: BoxDecoration(
                                                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                                       color: Color(0xfff2f2f2),
@@ -573,10 +594,10 @@ class _TopUpViaViewState extends State<TopUpViaView> {
 
                                                       ),
                                                     ),
-                                                  )
+                                                  ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                                  padding: const EdgeInsets.only(right: 20.0, left: 10.0),
                                                   child: Container(
                                                       padding: EdgeInsets.only(left: 10),
                                                       height: 46,
@@ -745,7 +766,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                             )
                                                         ),
                                                         GradientText(
-                                                            text: 'Step',
+                                                            text: AppLocalizations.of(context)!.step,
                                                             style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
                                                             gradient: const LinearGradient(
                                                                 colors: [
@@ -910,7 +931,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                             Row(
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(left: 20.0, right: 6),
+                                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                                   child: Container(
                                                     width: 68,
                                                     height: 68,
@@ -941,7 +962,7 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                             )
                                                         ),
                                                         GradientText(
-                                                            text: 'Step',
+                                                            text: AppLocalizations.of(context)!.step,
                                                             style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w700),
                                                             gradient: const LinearGradient(
                                                                 colors: [
@@ -955,21 +976,27 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(left: 6.0, right: 20),
+                                                Expanded(
                                                   child: DottedBorder(
                                                     borderType: BorderType.RRect,
                                                     color: Color(0xff25bfa0),
                                                     radius: Radius.circular(12),
+                                                    //padding: const EdgeInsets.all(0),
                                                     dashPattern: [16, 4],
                                                     child: ClipRRect(
                                                       borderRadius: BorderRadius.all(Radius.circular(12)),
                                                       child: Container(
-                                                        width: 282,
+                                                        //width: 282,
+                                                        constraints: BoxConstraints(
+                                                            maxWidth: 282
+                                                        ),
                                                         height: 62,
                                                         child: Row(
                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                           children: [
+                                                            SizedBox(
+                                                              width: 10,
+                                                            ),
                                                             GradientIcon(
                                                               FontAwesomeIcons.cloudDownloadAlt,
                                                               24.0,
@@ -982,16 +1009,30 @@ class _TopUpViaViewState extends State<TopUpViaView> {
                                                                 //end: Alignment.bottomRight,
                                                               ),
                                                             ),
-                                                            Padding(
-                                                              padding: const EdgeInsets.symmetric(horizontal:20.0),
-                                                              child: Text(AppLocalizations.of(context)!.uploadTransferReceipt, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                                            Expanded(
+                                                              child: Container(
+                                                                //width: 200,
+                                                                  padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                                                                  alignment: Alignment.center,
+                                                                  height: double.infinity,
+                                                                  constraints: BoxConstraints(
+                                                                    maxWidth: 180,
+                                                                  ),
+                                                                  child: Text(
+                                                                      AppLocalizations.of(context)!.uploadTransferReceipt,
+                                                                      style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)
+                                                                  )
+                                                              ),
                                                             )
                                                           ],
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                )
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
                                               ],
                                             ),
                                             SizedBox(

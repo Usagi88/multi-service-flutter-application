@@ -120,5 +120,7 @@
     "keepInfoSaved": "जानकारी सहेज कर रखें",
     "savedNumbers": "सहेजे गए नंबर",
     "delete": "Delete",
-    "show": "Show"
+    "show": "Show",
+
+    "step": "कदम"
 }
