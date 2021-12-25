@@ -32,6 +32,7 @@ class FPCard extends StatelessWidget {
   Container _portraitModeOnly(BuildContext context){
     return Container(
         alignment: Alignment.center,
+        width: double.infinity,
         constraints: BoxConstraints(
             minHeight: 59
         ),
@@ -63,12 +64,16 @@ class FPCard extends StatelessWidget {
               width: 10,
             ),
             Container(
+              alignment: Alignment.centerLeft,
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+                //mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    child: Text(title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: Text(title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                    ),
                   ),
                   Container(
                       width: MediaQuery.of(context).size.width * 0.4,
@@ -77,17 +82,20 @@ class FPCard extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
-            Container(
+            //Spacer(),
+            Expanded(
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+                //mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.3,
+                    //color: Colors.green,
+                    alignment: Alignment.centerRight,
+                    //width: MediaQuery.of(context).size.width * 0.3,
                     child: Text(value.format(amount),textAlign: TextAlign.right,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500, color: Color(fpCardColor)),),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.3,
+                    alignment: Alignment.centerRight,
+                    //width: MediaQuery.of(context).size.width * 0.3,
                     child: Text(currency,textAlign: TextAlign.right,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500, color: Color(0xff626262)),),
                   )
                 ],
@@ -103,84 +111,6 @@ class FPCard extends StatelessWidget {
 
     );
   }
-
-  //landscape
-  /*
-    Container _landscapeModeOnly(BuildContext context){
-    return Container(
-        alignment: Alignment.center,
-        constraints: BoxConstraints(
-            minHeight: 59
-        ),
-
-        decoration: BoxDecoration(
-            color: Colors.grey.shade200,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-        ),
-
-        child: Row(
-          children: [
-            Container(
-              width: 2,
-              height: 40,
-              color: Color(fpCardColor),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Container(
-              width: 38,
-              height: 41,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(5))
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Container(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    child: Text(title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
-                  ),
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      child: Text(date,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Color(0xff929292)))
-                  ),
-                ],
-              ),
-            ),
-            Spacer(),
-            Container(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.3,
-                    child: Text(value.format(amount),textAlign: TextAlign.right,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500, color: Color(fpCardColor)),),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.3,
-                    child: Text(currency,textAlign: TextAlign.right,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500, color: Color(0xff626262)),),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              width: 16,
-            ),
-
-          ],
-
-        )
-
-    );
-  }
-   */
 
 }
 
