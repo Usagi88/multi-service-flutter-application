@@ -33,7 +33,7 @@ class Header extends StatelessWidget {
           ),
         if(animationController != null) ...[
           Positioned(
-            left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.24 : MediaQuery.of(context).size.width * 0.20,
+            left: MediaQuery.of(context).size.width > 350 ? MediaQuery.of(context).size.width * 0.24 : MediaQuery.of(context).size.width * 0.20,
             right: 0,
             top: 30,
             child: ListTile(
@@ -73,7 +73,7 @@ class Header extends StatelessWidget {
           ),
         ] else ...[
           Positioned(
-            left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.24 : MediaQuery.of(context).size.width * 0.20,
+            left: MediaQuery.of(context).size.width > 350 ? MediaQuery.of(context).size.width * 0.24 : MediaQuery.of(context).size.width * 0.20,
             right: 0,
             top: 30,
             child: ListTile(
@@ -94,44 +94,6 @@ class Header extends StatelessWidget {
       ]
     );
   }
-
-  //landscape
-  /*
-    Stack _landscapeModeOnly(BuildContext context){
-    return Stack(
-        children: <Widget>[
-          Container(
-            height: 164,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    'assets/images/banner.png'),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Positioned(
-            left: MediaQuery.of(context).size.width * 0.35,
-            right: 0,
-            top: 30,
-            child: ListTile(
-              minLeadingWidth: 10,
-              leading: Icon(FontAwesomeIcons.userAlt,
-                size: 32,
-                color: Colors.white,
-              ),
-              title: Text("Ibrahim Naish",
-                  style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w700)),
-              subtitle: Text("A327029",
-                  style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w700)
-              ),
-              dense: true,
-            ),
-          ),
-        ]
-    );
-  }
-   */
 
 }
 

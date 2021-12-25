@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fpapp/classes/gradient_icon.dart';
+import 'package:fpapp/classes/gradient_text.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/button_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
@@ -1433,98 +1435,11 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                             ]
                         ),
                       ),
-
                     ),
-
-
                   ],
                 )
             )
         )
-    );
-  }
-}
-
-
-
-//class that makes text have gradient
-class GradientText extends StatelessWidget {
-  final String text;
-  final Gradient gradient;
-  final TextStyle? style;
-
-  const GradientText({
-    Key? key,
-    required this.text,
-    required this.gradient,
-    this.style,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (Rect bounds) {
-        return gradient
-            .createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height));
-      },
-      child: Text(
-        text,
-        style: style,
-      ),
-    );
-  }
-}
-
-
-//class that makes icons have gradient
-class GradientIcon extends StatelessWidget {
-  GradientIcon(
-      this.icon,
-      this.size,
-      this.gradient,
-      );
-
-  final IconData icon;
-  final double size;
-  final Gradient gradient;
-
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      child: SizedBox(
-        width: size * 1.4,
-        height: size * 1.4,
-        child: Icon(
-          icon,
-          size: size,
-          color: Colors.white,
-        ),
-      ),
-      shaderCallback: (Rect bounds) {
-        final Rect rect = Rect.fromLTRB(0, 0, size, size);
-        return gradient.createShader(rect);
-      },
-    );
-  }
-}
-
-
-//class that makes icons have gradient. Used in navbar/appbar
-class RadiantGradientMask extends StatelessWidget {
-  final Widget child;
-  RadiantGradientMask({Key? key,
-    required this.child
-  }) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (bounds) => RadialGradient(
-        center: Alignment.center,
-        radius: 0.5,
-        colors: [Color(0xff3AC170), Color(0xff25BFA3)],
-        tileMode: TileMode.mirror,
-      ).createShader(bounds),
-      child: child,
     );
   }
 }

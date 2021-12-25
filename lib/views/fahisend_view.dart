@@ -139,7 +139,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                           height: 46,
                           width: MediaQuery.of(context).size.width * 0.43,
                           constraints: BoxConstraints(
-                              maxWidth: 177
+                              maxWidth: 154
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -167,7 +167,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                           height: 46,
                           width: MediaQuery.of(context).size.width * 0.43,
                           constraints: BoxConstraints(
-                              maxWidth: 177
+                              maxWidth: 154
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(10.0)),

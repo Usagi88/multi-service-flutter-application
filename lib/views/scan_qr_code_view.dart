@@ -39,7 +39,7 @@ Scaffold _portraitModeOnly(BuildContext context,safePadding) {
                 padding: const EdgeInsets.symmetric(horizontal: 50.0),
                 child: Container(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.width > 320 ? 317 : 250,
+                  height: MediaQuery.of(context).size.width > 350 ? 317 : 250,
                   decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.white,
@@ -51,7 +51,7 @@ Scaffold _portraitModeOnly(BuildContext context,safePadding) {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.width > 320 ? 30 : 100,
+                height: MediaQuery.of(context).size.width > 350 ? 30 : 100,
               ),
               Text(AppLocalizations.of(context)!.scanQrCodeText,style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),),
             ],

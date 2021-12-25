@@ -495,17 +495,10 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           ]
                       ),
                     ),
-
                   ),
                   SizedBox(
                     height: 20,
                   ),
-
-
-
-
-
-
                 ],
               )
           )

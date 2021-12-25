@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fpapp/classes/gradient_icon.dart';
+import 'package:fpapp/classes/gradient_text.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/button_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
@@ -92,7 +94,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                           child: FadeTransition(
                             opacity: _animationController,
                             child: Container(
-                              width: MediaQuery.of(context).size.width > 320 ? 135 : 100,
+                              width: MediaQuery.of(context).size.width > 350 ? 135 : 100,
                               constraints: BoxConstraints(
                                   minHeight: 68
                               ),
@@ -116,7 +118,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                                   Container(
                                     child: GradientIcon(
                                       FontAwesomeIcons.solidEnvelope,
-                                      MediaQuery.of(context).size.width > 320 ? 31.0 : 24.0,
+                                      MediaQuery.of(context).size.width > 350 ? 31.0 : 24.0,
                                       LinearGradient(
                                         colors: <Color>[
                                           Color(0xff3AC170),
@@ -128,7 +130,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width > 320 ? 16.0 : 12.0,
+                                    width: MediaQuery.of(context).size.width > 350 ? 16.0 : 12.0,
                                   ),
                                   Container(
                                     width: 1,
@@ -148,7 +150,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                                               text: '2',
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: MediaQuery.of(context).size.width > 320 ? 26 : 20,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 26 : 20,
                                                   fontWeight: FontWeight.w700),
                                               gradient: const LinearGradient(
                                                   colors: [
@@ -191,7 +193,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                           child: FadeTransition(
                             opacity: _animationController,
                             child: Container(
-                              width: MediaQuery.of(context).size.width > 320 ? 200 : 160,
+                              width: MediaQuery.of(context).size.width > 350 ? 200 : 160,
                               height: 68,
                               alignment: Alignment.centerLeft,
                               child: Text(
@@ -408,7 +410,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: Expanded(
                           child: Container(
-                            //width: MediaQuery.of(context).size.width > 320 ? 364 : 280,
+                            //width: MediaQuery.of(context).size.width > 350 ? 364 : 280,
                             constraints: BoxConstraints(
                               maxWidth: 364
                             ),
@@ -484,63 +486,4 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
           )
       )
   );
-}
-//class that makes icons have gradient.
-class GradientIcon extends StatelessWidget {
-  GradientIcon(
-      this.icon,
-      this.size,
-      this.gradient,
-  );
-
-  final IconData icon;
-  final double size;
-  final Gradient gradient;
-
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      child: SizedBox(
-        width: size * 1.2,
-        height: size * 1.2,
-        child: Icon(
-          icon,
-          size: size,
-          color: Colors.white,
-        ),
-      ),
-      shaderCallback: (Rect bounds) {
-        final Rect rect = Rect.fromLTRB(0, 0, size, size);
-        return gradient.createShader(rect);
-      },
-    );
-  }
-}
-
-//class that makes text have gradient
-class GradientText extends StatelessWidget {
-  final String text;
-  final Gradient gradient;
-  final TextStyle? style;
-
-  const GradientText({
-    Key? key,
-    required this.text,
-    required this.gradient,
-    this.style,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (Rect bounds) {
-        return gradient
-            .createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height));
-      },
-      child: Text(
-        text,
-        style: style,
-      ),
-    );
-  }
 }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/button_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
@@ -870,38 +871,6 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                 )
             )
         )
-    );
-  }
-}
-
-//class that makes icons have gradient
-class GradientIcon extends StatelessWidget {
-  GradientIcon(
-      this.icon,
-      this.size,
-      this.gradient,
-      );
-
-  final IconData icon;
-  final double size;
-  final Gradient gradient;
-
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      child: SizedBox(
-        width: size * 1.2,
-        height: size * 1.2,
-        child: Icon(
-          icon,
-          size: size,
-          color: Colors.white,
-        ),
-      ),
-      shaderCallback: (Rect bounds) {
-        final Rect rect = Rect.fromLTRB(0, 0, size, size);
-        return gradient.createShader(rect);
-      },
     );
   }
 }

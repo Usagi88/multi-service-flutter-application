@@ -6,13 +6,13 @@ import 'package:flutter/services.dart';
  */
 class GiftCardButtonWidget extends StatelessWidget {
   String buttonText;
-  double buttonWidth;
+  double? buttonWidth;
   double buttonHeight;
   bool available;
   bool selected;
   GiftCardButtonWidget({Key? key,
     required this.buttonText,
-    required this.buttonWidth,
+    this.buttonWidth,
     required this.buttonHeight,
     required this.available,
     required this.selected,
@@ -32,7 +32,10 @@ class GiftCardButtonWidget extends StatelessWidget {
     if(available != true || selected != true) {//using if condition to know if it is available or not
       return Container(
         height: buttonHeight,
-        width: buttonWidth,
+        //width: buttonWidth,
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width > 350 ? 76 : 56,
+        ),
         decoration: BoxDecoration(
             border: Border.all(
                 color: Colors.grey.shade400,
@@ -59,10 +62,13 @@ class GiftCardButtonWidget extends StatelessWidget {
     }else{
       return Container(
         height: buttonHeight,
-        width: buttonWidth,
+        //width: buttonWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+        ),
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width > 350 ? 76 : 56,
         ),
         child: TextButton(
           style: TextButton.styleFrom(
@@ -80,33 +86,5 @@ class GiftCardButtonWidget extends StatelessWidget {
         ),
       );
     }
-
   }
-
-//landscape mode
-/*
-    Container _landscapeModeOnly(BuildContext context){
-    return Container(
-      height: buttonHeight,
-      width: buttonWidth,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-      ),
-      child: TextButton(
-        style: TextButton.styleFrom(
-          primary: Colors.white,
-        ),
-        onPressed: () { },
-        child: Text(
-          buttonText,
-          style: TextStyle(
-              fontSize: 14
-          ),
-        ),
-      ),
-    );
-  }
-   */
-
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fpapp/classes/gradient_text.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
@@ -137,14 +138,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   child: Row(
                                     children: [
                                       Text(AppLocalizations.of(context)!.status,
-                                        style: TextStyle(fontSize: MediaQuery.of(context).size.width > 320 ? 14: 12),
+                                        style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14: 12),
                                       ),
                                       Spacer(),
                                       GradientText(
                                           text: 'Success',
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                              fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                               fontWeight: FontWeight.w400),
                                           gradient: const LinearGradient(
                                               colors: [
@@ -174,11 +175,11 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   child: Row(
                                     children: [
                                       Text(AppLocalizations.of(context)!.name, style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400),),
                                       Spacer(),
                                       Text('MediaNet BillPay', style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.grey.shade600),),
                                     ],
@@ -201,11 +202,11 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   child: Row(
                                     children: [
                                       Text(AppLocalizations.of(context)!.details, style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400),),
                                       Spacer(),
                                       Text('Medianet BillPay  (158414) Local IPTV', textAlign:TextAlign.right, style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.grey.shade600),),
                                     ],
@@ -228,11 +229,11 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   child: Row(
                                     children: [
                                       Text(AppLocalizations.of(context)!.amount, style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400),),
                                       Spacer(),
                                       Text('MVR -159', style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.grey.shade600),),
                                     ],
@@ -255,11 +256,11 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   child: Row(
                                     children: [
                                       Text(AppLocalizations.of(context)!.reference, style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400),),
                                       Spacer(),
                                       Text('F120687246110RK', style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.grey.shade600),),
                                     ],
@@ -282,18 +283,18 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                   child: Row(
                                     children: [
                                       Text(AppLocalizations.of(context)!.time, style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400),),
                                       Spacer(),
                                       Text('21st July 2021 - 19:24', style: TextStyle(
-                                          fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 12,
+                                          fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.grey.shade600),),
                                     ],
                                   ),
                                 ),
                                 SizedBox(
-                                  height: MediaQuery.of(context).size.width > 320 ? 10 : 30,
+                                  height: MediaQuery.of(context).size.width > 350 ? 10 : 30,
                                 ),
                               ]
                           ),
@@ -328,12 +329,12 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                 child: TextButton.icon(
                                     label: Text(AppLocalizations.of(context)!.shareReceipt,style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 11,
+                                        fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 11,
                                         fontWeight: FontWeight.w400),),
                                     icon: Icon(
                                       FontAwesomeIcons.shareSquare,
                                       color: Colors.white,
-                                      size: MediaQuery.of(context).size.width > 320 ? 22 : 16,
+                                      size: MediaQuery.of(context).size.width > 350 ? 22 : 16,
                                     ),
                                     onPressed: () {
 
@@ -367,12 +368,12 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                                 child: TextButton.icon(
                                     label: Text(AppLocalizations.of(context)!.saveReceipt,style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: MediaQuery.of(context).size.width > 320 ? 14 : 11,
+                                        fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 11,
                                         fontWeight: FontWeight.w400),),
                                     icon: Icon(
                                         FontAwesomeIcons.download,
                                         color: Colors.white,
-                                        size: MediaQuery.of(context).size.width > 320 ? 22 : 16),
+                                        size: MediaQuery.of(context).size.width > 350 ? 22 : 16),
                                     onPressed: () {
 
                                     }
@@ -386,37 +387,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding,  _animatio
                 ),
               ],
             ),
-
-
           )
       )
   );
-}
-
-//class that makes text have gradient
-class GradientText extends StatelessWidget {
-  final String text;
-  final Gradient gradient;
-  final TextStyle? style;
-
-  const GradientText({
-    Key? key,
-    required this.text,
-    required this.gradient,
-    this.style,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (Rect bounds) {
-        return gradient
-            .createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height));
-      },
-      child: Text(
-        text,
-        style: style,
-      ),
-    );
-  }
 }
