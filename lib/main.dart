@@ -41,10 +41,9 @@ class MyApp extends StatelessWidget {
       child: Consumer<LocaleProvider>(
           builder: (context, locale, child) {
             var lang = locale.locale;
-
             return MaterialApp(
               theme: ThemeData(
-                fontFamily: lang == 'dv'? 'Faruma' : null,
+                fontFamily: lang.toString() == 'dv' ? 'Faruma' : null,
                 pageTransitionsTheme: PageTransitionsTheme(builders: {
                     TargetPlatform.iOS: ZoomPageTransitionsBuilder(),
                     TargetPlatform.android: CupertinoPageTransitionsBuilder(),
@@ -78,7 +77,7 @@ class MyApp extends StatelessWidget {
                 '/transaction-history': (BuildContext context) => new TransactionHistoryFullView(),
                 '/fahi-send': (BuildContext context) => new FahisendView(),
               },
-              home: FahisendView(),
+              home: ContactUsView(),
             );
           }
       ),

@@ -36,7 +36,7 @@ class DvGlobalWidgetsLocalizations implements WidgetsLocalizations {
     'he', // Hebrew
     'ps', // Pashto
     'ur', // Urdu
-    'dv', // Dhivehi
+    //'dv', // Dhivehi
   ];
 
   /// The locale for which the values of this class's localized resources
