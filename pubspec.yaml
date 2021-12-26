@@ -29,12 +29,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   font_awesome_flutter: ^9.2.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
   intl: ^0.17.0
+  flutter_svg: ^0.23.0+1
+  dotted_border: ^2.0.0+1
+  provider: ^6.0.1
+  shared_preferences: ^2.0.9
+
 
 
 dev_dependencies:
@@ -58,11 +66,16 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/images/
 
+  fonts:
+    - family: Faruma
+      fonts:
+        - asset: assets/fonts/Faruma.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

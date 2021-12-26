@@ -1,12 +1,42 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/widgets/header_widget.dart';
-import 'package:fpapp/widgets/navbar_widget.dart';
+import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
+
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStateMixin{
+  AnimationController? _animationController;
+  Tween<double> _tween = Tween(begin: 0.1, end: 1);
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+
+    );
+    Timer(Duration(milliseconds: 250), () => _animationController!.forward());
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,141 +44,327 @@ class ProfileView extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context);
+    return _portraitModeOnly(context, _animationController, _tween);
   }
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context) {
+Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
   return Scaffold(
-    appBar: Navbar(),
+    appBar: NavbarWithBackButton(),
     drawer: SideMenu(),
     body: SafeArea(
       child: SingleChildScrollView(
         child: Column(//not putting padding on column because logo image requires different padding
           children: [
-            Header(),
+            Header(animationController: _animationController),
             SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                children:[
-                  Text(
-                    'Profile',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
+            Row(
+              children:[
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(
+                        AppLocalizations.of(context)!.profile,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Container(
-                      height: 1,
-                      width: MediaQuery.of(context).size.width * 0.72,
-                      color: Colors.grey.shade400,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(2, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: const SizedBox(
+                        height: 1.0,
+                        child: const DecoratedBox(
+                          decoration: const BoxDecoration(
+                              color: Color(0xffcccccc)
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  width: 20,
+                )
+              ],
             ),
             SizedBox(
               height: 10,
             ),
             ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.email)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text('Mobile Number'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.mobileNumber)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text('Address'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.address)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.islandCity)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.country)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
             ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              title: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text(AppLocalizations.of(context)!.postCode)
+                ),
+              ),
+              subtitle: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(-1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Hussain.shafiu@gmail.com')
+                ),
+              ),
+              trailing: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(2, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: GradientIcon(
+                    FontAwesomeIcons.solidEdit,
+                    22.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -157,180 +373,4 @@ Scaffold _portraitModeOnly(BuildContext context) {
       ),
     ),
   );
-}
-
-//landscape
-/*
-  Scaffold _landscapeModeOnly(BuildContext context) {
-  return Scaffold(
-    appBar: Navbar(),
-    drawer: SideMenu(),
-    body: SafeArea(
-      child: SingleChildScrollView(
-        child: Column(//not putting padding on column because logo image requires different padding
-          children: [
-            Header(),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                children:[
-                  Text(
-                    'Profile',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Container(
-                      height: 1,
-                      width: MediaQuery.of(context).size.width * 0.72,
-                      color: Colors.grey.shade400,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Mobile Number'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Address'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Email'),
-              subtitle: Text('Hussain.shafiu@gmail.com'),
-              trailing: GradientIcon(
-                FontAwesomeIcons.solidEdit,
-                22.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
- */
-
-
-//class that makes icons have gradient. Used in ListTile
-class GradientIcon extends StatelessWidget {
-  GradientIcon(
-      this.icon,
-      this.size,
-      this.gradient,
-      );
-
-  final IconData icon;
-  final double size;
-  final Gradient gradient;
-
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      child: SizedBox(
-        width: size * 1.2,
-        height: size * 1.2,
-        child: Icon(
-          icon,
-          size: size,
-          color: Colors.white,
-        ),
-      ),
-      shaderCallback: (Rect bounds) {
-        final Rect rect = Rect.fromLTRB(0, 0, size, size);
-        return gradient.createShader(rect);
-      },
-    );
-  }
 }

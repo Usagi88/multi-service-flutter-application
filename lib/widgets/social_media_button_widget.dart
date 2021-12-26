@@ -19,7 +19,7 @@ class SocialMediaButton extends StatelessWidget {
   //portrait
   Container _portraitModeOnly(BuildContext context) {
     return Container(
-      width: 63,
+      width:  MediaQuery.of(context).size.width > 350 ? 63 : 55,
       height: 63,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -37,29 +37,4 @@ class SocialMediaButton extends StatelessWidget {
       ),
     );
   }
-
-  //landscape
-  /*
-    Container _landscapeModeOnly(BuildContext context) {
-    return Container(
-      width: 63,
-      height: 63,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        gradient: LinearGradient(
-          colors: [
-            const Color(0xff3AC170),
-            const Color(0xff25BFA3),
-          ],
-        ),
-      ),
-      child: Icon(
-        socialMediaIcon,
-        size: 32,
-        color: Colors.white,
-      ),
-    );
-  }
-   */
-
 }
