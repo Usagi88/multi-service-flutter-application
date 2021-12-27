@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fpapp/classes/custom_carousel_pro.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/service_card_widget.dart';
@@ -68,12 +69,28 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                       opacity: _animationController,
                       child: Container(
                         height: 130,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                                'assets/images/zakai.png'),
-                            fit: BoxFit.fill,
-                          ),
+                        child: Carousel(
+                            dotSize: 4.0,
+                            dotSpacing: 15.0,
+                            dotColor: Colors.greenAccent,
+                            indicatorBgPadding: 5.0,
+                            dotBgColor: Colors.transparent,
+                            dotVerticalPadding: 5.0,
+                            dotPosition: DotPosition.bottomRight,
+                            images: [
+                              Image.asset(
+                                'assets/images/carousel/bannerOne.png',
+                                fit: BoxFit.fill,
+                              ),
+                              Image.asset(
+                                'assets/images/carousel/bannerTwo.png',
+                                fit: BoxFit.fill,
+                              ),
+                              Image.asset(
+                                'assets/images/carousel/bannerThree.png',
+                                fit: BoxFit.fill,
+                              ),
+                            ]
                         ),
                       ),
                     ),
@@ -144,6 +161,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 serviceCardImage: 'assets/images/dhiraagu-logo.png',
                                 serviceCardText: 'Dhiraagu Reload',
                                 animationController: _animationController,
+                                route: '/service-details-view',
                               ),
                               SizedBox(
                                 width: 20,

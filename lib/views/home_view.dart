@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fpapp/classes/custom_carousel_pro.dart';
 import 'package:fpapp/widgets/banner_widget.dart';
 import 'package:fpapp/widgets/fp_card_widget.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
@@ -66,16 +68,36 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                 opacity: _animationController,
                 child: Container(
                   height: 130,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'assets/images/zakai.png'),
-                      fit: BoxFit.fill,
-                    ),
+                  child: Carousel(
+                      dotSize: 4.0,
+                      dotSpacing: 15.0,
+                      dotColor: Colors.greenAccent,
+                      indicatorBgPadding: 5.0,
+                      dotBgColor: Colors.transparent,
+                      dotVerticalPadding: 5.0,
+                      dotPosition: DotPosition.bottomRight,
+                      images: [
+                        Image.asset(
+                          'assets/images/carousel/bannerOne.png',
+                          fit: BoxFit.fill,
+                        ),
+                        Image.asset(
+                          'assets/images/carousel/bannerTwo.png',
+                          fit: BoxFit.fill,
+                        ),
+                        Image.asset(
+                          'assets/images/carousel/bannerThree.png',
+                          fit: BoxFit.fill,
+                        ),
+                      ]
                   ),
                 ),
               ),
             ),
+
+
+
+
             SlideTransition(
               position: Tween<Offset>(
                 begin: Offset(0, 1),
@@ -166,14 +188,11 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                                child: Transform.rotate(
-                                  angle: 180 * math.pi / 100,
-                                  child: IconButton(
-                                    icon: Icon(FontAwesomeIcons.ticketAlt,size: 32,color: Color(0xff7B89F9),),
-                                    onPressed: () {
-                                      Navigator.of(context).pushNamed('/services');
-                                    },
-                                  ),
+                                child: IconButton(
+                                  icon: SvgPicture.asset("assets/images/icon/serviceIconSVG.svg"),
+                                  onPressed: () {
+                                    Navigator.of(context).pushNamed('/services');
+                                  },
                                 ),
                                 onPressed: () {},
                               ),
@@ -206,7 +225,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
                                 child: IconButton(
-                                  icon: Icon(FontAwesomeIcons.wallet,size: 32,color: Color(0xff0CAF39),),
+                                  icon: SvgPicture.asset("assets/images/icon/walletIconSVG.svg"),
                                   onPressed: () {
                                     //Navigator.of(context).pushNamed('/fahi-send');
                                   },

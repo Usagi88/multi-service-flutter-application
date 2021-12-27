@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/classes/radiant_gradient_mask.dart';
+
+
 
 class Navbar extends StatelessWidget with PreferredSizeWidget{
   const Navbar({Key? key}) : super(key: key);
@@ -45,7 +48,7 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
       actions: [
         RadiantGradientMask(
           child: IconButton(
-            icon: Icon(FontAwesomeIcons.qrcode),
+            icon: SvgPicture.asset("assets/images/icon/qrCodeIconSVG.svg"),
             onPressed: () {
               Navigator.of(context).pushNamed('/scan-qr-code');
             },
@@ -53,7 +56,7 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
         ),
         RadiantGradientMask(
           child: IconButton(
-            icon: Icon(FontAwesomeIcons.comment),
+            icon: SvgPicture.asset("assets/images/icon/liveChatIconSVG.svg"),
             onPressed: () {
               Navigator.of(context).pushNamed('/live-chat');
             },

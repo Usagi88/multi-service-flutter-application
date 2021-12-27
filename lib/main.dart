@@ -76,8 +76,9 @@ class MyApp extends StatelessWidget {
                 '/scan-qr-code': (BuildContext context) => new ScanQRCodeView(),
                 '/transaction-history': (BuildContext context) => new TransactionHistoryFullView(),
                 '/fahi-send': (BuildContext context) => new FahisendView(),
+                '/service-details-view': (BuildContext context) => new ServiceDetailsView(),
               },
-              home: ContactUsView(),
+              home: HomeView(),
             );
           }
       ),
