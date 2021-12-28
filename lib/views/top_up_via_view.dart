@@ -17,7 +17,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fpapp/widgets/warning_text_widget.dart';
 
 class TopUpViaView extends StatefulWidget {
-  const TopUpViaView({Key? key}) : super(key: key);
+  final bool? mib;
+  final bool? bml;
+  TopUpViaView({Key? key,
+    this.mib,
+    this.bml
+  }) : super(key: key);
 
   @override
   _TopUpViaViewState createState() => _TopUpViaViewState();
@@ -38,7 +43,6 @@ class CurrencyClass {
 class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderStateMixin{
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
-
   UsersClass? _selectedUser;
   List<UsersClass> users = <UsersClass>[
     const UsersClass(0,'IBRAHIM NAISH'),
@@ -50,6 +54,7 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
     const CurrencyClass(0,'MVR'),
     const CurrencyClass(1,'USD'),
   ];
+
   @override
   // ignore: must_call_super
   void initState() {
@@ -92,7 +97,7 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                   children: [
                     DefaultTabController(
                       length: 2,
-                      initialIndex: 0,
+                      initialIndex: (widget.bml != false) ? 0 : ( widget.mib != false) ? 1 : (widget.bml! && widget.mib! == null) ? 0 : 0,
                       child: Container(
                         height: MediaQuery.of(context).size.height - (height + safePadding),
                         child: Stack(

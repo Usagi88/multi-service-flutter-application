@@ -151,14 +151,16 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                               scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                                child: IconButton(
-                                  icon: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
-                                  onPressed: () {
-                                    Navigator.of(context).pushNamed('/live-chat');
-                                  },
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(24),
+                                  primary: Colors.white,
+                                  onPrimary: Colors.grey.shade400,
+                                  elevation: 1.0,
                                 ),
-                                onPressed: () {},
+                                child: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
+                                onPressed: () {
+                                  Navigator.of(context).pushNamed('/live-chat');
+                                },
                               ),
                             ),
                             SizedBox(
@@ -187,14 +189,16 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                               scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                                child: IconButton(
-                                  icon: SvgPicture.asset("assets/images/icon/serviceIconSVG.svg"),
-                                  onPressed: () {
-                                    Navigator.of(context).pushNamed('/services');
-                                  },
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(22),
+                                  primary: Colors.white,
+                                  onPrimary: Colors.grey.shade400,
+                                  elevation: 1.0,
                                 ),
-                                onPressed: () {},
+                                child: SvgPicture.asset("assets/images/icon/serviceIconSVG.svg"),
+                                onPressed: () {
+                                  Navigator.of(context).pushNamed('/services');
+                                },
                               ),
                             ),
                             SizedBox(
@@ -223,14 +227,16 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween) {
                               scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(), padding: EdgeInsets.all(16), primary: Colors.white, elevation: 1.0,),
-                                child: IconButton(
-                                  icon: SvgPicture.asset("assets/images/icon/walletIconSVG.svg"),
-                                  onPressed: () {
-                                    //Navigator.of(context).pushNamed('/fahi-send');
-                                  },
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(26),
+                                  primary: Colors.white,
+                                  onPrimary: Colors.grey.shade400,
+                                  elevation: 1.0,
                                 ),
-                                onPressed: () {},
+                                child: SvgPicture.asset("assets/images/icon/walletIconSVG.svg"),
+                                onPressed: () {
+                                  Navigator.of(context).pushNamed('/add-cash');
+                                },
                               ),
                             ),
                             SizedBox(

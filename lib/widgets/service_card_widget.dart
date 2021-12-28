@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fpapp/views/service_details_view.dart';
 
 
 class ServiceCard extends StatelessWidget {
   String serviceCardText;
   String serviceCardImage;
   String? route;
+  bool? dhiraagu;
+  bool? ooredoo;
   AnimationController? animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
   ServiceCard({Key? key,
@@ -13,6 +16,8 @@ class ServiceCard extends StatelessWidget {
     required this.serviceCardImage,
     this.route,
     this.animationController,
+    this.dhiraagu,
+    this.ooredoo
   }) : super(key: key);
 
   @override
@@ -31,7 +36,13 @@ class ServiceCard extends StatelessWidget {
           scale: _tween.animate(CurvedAnimation(parent: animationController!, curve: Curves.easeInOutBack)),
           child: GestureDetector(
             onTap: () {
-              route != null ? Navigator.of(context).pushNamed(route!) : null;
+              (route != null && route == '/service-details') ?
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ServiceDetailsView(dhiraagu: dhiraagu, ooredoo: ooredoo),
+                  )
+              ) : (route != null) ? Navigator.of(context).pushNamed(route!) : null;
             },
             child: Container(
               //width: 166,

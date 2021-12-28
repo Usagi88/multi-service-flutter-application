@@ -161,7 +161,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 serviceCardImage: 'assets/images/dhiraagu-logo.png',
                                 serviceCardText: 'Dhiraagu Reload',
                                 animationController: _animationController,
-                                route: '/service-details-view',
+                                route: '/service-details',
+                                dhiraagu: true,
+                                ooredoo: false,
                               ),
                               SizedBox(
                                 width: 20,
@@ -170,6 +172,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 serviceCardImage: 'assets/images/ooredoo-logo.png',
                                 serviceCardText: 'Ooredoo Raastas',
                                 animationController: _animationController,
+                                route: '/service-details',
+                                dhiraagu: false,
+                                ooredoo: true,
                               ),
                               SizedBox(
                                 width: 20,

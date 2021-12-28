@@ -13,7 +13,12 @@ import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ServiceDetailsView extends StatefulWidget {
-  const ServiceDetailsView({Key? key}) : super(key: key);
+  final bool? dhiraagu;
+  final bool? ooredoo;
+  ServiceDetailsView({Key? key,
+    this.dhiraagu,
+    this.ooredoo
+  }) : super(key: key);
 
   @override
   _ServiceDetailsViewState createState() => _ServiceDetailsViewState();
@@ -64,7 +69,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                   children: [
                     DefaultTabController(
                       length: 2,
-                      initialIndex: 0,
+                      initialIndex: (widget.dhiraagu != false) ? 0 : ( widget.ooredoo != false) ? 1 : (widget.dhiraagu! && widget.ooredoo! == null) ? 0 : 0,
                       child: Container(
                         height: MediaQuery.of(context).size.height - (height + safePadding),
                         child: Stack(

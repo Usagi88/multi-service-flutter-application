@@ -26,6 +26,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'classes/dv_global_localizations.dart';
 import 'classes/dv_intl.dart';
+import 'views/add_cash_view.dart';
 
 
 void main() {
@@ -76,9 +77,11 @@ class MyApp extends StatelessWidget {
                 '/scan-qr-code': (BuildContext context) => new ScanQRCodeView(),
                 '/transaction-history': (BuildContext context) => new TransactionHistoryFullView(),
                 '/fahi-send': (BuildContext context) => new FahisendView(),
-                '/service-details-view': (BuildContext context) => new ServiceDetailsView(),
+                '/add-cash': (BuildContext context) => new AddCashView(),
+                '/top-up-via-bml-gateway': (BuildContext context) => new TopUpViaBMLGatewayView(),
+                '/top-up-via': (BuildContext context) => new TopUpViaView(),
               },
-              home: HomeView(),
+              home: AddCashView(),
             );
           }
       ),
