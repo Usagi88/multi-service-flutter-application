@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:circle_flags/circle_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -41,7 +42,7 @@ class _LanguagePickerWidgetState extends State<LanguagePickerWidget> with Single
   @override
   Widget build(BuildContext context) {
     var language = Provider.of<LocaleProvider>(context);
-    final provider = Provider.of<LocaleProvider>(context);
+    //final provider = Provider.of<LocaleProvider>(context);
     //final locale = provider.locale;
 
     SystemChrome.setPreferredOrientations([
@@ -56,18 +57,20 @@ class _LanguagePickerWidgetState extends State<LanguagePickerWidget> with Single
     return ScaleTransition(
       scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.elasticOut)),
       child: AlertDialog(
-        title: Text('Languages'),
+        title: Text('Languages',style: TextStyle(fontWeight: FontWeight.w700),),
         content: Container(
           height: 300.0, // Change as per your requirement
           width: 300.0, // Change as per your requirement
           child: ListView(
             shrinkWrap: true,
             children: L10n.all.map((locale) {
-              final flag = L10n.getFlag(locale.languageCode);
+              final flag = L10n.getCountryCode(locale.languageCode);
               final languageName = L10n.getLanguageName(locale.languageCode);
               return ListTile(
-                leading: Text(flag, style: TextStyle(fontSize: 26),),
-                title: Text(languageName, style: TextStyle(fontSize: 16),),
+                //leading: Text(flag, style: TextStyle(fontSize: 26),),
+                contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+                leading: CircleFlag(flag),
+                title: Text(languageName, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, ),),
                 onTap: () {
                   language.changeLocale(Locale(locale.languageCode));
                   Navigator.pop(context);
