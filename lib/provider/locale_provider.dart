@@ -14,6 +14,8 @@ class LocaleProvider extends ChangeNotifier {
       _locale = Locale('ja');
     }else if(newLocale == Locale('dv')){
       _locale = Locale('dv');
+    }else if(newLocale == Locale('bn')){
+      _locale = Locale('bn');
     }
 
     notifyListeners();

@@ -6,6 +6,7 @@ class L10n {
     const Locale('hi'),
     const Locale('ja'),
     const Locale('dv'),
+    const Locale('bn'),
   ];
 
   static String getFlag(String code) {
@@ -16,6 +17,8 @@ class L10n {
         return '🇯🇵';
       case 'dv':
         return '🇲🇻';
+      case 'bn':
+        return '🇧🇩';
       case 'en':
         return '🇺🇸';
       default:
@@ -31,6 +34,8 @@ class L10n {
         return 'Japanese';
       case 'dv':
         return 'Dhivehi';
+      case 'bn':
+        return 'Bengali';
       case 'en':
         return 'English';
       default:
@@ -46,6 +51,8 @@ class L10n {
         return 'jp';
       case 'dv':
         return 'mv';
+      case 'bn':
+        return 'bd';
       case 'en':
         return 'us';
       default:
