@@ -322,7 +322,39 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   children:[
-                    ..._buildListItems()
+                    ScaleTransition(
+                      scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                      child: SocialMediaButton(
+                        socialMediaIcon: FontAwesomeIcons.twitter,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    ScaleTransition(
+                      scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                      child: SocialMediaButton(
+                        socialMediaIcon: FontAwesomeIcons.telegramPlane,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    ScaleTransition(
+                      scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                      child: SocialMediaButton(
+                        socialMediaIcon: FontAwesomeIcons.viber,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    ScaleTransition(
+                      scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                      child: SocialMediaButton(
+                        socialMediaIcon: FontAwesomeIcons.facebookF,
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -336,6 +368,8 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
     );
   }
 
+}
+  /*
   List<Widget> _buildListItems() {
     final listItems = <Widget>[];
     for (var i = 0; i < 4; ++i) {
@@ -367,7 +401,9 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
     }
     return listItems;
   }
-}
+
+*/
+
 
 
 
