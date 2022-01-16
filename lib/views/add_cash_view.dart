@@ -6,12 +6,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/classes/custom_carousel_pro.dart';
 import 'package:fpapp/classes/gradient_text.dart';
+import 'package:fpapp/provider/locale_provider.dart';
 import 'package:fpapp/views/top_up_via_view.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 
 class AddCashView extends StatefulWidget {
@@ -45,18 +47,19 @@ class _AddCashViewState extends State<AddCashView> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
+    var language = Provider.of<LocaleProvider>(context);
     double height = Navbar().preferredSize.height;
     var safePadding = MediaQuery.of(context).padding.top;
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, height, safePadding, _animationController, _tween);
+    return _portraitModeOnly(context, height, safePadding, _animationController, _tween, language);
   }
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animationController, _tween) {
+Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animationController, _tween, language) {
   return Scaffold(
       appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
