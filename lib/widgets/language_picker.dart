@@ -54,6 +54,42 @@ class _LanguagePickerWidgetState extends State<LanguagePickerWidget> with Single
 
   //portrait
   ScaleTransition _portraitModeOnly(BuildContext context, language, _animationController, _tween){
+    if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
+      return ScaleTransition(
+        scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.elasticOut)),
+        child: AlertDialog(
+          title: Align(
+            alignment: Alignment.centerLeft,
+              child: Text('Languages',style: TextStyle(fontWeight: FontWeight.w700,fontFamily: 'Roboto'),)
+          ),
+          content: Container(
+            height: 300.0, // Change as per your requirement
+            width: 300.0, // Change as per your requirement
+            child: ListView(
+              shrinkWrap: true,
+              children: L10n.all.map((locale) {
+                final flag = L10n.getCountryCode(locale.languageCode);
+                final languageName = L10n.getLanguageName(locale.languageCode);
+                return ListTile(
+                  //leading: Text(flag, style: TextStyle(fontSize: 26),),
+                  contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+                  title: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(languageName, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, fontFamily: 'Roboto' ),
+                    ),
+                  ),
+                  trailing: CircleFlag(flag),
+                  onTap: () {
+                    language.changeLocale(Locale(locale.languageCode));
+                    Navigator.pop(context);
+                  },
+                );
+              }).toList(),
+            ),
+          ),
+        ),
+      );
+    }
     return ScaleTransition(
       scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.elasticOut)),
       child: AlertDialog(

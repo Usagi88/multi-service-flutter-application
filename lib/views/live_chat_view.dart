@@ -162,7 +162,7 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
                                 SendMessage(message: "Hello", time: "19:12",),
                                 ReceiveMessage(message: "In order for user to deposit into fahipay you have to ",time: "19:12",),
                                 SendMessage(message: "Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on", time: "19:12",),
-                                SendMessage(message: "Hello, i need your help on depositing", time: "19:12",),
+                                SendMessage(message: "Hello, i need your help on deposit", time: "19:12",),
                                 SizedBox(
                                   height: 10.0,
                                 ),
@@ -349,7 +349,7 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
                               SendMessage(message: "Hello", time: "19:12",),
                               ReceiveMessage(message: "In order for user to deposit into fahipay you have to ",time: "19:12",),
                               SendMessage(message: "Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on", time: "19:12",),
-                              SendMessage(message: "Hello, i need your help on depositing", time: "19:12",),
+                              SendMessage(message: "Hello, i need your help on deposit", time: "19:12",),
                               SizedBox(
                                 height: 10.0,
                               ),

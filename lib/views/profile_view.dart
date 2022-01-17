@@ -71,7 +71,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: SlideTransition(
                       position: Tween<Offset>(
-                        begin: Offset(-1, 0),
+                        begin: Offset(1, 0),
                         end: Offset.zero,
                       ).animate(_animationController),
                       child: FadeTransition(
@@ -90,7 +90,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                     flex: 1,
                     child: SlideTransition(
                       position: Tween<Offset>(
-                        begin: Offset(2, 0),
+                        begin: Offset(1, 0),
                         end: Offset.zero,
                       ).animate(_animationController),
                       child: FadeTransition(
@@ -117,7 +117,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ListTile(
                 title: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -127,7 +127,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -137,7 +137,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(2, 0),
+                    begin: Offset(-1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -160,7 +160,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ListTile(
                 title: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -170,7 +170,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -180,7 +180,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(2, 0),
+                    begin: Offset(-1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -203,7 +203,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ListTile(
                 title: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -213,7 +213,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -223,7 +223,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(2, 0),
+                    begin: Offset(-1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -246,7 +246,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ListTile(
                 title: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -256,7 +256,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -266,7 +266,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(2, 0),
+                    begin: Offset(-1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -289,7 +289,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ListTile(
                 title: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -299,7 +299,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -309,7 +309,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(2, 0),
+                    begin: Offset(-1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -332,7 +332,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ListTile(
                 title: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -342,7 +342,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(-1, 0),
+                    begin: Offset(1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(
@@ -352,7 +352,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(2, 0),
+                    begin: Offset(-1, 0),
                     end: Offset.zero,
                   ).animate(_animationController),
                   child: FadeTransition(

@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
                 '/top-up-via-bml-gateway': (BuildContext context) => new TopUpViaBMLGatewayView(),
                 '/top-up-via': (BuildContext context) => new TopUpViaView(),
               },
-              home: LiveChatView(),
+              home: HomeView(),
             );
           }
       ),
