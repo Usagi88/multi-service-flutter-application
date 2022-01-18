@@ -127,5 +127,15 @@
   "country": "দেশ",
   "postCode": "পোস্ট কোড",
 
-  "transactionDetails": "লেনদেনের বিবরণ"
+  "transactionDetails": "লেনদেনের বিবরণ",
+
+  "selectAPackage": "একটি প্যাকেজ নির্বাচন করুন",
+  "selectAService": "একটি পরিষেবা নির্বাচন করুন",
+
+  "scheduledPaymentsViewFirstText": "আপনি এই পরিষেবার মাধ্যমে সহজেই একটি স্বয়ংক্রিয় মাসিক অর্থপ্রদান করতে পারেন। আপনার FahiPay অ্যাকাউন্টে পর্যাপ্ত ব্যালেন্স থাকলেই স্বয়ংক্রিয় অর্থপ্রদান কাজ করবে",
+  "paymentDayOfMonth": "মাসের পেমেন্টের দিন",
+  "serviceNumber": "পরিষেবা নম্বর",
+  "service": "সেবা",
+  "number": "সংখ্যা",
+  "day": "দিন"
 }

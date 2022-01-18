@@ -12,6 +12,7 @@ import 'package:fpapp/views/profile_view.dart';
 import 'package:fpapp/views/register_view.dart';
 import 'package:fpapp/views/reset_password_view.dart';
 import 'package:fpapp/views/scan_qr_code_view.dart';
+import 'package:fpapp/views/schedule_payments_view.dart';
 import 'package:fpapp/views/send_sms_view.dart';
 import 'package:fpapp/views/service_details_view.dart';
 import 'package:fpapp/views/services_view.dart';
@@ -80,8 +81,9 @@ class MyApp extends StatelessWidget {
                 '/add-cash': (BuildContext context) => new AddCashView(),
                 '/top-up-via-bml-gateway': (BuildContext context) => new TopUpViaBMLGatewayView(),
                 '/top-up-via': (BuildContext context) => new TopUpViaView(),
+                '/scheduled-payments': (BuildContext context) => new ScheduledPaymentsView(),
               },
-              home: HomeView(),
+              home: ScheduledPaymentsView(),
             );
           }
       ),

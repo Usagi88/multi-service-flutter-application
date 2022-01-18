@@ -66,6 +66,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 ),
               ),
               title: Text(AppLocalizations.of(context)!.schedulePayment,),
+              onTap: () => Navigator.of(context).pushNamed('/scheduled-payments'),
             ),
             ListTile(
               leading: GradientIcon(
@@ -241,6 +242,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.schedulePayment),
+            onTap: () => Navigator.of(context).pushNamed('/scheduled-payments'),
           ),
           ListTile(
             leading: GradientIcon(

@@ -26,13 +26,42 @@ class ServiceDetailsView extends StatefulWidget {
   _ServiceDetailsViewState createState() => _ServiceDetailsViewState();
 }
 
+class DhiraaguPackagesClass {
+  final String name;
+  final int id;
+  const DhiraaguPackagesClass(this.id,this.name);
+}
+class OoredooPackagesClass {
+  final String name;
+  final int id;
+  const OoredooPackagesClass(this.id,this.name);
+}
+
 class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTickerProviderStateMixin{
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
   bool? _checked = false;
 
+  DhiraaguPackagesClass? _selectedDhiraaguPackage;
+  List<DhiraaguPackagesClass> dhiraaguPackages = <DhiraaguPackagesClass>[
+    const DhiraaguPackagesClass(1,'Select a package'),
+    const DhiraaguPackagesClass(2,'Dhiraagu P1'),
+    const DhiraaguPackagesClass(3,'Dhiraagu P2'),
+    const DhiraaguPackagesClass(4,'Dhiraagu P3')
+  ];
+
+  OoredooPackagesClass? _selectedOoredooPackage;
+  List<OoredooPackagesClass> ooredooPackages = <OoredooPackagesClass>[
+    const OoredooPackagesClass(1,'Select a package'),
+    const OoredooPackagesClass(2,'Ooredoo P1'),
+    const OoredooPackagesClass(3,'Ooredoo P2'),
+    const OoredooPackagesClass(4,'Ooredoo P3')
+  ];
+
   @override
   void initState() {
+    _selectedDhiraaguPackage=dhiraaguPackages[0];
+    _selectedOoredooPackage=ooredooPackages[0];
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
@@ -212,8 +241,62 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                   ).animate(_animationController),
                                                   child: FadeTransition(
                                                     opacity: _animationController,
-                                                    child: TextfieldTextWidget(
-                                                      hintText: AppLocalizations.of(context)!.selectPackage,
+                                                    child: Container(
+                                                        padding: EdgeInsets.symmetric(horizontal: 20),
+                                                        height: 46,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.grey.shade200,
+                                                            borderRadius: BorderRadius.circular(10)
+                                                        ),
+                                                        child: DropdownButtonHideUnderline(
+                                                          child:DropdownButton<DhiraaguPackagesClass>(
+                                                            value: _selectedDhiraaguPackage,
+                                                            onChanged: (DhiraaguPackagesClass? newValue) {
+                                                              setState(() {
+                                                                _selectedDhiraaguPackage = newValue;
+                                                              });
+                                                            },
+                                                            items: dhiraaguPackages.map((DhiraaguPackagesClass dhiraaguPackage) {
+                                                              return new DropdownMenuItem<DhiraaguPackagesClass>(
+                                                                value: dhiraaguPackage,
+                                                                child: Container(
+                                                                    width:double.infinity,
+                                                                    alignment:Alignment.centerRight,
+                                                                    padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
+                                                                    child:Text(
+                                                                      dhiraaguPackage.name,
+                                                                      style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                                                    ),
+                                                                    decoration:BoxDecoration(
+                                                                        border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
+                                                                    )
+                                                                ),
+                                                              );
+                                                            }).toList(),
+                                                            isExpanded: true,
+                                                            icon: Align(
+                                                              alignment: Alignment(0.0,-0.50),
+                                                              child: GradientIcon(
+                                                                FontAwesomeIcons.sortDown,
+                                                                22.0,
+                                                                LinearGradient(
+                                                                  colors: <Color>[
+                                                                    Color(0xff3AC170),
+                                                                    Color(0xff25BFA3),
+                                                                  ],
+                                                                  begin: Alignment.topLeft,
+                                                                  end: Alignment.bottomRight,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            hint:Text(AppLocalizations.of(context)!.selectAPackage),
+                                                            disabledHint:Text(AppLocalizations.of(context)!.disabled),
+                                                            iconDisabledColor: Colors.red,
+                                                            iconEnabledColor: Colors.green,
+                                                            style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
+                                                            elevation: 2,
+                                                          ),
+                                                        )
                                                     ),
                                                   ),
                                                 ),
@@ -374,76 +457,87 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                               horizontalMargin: 0,
                                                               columns: [
                                                                 DataColumn(label:
-                                                                  Container(
-                                                                      width: 20,
-                                                                      child: Text("#",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
-                                                                  )
+                                                                Padding(
+                                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                  child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
+                                                                )
                                                                 ),
                                                                 DataColumn(
-                                                                    label: Container(
-                                                                      width: 150,
-                                                                      child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
-                                                                  )
+                                                                    label: Padding(
+                                                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                      child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
+                                                                    )
                                                                 ),
                                                                 DataColumn(label:
-                                                                  Container(
-                                                                    width: 45,
-                                                                    child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
-                                                                  )
+                                                                Padding(
+                                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                  child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                                                                )
                                                                 ),
                                                                 DataColumn(label:
-                                                                  Container(
-                                                                      width: 45,
-                                                                    child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
-                                                                  )
+                                                                Padding(
+                                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                  child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                                                                )
                                                                 ),
                                                               ],
                                                               rows: [
                                                                 DataRow(
                                                                     cells: [
-                                                                      DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                      DataCell(Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      )),
                                                                       DataCell(
-                                                                        Padding(
-                                                                          padding: const EdgeInsets.only(top:6.0),
-                                                                          child: Column(
-                                                                            children: [
-                                                                              Align(
-                                                                                  alignment: Alignment.centerRight,
-                                                                                  child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
-                                                                              ),
-                                                                              Align(
-                                                                                  alignment: Alignment.centerRight,
-                                                                                  child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
-                                                                              ),
-                                                                            ]
-                                                                          ),
-                                                                        )
+                                                                          Padding(
+                                                                            padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                            child: Column(
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                children: [
+                                                                                  Align(
+                                                                                      alignment: Alignment.centerRight,
+                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                  ),
+                                                                                  Align(
+                                                                                      alignment: Alignment.centerRight,
+                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                  ),
+                                                                                ]
+                                                                            ),
+                                                                          )
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       )
@@ -451,49 +545,60 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                                 ),
                                                                 DataRow(
                                                                     cells: [
-                                                                      DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                      DataCell(Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      )),
                                                                       DataCell(
                                                                           Padding(
-                                                                            padding: const EdgeInsets.only(top:6.0),
+                                                                            padding: const EdgeInsets.symmetric(horizontal:4.0),
                                                                             child: Column(
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                crossAxisAlignment: CrossAxisAlignment.center,
                                                                                 children: [
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                 ]
                                                                             ),
                                                                           )
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       )
@@ -570,8 +675,62 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                   ).animate(_animationController),
                                                   child: FadeTransition(
                                                     opacity: _animationController,
-                                                    child: TextfieldTextWidget(
-                                                      hintText: AppLocalizations.of(context)!.selectPackage,
+                                                    child: Container(
+                                                        padding: EdgeInsets.symmetric(horizontal: 20),
+                                                        height: 46,
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.grey.shade200,
+                                                            borderRadius: BorderRadius.circular(10)
+                                                        ),
+                                                        child: DropdownButtonHideUnderline(
+                                                          child:DropdownButton<OoredooPackagesClass>(
+                                                            value: _selectedOoredooPackage,
+                                                            onChanged: (OoredooPackagesClass? newValue) {
+                                                              setState(() {
+                                                                _selectedOoredooPackage = newValue;
+                                                              });
+                                                            },
+                                                            items: ooredooPackages.map((OoredooPackagesClass ooredooPackage) {
+                                                              return new DropdownMenuItem<OoredooPackagesClass>(
+                                                                value: ooredooPackage,
+                                                                child: Container(
+                                                                    width:double.infinity,
+                                                                    alignment:Alignment.centerRight,
+                                                                    padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
+                                                                    child:Text(
+                                                                      ooredooPackage.name,
+                                                                      style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                                                    ),
+                                                                    decoration:BoxDecoration(
+                                                                        border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
+                                                                    )
+                                                                ),
+                                                              );
+                                                            }).toList(),
+                                                            isExpanded: true,
+                                                            icon: Align(
+                                                              alignment: Alignment(0.0,-0.50),
+                                                              child: GradientIcon(
+                                                                FontAwesomeIcons.sortDown,
+                                                                22.0,
+                                                                LinearGradient(
+                                                                  colors: <Color>[
+                                                                    Color(0xff3AC170),
+                                                                    Color(0xff25BFA3),
+                                                                  ],
+                                                                  begin: Alignment.topLeft,
+                                                                  end: Alignment.bottomRight,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            hint:Text(AppLocalizations.of(context)!.selectAPackage),
+                                                            disabledHint:Text(AppLocalizations.of(context)!.disabled),
+                                                            iconDisabledColor: Colors.red,
+                                                            iconEnabledColor: Colors.green,
+                                                            style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
+                                                            elevation: 2,
+                                                          ),
+                                                        )
                                                     ),
                                                   ),
                                                 ),
@@ -733,76 +892,87 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                               horizontalMargin: 0,
                                                               columns: [
                                                                 DataColumn(label:
-                                                                Container(
-                                                                    width: 20,
-                                                                    child: Text("#",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
+                                                                Padding(
+                                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                  child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
                                                                 )
                                                                 ),
                                                                 DataColumn(
-                                                                    label: Container(
-                                                                        width: 150,
-                                                                        child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
+                                                                    label: Padding(
+                                                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                      child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
                                                                     )
                                                                 ),
                                                                 DataColumn(label:
-                                                                Container(
-                                                                    width: 45,
-                                                                    child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
+                                                                Padding(
+                                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                  child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                                                                 )
                                                                 ),
                                                                 DataColumn(label:
-                                                                Container(
-                                                                    width: 45,
-                                                                    child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
+                                                                Padding(
+                                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                  child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                                                                 )
                                                                 ),
                                                               ],
                                                               rows: [
                                                                 DataRow(
                                                                     cells: [
-                                                                      DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                      DataCell(Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      )),
                                                                       DataCell(
                                                                           Padding(
-                                                                            padding: const EdgeInsets.only(top:6.0),
+                                                                            padding: const EdgeInsets.symmetric(horizontal:4.0),
                                                                             child: Column(
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                crossAxisAlignment: CrossAxisAlignment.center,
                                                                                 children: [
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                 ]
                                                                             ),
                                                                           )
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       )
@@ -810,49 +980,60 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                                 ),
                                                                 DataRow(
                                                                     cells: [
-                                                                      DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                      DataCell(Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      )),
                                                                       DataCell(
                                                                           Padding(
-                                                                            padding: const EdgeInsets.only(top:6.0),
+                                                                            padding: const EdgeInsets.symmetric(horizontal:4.0),
                                                                             child: Column(
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                crossAxisAlignment: CrossAxisAlignment.center,
                                                                                 children: [
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                 ]
                                                                             ),
                                                                           )
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                       DataCell(
-                                                                        GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          24.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                          child: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       )
@@ -893,6 +1074,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
           )
       );
     }
+
     return Scaffold(
         appBar: NavbarWithBackButton(),
         drawer: SideMenu(),
@@ -1041,8 +1223,63 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                 ).animate(_animationController),
                                                 child: FadeTransition(
                                                   opacity: _animationController,
-                                                  child: TextfieldTextWidget(
-                                                    hintText: AppLocalizations.of(context)!.selectPackage,
+                                                  child: Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 20),
+                                                      height: 46,
+                                                      decoration: BoxDecoration(
+                                                          color: Colors.grey.shade200,
+                                                          borderRadius: BorderRadius.circular(10)
+                                                      ),
+                                                      child: DropdownButtonHideUnderline(
+                                                        child:DropdownButton<DhiraaguPackagesClass>(
+                                                          value: _selectedDhiraaguPackage,
+                                                          onChanged: (DhiraaguPackagesClass? newValue) {
+                                                            setState(() {
+                                                              _selectedDhiraaguPackage = newValue;
+                                                              print(newValue?.id);
+                                                            });
+                                                          },
+                                                          items: dhiraaguPackages.map((DhiraaguPackagesClass dhiraaguPackage) {
+                                                            return new DropdownMenuItem<DhiraaguPackagesClass>(
+                                                              value: dhiraaguPackage,
+                                                              child: Container(
+                                                                  width:double.infinity,
+                                                                  alignment:Alignment.centerLeft,
+                                                                  padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
+                                                                  child:Text(
+                                                                    dhiraaguPackage.name,
+                                                                    style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                                                  ),
+                                                                  decoration:BoxDecoration(
+                                                                      border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
+                                                                  )
+                                                              ),
+                                                            );
+                                                          }).toList(),
+                                                          isExpanded: true,
+                                                          icon: Align(
+                                                            alignment: Alignment(0.0,-0.50),
+                                                            child: GradientIcon(
+                                                              FontAwesomeIcons.sortDown,
+                                                              22.0,
+                                                              LinearGradient(
+                                                                colors: <Color>[
+                                                                  Color(0xff3AC170),
+                                                                  Color(0xff25BFA3),
+                                                                ],
+                                                                begin: Alignment.topLeft,
+                                                                end: Alignment.bottomRight,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          hint:Text(AppLocalizations.of(context)!.selectAPackage),
+                                                          disabledHint:Text(AppLocalizations.of(context)!.disabled),
+                                                          iconDisabledColor: Colors.red,
+                                                          iconEnabledColor: Colors.green,
+                                                          style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
+                                                          elevation: 2,
+                                                        ),
+                                                      )
                                                   ),
                                                 ),
                                               ),
@@ -1204,76 +1441,87 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                             horizontalMargin: 0,
                                                             columns: [
                                                               DataColumn(label:
-                                                              Container(
-                                                                  width: 20,
-                                                                  child: Text("#",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
+                                                              Padding(
+                                                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
                                                               )
                                                               ),
                                                               DataColumn(
-                                                                  label: Container(
-                                                                      width: 150,
-                                                                      child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
+                                                                  label: Padding(
+                                                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                    child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
                                                                   )
                                                               ),
                                                               DataColumn(label:
-                                                              Container(
-                                                                  width: 45,
-                                                                  child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
+                                                              Padding(
+                                                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                                                               )
                                                               ),
                                                               DataColumn(label:
-                                                              Container(
-                                                                  width: 45,
-                                                                  child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
+                                                              Padding(
+                                                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                                                               )
                                                               ),
                                                             ],
                                                             rows: [
                                                               DataRow(
                                                                   cells: [
-                                                                    DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                    DataCell(Padding(
+                                                                      padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                    )),
                                                                     DataCell(
                                                                         Padding(
-                                                                          padding: const EdgeInsets.only(top:6.0),
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
                                                                           child: Column(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              crossAxisAlignment: CrossAxisAlignment.center,
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),
                                                                         )
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.trash,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.trash,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.locationArrow,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.locationArrow,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     )
@@ -1281,49 +1529,60 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                               ),
                                                               DataRow(
                                                                   cells: [
-                                                                    DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                    DataCell(Padding(
+                                                                      padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                    )),
                                                                     DataCell(
                                                                         Padding(
-                                                                          padding: const EdgeInsets.only(top:6.0),
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
                                                                           child: Column(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              crossAxisAlignment: CrossAxisAlignment.center,
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),
                                                                         )
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.trash,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.trash,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.locationArrow,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.locationArrow,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     )
@@ -1395,13 +1654,68 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: SlideTransition(
                                                 position: Tween<Offset>(
-                                                  begin: Offset(2, 0),
+                                                  begin: Offset(-1, 0),
                                                   end: Offset.zero,
                                                 ).animate(_animationController),
                                                 child: FadeTransition(
                                                   opacity: _animationController,
-                                                  child: TextfieldTextWidget(
-                                                    hintText: AppLocalizations.of(context)!.selectPackage,
+                                                  child: Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 20),
+                                                      height: 46,
+                                                      decoration: BoxDecoration(
+                                                          color: Colors.grey.shade200,
+                                                          borderRadius: BorderRadius.circular(10)
+                                                      ),
+                                                      child: DropdownButtonHideUnderline(
+                                                        child:DropdownButton<OoredooPackagesClass>(
+                                                          value: _selectedOoredooPackage,
+                                                          onChanged: (OoredooPackagesClass? newValue) {
+                                                            setState(() {
+                                                              _selectedOoredooPackage = newValue;
+                                                              print(newValue?.id);
+                                                            });
+                                                          },
+                                                          items: ooredooPackages.map((OoredooPackagesClass ooredooPackage) {
+                                                            return new DropdownMenuItem<OoredooPackagesClass>(
+                                                              value: ooredooPackage,
+                                                              child: Container(
+                                                                  width:double.infinity,
+                                                                  alignment:Alignment.centerLeft,
+                                                                  padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
+                                                                  child:Text(
+                                                                    ooredooPackage.name,
+                                                                    style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                                                  ),
+                                                                  decoration:BoxDecoration(
+                                                                      border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
+                                                                  )
+                                                              ),
+                                                            );
+                                                          }).toList(),
+                                                          isExpanded: true,
+                                                          icon: Align(
+                                                            alignment: Alignment(0.0,-0.50),
+                                                            child: GradientIcon(
+                                                              FontAwesomeIcons.sortDown,
+                                                              22.0,
+                                                              LinearGradient(
+                                                                colors: <Color>[
+                                                                  Color(0xff3AC170),
+                                                                  Color(0xff25BFA3),
+                                                                ],
+                                                                begin: Alignment.topLeft,
+                                                                end: Alignment.bottomRight,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          hint:Text(AppLocalizations.of(context)!.selectAPackage),
+                                                          disabledHint:Text(AppLocalizations.of(context)!.disabled),
+                                                          iconDisabledColor: Colors.red,
+                                                          iconEnabledColor: Colors.green,
+                                                          style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
+                                                          elevation: 2,
+                                                        ),
+                                                      )
                                                   ),
                                                 ),
                                               ),
@@ -1416,7 +1730,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                   alignment: Alignment.centerLeft,
                                                   child: SlideTransition(
                                                     position: Tween<Offset>(
-                                                      begin: Offset(-1, 0),
+                                                      begin: Offset(2, 0),
                                                       end: Offset.zero,
                                                     ).animate(_animationController),
                                                     child: FadeTransition(
@@ -1563,76 +1877,87 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                             horizontalMargin: 0,
                                                             columns: [
                                                               DataColumn(label:
-                                                              Container(
-                                                                  width: 20,
-                                                                  child: Text("#",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
+                                                              Padding(
+                                                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
                                                               )
                                                               ),
                                                               DataColumn(
-                                                                  label: Container(
-                                                                      width: 150,
-                                                                      child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),)
+                                                                  label: Padding(
+                                                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                    child: Text(AppLocalizations.of(context)!.details,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
                                                                   )
                                                               ),
                                                               DataColumn(label:
-                                                              Container(
-                                                                  width: 45,
-                                                                  child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
+                                                              Padding(
+                                                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                child: Text(AppLocalizations.of(context)!.delete,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                                                               )
                                                               ),
                                                               DataColumn(label:
-                                                              Container(
-                                                                  width: 45,
-                                                                  child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),)
+                                                              Padding(
+                                                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                                child: Text(AppLocalizations.of(context)!.show,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                                                               )
                                                               ),
                                                             ],
                                                             rows: [
                                                               DataRow(
                                                                   cells: [
-                                                                    DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                    DataCell(Padding(
+                                                                      padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                    )),
                                                                     DataCell(
                                                                         Padding(
-                                                                          padding: const EdgeInsets.only(top:6.0),
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
                                                                           child: Column(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              crossAxisAlignment: CrossAxisAlignment.center,
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),
                                                                         )
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.trash,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.trash,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.locationArrow,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.locationArrow,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     )
@@ -1640,49 +1965,60 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                               ),
                                                               DataRow(
                                                                   cells: [
-                                                                    DataCell(Text("1",style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)),
+                                                                    DataCell(Padding(
+                                                                      padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                    )),
                                                                     DataCell(
                                                                         Padding(
-                                                                          padding: const EdgeInsets.only(top:6.0),
+                                                                          padding: const EdgeInsets.symmetric(horizontal:4.0),
                                                                           child: Column(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              crossAxisAlignment: CrossAxisAlignment.center,
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),
                                                                         )
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.trash,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.trash,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     DataCell(
-                                                                      GradientIcon(
-                                                                        FontAwesomeIcons.locationArrow,
-                                                                        24.0,
-                                                                        LinearGradient(
-                                                                          colors: <Color>[
-                                                                            Color(0xff3AC170),
-                                                                            Color(0xff25BFA3),
-                                                                          ],
-                                                                          begin: Alignment.topLeft,
-                                                                          end: Alignment.bottomRight,
+                                                                      Padding(
+                                                                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                                                                        child: GradientIcon(
+                                                                          FontAwesomeIcons.locationArrow,
+                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                          LinearGradient(
+                                                                            colors: <Color>[
+                                                                              Color(0xff3AC170),
+                                                                              Color(0xff25BFA3),
+                                                                            ],
+                                                                            begin: Alignment.topLeft,
+                                                                            end: Alignment.bottomRight,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     )

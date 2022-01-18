@@ -128,5 +128,15 @@
   "country": "国",
   "postCode": "郵便番号",
 
-  "transactionDetails": "取引の詳細"
+  "transactionDetails": "取引の詳細",
+
+  "selectAPackage": "パッケージを選択",
+  "selectAService": "サービスを選択してください",
+
+  "scheduledPaymentsViewFirstText": "このサービスで簡単に月々の自動支払いができます。 自動支払いは、FahiPayアカウントに十分な残高がある場合にのみ機能します",
+  "paymentDayOfMonth": "月の支払い日",
+  "serviceNumber": "サービス番号",
+  "service": "サービス",
+  "number": "番号",
+  "day": "日"
 }

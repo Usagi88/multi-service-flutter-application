@@ -166,5 +166,15 @@
     "country": "Country",
     "postCode": "Post Code",
 
-    "transactionDetails": "Transaction Details"
+    "transactionDetails": "Transaction Details",
+
+    "selectAPackage": "Select a package",
+    "selectAService": "Select a service",
+
+    "scheduledPaymentsViewFirstText": "You can easily make an automatic monthly payment with this service. The automatic payment will work only if you have sufficient balance in FahiPay account",
+    "paymentDayOfMonth": "Payment day of month",
+    "serviceNumber": "Service number",
+    "service": "Service",
+    "number": "Number",
+    "day": "Day"
 }

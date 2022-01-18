@@ -64,6 +64,10 @@ class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     var language = Provider.of<LocaleProvider>(context);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return _portraitModeOnly(context, _animationController, _tween, language);
   }
   //portrait
@@ -200,6 +204,7 @@ class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderSt
 
       );
     }
+
     return Scaffold(
         appBar: NavbarWithBackButton(),
         drawer: SideMenu(),

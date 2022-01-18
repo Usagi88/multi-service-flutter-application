@@ -127,5 +127,15 @@
     "country": "देश",
     "postCode": "पोस्ट कोड",
 
-    "transactionDetails": "लेनदेन का विवरण"
+    "transactionDetails": "लेनदेन का विवरण",
+
+    "selectAPackage": "एक पैकेज चुनें",
+    "selectAService": "एक सेवा का चयन करें",
+
+    "scheduledPaymentsViewFirstText": "आप इस सेवा के साथ आसानी से स्वचालित मासिक भुगतान कर सकते हैं। स्वचालित भुगतान तभी काम करेगा जब आपके पास FahiPay खाते में पर्याप्त शेष राशि होगी",
+    "paymentDayOfMonth": "महीने का भुगतान दिवस",
+    "serviceNumber": "सेवा संख्या",
+    "service": "सेवा",
+    "number": "संख्या",
+    "day": "दिन"
 }
