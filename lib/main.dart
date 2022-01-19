@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fpapp/provider/locale_provider.dart';
 import 'package:fpapp/views/about_view.dart';
+import 'package:fpapp/views/bill_pay_view.dart';
+import 'package:fpapp/views/cash_in_view.dart';
 import 'package:fpapp/views/contact_us_view.dart';
 import 'package:fpapp/views/fahisend_view.dart';
 import 'package:fpapp/views/gift_card_view.dart';
@@ -14,7 +16,7 @@ import 'package:fpapp/views/reset_password_view.dart';
 import 'package:fpapp/views/scan_qr_code_view.dart';
 import 'package:fpapp/views/schedule_payments_view.dart';
 import 'package:fpapp/views/send_sms_view.dart';
-import 'package:fpapp/views/service_details_view.dart';
+import 'package:fpapp/views/package_recharge_view.dart';
 import 'package:fpapp/views/services_view.dart';
 import 'package:fpapp/views/slip_view.dart';
 import 'package:fpapp/views/top_up_via_bml_gateway_view.dart';
@@ -28,6 +30,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'classes/dv_global_localizations.dart';
 import 'classes/dv_intl.dart';
 import 'views/add_cash_view.dart';
+import 'views/raastas_reload_view.dart';
 
 
 void main() {
@@ -73,7 +76,7 @@ class MyApp extends StatelessWidget {
                 '/register': (BuildContext context) => new RegisterView(),
                 '/reset-password': (BuildContext context) => new ResetPasswordView(),
                 '/send-sms': (BuildContext context) => new SendSmsView(),
-                '/service-details': (BuildContext context) => new ServiceDetailsView(),
+                '/package-recharge': (BuildContext context) => new PackageRechargeView(),
                 '/services': (BuildContext context) => new ServicesView(),
                 '/scan-qr-code': (BuildContext context) => new ScanQRCodeView(),
                 '/transaction-history': (BuildContext context) => new TransactionHistoryFullView(),
@@ -82,8 +85,11 @@ class MyApp extends StatelessWidget {
                 '/top-up-via-bml-gateway': (BuildContext context) => new TopUpViaBMLGatewayView(),
                 '/top-up-via': (BuildContext context) => new TopUpViaView(),
                 '/scheduled-payments': (BuildContext context) => new ScheduledPaymentsView(),
+                '/raastas-reload': (BuildContext context) => new RaastasReloadView(),
+                '/bill-pay': (BuildContext context) => new BillPayView(),
+                '/cash-in': (BuildContext context) => new CashInView(),
               },
-              home: ScheduledPaymentsView(),
+              home: CashInView(),
             );
           }
       ),

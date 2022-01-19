@@ -16,7 +16,7 @@
     "address": "އެޑްރެސް",
     "socialMediaHandles": "ސޯޝަލް މީޑިއާ ހޭންޑަލްސް",
     "qrScan": "QR Scan",
-    "pickContact": "ކޮންޓެކްޓް ނެގުން",
+    "pickContact": "ނަންބަރު އިޚްތިޔާކުރޭ",
     "emailOrContactNumber": "އީމެއިލް ނުވަތަ މޯބައިލް ނަންބަރ",
     "amount": "އަދަދު",
     "submit": "ސަބްމިޓް",
@@ -112,10 +112,10 @@
 
     "transactionHistory": "ކުރީގެ މުއާމަލާތްތައް",
 
-    "serviceDetailsViewDhiraaguFirstText": "ރީޅޯޑް ކުރަން ދިރާގު ނަންބަރ އާއި އަދަދު ލިޔާށެވެ.",
-    "serviceDetailsViewOoredooFirstText": "ރާސްޓަސް ކުރަން އޫރިދޫ ނަންބަރ އާއި އަދަދު ލިޔާށެވެ.",
-    "dhiraagu": "Dhiraagu",
-    "ooredoo": "Ooredoo",
+    "packageRechargeViewDhiraaguFirstText": "ދިރާގު ނަންބަރު ލިޔުއްވުމަށްފަހު ބޭނުންފުޅުވާ ޕެކޭޖް އިޚްތިޔާރު ކުރައްވާ",
+    "packageRechargeViewOoredooFirstText": "އުރިދޫ ނަންބަރު ލިޔުއްވުމަށްފަހު ބޭނުންފުޅުވާ ޕެކޭޖް އިޚްތިޔާރު ކުރައްވާ",
+    "dhiraagu": "ދިރާގު",
+    "ooredoo": "އުރީދޫ",
     "sendReload": "ސެންޑް ރީލޯޑް",
     "sendRaastas": "ސެންޑް ރާސްޓަސް",
     "keepInfoSaved": "މައުލޫމާތު ސޭވް ކުރުން",
@@ -139,5 +139,20 @@
     "serviceNumber": "ޚިދުމަތް ބޭނުންކުރާ ނަންބަރ",
     "service": "ޚިދުމަތް",
     "number": "ނަންބަރ",
-    "day": "ދުވަސް"
+    "day": "ދުވަސް",
+
+    "reloadFirstText": "ދިރާގު ނަންބަރު ލިއުއްވުމަށްފަހު ރީލޯޑް ކުރަން ބޭނުންވާ އަދަދު ޖައްސަވާ",
+    "raastasFirstText": "އުރީދޫ ނަންބަރު ލިއުއްވުމަށްފަހު ރީލޯޑް ކުރަން ބޭނުންވާ އަދަދު ޖައްސަވާ",
+
+    "dhiraaguBillPayFirstText": "ދިރާގު ނަންބަރު ލިއުއްވުމަށްފަހު ބިލް ޖުމްލަ އަދަދު ޖައްސަވާ",
+    "ooredooBillPayFirstText": "އުރީދޫ ނަންބަރު ލިއުއްވުމަށްފަހު ބިލް ޖުމްލަ އަދަދު ޖައްސަވާ",
+    "payBill": "ބިލް ދައްކާ",
+    "checkBalance": "ބިލް ބާކީ ބަލާ",
+
+    "buyPackage": "ޕެކޭޖް ނަގާ",
+
+    "dhiraaguCashInFirstText": "ދިރާގު ނަންބަރާއި ދިރާގު ޕޭ ކޭޝްއިން ކުރެއްވުމަށް ބޭނުންވާ އަދަދު ޖައްސަވާ",
+    "ooredooCashInFirstText": "އުރީދޫ ނަންބަރު ލިޔުއްވުމަށްފަހު އެމް.ފައިސާ ކޭޝްއިން ކުރެއްވުމަށް ބޭނުންވާ އަދަދު ޖައްސަވާ",
+    "cashIn": "ކޭޝް އިން"
+
 }

@@ -14,54 +14,25 @@ import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
-class ServiceDetailsView extends StatefulWidget {
+class BillPayView extends StatefulWidget {
   final bool? dhiraagu;
   final bool? ooredoo;
-  ServiceDetailsView({Key? key,
+  BillPayView({Key? key,
     this.dhiraagu,
     this.ooredoo
   }) : super(key: key);
 
   @override
-  _ServiceDetailsViewState createState() => _ServiceDetailsViewState();
+  _BillPayViewState createState() => _BillPayViewState();
 }
 
-class DhiraaguPackagesClass {
-  final String name;
-  final int id;
-  const DhiraaguPackagesClass(this.id,this.name);
-}
-class OoredooPackagesClass {
-  final String name;
-  final int id;
-  const OoredooPackagesClass(this.id,this.name);
-}
-
-class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTickerProviderStateMixin{
+class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStateMixin{
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
   bool? _checked = false;
 
-  DhiraaguPackagesClass? _selectedDhiraaguPackage;
-  List<DhiraaguPackagesClass> dhiraaguPackages = <DhiraaguPackagesClass>[
-    const DhiraaguPackagesClass(1,'Select a package'),
-    const DhiraaguPackagesClass(2,'Dhiraagu P1'),
-    const DhiraaguPackagesClass(3,'Dhiraagu P2'),
-    const DhiraaguPackagesClass(4,'Dhiraagu P3')
-  ];
-
-  OoredooPackagesClass? _selectedOoredooPackage;
-  List<OoredooPackagesClass> ooredooPackages = <OoredooPackagesClass>[
-    const OoredooPackagesClass(1,'Select a package'),
-    const OoredooPackagesClass(2,'Ooredoo P1'),
-    const OoredooPackagesClass(3,'Ooredoo P2'),
-    const OoredooPackagesClass(4,'Ooredoo P3')
-  ];
-
   @override
   void initState() {
-    _selectedDhiraaguPackage=dhiraaguPackages[0];
-    _selectedOoredooPackage=ooredooPackages[0];
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
@@ -162,13 +133,13 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                 Tab(
                                                   child: Align(
                                                     alignment: Alignment.center,
-                                                    child: Text(AppLocalizations.of(context)!.dhiraagu, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, fontFamily: 'Roboto')),
+                                                    child: Text(AppLocalizations.of(context)!.dhiraagu, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,)),
                                                   ),
                                                 ),
                                                 Tab(
                                                   child: Align(
                                                     alignment: Alignment.center,
-                                                    child: Text(AppLocalizations.of(context)!.ooredoo, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, fontFamily: 'Roboto')),
+                                                    child: Text(AppLocalizations.of(context)!.ooredoo, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,)),
                                                   ),
                                                 ),
                                               ]
@@ -204,7 +175,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                       ).animate(_animationController),
                                                       child: FadeTransition(
                                                         opacity: _animationController,
-                                                        child: Text(AppLocalizations.of(context)!.serviceDetailsViewDhiraaguFirstText,
+                                                        child: Text(AppLocalizations.of(context)!.dhiraaguBillPayFirstText,
                                                           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                                       ),
                                                     )
@@ -212,6 +183,42 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                               ),
                                               SizedBox(
                                                 height: 20,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                child: SlideTransition(
+                                                  position: Tween<Offset>(
+                                                    begin: Offset(1, 0),
+                                                    end: Offset.zero,
+                                                  ).animate(_animationController),
+                                                  child: FadeTransition(
+                                                    opacity: _animationController,
+                                                    child: Container(
+                                                      height: 46,
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                        gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                      ),
+                                                      child: TextButton(
+                                                        style: TextButton.styleFrom(
+                                                          primary: Colors.white,
+                                                        ),
+                                                        onPressed: () { },
+                                                        child: Text(
+                                                          AppLocalizations.of(context)!.pickContact,
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              fontWeight: FontWeight.w400
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: 7,
                                               ),
                                               Padding(
                                                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -224,7 +231,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                       child: FadeTransition(
                                                           opacity: _animationController,
                                                           child: Text(
-                                                            AppLocalizations.of(context)!.selectPackage,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
+                                                            AppLocalizations.of(context)!.serviceNumber,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
                                                       ),
                                                     )
                                                 ),
@@ -241,62 +248,37 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                   ).animate(_animationController),
                                                   child: FadeTransition(
                                                     opacity: _animationController,
-                                                    child: Container(
-                                                        padding: EdgeInsets.symmetric(horizontal: 20),
-                                                        height: 46,
+                                                    child: TextfieldTextWidget(
+                                                      hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: Container(
+                                                        width: 129,
+                                                        height: 26,
+                                                        alignment: Alignment.center,
                                                         decoration: BoxDecoration(
-                                                            color: Colors.grey.shade200,
-                                                            borderRadius: BorderRadius.circular(10)
-                                                        ),
-                                                        child: DropdownButtonHideUnderline(
-                                                          child:DropdownButton<DhiraaguPackagesClass>(
-                                                            value: _selectedDhiraaguPackage,
-                                                            onChanged: (DhiraaguPackagesClass? newValue) {
-                                                              setState(() {
-                                                                _selectedDhiraaguPackage = newValue;
-                                                              });
-                                                            },
-                                                            items: dhiraaguPackages.map((DhiraaguPackagesClass dhiraaguPackage) {
-                                                              return new DropdownMenuItem<DhiraaguPackagesClass>(
-                                                                value: dhiraaguPackage,
-                                                                child: Container(
-                                                                    width:double.infinity,
-                                                                    alignment:Alignment.centerRight,
-                                                                    padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
-                                                                    child:Text(
-                                                                      dhiraaguPackage.name,
-                                                                      style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                                                    ),
-                                                                    decoration:BoxDecoration(
-                                                                        border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
-                                                                    )
-                                                                ),
-                                                              );
-                                                            }).toList(),
-                                                            isExpanded: true,
-                                                            icon: Align(
-                                                              alignment: Alignment(0.0,-0.50),
-                                                              child: GradientIcon(
-                                                                FontAwesomeIcons.sortDown,
-                                                                22.0,
-                                                                LinearGradient(
-                                                                  colors: <Color>[
-                                                                    Color(0xff3AC170),
-                                                                    Color(0xff25BFA3),
-                                                                  ],
-                                                                  begin: Alignment.topLeft,
-                                                                  end: Alignment.bottomRight,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            hint:Text(AppLocalizations.of(context)!.selectAPackage),
-                                                            disabledHint:Text(AppLocalizations.of(context)!.disabled),
-                                                            iconDisabledColor: Colors.red,
-                                                            iconEnabledColor: Colors.green,
-                                                            style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
-                                                            elevation: 2,
+                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                          borderRadius: BorderRadius.only(
+                                                            bottomRight: Radius.circular(10),
+                                                            bottomLeft: Radius.circular(10),
                                                           ),
-                                                        )
+
+                                                        ),
+                                                        child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -355,7 +337,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                         width: 172,
                                                         alignment: Alignment.centerRight,
                                                         child: CheckboxListTile(
-                                                          title: Text('Keep info saved', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                          title: Text(AppLocalizations.of(context)!.keepInfoSaved, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),),
                                                           value: _checked,
                                                           controlAffinity: ListTileControlAffinity.leading,
                                                           activeColor: Color(0xff29bf9a),
@@ -381,7 +363,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                   child: FadeTransition(
                                                     opacity: _animationController,
                                                     child: ButtonWidget(
-                                                      buttonText: AppLocalizations.of(context)!.sendReload,
+                                                      buttonText: AppLocalizations.of(context)!.payBill,
                                                     ),
                                                   ),
                                                 ),
@@ -638,7 +620,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                       ).animate(_animationController),
                                                       child: FadeTransition(
                                                         opacity: _animationController,
-                                                        child: Text(AppLocalizations.of(context)!.serviceDetailsViewOoredooFirstText,
+                                                        child: Text(AppLocalizations.of(context)!.ooredooBillPayFirstText,
                                                           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                                       ),
                                                     )
@@ -646,6 +628,42 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                               ),
                                               SizedBox(
                                                 height: 20,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                child: SlideTransition(
+                                                  position: Tween<Offset>(
+                                                    begin: Offset(1, 0),
+                                                    end: Offset.zero,
+                                                  ).animate(_animationController),
+                                                  child: FadeTransition(
+                                                    opacity: _animationController,
+                                                    child: Container(
+                                                      height: 46,
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                        gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                      ),
+                                                      child: TextButton(
+                                                        style: TextButton.styleFrom(
+                                                          primary: Colors.white,
+                                                        ),
+                                                        onPressed: () { },
+                                                        child: Text(
+                                                          AppLocalizations.of(context)!.pickContact,
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              fontWeight: FontWeight.w400
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: 7,
                                               ),
                                               Padding(
                                                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -658,7 +676,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                       child: FadeTransition(
                                                           opacity: _animationController,
                                                           child: Text(
-                                                            AppLocalizations.of(context)!.selectPackage,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
+                                                            AppLocalizations.of(context)!.serviceNumber,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
                                                       ),
                                                     )
                                                 ),
@@ -675,62 +693,37 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                   ).animate(_animationController),
                                                   child: FadeTransition(
                                                     opacity: _animationController,
-                                                    child: Container(
-                                                        padding: EdgeInsets.symmetric(horizontal: 20),
-                                                        height: 46,
+                                                    child: TextfieldTextWidget(
+                                                      hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                                                  child: SlideTransition(
+                                                    position: Tween<Offset>(
+                                                      begin: Offset(-1, 0),
+                                                      end: Offset.zero,
+                                                    ).animate(_animationController),
+                                                    child: FadeTransition(
+                                                      opacity: _animationController,
+                                                      child: Container(
+                                                        width: 129,
+                                                        height: 26,
+                                                        alignment: Alignment.center,
                                                         decoration: BoxDecoration(
-                                                            color: Colors.grey.shade200,
-                                                            borderRadius: BorderRadius.circular(10)
-                                                        ),
-                                                        child: DropdownButtonHideUnderline(
-                                                          child:DropdownButton<OoredooPackagesClass>(
-                                                            value: _selectedOoredooPackage,
-                                                            onChanged: (OoredooPackagesClass? newValue) {
-                                                              setState(() {
-                                                                _selectedOoredooPackage = newValue;
-                                                              });
-                                                            },
-                                                            items: ooredooPackages.map((OoredooPackagesClass ooredooPackage) {
-                                                              return new DropdownMenuItem<OoredooPackagesClass>(
-                                                                value: ooredooPackage,
-                                                                child: Container(
-                                                                    width:double.infinity,
-                                                                    alignment:Alignment.centerRight,
-                                                                    padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
-                                                                    child:Text(
-                                                                      ooredooPackage.name,
-                                                                      style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                                                    ),
-                                                                    decoration:BoxDecoration(
-                                                                        border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
-                                                                    )
-                                                                ),
-                                                              );
-                                                            }).toList(),
-                                                            isExpanded: true,
-                                                            icon: Align(
-                                                              alignment: Alignment(0.0,-0.50),
-                                                              child: GradientIcon(
-                                                                FontAwesomeIcons.sortDown,
-                                                                22.0,
-                                                                LinearGradient(
-                                                                  colors: <Color>[
-                                                                    Color(0xff3AC170),
-                                                                    Color(0xff25BFA3),
-                                                                  ],
-                                                                  begin: Alignment.topLeft,
-                                                                  end: Alignment.bottomRight,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            hint:Text(AppLocalizations.of(context)!.selectAPackage),
-                                                            disabledHint:Text(AppLocalizations.of(context)!.disabled),
-                                                            iconDisabledColor: Colors.red,
-                                                            iconEnabledColor: Colors.green,
-                                                            style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
-                                                            elevation: 2,
+                                                          gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                          borderRadius: BorderRadius.only(
+                                                            bottomRight: Radius.circular(10),
+                                                            bottomLeft: Radius.circular(10),
                                                           ),
-                                                        )
+
+                                                        ),
+                                                        child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -789,7 +782,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                         width: 172,
                                                         alignment: Alignment.centerRight,
                                                         child: CheckboxListTile(
-                                                          title: Text('Keep info saved', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                          title: Text(AppLocalizations.of(context)!.keepInfoSaved, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400,),),
                                                           value: _checked,
                                                           controlAffinity: ListTileControlAffinity.leading,
                                                           activeColor: Color(0xff29bf9a),
@@ -816,7 +809,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                   child: FadeTransition(
                                                     opacity: _animationController,
                                                     child: ButtonWidget(
-                                                      buttonText: AppLocalizations.of(context)!.sendRaastas,
+                                                      buttonText: AppLocalizations.of(context)!.payBill,
                                                     ),
                                                   ),
                                                 ),
@@ -1186,7 +1179,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                     ).animate(_animationController),
                                                     child: FadeTransition(
                                                       opacity: _animationController,
-                                                      child: Text(AppLocalizations.of(context)!.serviceDetailsViewDhiraaguFirstText,
+                                                      child: Text(AppLocalizations.of(context)!.dhiraaguBillPayFirstText,
                                                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                                     ),
                                                   )
@@ -1197,6 +1190,42 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(-1, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: Container(
+                                                    height: 46,
+                                                    width: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                    ),
+                                                    child: TextButton(
+                                                      style: TextButton.styleFrom(
+                                                        primary: Colors.white,
+                                                      ),
+                                                      onPressed: () { },
+                                                      child: Text(
+                                                        AppLocalizations.of(context)!.pickContact,
+                                                        style: TextStyle(
+                                                            fontSize: 14,
+                                                            fontWeight: FontWeight.w400
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 7,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: Align( alignment: Alignment.centerLeft,
                                                   child: SlideTransition(
                                                     position: Tween<Offset>(
@@ -1204,9 +1233,9 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                       end: Offset.zero,
                                                     ).animate(_animationController),
                                                     child: FadeTransition(
-                                                      opacity: _animationController,
+                                                        opacity: _animationController,
                                                         child: Text(
-                                                          AppLocalizations.of(context)!.selectPackage,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
+                                                          AppLocalizations.of(context)!.serviceNumber,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
                                                     ),
                                                   )
                                               ),
@@ -1218,68 +1247,42 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                               child: SlideTransition(
                                                 position: Tween<Offset>(
-                                                  begin: Offset(2, 0),
+                                                  begin: Offset(-1, 0),
                                                   end: Offset.zero,
                                                 ).animate(_animationController),
                                                 child: FadeTransition(
                                                   opacity: _animationController,
-                                                  child: Container(
-                                                      padding: EdgeInsets.symmetric(horizontal: 20),
-                                                      height: 46,
+                                                  child: TextfieldTextWidget(
+                                                    hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: Alignment.centerRight,
+                                              child: Padding(
+                                                padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                                                child: SlideTransition(
+                                                  position: Tween<Offset>(
+                                                    begin: Offset(1, 0),
+                                                    end: Offset.zero,
+                                                  ).animate(_animationController),
+                                                  child: FadeTransition(
+                                                    opacity: _animationController,
+                                                    child: Container(
+                                                      width: 129,
+                                                      height: 26,
+                                                      alignment: Alignment.center,
                                                       decoration: BoxDecoration(
-                                                          color: Colors.grey.shade200,
-                                                          borderRadius: BorderRadius.circular(10)
-                                                      ),
-                                                      child: DropdownButtonHideUnderline(
-                                                        child:DropdownButton<DhiraaguPackagesClass>(
-                                                          value: _selectedDhiraaguPackage,
-                                                          onChanged: (DhiraaguPackagesClass? newValue) {
-                                                            setState(() {
-                                                              _selectedDhiraaguPackage = newValue;
-                                                              print(newValue?.id);
-                                                            });
-                                                          },
-                                                          items: dhiraaguPackages.map((DhiraaguPackagesClass dhiraaguPackage) {
-                                                            return new DropdownMenuItem<DhiraaguPackagesClass>(
-                                                              value: dhiraaguPackage,
-                                                              child: Container(
-                                                                  width:double.infinity,
-                                                                  alignment:Alignment.centerLeft,
-                                                                  padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
-                                                                  child:Text(
-                                                                    dhiraaguPackage.name,
-                                                                    style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                                                  ),
-                                                                  decoration:BoxDecoration(
-                                                                      border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
-                                                                  )
-                                                              ),
-                                                            );
-                                                          }).toList(),
-                                                          isExpanded: true,
-                                                          icon: Align(
-                                                            alignment: Alignment(0.0,-0.50),
-                                                            child: GradientIcon(
-                                                              FontAwesomeIcons.sortDown,
-                                                              22.0,
-                                                              LinearGradient(
-                                                                colors: <Color>[
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                begin: Alignment.topLeft,
-                                                                end: Alignment.bottomRight,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          hint:Text(AppLocalizations.of(context)!.selectAPackage),
-                                                          disabledHint:Text(AppLocalizations.of(context)!.disabled),
-                                                          iconDisabledColor: Colors.red,
-                                                          iconEnabledColor: Colors.green,
-                                                          style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
-                                                          elevation: 2,
+                                                        gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                        borderRadius: BorderRadius.only(
+                                                          bottomRight: Radius.circular(10),
+                                                          bottomLeft: Radius.circular(10),
                                                         ),
-                                                      )
+
+                                                      ),
+                                                      child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -1338,7 +1341,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                       width: 172,
                                                       alignment: Alignment.centerLeft,
                                                       child: CheckboxListTile(
-                                                        title: Text('Keep info saved', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),),
+                                                        title: Text(AppLocalizations.of(context)!.keepInfoSaved, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),),
                                                         value: _checked,
                                                         controlAffinity: ListTileControlAffinity.leading,
                                                         activeColor: Color(0xff29bf9a),
@@ -1365,7 +1368,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                 child: FadeTransition(
                                                   opacity: _animationController,
                                                   child: ButtonWidget(
-                                                    buttonText: AppLocalizations.of(context)!.sendReload,
+                                                    buttonText: AppLocalizations.of(context)!.payBill,
                                                   ),
                                                 ),
                                               ),
@@ -1622,7 +1625,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                     ).animate(_animationController),
                                                     child: FadeTransition(
                                                       opacity: _animationController,
-                                                      child: Text(AppLocalizations.of(context)!.serviceDetailsViewOoredooFirstText,
+                                                      child: Text(AppLocalizations.of(context)!.ooredooBillPayFirstText,
                                                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                                                     ),
                                                   )
@@ -1630,6 +1633,42 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                             ),
                                             SizedBox(
                                               height: 20,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                              child: SlideTransition(
+                                                position: Tween<Offset>(
+                                                  begin: Offset(-1, 0),
+                                                  end: Offset.zero,
+                                                ).animate(_animationController),
+                                                child: FadeTransition(
+                                                  opacity: _animationController,
+                                                  child: Container(
+                                                    height: 46,
+                                                    width: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                    ),
+                                                    child: TextButton(
+                                                      style: TextButton.styleFrom(
+                                                        primary: Colors.white,
+                                                      ),
+                                                      onPressed: () { },
+                                                      child: Text(
+                                                        AppLocalizations.of(context)!.pickContact,
+                                                        style: TextStyle(
+                                                            fontSize: 14,
+                                                            fontWeight: FontWeight.w400
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 7,
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -1642,7 +1681,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                     child: FadeTransition(
                                                         opacity: _animationController,
                                                         child: Text(
-                                                          AppLocalizations.of(context)!.selectPackage,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
+                                                          AppLocalizations.of(context)!.serviceNumber,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
                                                     ),
                                                   )
                                               ),
@@ -1659,63 +1698,37 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                 ).animate(_animationController),
                                                 child: FadeTransition(
                                                   opacity: _animationController,
-                                                  child: Container(
-                                                      padding: EdgeInsets.symmetric(horizontal: 20),
-                                                      height: 46,
+                                                  child: TextfieldTextWidget(
+                                                    hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: Alignment.centerRight,
+                                              child: Padding(
+                                                padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                                                child: SlideTransition(
+                                                  position: Tween<Offset>(
+                                                    begin: Offset(1, 0),
+                                                    end: Offset.zero,
+                                                  ).animate(_animationController),
+                                                  child: FadeTransition(
+                                                    opacity: _animationController,
+                                                    child: Container(
+                                                      width: 129,
+                                                      height: 26,
+                                                      alignment: Alignment.center,
                                                       decoration: BoxDecoration(
-                                                          color: Colors.grey.shade200,
-                                                          borderRadius: BorderRadius.circular(10)
-                                                      ),
-                                                      child: DropdownButtonHideUnderline(
-                                                        child:DropdownButton<OoredooPackagesClass>(
-                                                          value: _selectedOoredooPackage,
-                                                          onChanged: (OoredooPackagesClass? newValue) {
-                                                            setState(() {
-                                                              _selectedOoredooPackage = newValue;
-                                                              print(newValue?.id);
-                                                            });
-                                                          },
-                                                          items: ooredooPackages.map((OoredooPackagesClass ooredooPackage) {
-                                                            return new DropdownMenuItem<OoredooPackagesClass>(
-                                                              value: ooredooPackage,
-                                                              child: Container(
-                                                                  width:double.infinity,
-                                                                  alignment:Alignment.centerLeft,
-                                                                  padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
-                                                                  child:Text(
-                                                                    ooredooPackage.name,
-                                                                    style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                                                  ),
-                                                                  decoration:BoxDecoration(
-                                                                      border:Border(bottom:BorderSide(color:Colors.grey.shade300,width:1))
-                                                                  )
-                                                              ),
-                                                            );
-                                                          }).toList(),
-                                                          isExpanded: true,
-                                                          icon: Align(
-                                                            alignment: Alignment(0.0,-0.50),
-                                                            child: GradientIcon(
-                                                              FontAwesomeIcons.sortDown,
-                                                              22.0,
-                                                              LinearGradient(
-                                                                colors: <Color>[
-                                                                  Color(0xff3AC170),
-                                                                  Color(0xff25BFA3),
-                                                                ],
-                                                                begin: Alignment.topLeft,
-                                                                end: Alignment.bottomRight,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          hint:Text(AppLocalizations.of(context)!.selectAPackage),
-                                                          disabledHint:Text(AppLocalizations.of(context)!.disabled),
-                                                          iconDisabledColor: Colors.red,
-                                                          iconEnabledColor: Colors.green,
-                                                          style: TextStyle(color: Colors.black, fontSize: 14,fontWeight: FontWeight.w400),
-                                                          elevation: 2,
+                                                        gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                                        borderRadius: BorderRadius.only(
+                                                          bottomRight: Radius.circular(10),
+                                                          bottomLeft: Radius.circular(10),
                                                         ),
-                                                      )
+
+                                                      ),
+                                                      child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -1774,7 +1787,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                       width: 172,
                                                       alignment: Alignment.centerLeft,
                                                       child: CheckboxListTile(
-                                                        title: Text('Keep info saved', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),),
+                                                        title: Text(AppLocalizations.of(context)!.keepInfoSaved, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),),
                                                         value: _checked,
                                                         controlAffinity: ListTileControlAffinity.leading,
                                                         activeColor: Color(0xff29bf9a),
@@ -1801,7 +1814,7 @@ class _ServiceDetailsViewState extends State<ServiceDetailsView> with SingleTick
                                                 child: FadeTransition(
                                                   opacity: _animationController,
                                                   child: ButtonWidget(
-                                                    buttonText: AppLocalizations.of(context)!.sendRaastas,
+                                                    buttonText: AppLocalizations.of(context)!.payBill,
                                                   ),
                                                 ),
                                               ),

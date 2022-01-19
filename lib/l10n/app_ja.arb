@@ -111,8 +111,8 @@
 
   "transactionHistory": "取引履歴",
 
-  "serviceDetailsViewDhiraaguFirstText": "リロードを送信するdhiraagu番号と金額を入力します。",
-  "serviceDetailsViewOoredooFirstText": "ラースタズを送信するOoredoo番号と金額を入力します。",
+  "packageRechargeViewDhiraaguFirstText": "dhiraagu番号を入力し、再充電するパッケージを選択します",
+  "packageRechargeViewOoredooFirstText": "オレドー番号を入力し、充電するパッケージを選択してください",
   "dhiraagu": "Dhiraagu",
   "ooredoo": "Ooredoo",
   "sendReload": "リロードを送信",
@@ -138,5 +138,19 @@
   "serviceNumber": "サービス番号",
   "service": "サービス",
   "number": "番号",
-  "day": "日"
+  "day": "日",
+
+  "reloadFirstText": "リロードを送信するdhiraagu番号と金額を入力します。",
+  "raastasFirstText": "ラースタズを送信するOoredoo番号と金額を入力します。",
+
+  "dhiraaguBillPayFirstText": "Dhiraaguのサービス番号とお支払い金額を入力してください。",
+  "ooredooBillPayFirstText": "Ooredooのサービス番号と支払い金額を入力します。",
+  "payBill": "請求書を支払う",
+  "checkBalance": "バランスチェック",
+
+  "buyPackage": "パッケージを購入する",
+
+  "dhiraaguCashInFirstText": "Dhiraaguの番号と金額を入力してDhiraaguPayの現金を支払います。",
+  "ooredooCashInFirstText": "M-faisaaの現金で支払うOoredoo番号と金額を入力します。",
+  "cashIn": "現金で"
 }

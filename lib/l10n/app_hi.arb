@@ -110,8 +110,8 @@
 
     "transactionHistory": "ट्रांजेक्शन इतिहास",
 
-    "serviceDetailsViewDhiraaguFirstText": "पुनः लोड भेजने के लिए धीरागु संख्या और राशि दर्ज करें।",
-    "serviceDetailsViewOoredooFirstText": "रास्ता भेजने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
+    "packageRechargeViewDhiraaguFirstText": "धीरागु नंबर दर्ज करें और रिचार्ज करने के लिए एक पैकेज चुनें",
+    "packageRechargeViewOoredooFirstText": "ooredoo नंबर दर्ज करें और रिचार्ज करने के लिए एक पैकेज चुनें",
     "dhiraagu": "Dhiraagu",
     "ooredoo": "Ooredoo",
     "sendReload": "Send Reload",
@@ -137,5 +137,19 @@
     "serviceNumber": "सेवा संख्या",
     "service": "सेवा",
     "number": "संख्या",
-    "day": "दिन"
+    "day": "दिन",
+
+    "reloadFirstText": "पुनः लोड भेजने के लिए धीरागु संख्या और राशि दर्ज करें।",
+    "raastasFirstText": "रास्ता भेजने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
+
+    "dhiraaguBillPayFirstText": "धीरागु सेवा संख्या दर्ज करें और बिल का भुगतान करने के लिए राशि दर्ज करें।",
+    "ooredooBillPayFirstText": "ऊरेडू सेवा संख्या और बिल का भुगतान करने की राशि दर्ज करें।",
+    "payBill": "पैसा भरो",
+    "checkBalance": "बकाया जाँचो",
+
+    "buyPackage": "पैकेज खरीदें",
+
+    "dhiraaguCashInFirstText": "धीरागु का भुगतान करने के लिए धीरागु नंबर और राशि दर्ज करें नकद भुगतान करें।",
+    "ooredooCashInFirstText": "एम-फैसा कैश इन का भुगतान करने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
+    "cashIn": "नकद में"
 }

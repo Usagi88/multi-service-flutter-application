@@ -110,8 +110,8 @@
 
   "transactionHistory": "লেনদেনের ইতিহাস",
 
-  "serviceDetailsViewDhiraaguFirstText": "রিলোড পাঠাতে ধীরাগু নম্বর এবং পরিমাণ লিখুন।",
-  "serviceDetailsViewOoredooFirstText": "রাসতা পাঠাতে Ooredoo নম্বর এবং পরিমাণ লিখুন।",
+  "packageRechargeViewDhiraaguFirstText": "রিলোড পাঠাতে ধীরাগু নম্বর এবং পরিমাণ লিখুন।",
+  "packageRechargeViewOoredooFirstText": "রাসতা পাঠাতে Ooredoo নম্বর এবং পরিমাণ লিখুন।",
   "dhiraagu": "Dhiraagu",
   "ooredoo": "Ooredoo",
   "sendReload": "রিলোড পাঠান",
@@ -137,5 +137,20 @@
   "serviceNumber": "পরিষেবা নম্বর",
   "service": "সেবা",
   "number": "সংখ্যা",
-  "day": "দিন"
+  "day": "দিন",
+
+  "reloadFirstText": "রিলোড পাঠাতে ধীরাগু নম্বর এবং পরিমাণ লিখুন।",
+  "raastasFirstText": "রাসতা পাঠাতে Ooredoo নম্বর এবং পরিমাণ লিখুন।",
+
+  "dhiraaguBillPayFirstText": "ধীরাগু পরিষেবা নম্বর এবং বিল পরিশোধের পরিমাণ লিখুন।",
+  "ooredooBillPayFirstText": "Ooredoo পরিষেবা নম্বর এবং বিল পরিশোধের পরিমাণ লিখুন।",
+  "payBill": "বিল পরিশোধ করুন",
+  "checkBalance": "ব্যালেন্স চেক করুন",
+
+  "buyPackage": "প্যাকেজ কিনুন",
+
+  "dhiraaguCashInFirstText": "ধীরাগু নম্বর এবং পরিমাণ লিখুন ধীরাগু পে ক্যাশ ইন করুন।",
+  "ooredooCashInFirstText": "M-faisaa নগদ অর্থ প্রদান করতে Ooredoo নম্বর এবং পরিমাণ লিখুন।",
+  "cashIn": "মজুদ করা"
+
 }

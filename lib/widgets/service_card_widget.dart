@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/provider/locale_provider.dart';
-import 'package:fpapp/views/service_details_view.dart';
+import 'package:fpapp/views/package_recharge_view.dart';
 import 'package:provider/provider.dart';
 
 
@@ -25,6 +25,7 @@ class ServiceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var language = Provider.of<LocaleProvider>(context);
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -44,7 +45,7 @@ class ServiceCard extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ServiceDetailsView(dhiraagu: dhiraagu, ooredoo: ooredoo),
+                      builder: (context) => PackageRechargeView(dhiraagu: dhiraagu, ooredoo: ooredoo),
                     )
                 ) : (route != null) ? Navigator.of(context).pushNamed(route!) : null;
               },
@@ -175,6 +176,7 @@ class ServiceCard extends StatelessWidget {
         );
       }
     }
+
     if(animationController != null) {
       return Expanded(
         child: ScaleTransition(
@@ -185,7 +187,7 @@ class ServiceCard extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ServiceDetailsView(dhiraagu: dhiraagu, ooredoo: ooredoo),
+                    builder: (context) => PackageRechargeView(dhiraagu: dhiraagu, ooredoo: ooredoo),
                   )
               ) : (route != null) ? Navigator.of(context).pushNamed(route!) : null;
             },

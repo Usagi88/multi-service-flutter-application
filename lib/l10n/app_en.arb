@@ -149,8 +149,8 @@
 
     "transactionHistory": "Transaction History",
 
-    "serviceDetailsViewDhiraaguFirstText": "Enter the dhiraagu number and amount to send reload.",
-    "serviceDetailsViewOoredooFirstText": "Enter the Ooredoo number and amount to send raastas.",
+    "packageRechargeViewDhiraaguFirstText": "Enter the dhiraagu number and select a package to recharge",
+    "packageRechargeViewOoredooFirstText": "Enter the ooredoo number and select a package to recharge",
     "dhiraagu": "Dhiraagu",
     "ooredoo": "Ooredoo",
     "sendReload": "Send Reload",
@@ -176,5 +176,20 @@
     "serviceNumber": "Service number",
     "service": "Service",
     "number": "Number",
-    "day": "Day"
+    "day": "Day",
+
+
+    "reloadFirstText": "Enter the Dhiraagu number and amount to send reload.",
+    "raastasFirstText": "Enter the Ooredoo number and amount to send raastas.",
+
+    "dhiraaguBillPayFirstText": "Enter the Dhiraagu service number and amount to pay bill.",
+    "ooredooBillPayFirstText": "Enter the Ooredoo service number and amount to pay bill.",
+    "payBill": "Pay bill",
+    "checkBalance": "Check Balance",
+
+    "buyPackage": "Buy Package",
+
+    "dhiraaguCashInFirstText": "Enter the Dhiraagu number and amount to pay Dhiraagu Pay cash in.",
+    "ooredooCashInFirstText": "Enter the Ooredoo number and amount to pay M-faisaa cash in.",
+    "cashIn": "Cash In"
 }
