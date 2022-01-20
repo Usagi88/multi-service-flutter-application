@@ -30,6 +30,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
   bool? _checked = false;
+  bool _isVisible = false;
 
   @override
   void initState() {
@@ -47,6 +48,12 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
   void dispose() {
     _animationController!.dispose();
     super.dispose();
+  }
+
+  _toggleVisibility() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
   }
 
   @override
@@ -293,6 +300,51 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                   ),
                                                 ),
                                               ),
+                                              Visibility(
+                                                  visible: _isVisible,
+                                                  child: Column(
+                                                    children: [
+                                                      SizedBox(
+                                                        height: 20,
+                                                      ),
+                                                      Align(
+                                                          alignment: Alignment.centerRight,
+                                                          child: Padding(
+                                                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                            child: SlideTransition(
+                                                              position: Tween<Offset>(
+                                                                begin: Offset(1, 0),
+                                                                end: Offset.zero,
+                                                              ).animate(_animationController),
+                                                              child: FadeTransition(
+                                                                  opacity: _animationController,
+                                                                  child: Text(AppLocalizations.of(context)!.nameToSave, style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600)
+                                                                  )
+                                                              ),
+                                                            ),
+                                                          )
+                                                      ),
+                                                      SizedBox(
+                                                        height: 6,
+                                                      ),
+                                                      Padding(
+                                                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                        child: SlideTransition(
+                                                          position: Tween<Offset>(
+                                                            begin: Offset(1, 0),
+                                                            end: Offset.zero,
+                                                          ).animate(_animationController),
+                                                          child: FadeTransition(
+                                                            opacity: _animationController,
+                                                            child: TextfieldTextWidget(
+                                                                hintText: AppLocalizations.of(context)!.nameToSave
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                              ),
                                               Align(
                                                 alignment: Alignment.centerRight,
                                                 child: Padding(
@@ -316,6 +368,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                           onChanged: (bool? newValue) {
                                                             setState(() {
                                                               _checked = newValue;
+                                                              _toggleVisibility();
                                                             });
                                                           },
                                                         ),
@@ -709,6 +762,51 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                   ),
                                                 ),
                                               ),
+                                              Visibility(
+                                                  visible: _isVisible,
+                                                  child: Column(
+                                                    children: [
+                                                      SizedBox(
+                                                        height: 20,
+                                                      ),
+                                                      Align(
+                                                          alignment: Alignment.centerRight,
+                                                          child: Padding(
+                                                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                            child: SlideTransition(
+                                                              position: Tween<Offset>(
+                                                                begin: Offset(1, 0),
+                                                                end: Offset.zero,
+                                                              ).animate(_animationController),
+                                                              child: FadeTransition(
+                                                                  opacity: _animationController,
+                                                                  child: Text(AppLocalizations.of(context)!.nameToSave, style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600)
+                                                                  )
+                                                              ),
+                                                            ),
+                                                          )
+                                                      ),
+                                                      SizedBox(
+                                                        height: 6,
+                                                      ),
+                                                      Padding(
+                                                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                        child: SlideTransition(
+                                                          position: Tween<Offset>(
+                                                            begin: Offset(1, 0),
+                                                            end: Offset.zero,
+                                                          ).animate(_animationController),
+                                                          child: FadeTransition(
+                                                            opacity: _animationController,
+                                                            child: TextfieldTextWidget(
+                                                                hintText: AppLocalizations.of(context)!.nameToSave
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                              ),
                                               Align(
                                                 alignment: Alignment.centerRight,
                                                 child: Padding(
@@ -732,7 +830,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                           onChanged: (bool? newValue) {
                                                             setState(() {
                                                               _checked = newValue;
-                                                              print(_checked);
+                                                              _toggleVisibility();
                                                             });
                                                           },
                                                         ),
@@ -1239,6 +1337,51 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                 ),
                                               ),
                                             ),
+                                            Visibility(
+                                                visible: _isVisible,
+                                                child: Column(
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 20,
+                                                    ),
+                                                    Align(
+                                                        alignment: Alignment.centerLeft,
+                                                        child: Padding(
+                                                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                          child: SlideTransition(
+                                                            position: Tween<Offset>(
+                                                              begin: Offset(-1, 0),
+                                                              end: Offset.zero,
+                                                            ).animate(_animationController),
+                                                            child: FadeTransition(
+                                                                opacity: _animationController,
+                                                                child: Text(AppLocalizations.of(context)!.nameToSave, style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600)
+                                                                )
+                                                            ),
+                                                          ),
+                                                        )
+                                                    ),
+                                                    SizedBox(
+                                                      height: 6,
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                      child: SlideTransition(
+                                                        position: Tween<Offset>(
+                                                          begin: Offset(-1, 0),
+                                                          end: Offset.zero,
+                                                        ).animate(_animationController),
+                                                        child: FadeTransition(
+                                                          opacity: _animationController,
+                                                          child: TextfieldTextWidget(
+                                                              hintText: AppLocalizations.of(context)!.nameToSave
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
+                                            ),
                                             Align(
                                               alignment: Alignment.centerLeft,
                                               child: Padding(
@@ -1262,7 +1405,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                         onChanged: (bool? newValue) {
                                                           setState(() {
                                                             _checked = newValue;
-                                                            print(_checked);
+                                                            _toggleVisibility();
                                                           });
                                                         },
                                                       ),
@@ -1656,6 +1799,51 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                 ),
                                               ),
                                             ),
+                                            Visibility(
+                                                visible: _isVisible,
+                                                child: Column(
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 20,
+                                                    ),
+                                                    Align(
+                                                        alignment: Alignment.centerLeft,
+                                                        child: Padding(
+                                                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                          child: SlideTransition(
+                                                            position: Tween<Offset>(
+                                                              begin: Offset(-1, 0),
+                                                              end: Offset.zero,
+                                                            ).animate(_animationController),
+                                                            child: FadeTransition(
+                                                                opacity: _animationController,
+                                                                child: Text(AppLocalizations.of(context)!.nameToSave, style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600)
+                                                                )
+                                                            ),
+                                                          ),
+                                                        )
+                                                    ),
+                                                    SizedBox(
+                                                      height: 6,
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                                      child: SlideTransition(
+                                                        position: Tween<Offset>(
+                                                          begin: Offset(-1, 0),
+                                                          end: Offset.zero,
+                                                        ).animate(_animationController),
+                                                        child: FadeTransition(
+                                                          opacity: _animationController,
+                                                          child: TextfieldTextWidget(
+                                                              hintText: AppLocalizations.of(context)!.nameToSave
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
+                                            ),
                                             Align(
                                               alignment: Alignment.centerLeft,
                                               child: Padding(
@@ -1679,7 +1867,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                         onChanged: (bool? newValue) {
                                                           setState(() {
                                                             _checked = newValue;
-                                                            print(_checked);
+                                                            _toggleVisibility();
                                                           });
                                                         },
                                                       ),

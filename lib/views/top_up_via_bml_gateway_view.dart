@@ -335,6 +335,7 @@ Scaffold _portraitModeOnly(BuildContext context,  _animationController, _tween, 
         )
     );
   }
+
   return Scaffold (
     appBar: NavbarWithBackButton(),
     drawer: SideMenu(),

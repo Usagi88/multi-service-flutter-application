@@ -31,7 +31,38 @@ class GiftCardClass {
 class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderStateMixin{
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
+  bool _isVisibleItunes = true;
+  bool _isVisiblePlaystation = true;
+  bool _isVisibleNetflix = true;
 
+  _setVisibilityAll() {
+    setState(() {
+      _isVisibleItunes = true;
+      _isVisiblePlaystation = true;
+      _isVisibleNetflix = true;
+    });
+  }
+  _setVisibilityItunes() {
+    setState(() {
+      _isVisibleItunes = true;
+      _isVisiblePlaystation = false;
+      _isVisibleNetflix = false;
+    });
+  }
+  _setVisibilityPlaystation() {
+    setState(() {
+      _isVisibleItunes = false;
+      _isVisiblePlaystation = true;
+      _isVisibleNetflix = false;
+    });
+  }
+  _setVisibilityNetflix() {
+    setState(() {
+      _isVisibleItunes = false;
+      _isVisiblePlaystation = false;
+      _isVisibleNetflix = true;
+    });
+  }
   GiftCardClass? _selectedGiftCard;
   List<GiftCardClass> giftCards = <GiftCardClass>[
     const GiftCardClass(1,'All'),
@@ -122,6 +153,15 @@ class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderSt
                                     onChanged: (GiftCardClass? newValue) {
                                       setState(() {
                                         _selectedGiftCard = newValue;
+                                        if(newValue?.name == 'All'){
+                                          _setVisibilityAll();
+                                        }else if(newValue?.name == 'Itunes'){
+                                          _setVisibilityItunes();
+                                        }else if(newValue?.name == 'Playstation'){
+                                          _setVisibilityPlaystation();
+                                        }else if(newValue?.name == 'Netflix'){
+                                          _setVisibilityNetflix();
+                                        }
                                       });
                                     },
                                     items: giftCards.map((GiftCardClass giftcard) {
@@ -172,30 +212,52 @@ class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderSt
                       SizedBox(
                         height: 10,
                       ),
-                      GiftCardWidget(
-                        itunes: true,
-                        psn: false,
-                        netflix: false,
+                      Visibility(
+                          visible: _isVisibleItunes,
+                          child: Column(
+                            children: [
+                              GiftCardWidget(
+                                itunes: true,
+                                psn: false,
+                                netflix: false,
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                            ],
+                          )
                       ),
-                      SizedBox(
-                        height: 30,
+                      Visibility(
+                          visible: _isVisiblePlaystation,
+                          child: Column(
+                            children: [
+                              GiftCardWidget(
+                                itunes: false,
+                                psn: true,
+                                netflix: false,
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                            ],
+                          )
                       ),
-                      GiftCardWidget(
-                        itunes: false,
-                        psn: true,
-                        netflix: false,
+                      Visibility(
+                          visible: _isVisibleNetflix,
+                          child: Column(
+                            children: [
+                              GiftCardWidget(
+                                itunes: false,
+                                psn: false,
+                                netflix: true,
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                            ],
+                          )
                       ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      GiftCardWidget(
-                        itunes: false,
-                        psn: false,
-                        netflix: true,
-                      ),
-                      SizedBox(
-                        height: 40,
-                      ),
+
                     ],
                   )
 
@@ -254,7 +316,15 @@ class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderSt
                                   onChanged: (GiftCardClass? newValue) {
                                     setState(() {
                                       _selectedGiftCard = newValue;
-                                      print(newValue?.id);
+                                      if(newValue?.name == 'All'){
+                                        _setVisibilityAll();
+                                      }else if(newValue?.name == 'Itunes'){
+                                        _setVisibilityItunes();
+                                      }else if(newValue?.name == 'Playstation'){
+                                        _setVisibilityPlaystation();
+                                      }else if(newValue?.name == 'Netflix'){
+                                        _setVisibilityNetflix();
+                                      }
                                     });
                                   },
                                   items: giftCards.map((GiftCardClass giftcard) {
@@ -305,29 +375,50 @@ class _GiftCardViewState extends State<GiftCardView> with SingleTickerProviderSt
                     SizedBox(
                       height: 10,
                     ),
-                    GiftCardWidget(
-                      itunes: true,
-                      psn: false,
-                      netflix: false,
+                    Visibility(
+                      visible: _isVisibleItunes,
+                      child: Column(
+                        children: [
+                          GiftCardWidget(
+                            itunes: true,
+                            psn: false,
+                            netflix: false,
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                        ],
+                      )
                     ),
-                    SizedBox(
-                      height: 30,
+                    Visibility(
+                        visible: _isVisiblePlaystation,
+                        child: Column(
+                          children: [
+                            GiftCardWidget(
+                              itunes: false,
+                              psn: true,
+                              netflix: false,
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                          ],
+                        )
                     ),
-                    GiftCardWidget(
-                      itunes: false,
-                      psn: true,
-                      netflix: false,
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    GiftCardWidget(
-                      itunes: false,
-                      psn: false,
-                      netflix: true,
-                    ),
-                    SizedBox(
-                      height: 40,
+                    Visibility(
+                        visible: _isVisibleNetflix,
+                        child: Column(
+                          children: [
+                            GiftCardWidget(
+                              itunes: false,
+                              psn: false,
+                              netflix: true,
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                          ],
+                        )
                     ),
                   ],
                 )

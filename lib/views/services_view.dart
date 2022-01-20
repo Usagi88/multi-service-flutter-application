@@ -177,7 +177,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                     },
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -257,7 +257,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                     },
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -347,7 +347,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                     },
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -427,7 +427,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                     },
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -517,7 +517,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                     },
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -597,7 +597,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                     },
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -672,22 +672,15 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                               SizedBox(
                                 width: 20,
                               ),
-                              //DHIRAAGU CASH IN
+                              //ROL BILL PAY
                               Expanded(
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => CashInView(dhiraagu: true, ooredoo: false),
-                                          )
-                                      );
-                                    },
+                                    onTap: () => Navigator.of(context).pushNamed('/rol-bill-pay'),
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -712,7 +705,482 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
-                                                    'assets/images/dhiraagu-logo.png'),
+                                                    'assets/images/icon/ROL.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'Raajje Online Bill Pay',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //GIFT CARDS
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/gift-card'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/giftcard.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'Gift Cards',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //PUBG UC
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/pubg'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/pubg.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'PUBG UC',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //MWSC BILL PAY
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/mwsc-bill-pay'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/mwsc.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'MWSC Bill Pay',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //MEDIANET BILL PAY
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/medianet-bill-pay'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/medianet.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'MediaNet Bill Pay',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //MALDIVE GAS
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/maldive-gas'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/gas.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'Maldive Gas',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //DHIRAAGU CASH IN
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => CashInView(dhiraagu: true, ooredoo: false),
+                                          )
+                                      );
+                                    },
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/dhp.png'),
                                                 fit: BoxFit.fill,
                                               ),
                                             ),
@@ -767,7 +1235,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                     },
                                     child: Container(
                                       //width: 166,
-                                      //padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
                                       height: 84,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -792,7 +1260,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
-                                                    'assets/images/ooredoo-logo.png'),
+                                                    'assets/images/icon/mfaisaa.png'),
                                                 fit: BoxFit.fill,
                                               ),
                                             ),
@@ -842,18 +1310,238 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                               SizedBox(
                                 width: 20,
                               ),
-                              ServiceCard(
-                                serviceCardImage: 'assets/images/dhiraagu-logo.png',
-                                serviceCardText: 'Dhiraagu Reload',
-                                animationController: _animationController,
+                              //SCHEDULED PAYMENTS
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/scheduled-payments'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/schedule.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'Scheduled Payments',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                               SizedBox(
                                 width: 20,
                               ),
-                              ServiceCard(
-                                serviceCardImage: 'assets/images/ooredoo-logo.png',
-                                serviceCardText: 'Ooredoo Raastas',
-                                animationController: _animationController,
+                              //SEND SMS
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/send-sms'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/sms.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'Send SMS',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //DONATE
+                              Expanded(
+                                child: ScaleTransition(
+                                  scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.of(context).pushNamed('/donate'),
+                                    child: Container(
+                                      //width: 166,
+                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      height: 84,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/icon/donate.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                            child: VerticalDivider(
+                                              thickness: 1,
+                                              color: Colors.grey.shade400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'Donate',
+                                              style: TextStyle(
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  color: Colors.grey.shade600,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              //SEND SMS
+                              Expanded(
+                                child: Container()
                               ),
                               SizedBox(
                                 width: 20,

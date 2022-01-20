@@ -5,14 +5,17 @@ import 'package:fpapp/views/about_view.dart';
 import 'package:fpapp/views/bill_pay_view.dart';
 import 'package:fpapp/views/cash_in_view.dart';
 import 'package:fpapp/views/contact_us_view.dart';
+import 'package:fpapp/views/donate_view.dart';
 import 'package:fpapp/views/fahisend_view.dart';
 import 'package:fpapp/views/gift_card_view.dart';
 import 'package:fpapp/views/home_view.dart';
 import 'package:fpapp/views/invite_friends_view.dart';
 import 'package:fpapp/views/live_chat_view.dart';
+import 'package:fpapp/views/maldive_gas_view.dart';
 import 'package:fpapp/views/profile_view.dart';
 import 'package:fpapp/views/register_view.dart';
 import 'package:fpapp/views/reset_password_view.dart';
+import 'package:fpapp/views/rol_bill_pay_view.dart';
 import 'package:fpapp/views/scan_qr_code_view.dart';
 import 'package:fpapp/views/schedule_payments_view.dart';
 import 'package:fpapp/views/send_sms_view.dart';
@@ -30,6 +33,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'classes/dv_global_localizations.dart';
 import 'classes/dv_intl.dart';
 import 'views/add_cash_view.dart';
+import 'views/medianet_bill_pay_view.dart';
+import 'views/mwsc_bill_pay.dart';
+import 'views/pubg_view.dart';
 import 'views/raastas_reload_view.dart';
 
 
@@ -88,8 +94,14 @@ class MyApp extends StatelessWidget {
                 '/raastas-reload': (BuildContext context) => new RaastasReloadView(),
                 '/bill-pay': (BuildContext context) => new BillPayView(),
                 '/cash-in': (BuildContext context) => new CashInView(),
+                '/rol-bill-pay': (BuildContext context) => new RolBillPayView(),
+                '/pubg': (BuildContext context) => new PubGView(),
+                '/mwsc-bill-pay': (BuildContext context) => new MwscBillPayView(),
+                '/medianet-bill-pay': (BuildContext context) => new MedianetBillPayView(),
+                '/maldive-gas': (BuildContext context) => new MaldiveGasView(),
+                '/donate': (BuildContext context) => new DonateView(),
               },
-              home: CashInView(),
+              home: ServicesView(),
             );
           }
       ),

@@ -191,5 +191,28 @@
 
     "dhiraaguCashInFirstText": "Enter the Dhiraagu number and amount to pay Dhiraagu Pay cash in.",
     "ooredooCashInFirstText": "Enter the Ooredoo number and amount to pay M-faisaa cash in.",
-    "cashIn": "Cash In"
+    "cashIn": "Cash In",
+
+    "rolPayBillFirstText" : "Enter the ROL number and select bill to pay",
+    "accountNumber" : "Account Number",
+    "nameToSave": "Name to save",
+
+    "pubgFirstText" : "Enter the player ID and select a package to buy PUBG UC.",
+    "playerID": "Player ID",
+    "pubgSecondText": "UC will be delivered within 5 to 30 minutes. This transaction is non-refundable",
+
+    "mwscPayBillFirstText" : "Enter MWSC account number, meter number and amount to pay bill.",
+    "meterNumber": "Meter Number",
+
+    "medianetPayBillFirstText" : "Enter MediaNet account number, owner's ID number and select a package to pay bill.",
+    "ownerIDCardNum": "Owner's ID Card number",
+    "medianetPayBillSecondText" : "Medianet payments are NOT available for Vilimale', Hulhumale' phase 2 and multiscreen users.",
+
+    "maldiveGasFirstText" : "Enter Maldive Gas account number. NID number and select a package to order Gas",
+    "orderGas": "Order Gas",
+
+    "donateFirstText" : "Select the recipent to donate",
+    "selectADonee": "Select a donee",
+    "sendDonation": "Send Donation",
+    "donateSecondText" : "Note: Call 4007004 if you would like to receive donations through FahiPay."
 }

@@ -176,15 +176,23 @@ class GiftCardWidget extends StatelessWidget {
               left: MediaQuery.of(context).size.width >= 364 ? 190 : MediaQuery.of(context).size.width * 0.60,
               top: 165,
               child: Container(
-                width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
                 height: 46,
+                width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                 ),
-                child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    minimumSize: Size(MediaQuery.of(context).size.width > 364 ? 133 : 90, 46),
+                  ),
+                  onPressed: () { },
+                  child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+                ),
               ),
+
             ),
           ],
         );
@@ -333,15 +341,23 @@ class GiftCardWidget extends StatelessWidget {
               left: MediaQuery.of(context).size.width >= 364 ? 190 : MediaQuery.of(context).size.width * 0.60,
               top: 165,
               child: Container(
-                width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
                 height: 46,
+                width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                 ),
-                child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    minimumSize: Size(MediaQuery.of(context).size.width > 364 ? 133 : 90, 46),
+                  ),
+                  onPressed: () { },
+                  child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+                ),
               ),
+
             ),
           ],
         );
@@ -425,15 +441,23 @@ class GiftCardWidget extends StatelessWidget {
               left: MediaQuery.of(context).size.width >= 364 ? 190 : MediaQuery.of(context).size.width * 0.60,
               top: 165,
               child: Container(
-                width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
                 height: 46,
+                width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                 ),
-                child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    minimumSize: Size(MediaQuery.of(context).size.width > 364 ? 133 : 90, 46),
+                  ),
+                  onPressed: () { },
+                  child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+                ),
               ),
+
             ),
           ],
         );
@@ -588,15 +612,23 @@ class GiftCardWidget extends StatelessWidget {
             left: MediaQuery.of(context).size.width >= 364 ? 190 : MediaQuery.of(context).size.width * 0.60,
             top: 165,
             child: Container(
-              width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
               height: 46,
+              width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
                 gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
               ),
-              child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white),),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  primary: Colors.white,
+                  minimumSize: Size(MediaQuery.of(context).size.width > 364 ? 133 : 90, 46),
+                ),
+                onPressed: () { },
+                child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+              ),
             ),
+
           ),
         ],
       );
@@ -745,15 +777,23 @@ class GiftCardWidget extends StatelessWidget {
             left: MediaQuery.of(context).size.width >= 364 ? 190 : MediaQuery.of(context).size.width * 0.60,
             top: 165,
             child: Container(
-              width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
               height: 46,
+              width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
                 gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
               ),
-              child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white),),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  primary: Colors.white,
+                  minimumSize: Size(MediaQuery.of(context).size.width > 364 ? 133 : 90, 46),
+                ),
+                onPressed: () { },
+                child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+              ),
             ),
+
           ),
         ],
       );
@@ -837,15 +877,23 @@ class GiftCardWidget extends StatelessWidget {
             left: MediaQuery.of(context).size.width >= 364 ? 190 : MediaQuery.of(context).size.width * 0.60,
             top: 165,
             child: Container(
-              width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
               height: 46,
+              width: MediaQuery.of(context).size.width > 364 ? 133 : 90,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
                 gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
               ),
-              child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white),),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  primary: Colors.white,
+                  minimumSize: Size(MediaQuery.of(context).size.width > 364 ? 133 : 90, 46),
+                ),
+                onPressed: () { },
+                child: Text('BUY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400, color: Colors.white, fontFamily: 'Roboto'),),
+              ),
             ),
+
           ),
         ],
       );

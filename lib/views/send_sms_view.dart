@@ -122,6 +122,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                 constraints: BoxConstraints(
                                     minHeight: 68
                                 ),
+                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -136,53 +137,6 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                 ),
                                 child: Row(
                                   children: [
-                                    Column(
-                                      children: [
-                                        Container(
-                                          alignment: Alignment.center,
-                                          width: 80,
-                                          padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                                          child: GradientText(
-                                              text: '2',
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 26 : 20,
-                                                  fontWeight: FontWeight.w700,
-                                                  fontFamily: 'Roboto'),
-                                              gradient: const LinearGradient(
-                                                  colors: [
-                                                    Color(0xff3AC170),
-                                                    Color(0xff25BFA3),
-                                                  ],
-                                                  transform: GradientRotation(math.pi * 0.50)
-                                              )
-                                          ),
-                                        ),
-                                        Container(
-                                          alignment: Alignment.center,
-                                          width: 80,
-                                          child: GradientText(
-                                              text: 'sms',
-                                              style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w700, fontFamily: 'Roboto'),
-                                              gradient: const LinearGradient(
-                                                  colors: [
-                                                    Color(0xff3AC170),
-                                                    Color(0xff25BFA3),
-                                                  ],
-                                                  transform: GradientRotation(math.pi * 0.50)
-                                              )
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      width: 1,
-                                      height: 44,
-                                      color: Colors.grey.shade300,
-                                    ),
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width > 350 ? 16.0 : 12.0,
-                                    ),
                                     Container(
                                       child: GradientIcon(
                                         FontAwesomeIcons.solidEnvelope,
@@ -198,7 +152,58 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                       ),
                                     ),
                                     SizedBox(
-                                      width: 8,
+                                      width: MediaQuery.of(context).size.width > 350 ? 16.0 : 12.0,
+                                    ),
+                                    Container(
+                                      width: 1,
+                                      height: 44,
+                                      color: Colors.grey.shade300,
+                                    ),
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width > 350 ? 6.0 : 2.0,
+                                    ),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            alignment: Alignment.center,
+                                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                            child: GradientText(
+                                                text: '2',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: MediaQuery.of(context).size.width > 350 ? 22 : 20,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontFamily: 'Roboto'
+                                                ),
+                                                gradient: const LinearGradient(
+                                                    colors: [
+                                                      Color(0xff3AC170),
+                                                      Color(0xff25BFA3),
+                                                    ],
+                                                    transform: GradientRotation(math.pi * 0.50)
+                                                )
+                                            ),
+                                          ),
+                                          Container(
+                                            alignment: Alignment.center,
+
+                                            child: GradientText(
+                                                text: 'sms',
+                                                style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w700,fontFamily: 'Roboto'),
+                                                gradient: const LinearGradient(
+                                                    colors: [
+                                                      Color(0xff3AC170),
+                                                      Color(0xff25BFA3),
+                                                    ],
+                                                    transform: GradientRotation(math.pi * 0.50)
+                                                )
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -530,6 +535,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                               constraints: BoxConstraints(
                                   minHeight: 68
                               ),
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -544,9 +550,6 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                               ),
                               child: Row(
                                 children: [
-                                  SizedBox(
-                                    width: 8,
-                                  ),
                                   Container(
                                     child: GradientIcon(
                                       FontAwesomeIcons.solidEnvelope,
@@ -569,44 +572,49 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                     height: 44,
                                     color: Colors.grey.shade300,
                                   ),
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width > 350 ? 6.0 : 2.0,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          alignment: Alignment.center,
+                                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                          child: GradientText(
+                                              text: '2',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 22 : 20,
+                                                  fontWeight: FontWeight.w700),
+                                              gradient: const LinearGradient(
+                                                  colors: [
+                                                    Color(0xff3AC170),
+                                                    Color(0xff25BFA3),
+                                                  ],
+                                                  transform: GradientRotation(math.pi * 0.50)
+                                              )
+                                          ),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.center,
 
-                                  Column(
-                                    children: [
-                                      Container(
-                                        alignment: Alignment.center,
-                                        width: 80,
-                                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                                        child: GradientText(
-                                            text: '2',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: MediaQuery.of(context).size.width > 350 ? 26 : 20,
-                                                fontWeight: FontWeight.w700),
-                                            gradient: const LinearGradient(
-                                                colors: [
-                                                  Color(0xff3AC170),
-                                                  Color(0xff25BFA3),
-                                                ],
-                                                transform: GradientRotation(math.pi * 0.50)
-                                            )
+                                          child: GradientText(
+                                              text: 'sms',
+                                              style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w700),
+                                              gradient: const LinearGradient(
+                                                  colors: [
+                                                    Color(0xff3AC170),
+                                                    Color(0xff25BFA3),
+                                                  ],
+                                                  transform: GradientRotation(math.pi * 0.50)
+                                              )
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        alignment: Alignment.center,
-                                        width: 80,
-                                        child: GradientText(
-                                            text: 'sms',
-                                            style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w700),
-                                            gradient: const LinearGradient(
-                                                colors: [
-                                                  Color(0xff3AC170),
-                                                  Color(0xff25BFA3),
-                                                ],
-                                                transform: GradientRotation(math.pi * 0.50)
-                                            )
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
