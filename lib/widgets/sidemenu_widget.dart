@@ -14,6 +14,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     var language = Provider.of<LocaleProvider>(context);
+    print("working");
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -50,7 +51,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 ),
               ),
               title: Text(AppLocalizations.of(context)!.profile,),
-              onTap: () => Navigator.of(context).pushNamed('/profile'),
+              onTap: () => {
+                Navigator.pop(context),
+                Navigator.pushReplacementNamed(context, '/profile'),
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -66,7 +70,11 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 ),
               ),
               title: Text(AppLocalizations.of(context)!.schedulePayment,),
-              onTap: () => Navigator.of(context).pushNamed('/scheduled-payments'),
+              onTap: () =>
+              {
+                Navigator.pop(context),
+                Navigator.pushReplacementNamed(context, '/scheduled-payments'),
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -82,7 +90,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 ),
               ),
               title: Text(AppLocalizations.of(context)!.changePassword,),
-              onTap: () => Navigator.of(context).pushNamed('/reset-password'),
+              onTap: () => {
+                Navigator.pop(context),
+                Navigator.pushReplacementNamed(context, '/reset-password'),
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -98,7 +109,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 ),
               ),
               title: Text(AppLocalizations.of(context)!.inviteFriends,),
-              onTap: () => Navigator.of(context).pushNamed('/invite-friends'),
+              onTap: () => {
+                Navigator.pop(context),
+                Navigator.pushReplacementNamed(context, '/invite-friends'),
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -114,7 +128,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 ),
               ),
               title: Text(AppLocalizations.of(context)!.contactUs, ),
-              onTap: () => Navigator.of(context).pushNamed('/contact-us'),
+              onTap: () => {
+                Navigator.pop(context),
+                Navigator.pushReplacementNamed(context, '/contact-us'),
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -130,7 +147,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                 ),
               ),
               title: Text(AppLocalizations.of(context)!.about,),
-              onTap: () => Navigator.of(context).pushNamed('/about'),
+              onTap: () => {
+                Navigator.pop(context),
+                Navigator.pushReplacementNamed(context, '/about'),
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -227,7 +247,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.profile),
-            onTap: () => Navigator.of(context).pushNamed('/profile'),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushReplacementNamed(context, '/profile'),
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -243,7 +266,11 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.schedulePayment),
-            onTap: () => Navigator.of(context).pushNamed('/scheduled-payments'),
+            onTap: () =>
+            {
+              Navigator.pop(context),
+              Navigator.pushReplacementNamed(context, '/scheduled-payments'),
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -259,7 +286,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.changePassword),
-            onTap: () => Navigator.of(context).pushNamed('/reset-password'),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushReplacementNamed(context, '/reset-password'),
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -275,7 +305,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.inviteFriends),
-            onTap: () => Navigator.of(context).pushNamed('/invite-friends'),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushReplacementNamed(context, '/invite-friends'),
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -291,7 +324,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.contactUs),
-            onTap: () => Navigator.of(context).pushNamed('/contact-us'),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushReplacementNamed(context, '/contact-us'),
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -307,7 +343,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.about),
-            onTap: () => Navigator.of(context).pushNamed('/about'),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushReplacementNamed(context, '/about'),
+            },
           ),
           ListTile(
             leading: GradientIcon(

@@ -31,7 +31,7 @@ class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget{
                 icon: Icon(FontAwesomeIcons.arrowLeft),
                 onPressed: () {
                   //Scaffold.of(context).openDrawer();
-                  Navigator.of(context).pushNamed('/home');
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
                 //tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               ),
@@ -77,7 +77,7 @@ class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget{
                 icon: Icon(FontAwesomeIcons.arrowLeft),
                 onPressed: () {
                   //Scaffold.of(context).openDrawer();
-                  Navigator.of(context).pushNamed('/home');
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
                 //tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               ),

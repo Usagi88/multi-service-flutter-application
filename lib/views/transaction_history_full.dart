@@ -53,8 +53,8 @@ class _TransactionHistoryFullViewState extends State<TransactionHistoryFullView>
 //portrait
 Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animationController, _tween) {
   return Scaffold(
-    appBar: NavbarWithBackButton(),
     drawer: SideMenu(),
+    appBar: NavbarWithBackButton(),
     body: SafeArea(
       child: SingleChildScrollView(
         child: Column(
