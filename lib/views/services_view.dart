@@ -197,8 +197,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -222,9 +222,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Dhiraagu Reload',
+                                              AppLocalizations.of(context)!.dhiraaguReload,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -277,8 +277,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -302,9 +302,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Ooredoo Raastas',
+                                              AppLocalizations.of(context)!.ooredooRaastas,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -367,8 +367,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -392,9 +392,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Dhiraagu Package Recharge',
+                                              AppLocalizations.of(context)!.dhiraaguPackageRecharge,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -447,8 +447,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -472,9 +472,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Ooredoo Package Recharge',
+                                              AppLocalizations.of(context)!.ooredooPackageRecharge,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -537,8 +537,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -562,9 +562,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Dhiraagu Bill Pay',
+                                              AppLocalizations.of(context)!.dhiraaguBillPay,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -617,8 +617,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -642,9 +642,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Ooredoo Bill Pay',
+                                              AppLocalizations.of(context)!.ooredooBillPay,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -700,8 +700,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -725,9 +725,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Raajje Online Bill Pay',
+                                              AppLocalizations.of(context)!.rol,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -773,8 +773,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -798,9 +798,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Gift Cards',
+                                              AppLocalizations.of(context)!.giftCards,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -856,8 +856,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -881,9 +881,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'PUBG UC',
+                                              AppLocalizations.of(context)!.pubgUC,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -929,8 +929,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -954,9 +954,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'MWSC Bill Pay',
+                                              AppLocalizations.of(context)!.mwscBillPay,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -1012,8 +1012,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -1037,9 +1037,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'MediaNet Bill Pay',
+                                              AppLocalizations.of(context)!.medianetBillPay,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -1085,8 +1085,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -1110,9 +1110,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Maldive Gas',
+                                              AppLocalizations.of(context)!.maldiveGas,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -1175,8 +1175,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -1200,9 +1200,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Dhiraagu Pay Cash In',
+                                              AppLocalizations.of(context)!.dhiraaguPayCashIn,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -1255,8 +1255,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -1280,9 +1280,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Ooredoo M-Faisaa Cash In',
+                                              AppLocalizations.of(context)!.ooredooMFaisa,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -1338,8 +1338,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -1363,9 +1363,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Scheduled Payments',
+                                              AppLocalizations.of(context)!.schedulePayment,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -1411,8 +1411,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -1436,9 +1436,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Send SMS',
+                                              AppLocalizations.of(context)!.sendSMS,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),
@@ -1494,8 +1494,8 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                             width: 8,
                                           ),
                                           Container(
-                                            height: MediaQuery.of(context).size.width > 350 ? 56 : 42,
-                                            width: MediaQuery.of(context).size.width > 350 ? 56 : 42,
+                                            height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                            width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
@@ -1519,9 +1519,9 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Donate',
+                                              AppLocalizations.of(context)!.donate,
                                               style: TextStyle(
-                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12,
+                                                  fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                   color: Colors.grey.shade600,
                                                   fontWeight: FontWeight.w400
                                               ),

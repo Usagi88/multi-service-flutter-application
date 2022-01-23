@@ -12,13 +12,15 @@ class FPCard extends StatelessWidget {
   String date;
   double amount;
   String currency;
+  String image;
 
   FPCard({Key? key,
     required this.fpCardColor,
     required this.title,
     required this.date,
     required this.amount,
-    required this.currency
+    required this.currency,
+    required this.image,
   }) : super(key: key);
 
   @override
@@ -60,9 +62,14 @@ class FPCard extends StatelessWidget {
                 width: 38,
                 height: 41,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(5))
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    image: DecorationImage(
+                      image: AssetImage(
+                        image),
+                      fit: BoxFit.fill,
+                    ),
                 ),
+
               ),
               SizedBox(
                 width: 10,
@@ -115,6 +122,7 @@ class FPCard extends StatelessWidget {
 
       );
     }
+
     return Container(
         alignment: Alignment.center,
         width: double.infinity,
@@ -141,8 +149,12 @@ class FPCard extends StatelessWidget {
               width: 38,
               height: 41,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(5))
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+                image: DecorationImage(
+                  image: AssetImage(
+                      image),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             SizedBox(

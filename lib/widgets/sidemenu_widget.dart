@@ -200,6 +200,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
         ),
       );
     }
+
     return Drawer(
       child: ListView(
         children: [

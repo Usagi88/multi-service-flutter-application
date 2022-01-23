@@ -151,6 +151,47 @@
 
   "dhiraaguCashInFirstText": "ধীরাগু নম্বর এবং পরিমাণ লিখুন ধীরাগু পে ক্যাশ ইন করুন।",
   "ooredooCashInFirstText": "M-faisaa নগদ অর্থ প্রদান করতে Ooredoo নম্বর এবং পরিমাণ লিখুন।",
-  "cashIn": "মজুদ করা"
+  "cashIn": "মজুদ করা",
+
+  "rolPayBillFirstText" : "ROL নম্বর লিখুন এবং পরিশোধ করতে বিল নির্বাচন করুন",
+  "accountNumber" : "হিসাব নাম্বার",
+  "nameToSave": "সংরক্ষণের নাম",
+
+  "pubgFirstText" : "প্লেয়ার আইডি লিখুন এবং PUBG UC কিনতে একটি প্যাকেজ নির্বাচন করুন।",
+  "playerID": "প্লেয়ার আইডি",
+  "pubgSecondText": "UC 5 থেকে 30 মিনিটের মধ্যে বিতরণ করা হবে। এই লেনদেন অ ফেরতযোগ্য",
+
+  "mwscPayBillFirstText" : "MWSC অ্যাকাউন্ট নম্বর, মিটার নম্বর এবং বিল পরিশোধের পরিমাণ লিখুন।",
+  "meterNumber": "মিটার নম্বর",
+
+  "medianetPayBillFirstText" : "MediaNet অ্যাকাউন্ট নম্বর, মালিকের আইডি নম্বর লিখুন এবং বিল পরিশোধ করার জন্য একটি প্যাকেজ নির্বাচন করুন।",
+  "ownerIDCardNum": "মালিকের আইডি কার্ড নম্বর",
+  "medianetPayBillSecondText" : "মিডিয়ানেট পেমেন্ট Vilimale', Hulhumale' ফেজ 2 এবং মাল্টিস্ক্রিন ব্যবহারকারীদের জন্য উপলব্ধ নয়।",
+
+  "maldiveGasFirstText" : "মালদ্বীপ গ্যাস অ্যাকাউন্ট নম্বর লিখুন। NID নম্বর এবং গ্যাস অর্ডার করার জন্য একটি প্যাকেজ নির্বাচন করুন",
+  "orderGas": "গ্যাস অর্ডার করুন",
+
+  "donateFirstText" : "দান করার জন্য প্রাপক নির্বাচন করুন",
+  "selectADonee": "একটি সম্পন্ন নির্বাচন করুন",
+  "sendDonation": "অনুদান পাঠান",
+  "esfiya": "নির্বিচারে",
+  "dhivehiMv": "ধিমভ",
+  "donateSecondText" : "দ্রষ্টব্য: আপনি যদি FahiPay-এর মাধ্যমে অনুদান পেতে চান তাহলে 4007004 এ কল করুন।",
+
+  "ooredooRaastas": "Ooredoo Raastas",
+  "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
+  "ooredooPackageRecharge": "Ooredoo Package Recharge",
+  "dhiraaguBillPay": "Dhiraagu Bill Pay",
+  "ooredooBillPay": "Ooredoo Bill Pay",
+  "rol": "Raajje Online Bill Pay",
+  "giftCards": "Gift Cards",
+  "pubgUC": "PUBG UC",
+  "mwscBillPay": "MWSC Bill Pay",
+  "medianetBillPay": "MediaNet Bill Pay",
+  "maldiveGas": "Maldive Gas",
+  "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
+  "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
+  "sendSMS": "Send SMS",
+  "donate": "Donate"
 
 }

@@ -152,5 +152,46 @@
 
   "dhiraaguCashInFirstText": "Dhiraaguの番号と金額を入力してDhiraaguPayの現金を支払います。",
   "ooredooCashInFirstText": "M-faisaaの現金で支払うOoredoo番号と金額を入力します。",
-  "cashIn": "現金で"
+  "cashIn": "現金で",
+
+  "rolPayBillFirstText" : "ROL番号を入力し、支払う請求書を選択します",
+  "accountNumber" : "口座番号",
+  "nameToSave": "保存する名前",
+
+  "pubgFirstText" : "プレーヤーIDを入力し、PUBGUCを購入するパッケージを選択します。",
+  "playerID": "プレイヤーID",
+  "pubgSecondText": "UCは5〜30分以内に配達されます。 この取引は返金不可です",
+
+  "mwscPayBillFirstText" : "MWSCアカウント番号、メーター番号、および請求額を入力します。",
+  "meterNumber": "メーター番号",
+
+  "medianetPayBillFirstText" : "MediaNetアカウント番号、所有者のID番号を入力し、請求書を支払うパッケージを選択します。",
+  "ownerIDCardNum": "所有者のIDカード番号",
+  "medianetPayBillSecondText" : "メディアネット決済は、Vilimale '、Hulhumale'フェーズ2およびマルチスクリーンユーザーにはご利用いただけません。",
+
+  "maldiveGasFirstText" : "モルディブガスの口座番号を入力してください。 NID番号とガスを注文するパッケージを選択します",
+  "orderGas": "ガスを注文する",
+
+  "donateFirstText" : "寄付する受取人を選択してください",
+  "selectADonee": "ドニーを選択",
+  "sendDonation": "寄付を送る",
+  "esfiya": "エスフィヤ",
+  "dhivehiMv": "DhivehiMv",
+  "donateSecondText" : "注：FahiPayを通じて寄付を受け取りたい場合は、4007004に電話してください。",
+
+  "ooredooRaastas": "Ooredoo Raastas",
+  "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
+  "ooredooPackageRecharge": "Ooredoo Package Recharge",
+  "dhiraaguBillPay": "Dhiraagu Bill Pay",
+  "ooredooBillPay": "Ooredoo Bill Pay",
+  "rol": "Raajje Online Bill Pay",
+  "giftCards": "Gift Cards",
+  "pubgUC": "PUBG UC",
+  "mwscBillPay": "MWSC Bill Pay",
+  "medianetBillPay": "MediaNet Bill Pay",
+  "maldiveGas": "Maldive Gas",
+  "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
+  "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
+  "sendSMS": "Send SMS",
+  "donate": "Donate"
 }

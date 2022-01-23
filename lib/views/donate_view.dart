@@ -28,9 +28,9 @@ class DonateView extends StatefulWidget {
 }
 
 class DonatePackageClass {
-  final String name;
-  final int id;
-  const DonatePackageClass(this.id,this.name);
+  String name;
+  int id;
+  DonatePackageClass(this.id,this.name);
 }
 
 class _DonateViewState extends State<DonateView> with SingleTickerProviderStateMixin{
@@ -40,9 +40,9 @@ class _DonateViewState extends State<DonateView> with SingleTickerProviderStateM
 
   DonatePackageClass? _selectedDonatePackage;
   List<DonatePackageClass> donatePackages = <DonatePackageClass>[
-    const DonatePackageClass(1,'Select a donee'),
-    const DonatePackageClass(2,'Esfiya'),
-    const DonatePackageClass(3,'DhivehiMv'),
+    DonatePackageClass(1,'Select a donee'),
+    DonatePackageClass(2,'Esfiya'),
+    DonatePackageClass(3,'DhivehiMv'),
   ];
 
   @override
@@ -65,6 +65,13 @@ class _DonateViewState extends State<DonateView> with SingleTickerProviderStateM
   }
   @override
   Widget build(BuildContext context) {
+    for (var i = 0; i < donatePackages.length; i++) {
+      switch (donatePackages[i].name){
+        case 'Select a donee':
+          donatePackages[i].name = AppLocalizations.of(context)!.selectADonee;
+          break;
+      }
+    }
     var language = Provider.of<LocaleProvider>(context);
     double height = NavbarWithBackButton().preferredSize.height;
     var safePadding = MediaQuery.of(context).padding.top;
@@ -183,6 +190,7 @@ class _DonateViewState extends State<DonateView> with SingleTickerProviderStateM
                                           alignment:Alignment.centerRight,
                                           padding: const EdgeInsets.fromLTRB(0,8.0,0,6.0),
                                           child:Text(
+
                                             donatePackage.name,
                                             style: new TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
                                           ),
@@ -364,7 +372,7 @@ class _DonateViewState extends State<DonateView> with SingleTickerProviderStateM
                         child: FadeTransition(
                           opacity: _animationController,
                           child: Text(
-                            AppLocalizations.of(context)!.pubgFirstText,
+                            AppLocalizations.of(context)!.donateFirstText,
                             style: TextStyle(
                                 fontSize: 14.0,
                                 fontWeight: FontWeight.w400,

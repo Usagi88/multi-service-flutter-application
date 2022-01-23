@@ -211,8 +211,26 @@
     "maldiveGasFirstText" : "Enter Maldive Gas account number. NID number and select a package to order Gas",
     "orderGas": "Order Gas",
 
-    "donateFirstText" : "Select the recipent to donate",
+    "donateFirstText" : "Select the recipient to donate",
     "selectADonee": "Select a donee",
     "sendDonation": "Send Donation",
-    "donateSecondText" : "Note: Call 4007004 if you would like to receive donations through FahiPay."
+    "esfiya": "Esfiya",
+    "dhivehiMv": "DhivehiMv",
+    "donateSecondText" : "Note: Call 4007004 if you would like to receive donations through FahiPay.",
+
+    "ooredooRaastas": "Ooredoo Raastas",
+    "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
+    "ooredooPackageRecharge": "Ooredoo Package Recharge",
+    "dhiraaguBillPay": "Dhiraagu Bill Pay",
+    "ooredooBillPay": "Ooredoo Bill Pay",
+    "rol": "Raajje Online Bill Pay",
+    "giftCards": "Gift Cards",
+    "pubgUC": "PUBG UC",
+    "mwscBillPay": "MWSC Bill Pay",
+    "medianetBillPay": "MediaNet Bill Pay",
+    "maldiveGas": "Maldive Gas",
+    "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
+    "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
+    "sendSMS": "Send SMS",
+    "donate": "Donate"
 }

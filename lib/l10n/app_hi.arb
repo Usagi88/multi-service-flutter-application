@@ -151,5 +151,47 @@
 
     "dhiraaguCashInFirstText": "धीरागु का भुगतान करने के लिए धीरागु नंबर और राशि दर्ज करें नकद भुगतान करें।",
     "ooredooCashInFirstText": "एम-फैसा कैश इन का भुगतान करने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
-    "cashIn": "नकद में"
+    "cashIn": "नकद में",
+
+    "rolPayBillFirstText" : "रोल नंबर दर्ज करें और भुगतान करने के लिए बिल का चयन करें",
+    "accountNumber" : "खाता संख्या",
+    "nameToSave": "बचाने के लिए नाम",
+
+    "pubgFirstText" : "प्लेयर आईडी दर्ज करें और PUBG UC खरीदने के लिए एक पैकेज चुनें।",
+    "playerID": "प्लेयर आईडी",
+    "pubgSecondText": "UC 5 से 30 मिनट में डिलीवर हो जाएगा। यह लेनदेन अप्रतिदेय है",
+
+    "mwscPayBillFirstText" : "बिल का भुगतान करने के लिए MWSC खाता संख्या, मीटर संख्या और राशि दर्ज करें।",
+    "meterNumber": "मीटर संख्या",
+
+    "medianetPayBillFirstText" : "MediaNet खाता संख्या, स्वामी का आईडी नंबर दर्ज करें और बिल का भुगतान करने के लिए एक पैकेज का चयन करें।",
+    "ownerIDCardNum": "मालिक का आईडी कार्ड नंबर",
+    "medianetPayBillSecondText" : "Vilimale', Hulhumale' चरण 2 और मल्टीस्क्रीन उपयोगकर्ताओं के लिए Medianet भुगतान उपलब्ध नहीं हैं।",
+
+    "maldiveGasFirstText" : "मालदीव गैस खाता संख्या दर्ज करें। NID नंबर और गैस ऑर्डर करने के लिए पैकेज चुनें",
+    "orderGas": "ऑर्डर गैस",
+
+    "donateFirstText" : "दान करने के लिए प्राप्तकर्ता का चयन करें",
+    "selectADonee": "एक दीदी का चयन करें",
+    "sendDonation": "दान भेजें",
+    "esfiya": "मनमाने ढंग से",
+    "dhivehiMv": "धीवहिंव",
+    "donateSecondText" : "नोट: यदि आप FahiPay के माध्यम से दान प्राप्त करना चाहते हैं तो 4007004 पर कॉल करें।",
+
+    "ooredooRaastas": "Ooredoo Raastas",
+    "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
+    "ooredooPackageRecharge": "Ooredoo Package Recharge",
+    "dhiraaguBillPay": "Dhiraagu Bill Pay",
+    "ooredooBillPay": "Ooredoo Bill Pay",
+    "rol": "Raajje Online Bill Pay",
+    "giftCards": "Gift Cards",
+    "pubgUC": "PUBG UC",
+    "mwscBillPay": "MWSC Bill Pay",
+    "medianetBillPay": "MediaNet Bill Pay",
+    "maldiveGas": "Maldive Gas",
+    "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
+    "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
+    "sendSMS": "Send SMS",
+    "donate": "Donate"
+
 }

@@ -101,7 +101,7 @@ class MyApp extends StatelessWidget {
                 '/maldive-gas': (BuildContext context) => new MaldiveGasView(),
                 '/donate': (BuildContext context) => new DonateView(),
               },
-              home: ServicesView(),
+              home: HomeView(),
             );
           }
       ),
