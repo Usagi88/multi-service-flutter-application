@@ -160,7 +160,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                   ),
                                   child: SvgPicture.asset("assets/images/icon/walletIconSVG.svg"),
                                   onPressed: () {
-                                    Navigator.pushReplacementNamed(context, '/add-cash');
+                                    Navigator.pushNamed(context, '/add-cash');
                                   },
                                 ),
                               ),
@@ -198,7 +198,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                   ),
                                   child: SvgPicture.asset("assets/images/icon/serviceIconSVG.svg"),
                                   onPressed: () {
-                                    Navigator.pushReplacementNamed(context, '/services');
+                                    Navigator.pushNamed(context, '/services');
                                   },
                                 ),
                               ),
@@ -236,7 +236,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                   ),
                                   child: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
                                   onPressed: () {
-                                    Navigator.pushReplacementNamed(context, '/live-chat');
+                                    Navigator.pushNamed(context, '/live-chat');
                                   },
                                 ),
                               ),
@@ -336,7 +336,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                               padding: EdgeInsets.zero,
                               icon: Icon(FontAwesomeIcons.chevronUp,size: 14,color: Colors.white,),
                               onPressed: () {
-                                Navigator.pushReplacementNamed(context, '/transaction-history');
+                                Navigator.pushNamed(context, '/transaction-history');
                               },
                             ),
                           ),
@@ -539,7 +539,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                 ),
                                 child: Icon(FontAwesomeIcons.solidQuestionCircle,size: 32,color: Color(0xffFFA26B),),
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(context, '/live-chat');
+                                  Navigator.pushNamed(context, '/live-chat');
                                 },
                               ),
                             ),
@@ -577,7 +577,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                 ),
                                 child: SvgPicture.asset("assets/images/icon/serviceIconSVG.svg"),
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(context, '/services');
+                                  Navigator.pushNamed(context, '/services');
                                 },
                               ),
                             ),
@@ -615,7 +615,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                 ),
                                 child: SvgPicture.asset("assets/images/icon/walletIconSVG.svg"),
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(context, '/add-cash');
+                                  Navigator.pushNamed(context, '/add-cash');
                                 },
                               ),
                             ),
@@ -716,7 +716,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                             padding: EdgeInsets.zero,
                             icon: Icon(FontAwesomeIcons.chevronUp,size: 14,color: Colors.white,),
                             onPressed: () {
-                              Navigator.pushReplacementNamed(context, '/transaction-history');
+                              Navigator.pushNamed(context, '/transaction-history');
                             },
                           ),
                         ),

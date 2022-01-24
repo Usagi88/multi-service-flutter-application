@@ -14,7 +14,7 @@ import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddCashView extends StatefulWidget {
   const AddCashView({Key? key}) : super(key: key);
@@ -120,23 +120,17 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => TopUpViaView(mib: true, bml: false),
-                                  )
-                              );
+                              Navigator.pushNamed(context, '/top-up-via',arguments: TopUpViaView(mib: true, bml: false));
                             },
                             child:SizedBox(
-                              width: 40,
-                              height: 40,
+                              width: 60,
+                              height: 60,
                               child: Image.asset(
-                                'assets/images/icon/MIB.png',
+                                'assets/images/icon/mib.png',
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
-                              padding: EdgeInsets.all(20),
                               primary: Colors.white, // <-- Button color
                               onPrimary: Colors.grey.shade400, // <-- Splash color
                             ),
@@ -147,7 +141,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                         ),
                         ScaleTransition(
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text("MIB",
+                          child: Text(AppLocalizations.of(context)!.mib,
                             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                         ),
                       ],
@@ -159,17 +153,18 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                         ScaleTransition(
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/bonus');
+                            },
                             child:SizedBox(
-                              width: 40,
-                              height: 40,
+                              width: 60,
+                              height: 60,
                               child: Image.asset(
-                                'assets/images/icon/MIB.png',
+                                'assets/images/icon/bonus.png',
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
-                              padding: EdgeInsets.all(20),
                               primary: Colors.white, // <-- Button color
                               onPrimary: Colors.grey.shade400, // <-- Splash color
                             ),
@@ -180,7 +175,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                         ),
                         ScaleTransition(
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text("BONUS",
+                          child: Text(AppLocalizations.of(context)!.bonus,
                             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                         ),
                       ],
@@ -192,23 +187,17 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => TopUpViaView(mib: false, bml: true),
-                                  )
-                              );
+                              Navigator.pushNamed(context, '/top-up-via',arguments: TopUpViaView(mib: false, bml: true));
                             },
                             child:SizedBox(
-                              width: 40,
-                              height: 40,
+                              width: 60,
+                              height: 60,
                               child: Image.asset(
-                                'assets/images/icon/MIB.png',
+                                'assets/images/icon/bml.png',
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
-                              padding: EdgeInsets.all(20),
                               primary: Colors.white, // <-- Button color
                               onPrimary: Colors.grey.shade400, // <-- Splash color
                             ),
@@ -219,7 +208,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                         ),
                         ScaleTransition(
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text("BML",
+                          child: Text(AppLocalizations.of(context)!.bml,
                             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                         ),
                       ],
@@ -231,18 +220,17 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed('/top-up-via-bml-gateway');
+                              Navigator.pushNamed(context, '/top-up-via-bml-gateway');
                             },
                             child:SizedBox(
-                              width: 40,
-                              height: 40,
+                              width: 60,
+                              height: 60,
                               child: Image.asset(
-                                'assets/images/icon/MIB.png',
+                                'assets/images/icon/cashcard.png',
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
-                              padding: EdgeInsets.all(20),
                               primary: Colors.white, // <-- Button color
                               onPrimary: Colors.grey.shade400, // <-- Splash color
                             ),
@@ -253,7 +241,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                         ),
                         ScaleTransition(
                           scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text("CASH CARD",
+                          child: Text(AppLocalizations.of(context)!.cashCard,
                             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
                         ),
                       ],

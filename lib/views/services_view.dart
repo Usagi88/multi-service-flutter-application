@@ -168,12 +168,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => RaastasReloadView(dhiraagu: true, ooredoo: false),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/raastas-reload',arguments: RaastasReloadView(dhiraagu: true, ooredoo: false));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -248,12 +243,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => RaastasReloadView(dhiraagu: false, ooredoo: true),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/raastas-reload',arguments: RaastasReloadView(dhiraagu: false, ooredoo: true));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -338,12 +328,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => PackageRechargeView(dhiraagu: true, ooredoo: false),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/package-recharge',arguments: PackageRechargeView(dhiraagu: true, ooredoo: false));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -418,12 +403,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => PackageRechargeView(dhiraagu: false, ooredoo: true),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/package-recharge',arguments: PackageRechargeView(dhiraagu: false, ooredoo: true));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -508,12 +488,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => BillPayView(dhiraagu: true, ooredoo: false),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/bill-pay',arguments: BillPayView(dhiraagu: true, ooredoo: false));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -588,12 +563,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => BillPayView(dhiraagu: false, ooredoo: true),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/bill-pay',arguments: BillPayView(dhiraagu: false, ooredoo: true));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -677,7 +647,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/rol-bill-pay'),
+                                    onTap: () => Navigator.pushNamed(context, '/rol-bill-pay'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -750,7 +720,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/gift-card'),
+                                    onTap: () => Navigator.pushNamed(context, '/gift-card'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -833,7 +803,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/pubg'),
+                                    onTap: () => Navigator.pushNamed(context, '/pubg'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -906,7 +876,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/mwsc-bill-pay'),
+                                    onTap: () => Navigator.pushNamed(context, '/mwsc-bill-pay'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -989,7 +959,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/medianet-bill-pay'),
+                                    onTap: () => Navigator.pushNamed(context, '/medianet-bill-pay'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -1062,7 +1032,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/maldive-gas'),
+                                    onTap: () => Navigator.pushNamed(context, '/maldive-gas'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -1146,12 +1116,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => CashInView(dhiraagu: true, ooredoo: false),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/cash-in',arguments: CashInView(dhiraagu: true, ooredoo: false));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -1226,12 +1191,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => CashInView(dhiraagu: false, ooredoo: true),
-                                          )
-                                      );
+                                      Navigator.pushNamed(context, '/cash-in',arguments: CashInView(dhiraagu: false, ooredoo: true));
                                     },
                                     child: Container(
                                       //width: 166,
@@ -1315,7 +1275,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/scheduled-payments'),
+                                    onTap: () => Navigator.pushNamed(context, '/scheduled-payments'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -1388,7 +1348,7 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/send-sms'),
+                                    onTap: () => Navigator.pushNamed(context, '/send-sms'),
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -1471,7 +1431,11 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                 child: ScaleTransition(
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
-                                    onTap: () => Navigator.of(context).pushNamed('/donate'),
+                                    onTap: () => {
+
+                                      //Navigator.pop(context,true),// It worked for me instead of above line
+                                      Navigator.pushNamed(context, '/donate'),
+                                    },
                                     child: Container(
                                       //width: 166,
                                       padding: const EdgeInsets.symmetric(horizontal: 2.0),

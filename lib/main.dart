@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fpapp/provider/locale_provider.dart';
 import 'package:fpapp/views/about_view.dart';
 import 'package:fpapp/views/bill_pay_view.dart';
+import 'package:fpapp/views/bonus_view.dart';
 import 'package:fpapp/views/cash_in_view.dart';
 import 'package:fpapp/views/contact_us_view.dart';
 import 'package:fpapp/views/donate_view.dart';
@@ -38,7 +39,6 @@ import 'views/mwsc_bill_pay.dart';
 import 'views/pubg_view.dart';
 import 'views/raastas_reload_view.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -55,10 +55,12 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               theme: ThemeData(
                 fontFamily: lang.toString() == 'dv' ? 'Faruma' : null,
+                /*
                 pageTransitionsTheme: PageTransitionsTheme(builders: {
                     TargetPlatform.iOS: ZoomPageTransitionsBuilder(),
                     TargetPlatform.android: CupertinoPageTransitionsBuilder(),
                 }),
+                 */
                 scaffoldBackgroundColor: Colors.white
               ),
               localizationsDelegates: [
@@ -71,6 +73,7 @@ class MyApp extends StatelessWidget {
 
               supportedLocales: AppLocalizations.supportedLocales,
               locale: locale.locale,
+              //initialRoute: '/home',
               routes: <String, WidgetBuilder>{
                 '/about': (BuildContext context) => new AboutView(),
                 '/contact-us': (context) => new ContactUsView(),
@@ -100,6 +103,7 @@ class MyApp extends StatelessWidget {
                 '/medianet-bill-pay': (context) => new MedianetBillPayView(),
                 '/maldive-gas': (context) => new MaldiveGasView(),
                 '/donate': (context) => new DonateView(),
+                '/bonus': (context) => new BonusView(),
               },
               home: HomeView(),
             );

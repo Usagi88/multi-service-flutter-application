@@ -232,5 +232,14 @@
     "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
     "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
     "sendSMS": "Send SMS",
-    "donate": "Donate"
+    "donate": "Donate",
+
+    "mib": "MIB",
+    "bml": "BML",
+    "bonus": "BONUS",
+    "cashCard": "CASH CARD",
+
+    "bonusViewFirstText": "Enter the number of points you wish to redeem.",
+    "numberOfPoints": "Number of Points",
+    "redeem": "Redeem"
 }

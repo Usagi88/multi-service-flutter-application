@@ -192,6 +192,15 @@
     "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
     "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
     "sendSMS": "Send SMS",
-    "donate": "Donate"
+    "donate": "Donate",
+
+    "mib": "MIB",
+    "bml": "BML",
+    "bonus": "BONUS",
+    "cashCard": "CASH CARD",
+
+    "bonusViewFirstText": "जितने अंक आप भुनाना चाहते हैं, उतने अंक दर्ज करें।",
+    "numberOfPoints": "बिंदुओं की संख्या",
+    "redeem": "एवज"
 
 }

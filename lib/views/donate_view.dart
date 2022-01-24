@@ -47,6 +47,7 @@ class _DonateViewState extends State<DonateView> with SingleTickerProviderStateM
 
   @override
   void initState() {
+
     _selectedDonatePackage=donatePackages[0];
     _animationController = AnimationController(
       vsync: this,

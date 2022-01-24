@@ -14,7 +14,6 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     var language = Provider.of<LocaleProvider>(context);
-    print("working");
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -53,7 +52,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               title: Text(AppLocalizations.of(context)!.profile,),
               onTap: () => {
                 Navigator.pop(context),
-                Navigator.pushReplacementNamed(context, '/profile'),
+                Navigator.pushNamed(context, '/profile'),
               },
             ),
             ListTile(
@@ -73,7 +72,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               onTap: () =>
               {
                 Navigator.pop(context),
-                Navigator.pushReplacementNamed(context, '/scheduled-payments'),
+                Navigator.pushNamed(context, '/scheduled-payments'),
               },
             ),
             ListTile(
@@ -92,7 +91,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               title: Text(AppLocalizations.of(context)!.changePassword,),
               onTap: () => {
                 Navigator.pop(context),
-                Navigator.pushReplacementNamed(context, '/reset-password'),
+                Navigator.pushNamed(context, '/reset-password'),
               },
             ),
             ListTile(
@@ -111,7 +110,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               title: Text(AppLocalizations.of(context)!.inviteFriends,),
               onTap: () => {
                 Navigator.pop(context),
-                Navigator.pushReplacementNamed(context, '/invite-friends'),
+                Navigator.pushNamed(context, '/invite-friends'),
               },
             ),
             ListTile(
@@ -130,7 +129,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               title: Text(AppLocalizations.of(context)!.contactUs, ),
               onTap: () => {
                 Navigator.pop(context),
-                Navigator.pushReplacementNamed(context, '/contact-us'),
+                Navigator.pushNamed(context, '/contact-us'),
               },
             ),
             ListTile(
@@ -149,7 +148,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               title: Text(AppLocalizations.of(context)!.about,),
               onTap: () => {
                 Navigator.pop(context),
-                Navigator.pushReplacementNamed(context, '/about'),
+                Navigator.pushNamed(context, '/about'),
               },
             ),
             ListTile(
@@ -222,6 +221,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
     }
 
     return Drawer(
+
       child: ListView(
         children: [
           DrawerHeader(child: Container(
@@ -249,7 +249,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             title: Text(AppLocalizations.of(context)!.profile),
             onTap: () => {
               Navigator.pop(context),
-              Navigator.pushReplacementNamed(context, '/profile'),
+              Navigator.pushNamed(context, '/profile'),
             },
           ),
           ListTile(
@@ -269,7 +269,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             onTap: () =>
             {
               Navigator.pop(context),
-              Navigator.pushReplacementNamed(context, '/scheduled-payments'),
+              Navigator.pushNamed(context, '/scheduled-payments'),
             },
           ),
           ListTile(
@@ -288,7 +288,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             title: Text(AppLocalizations.of(context)!.changePassword),
             onTap: () => {
               Navigator.pop(context),
-              Navigator.pushReplacementNamed(context, '/reset-password'),
+              Navigator.pushNamed(context, '/reset-password'),
             },
           ),
           ListTile(
@@ -307,7 +307,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             title: Text(AppLocalizations.of(context)!.inviteFriends),
             onTap: () => {
               Navigator.pop(context),
-              Navigator.pushReplacementNamed(context, '/invite-friends'),
+              Navigator.pushNamed(context, '/invite-friends'),
             },
           ),
           ListTile(
@@ -326,7 +326,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             title: Text(AppLocalizations.of(context)!.contactUs),
             onTap: () => {
               Navigator.pop(context),
-              Navigator.pushReplacementNamed(context, '/contact-us'),
+              Navigator.pushNamed(context, '/contact-us'),
             },
           ),
           ListTile(
@@ -345,7 +345,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             title: Text(AppLocalizations.of(context)!.about),
             onTap: () => {
               Navigator.pop(context),
-              Navigator.pushReplacementNamed(context, '/about'),
+              Navigator.pushNamed(context, '/about'),
             },
           ),
           ListTile(
