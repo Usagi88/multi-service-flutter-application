@@ -44,6 +44,7 @@ dependencies:
   shared_preferences: ^2.0.9
   circle_list: ^1.0.5
   circle_flags: ^0.0.2
+  fialogs: ^2.0.4
 
 
 
