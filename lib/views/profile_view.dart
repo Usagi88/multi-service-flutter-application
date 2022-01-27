@@ -1057,7 +1057,7 @@ class _ProfileViewState extends State<ProfileView>
                                               title: Column(
                                                 children: [
                                                   Text(
-                                                    AppLocalizations.of(context)!.newMobileNumber,
+                                                    AppLocalizations.of(context)!.newEmail,
                                                     style: TextStyle(
                                                         fontSize: 22,
                                                         fontWeight:
@@ -1067,7 +1067,7 @@ class _ProfileViewState extends State<ProfileView>
                                                     height: 10,
                                                   ),
                                                   Text(
-                                                    AppLocalizations.of(context)!.enterNewMobileNumber,
+                                                    AppLocalizations.of(context)!.enterNewEmail,
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1224,7 +1224,7 @@ class _ProfileViewState extends State<ProfileView>
                                               title: Column(
                                                 children: [
                                                   Text(
-                                                    AppLocalizations.of(context)!.newEmail,
+                                                    AppLocalizations.of(context)!.newMobileNumber,
                                                     style: TextStyle(
                                                         fontSize: 22,
                                                         fontWeight:
@@ -1234,7 +1234,7 @@ class _ProfileViewState extends State<ProfileView>
                                                     height: 10,
                                                   ),
                                                   Text(
-                                                    AppLocalizations.of(context)!.enterNewEmail,
+                                                    AppLocalizations.of(context)!.enterNewMobileNumber,
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
