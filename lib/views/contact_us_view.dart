@@ -371,6 +371,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
         ),
       );
     }
+
     return Scaffold(
       appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
