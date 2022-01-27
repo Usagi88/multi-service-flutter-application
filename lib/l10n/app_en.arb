@@ -241,5 +241,23 @@
 
     "bonusViewFirstText": "Enter the number of points you wish to redeem.",
     "numberOfPoints": "Number of Points",
-    "redeem": "Redeem"
+    "redeem": "Redeem",
+
+
+    "password": "Password",
+    "pleaseEnterYourPassword": "Please enter your password",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "newEmail": "New email",
+    "enterNewEmail": "Enter new email address",
+    "newMobileNumber": "New mobile number",
+    "enterNewMobileNumber": "Enter new mobile number",
+    "newAddress": "New address",
+    "enterNewAddress": "Enter new address",
+    "newIslandCity": "New island/city",
+    "enterNewIslandCity": "Enter new island/city",
+    "newCountry": "New country",
+    "enterNewCountry": "Enter new country",
+    "newPostCode": "New post code",
+    "enterNewPostCode": "Enter new post code"
 }

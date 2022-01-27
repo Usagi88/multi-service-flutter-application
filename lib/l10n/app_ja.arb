@@ -202,5 +202,22 @@
 
   "bonusViewFirstText": "交換したいポイント数を入力してください。",
   "numberOfPoints": "ポイント数",
-  "redeem": "償還"
+  "redeem": "償還",
+
+  "password": "パスワード",
+  "pleaseEnterYourPassword": "パスワードを入力してください",
+  "cancel": "キャンセル",
+  "ok": "Ok",
+  "newEmail": "新しいメール",
+  "enterNewEmail": "新しいメールアドレスを入力してください",
+  "newMobileNumber": "新しい携帯電話番号",
+  "enterNewMobileNumber": "新しい携帯電話番号を入力してください",
+  "newAddress": "新しいアドレス",
+  "enterNewAddress": "新しい住所を入力してください",
+  "newIslandCity": "新しい島/都市",
+  "enterNewIslandCity": "新しい島/都市を入力してください",
+  "newCountry": "新しい国",
+  "enterNewCountry": "新しい国を入力してください",
+  "newPostCode": "新しい郵便番号",
+  "enterNewPostCode": "新しい郵便番号を入力してください"
 }

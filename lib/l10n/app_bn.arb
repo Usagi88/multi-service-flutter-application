@@ -201,6 +201,23 @@
 
   "bonusViewFirstText": "আপনি রিডিম করতে চান এমন পয়েন্টের সংখ্যা লিখুন।",
   "numberOfPoints": "পয়েন্টের সংখ্যা",
-  "redeem": "খালাস"
+  "redeem": "খালাস",
+
+  "password": "পাসওয়ার্ড",
+  "pleaseEnterYourPassword": "আপনার পাসওয়ার্ড দিন",
+  "cancel": "Cancel",
+  "ok": "Ok",
+  "newEmail": "নতুন ইমেইল",
+  "enterNewEmail": "নতুন ইমেল ঠিকানা লিখুন",
+  "newMobileNumber": "নতুন মোবাইল নম্বর",
+  "enterNewMobileNumber": "নতুন মোবাইল নম্বর লিখুন",
+  "newAddress": "নতুন ঠিকানা",
+  "enterNewAddress": "নতুন ঠিকানা লিখুন",
+  "newIslandCity": "নতুন ঠিকানা লিখুন",
+  "enterNewIslandCity": "নতুন দ্বীপ/শহর লিখুন",
+  "newCountry": "নতুন দেশ",
+  "enterNewCountry": "নতুন দেশে প্রবেশ করুন",
+  "newPostCode": "নতুন পোস্ট কোড",
+  "enterNewPostCode": "নতুন পোস্ট কোড লিখুন"
 
 }

@@ -201,6 +201,23 @@
 
     "bonusViewFirstText": "जितने अंक आप भुनाना चाहते हैं, उतने अंक दर्ज करें।",
     "numberOfPoints": "बिंदुओं की संख्या",
-    "redeem": "एवज"
+    "redeem": "एवज",
+
+    "password": "कुंजिका",
+    "pleaseEnterYourPassword": "अपना पासवर्ड दर्ज करें",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "newEmail": "नई ईमेल",
+    "enterNewEmail": "नया ईमेल पता दर्ज करें",
+    "newMobileNumber": "नया मोबाइल नंबर",
+    "enterNewMobileNumber": "नया मोबाइल नंबर दर्ज करें",
+    "newAddress": "नया पता",
+    "enterNewAddress": "नया पता दर्ज करें",
+    "newIslandCity": "नया द्वीप/शहर",
+    "enterNewIslandCity": "नया द्वीप/शहर दर्ज करें",
+    "newCountry": "नया देश",
+    "enterNewCountry": "नया देश दर्ज करें",
+    "newPostCode": "नया पोस्ट कोड",
+    "enterNewPostCode": "नया पोस्ट कोड दर्ज करें"
 
 }

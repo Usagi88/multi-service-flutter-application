@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:fialogs/fialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,13 +7,12 @@ import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/classes/radiant_gradient_mask.dart';
 import 'package:fpapp/provider/locale_provider.dart';
 import 'package:fpapp/widgets/header_widget.dart';
-import 'package:fpapp/widgets/language_picker.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-
+import 'package:fialogs/fialogs.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -23,7 +21,8 @@ class ProfileView extends StatefulWidget {
   State<ProfileView> createState() => _ProfileViewState();
 }
 
-class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStateMixin{
+class _ProfileViewState extends State<ProfileView>
+    with SingleTickerProviderStateMixin {
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
   bool _passwordVisible = true;
@@ -33,7 +32,6 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
-
     );
     Timer(Duration(milliseconds: 250), () => _animationController!.forward());
     _animationController!.forward();
@@ -63,21 +61,24 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
   }
 
   //portrait
-  Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, language) {
-    if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
+  Scaffold _portraitModeOnly(
+      BuildContext context, _animationController, _tween, language) {
+    if (language.locale.toString() == 'dv' ||
+        language.locale.toString() == 'ar') {
       return Scaffold(
         appBar: NavbarWithBackButton(),
         drawer: SideMenu(),
         body: SafeArea(
           child: SingleChildScrollView(
-            child: Column(//not putting padding on column because logo image requires different padding
+            child: Column(
+              //not putting padding on column because logo image requires different padding
               children: [
                 Header(animationController: _animationController),
                 SizedBox(
                   height: 10,
                 ),
                 Row(
-                  children:[
+                  children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: SlideTransition(
@@ -90,9 +91,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                           child: Text(
                             AppLocalizations.of(context)!.profile,
                             style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700
-                            ),
+                                fontSize: 20, fontWeight: FontWeight.w700),
                           ),
                         ),
                       ),
@@ -109,9 +108,8 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                           child: const SizedBox(
                             height: 1.0,
                             child: const DecoratedBox(
-                              decoration: const BoxDecoration(
-                                  color: Color(0xffcccccc)
-                              ),
+                              decoration:
+                                  const BoxDecoration(color: Color(0xffcccccc)),
                             ),
                           ),
                         ),
@@ -133,8 +131,12 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text(AppLocalizations.of(context)!.email, style: TextStyle(fontSize: 16,),)
-                    ),
+                        child: Text(
+                          AppLocalizations.of(context)!.email,
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        )),
                   ),
                   subtitle: SlideTransition(
                     position: Tween<Offset>(
@@ -143,8 +145,8 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com', style: TextStyle(fontFamily: 'Roboto'))
-                    ),
+                        child: Text('Hussain.shafiu@gmail.com',
+                            style: TextStyle(fontFamily: 'Roboto'))),
                   ),
                   trailing: SlideTransition(
                     position: Tween<Offset>(
@@ -153,16 +155,144 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: GradientIcon(
-                        FontAwesomeIcons.solidEdit,
-                        22.0,
-                        LinearGradient(
-                          colors: <Color>[
-                            Color(0xff3AC170),
-                            Color(0xff25BFA3),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                      child: RadiantGradientMask(
+                        child: IconButton(
+                          icon: SvgPicture.asset(
+                              "assets/images/icon/solid-edit.svg"),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return StatefulBuilder(
+                                  builder: (context, setState) {
+                                    return AlertDialog(
+                                      title: Column(
+                                        children: [
+                                          Text(
+                                            AppLocalizations.of(context)!.password,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            AppLocalizations.of(context)!.pleaseEnterYourPassword,
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                      content: Container(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            TextFormField(
+                                              obscureText: _passwordVisible,
+                                              decoration: InputDecoration(
+                                                  labelText: AppLocalizations.of(context)!.password,
+                                                  suffixIcon: IconButton(
+                                                      icon: _passwordVisible
+                                                          ? Icon(FontAwesomeIcons
+                                                          .eye)
+                                                          : Icon(FontAwesomeIcons
+                                                          .eyeSlash),
+                                                      onPressed: () {
+                                                        setState(() {
+                                                          _togglePasswordVisibility();
+                                                        });
+                                                        print(_passwordVisible);
+                                                      })),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () async {
+                                            Navigator.pop(context);
+                                            await showDialog(context: context, builder: (BuildContext context) {
+                                              return AlertDialog(
+                                                title: Column(
+                                                  children: [
+                                                    Text(
+                                                      AppLocalizations.of(context)!.newEmail,
+                                                      style: TextStyle(
+                                                          fontSize: 22,
+                                                          fontWeight:
+                                                          FontWeight.w600),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Text(
+                                                      AppLocalizations.of(context)!.enterNewEmail,
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.w400),
+                                                    ),
+                                                  ],
+                                                ),
+                                                content: Container(
+                                                  child: Column(
+                                                    mainAxisSize: MainAxisSize.min,
+                                                    children: [
+                                                      TextFormField(
+                                                        keyboardType: TextInputType.number,
+                                                        inputFormatters: <TextInputFormatter>[
+                                                          FilteringTextInputFormatter.digitsOnly
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                actions: <Widget>[
+
+                                                  TextButton(
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Text(AppLocalizations.of(context)!.ok),
+                                                  ),
+                                                  TextButton(
+                                                    style: TextButton.styleFrom(
+                                                        primary: Colors.red),
+                                                    onPressed: () =>
+                                                    {Navigator.pop(context)},
+                                                    child: Text(
+                                                      AppLocalizations.of(context)!.cancel,
+                                                      style: TextStyle(
+                                                          color: Colors.red),
+                                                    ),
+                                                  ),
+                                                ],
+                                              );
+                                            });
+
+                                          },
+                                          child: Text(AppLocalizations.of(context)!.ok),
+                                        ),
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                              primary: Colors.red),
+                                          onPressed: () =>
+                                          {Navigator.pop(context)},
+                                          child: Text(
+                                            AppLocalizations.of(context)!.cancel,
+                                            style: TextStyle(color: Colors.red),
+                                          ),
+                                        ),
+
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -176,8 +306,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text(AppLocalizations.of(context)!.mobileNumber,style: TextStyle(fontSize: 16,))
-                    ),
+                        child: Text(AppLocalizations.of(context)!.mobileNumber,
+                            style: TextStyle(
+                              fontSize: 16,
+                            ))),
                   ),
                   subtitle: SlideTransition(
                     position: Tween<Offset>(
@@ -186,8 +318,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('7776777',style: TextStyle(fontFamily: 'Roboto',))
-                    ),
+                        child: Text('7776777',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                            ))),
                   ),
                   trailing: SlideTransition(
                     position: Tween<Offset>(
@@ -196,16 +330,144 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: GradientIcon(
-                        FontAwesomeIcons.solidEdit,
-                        22.0,
-                        LinearGradient(
-                          colors: <Color>[
-                            Color(0xff3AC170),
-                            Color(0xff25BFA3),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                      child: RadiantGradientMask(
+                        child: IconButton(
+                          icon: SvgPicture.asset(
+                              "assets/images/icon/solid-edit.svg"),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return StatefulBuilder(
+                                  builder: (context, setState) {
+                                    return AlertDialog(
+                                      title: Column(
+                                        children: [
+                                          Text(
+                                            AppLocalizations.of(context)!.password,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            AppLocalizations.of(context)!.pleaseEnterYourPassword,
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                      content: Container(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            TextFormField(
+                                              obscureText: _passwordVisible,
+                                              decoration: InputDecoration(
+                                                  labelText: AppLocalizations.of(context)!.password,
+                                                  suffixIcon: IconButton(
+                                                      icon: _passwordVisible
+                                                          ? Icon(FontAwesomeIcons
+                                                          .eye)
+                                                          : Icon(FontAwesomeIcons
+                                                          .eyeSlash),
+                                                      onPressed: () {
+                                                        setState(() {
+                                                          _togglePasswordVisibility();
+                                                        });
+                                                        print(_passwordVisible);
+                                                      })),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () async {
+                                            Navigator.pop(context);
+                                            await showDialog(context: context, builder: (BuildContext context) {
+                                              return AlertDialog(
+                                                title: Column(
+                                                  children: [
+                                                    Text(
+                                                      AppLocalizations.of(context)!.newMobileNumber,
+                                                      style: TextStyle(
+                                                          fontSize: 22,
+                                                          fontWeight:
+                                                          FontWeight.w600),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Text(
+                                                      AppLocalizations.of(context)!.enterNewMobileNumber,
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.w400),
+                                                    ),
+                                                  ],
+                                                ),
+                                                content: Container(
+                                                  child: Column(
+                                                    mainAxisSize: MainAxisSize.min,
+                                                    children: [
+                                                      TextFormField(
+                                                        keyboardType: TextInputType.number,
+                                                        inputFormatters: <TextInputFormatter>[
+                                                          FilteringTextInputFormatter.digitsOnly
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                actions: <Widget>[
+
+                                                  TextButton(
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Text(AppLocalizations.of(context)!.ok),
+                                                  ),
+                                                  TextButton(
+                                                    style: TextButton.styleFrom(
+                                                        primary: Colors.red),
+                                                    onPressed: () =>
+                                                    {Navigator.pop(context)},
+                                                    child: Text(
+                                                      AppLocalizations.of(context)!.cancel,
+                                                      style: TextStyle(
+                                                          color: Colors.red),
+                                                    ),
+                                                  ),
+                                                ],
+                                              );
+                                            });
+
+                                          },
+                                          child: Text(AppLocalizations.of(context)!.ok),
+                                        ),
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                              primary: Colors.red),
+                                          onPressed: () =>
+                                          {Navigator.pop(context)},
+                                          child: Text(
+                                            AppLocalizations.of(context)!.cancel,
+                                            style: TextStyle(color: Colors.red),
+                                          ),
+                                        ),
+
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -219,8 +481,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text(AppLocalizations.of(context)!.address,style: TextStyle(fontSize: 16,))
-                    ),
+                        child: Text(AppLocalizations.of(context)!.address,
+                            style: TextStyle(
+                              fontSize: 16,
+                            ))),
                   ),
                   subtitle: SlideTransition(
                     position: Tween<Offset>(
@@ -229,8 +493,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com',style: TextStyle(fontFamily: 'Roboto',))
-                    ),
+                        child: Text('Hussain.shafiu@gmail.com',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                            ))),
                   ),
                   trailing: SlideTransition(
                     position: Tween<Offset>(
@@ -239,16 +505,74 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: GradientIcon(
-                        FontAwesomeIcons.solidEdit,
-                        22.0,
-                        LinearGradient(
-                          colors: <Color>[
-                            Color(0xff3AC170),
-                            Color(0xff25BFA3),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                      child: RadiantGradientMask(
+                        child: IconButton(
+                          icon: SvgPicture.asset(
+                              "assets/images/icon/solid-edit.svg"),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return StatefulBuilder(
+                                  builder: (context, setState) {
+                                    return AlertDialog(
+                                      title: Column(
+                                        children: [
+                                          Text(
+                                            AppLocalizations.of(context)!.newAddress,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight:
+                                                FontWeight.w600),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            AppLocalizations.of(context)!.enterNewAddress,
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                      content: Container(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            TextFormField(
+
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(AppLocalizations.of(context)!.ok),
+                                        ),
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                              primary: Colors.red),
+                                          onPressed: () =>
+                                          {Navigator.pop(context)},
+                                          child: Text(
+                                            AppLocalizations.of(context)!.cancel,
+                                            style: TextStyle(
+                                                color: Colors.red),
+                                          ),
+                                        ),
+
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -262,8 +586,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text(AppLocalizations.of(context)!.islandCity,style: TextStyle(fontSize: 16,))
-                    ),
+                        child: Text(AppLocalizations.of(context)!.islandCity,
+                            style: TextStyle(
+                              fontSize: 16,
+                            ))),
                   ),
                   subtitle: SlideTransition(
                     position: Tween<Offset>(
@@ -272,8 +598,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com',style: TextStyle(fontFamily: 'Roboto',))
-                    ),
+                        child: Text('Hussain.shafiu@gmail.com',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                            ))),
                   ),
                   trailing: SlideTransition(
                     position: Tween<Offset>(
@@ -282,16 +610,74 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: GradientIcon(
-                        FontAwesomeIcons.solidEdit,
-                        22.0,
-                        LinearGradient(
-                          colors: <Color>[
-                            Color(0xff3AC170),
-                            Color(0xff25BFA3),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                      child: RadiantGradientMask(
+                        child: IconButton(
+                          icon: SvgPicture.asset(
+                              "assets/images/icon/solid-edit.svg"),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return StatefulBuilder(
+                                  builder: (context, setState) {
+                                    return AlertDialog(
+                                      title: Column(
+                                        children: [
+                                          Text(
+                                            AppLocalizations.of(context)!.newIslandCity,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight:
+                                                FontWeight.w600),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            AppLocalizations.of(context)!.newIslandCity,
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                      content: Container(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            TextFormField(
+
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(AppLocalizations.of(context)!.ok),
+                                        ),
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                              primary: Colors.red),
+                                          onPressed: () =>
+                                          {Navigator.pop(context)},
+                                          child: Text(
+                                            AppLocalizations.of(context)!.cancel,
+                                            style: TextStyle(
+                                                color: Colors.red),
+                                          ),
+                                        ),
+
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -305,8 +691,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text(AppLocalizations.of(context)!.country, style: TextStyle(fontSize: 16,))
-                    ),
+                        child: Text(AppLocalizations.of(context)!.country,
+                            style: TextStyle(
+                              fontSize: 16,
+                            ))),
                   ),
                   subtitle: SlideTransition(
                     position: Tween<Offset>(
@@ -315,8 +703,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com', style: TextStyle(fontFamily: 'Roboto',))
-                    ),
+                        child: Text('Hussain.shafiu@gmail.com',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                            ))),
                   ),
                   trailing: SlideTransition(
                     position: Tween<Offset>(
@@ -325,16 +715,74 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: GradientIcon(
-                        FontAwesomeIcons.solidEdit,
-                        22.0,
-                        LinearGradient(
-                          colors: <Color>[
-                            Color(0xff3AC170),
-                            Color(0xff25BFA3),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                      child: RadiantGradientMask(
+                        child: IconButton(
+                          icon: SvgPicture.asset(
+                              "assets/images/icon/solid-edit.svg"),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return StatefulBuilder(
+                                  builder: (context, setState) {
+                                    return AlertDialog(
+                                      title: Column(
+                                        children: [
+                                          Text(
+                                            AppLocalizations.of(context)!.newCountry,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight:
+                                                FontWeight.w600),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            AppLocalizations.of(context)!.newCountry,
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                      content: Container(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            TextFormField(
+
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(AppLocalizations.of(context)!.ok),
+                                        ),
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                              primary: Colors.red),
+                                          onPressed: () =>
+                                          {Navigator.pop(context)},
+                                          child: Text(
+                                            AppLocalizations.of(context)!.cancel,
+                                            style: TextStyle(
+                                                color: Colors.red),
+                                          ),
+                                        ),
+
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -348,8 +796,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text(AppLocalizations.of(context)!.postCode, style: TextStyle(fontSize: 16,))
-                    ),
+                        child: Text(AppLocalizations.of(context)!.postCode,
+                            style: TextStyle(
+                              fontSize: 16,
+                            ))),
                   ),
                   subtitle: SlideTransition(
                     position: Tween<Offset>(
@@ -358,8 +808,10 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com', style: TextStyle(fontFamily: 'Roboto',))
-                    ),
+                        child: Text('Hussain.shafiu@gmail.com',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                            ))),
                   ),
                   trailing: SlideTransition(
                     position: Tween<Offset>(
@@ -368,16 +820,74 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: GradientIcon(
-                        FontAwesomeIcons.solidEdit,
-                        22.0,
-                        LinearGradient(
-                          colors: <Color>[
-                            Color(0xff3AC170),
-                            Color(0xff25BFA3),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                      child: RadiantGradientMask(
+                        child: IconButton(
+                          icon: SvgPicture.asset(
+                              "assets/images/icon/solid-edit.svg"),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return StatefulBuilder(
+                                  builder: (context, setState) {
+                                    return AlertDialog(
+                                      title: Column(
+                                        children: [
+                                          Text(
+                                            AppLocalizations.of(context)!.newPostCode,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight:
+                                                FontWeight.w600),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            AppLocalizations.of(context)!.newPostCode,
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                      content: Container(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            TextFormField(
+
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(AppLocalizations.of(context)!.ok),
+                                        ),
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                              primary: Colors.red),
+                                          onPressed: () =>
+                                          {Navigator.pop(context)},
+                                          child: Text(
+                                            AppLocalizations.of(context)!.cancel,
+                                            style: TextStyle(
+                                                color: Colors.red),
+                                          ),
+                                        ),
+
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -395,14 +905,15 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
       drawer: SideMenu(),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(//not putting padding on column because logo image requires different padding
+          child: Column(
+            //not putting padding on column because logo image requires different padding
             children: [
               Header(animationController: _animationController),
               SizedBox(
                 height: 10,
               ),
               Row(
-                children:[
+                children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: SlideTransition(
@@ -415,9 +926,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                         child: Text(
                           AppLocalizations.of(context)!.profile,
                           style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700
-                          ),
+                              fontSize: 20, fontWeight: FontWeight.w700),
                         ),
                       ),
                     ),
@@ -434,9 +943,8 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                         child: const SizedBox(
                           height: 1.0,
                           child: const DecoratedBox(
-                            decoration: const BoxDecoration(
-                                color: Color(0xffcccccc)
-                            ),
+                            decoration:
+                                const BoxDecoration(color: Color(0xffcccccc)),
                           ),
                         ),
                       ),
@@ -458,8 +966,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text(AppLocalizations.of(context)!.email)
-                  ),
+                      child: Text(AppLocalizations.of(context)!.email)),
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
@@ -468,8 +975,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')
-                  ),
+                      child: Text('Hussain.shafiu@gmail.com')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -480,102 +986,304 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                     opacity: _animationController,
                     child: RadiantGradientMask(
                       child: IconButton(
-                          icon: SvgPicture.asset("assets/images/icon/solid-edit.svg"),
-                          onPressed: () {
-                            customDialog(
-                              context,
-                              title: Column(
-                                children: [
-                                  Text(
-                                    "Password",
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w600
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    "Please enter your password",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              content:
-                              Column(
-                                children: [
-                                  TextFormField(
-                                    obscureText: _passwordVisible,
-
-                                    decoration: InputDecoration(
-                                        labelText: "Password",
-                                        suffixIcon: IconButton(
-                                            icon: Icon(FontAwesomeIcons.eye),
-                                            onPressed: () {
-                                              print(_passwordVisible);
-                                              _togglePasswordVisibility();
-                                            }
-                                        )
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              positiveButtonText: "Ok",
-                              positiveButtonAction: () {},
-                              negativeButtonText: "Cancel",
-                              negativeButtonAction: () {},
-                              neutralButtonAction: () {
-                                Navigator.pop(context);
-                              },
-                              hideNeutralButton: true,
-                              closeOnBackPress: true,
-                            );
-                          }
-                      ),
-                    ),
-
-                  ),
-                ),
-              ),
-              ListTile(
-                title: SlideTransition(
-                  position: Tween<Offset>(
-                    begin: Offset(-1, 0),
-                    end: Offset.zero,
-                  ).animate(_animationController),
-                  child: FadeTransition(
-                      opacity: _animationController,
-                      child: Text(AppLocalizations.of(context)!.mobileNumber)
-                  ),
-                ),
-                subtitle: SlideTransition(
-                  position: Tween<Offset>(
-                    begin: Offset(-1, 0),
-                    end: Offset.zero,
-                  ).animate(_animationController),
-                  child: FadeTransition(
-                      opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')
-                  ),
-                ),
-                trailing: SlideTransition(
-                  position: Tween<Offset>(
-                    begin: Offset(2, 0),
-                    end: Offset.zero,
-                  ).animate(_animationController),
-                  child: FadeTransition(
-                    opacity: _animationController,
-                    child: RadiantGradientMask(
-                      child: IconButton(
-                        icon: SvgPicture.asset("assets/images/icon/solid-edit.svg"),
+                        icon: SvgPicture.asset(
+                            "assets/images/icon/solid-edit.svg"),
                         onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return StatefulBuilder(
+                                builder: (context, setState) {
+                                  return AlertDialog(
+                                    title: Column(
+                                      children: [
+                                        Text(
+                                          AppLocalizations.of(context)!.password,
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.pleaseEnterYourPassword,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                    content: Container(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TextFormField(
+                                            obscureText: _passwordVisible,
+                                            decoration: InputDecoration(
+                                                labelText: AppLocalizations.of(context)!.password,
+                                                suffixIcon: IconButton(
+                                                    icon: _passwordVisible
+                                                        ? Icon(FontAwesomeIcons
+                                                        .eye)
+                                                        : Icon(FontAwesomeIcons
+                                                        .eyeSlash),
+                                                    onPressed: () {
+                                                      setState(() {
+                                                        _togglePasswordVisibility();
+                                                      });
+                                                      print(_passwordVisible);
+                                                    })),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () =>
+                                        {Navigator.pop(context)},
+                                        child: Text(
+                                          AppLocalizations.of(context)!.cancel,
+                                          style: TextStyle(color: Colors.red),
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () async {
+                                          Navigator.pop(context);
+                                          await showDialog(context: context, builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: Column(
+                                                children: [
+                                                  Text(
+                                                    AppLocalizations.of(context)!.newMobileNumber,
+                                                    style: TextStyle(
+                                                        fontSize: 22,
+                                                        fontWeight:
+                                                        FontWeight.w600),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Text(
+                                                    AppLocalizations.of(context)!.enterNewMobileNumber,
+                                                    style: TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                        FontWeight.w400),
+                                                  ),
+                                                ],
+                                              ),
+                                              content: Container(
+                                                child: Column(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    TextFormField(
+                                                      keyboardType: TextInputType.number,
+                                                      inputFormatters: <TextInputFormatter>[
+                                                        FilteringTextInputFormatter.digitsOnly
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  style: TextButton.styleFrom(
+                                                      primary: Colors.red),
+                                                  onPressed: () =>
+                                                  {Navigator.pop(context)},
+                                                  child: Text(
+                                                    AppLocalizations.of(context)!.cancel,
+                                                    style: TextStyle(
+                                                        color: Colors.red),
+                                                  ),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text(AppLocalizations.of(context)!.ok),
+                                                ),
+                                              ],
+                                            );
+                                          });
 
+                                        },
+                                        child: Text(AppLocalizations.of(context)!.ok),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          );
                         },
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                title: SlideTransition(
+                  position: Tween<Offset>(
+                    begin: Offset(-1, 0),
+                    end: Offset.zero,
+                  ).animate(_animationController),
+                  child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(AppLocalizations.of(context)!.mobileNumber)),
+                ),
+                subtitle: SlideTransition(
+                  position: Tween<Offset>(
+                    begin: Offset(-1, 0),
+                    end: Offset.zero,
+                  ).animate(_animationController),
+                  child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text('Hussain.shafiu@gmail.com')),
+                ),
+                trailing: SlideTransition(
+                  position: Tween<Offset>(
+                    begin: Offset(2, 0),
+                    end: Offset.zero,
+                  ).animate(_animationController),
+                  child: FadeTransition(
+                    opacity: _animationController,
+                    child: RadiantGradientMask(
+                      child: IconButton(
+                        icon: SvgPicture.asset(
+                            "assets/images/icon/solid-edit.svg"),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return StatefulBuilder(
+                                builder: (context, setState) {
+                                  return AlertDialog(
+                                    title: Column(
+                                      children: [
+                                        Text(
+                                          AppLocalizations.of(context)!.password,
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.pleaseEnterYourPassword,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                    content: Container(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TextFormField(
+                                            obscureText: _passwordVisible,
+                                            decoration: InputDecoration(
+                                                labelText: AppLocalizations.of(context)!.password,
+                                                suffixIcon: IconButton(
+                                                    icon: _passwordVisible
+                                                        ? Icon(FontAwesomeIcons
+                                                            .eye)
+                                                        : Icon(FontAwesomeIcons
+                                                            .eyeSlash),
+                                                    onPressed: () {
+                                                      setState(() {
+                                                        _togglePasswordVisibility();
+                                                      });
+                                                      print(_passwordVisible);
+                                                    })),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () =>
+                                            {Navigator.pop(context)},
+                                        child: Text(
+                                          AppLocalizations.of(context)!.cancel,
+                                          style: TextStyle(color: Colors.red),
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () async {
+                                          Navigator.pop(context);
+                                          await showDialog(context: context, builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: Column(
+                                                children: [
+                                                  Text(
+                                                    AppLocalizations.of(context)!.newEmail,
+                                                    style: TextStyle(
+                                                        fontSize: 22,
+                                                        fontWeight:
+                                                        FontWeight.w600),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Text(
+                                                    AppLocalizations.of(context)!.enterNewEmail,
+                                                    style: TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                        FontWeight.w400),
+                                                  ),
+                                                ],
+                                              ),
+                                              content: Container(
+                                                child: Column(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    TextFormField(
 
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  style: TextButton.styleFrom(
+                                                      primary: Colors.red),
+                                                  onPressed: () =>
+                                                  {Navigator.pop(context)},
+                                                  child: Text(
+                                                    AppLocalizations.of(context)!.cancel,
+                                                    style: TextStyle(
+                                                        color: Colors.red),
+                                                  ),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text(AppLocalizations.of(context)!.ok),
+                                                ),
+                                              ],
+                                            );
+                                          });
+
+                                        },
+                                        child: Text(AppLocalizations.of(context)!.ok),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -589,8 +1297,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text(AppLocalizations.of(context)!.address)
-                  ),
+                      child: Text(AppLocalizations.of(context)!.address)),
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
@@ -599,8 +1306,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')
-                  ),
+                      child: Text('Hussain.shafiu@gmail.com')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -609,16 +1315,73 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                     opacity: _animationController,
-                    child: GradientIcon(
-                      FontAwesomeIcons.solidEdit,
-                      22.0,
-                      LinearGradient(
-                        colors: <Color>[
-                          Color(0xff3AC170),
-                          Color(0xff25BFA3),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                    child: RadiantGradientMask(
+                      child: IconButton(
+                        icon: SvgPicture.asset(
+                            "assets/images/icon/solid-edit.svg"),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return StatefulBuilder(
+                                builder: (context, setState) {
+                                  return AlertDialog(
+                                    title: Column(
+                                      children: [
+                                        Text(
+                                          AppLocalizations.of(context)!.newAddress,
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight:
+                                              FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.enterNewAddress,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                    content: Container(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TextFormField(
+
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () =>
+                                        {Navigator.pop(context)},
+                                        child: Text(
+                                          AppLocalizations.of(context)!.cancel,
+                                          style: TextStyle(
+                                              color: Colors.red),
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text(AppLocalizations.of(context)!.ok),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -632,8 +1395,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text(AppLocalizations.of(context)!.islandCity)
-                  ),
+                      child: Text(AppLocalizations.of(context)!.islandCity)),
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
@@ -642,8 +1404,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')
-                  ),
+                      child: Text('Hussain.shafiu@gmail.com')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -652,16 +1413,73 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                     opacity: _animationController,
-                    child: GradientIcon(
-                      FontAwesomeIcons.solidEdit,
-                      22.0,
-                      LinearGradient(
-                        colors: <Color>[
-                          Color(0xff3AC170),
-                          Color(0xff25BFA3),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                    child: RadiantGradientMask(
+                      child: IconButton(
+                        icon: SvgPicture.asset(
+                            "assets/images/icon/solid-edit.svg"),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return StatefulBuilder(
+                                builder: (context, setState) {
+                                  return AlertDialog(
+                                    title: Column(
+                                      children: [
+                                        Text(
+                                          AppLocalizations.of(context)!.newIslandCity,
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight:
+                                              FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.enterNewIslandCity,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                    content: Container(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TextFormField(
+
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () =>
+                                        {Navigator.pop(context)},
+                                        child: Text(
+                                          AppLocalizations.of(context)!.cancel,
+                                          style: TextStyle(
+                                              color: Colors.red),
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text(AppLocalizations.of(context)!.ok),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -675,8 +1493,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text(AppLocalizations.of(context)!.country)
-                  ),
+                      child: Text(AppLocalizations.of(context)!.country)),
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
@@ -685,8 +1502,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')
-                  ),
+                      child: Text('Hussain.shafiu@gmail.com')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -695,16 +1511,73 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                     opacity: _animationController,
-                    child: GradientIcon(
-                      FontAwesomeIcons.solidEdit,
-                      22.0,
-                      LinearGradient(
-                        colors: <Color>[
-                          Color(0xff3AC170),
-                          Color(0xff25BFA3),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                    child: RadiantGradientMask(
+                      child: IconButton(
+                        icon: SvgPicture.asset(
+                            "assets/images/icon/solid-edit.svg"),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return StatefulBuilder(
+                                builder: (context, setState) {
+                                  return AlertDialog(
+                                    title: Column(
+                                      children: [
+                                        Text(
+                                          AppLocalizations.of(context)!.newCountry,
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight:
+                                              FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.enterNewCountry,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                    content: Container(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TextFormField(
+
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () =>
+                                        {Navigator.pop(context)},
+                                        child: Text(
+                                          AppLocalizations.of(context)!.cancel,
+                                          style: TextStyle(
+                                              color: Colors.red),
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text(AppLocalizations.of(context)!.ok),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -718,8 +1591,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text(AppLocalizations.of(context)!.postCode)
-                  ),
+                      child: Text(AppLocalizations.of(context)!.postCode)),
                 ),
                 subtitle: SlideTransition(
                   position: Tween<Offset>(
@@ -728,8 +1600,7 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')
-                  ),
+                      child: Text('Hussain.shafiu@gmail.com')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -738,16 +1609,73 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
                   ).animate(_animationController),
                   child: FadeTransition(
                     opacity: _animationController,
-                    child: GradientIcon(
-                      FontAwesomeIcons.solidEdit,
-                      22.0,
-                      LinearGradient(
-                        colors: <Color>[
-                          Color(0xff3AC170),
-                          Color(0xff25BFA3),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                    child: RadiantGradientMask(
+                      child: IconButton(
+                        icon: SvgPicture.asset(
+                            "assets/images/icon/solid-edit.svg"),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return StatefulBuilder(
+                                builder: (context, setState) {
+                                  return AlertDialog(
+                                    title: Column(
+                                      children: [
+                                        Text(
+                                          AppLocalizations.of(context)!.newPostCode,
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight:
+                                              FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.enterNewPostCode,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                    content: Container(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TextFormField(
+
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () =>
+                                        {Navigator.pop(context)},
+                                        child: Text(
+                                          AppLocalizations.of(context)!.cancel,
+                                          style: TextStyle(
+                                              color: Colors.red),
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text(AppLocalizations.of(context)!.ok),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -760,5 +1688,3 @@ class _ProfileViewState extends State<ProfileView> with SingleTickerProviderStat
     );
   }
 }
-
-
