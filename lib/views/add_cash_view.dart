@@ -23,7 +23,8 @@ class AddCashView extends StatefulWidget {
   _AddCashViewState createState() => _AddCashViewState();
 }
 
-class _AddCashViewState extends State<AddCashView> with SingleTickerProviderStateMixin{
+class _AddCashViewState extends State<AddCashView>
+    with SingleTickerProviderStateMixin {
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
 
@@ -32,7 +33,6 @@ class _AddCashViewState extends State<AddCashView> with SingleTickerProviderStat
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
-
     );
     Timer(Duration(milliseconds: 250), () => _animationController!.forward());
     _animationController!.forward();
@@ -54,12 +54,14 @@ class _AddCashViewState extends State<AddCashView> with SingleTickerProviderStat
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, height, safePadding, _animationController, _tween, language);
+    return _portraitModeOnly(
+        context, height, safePadding, _animationController, _tween, language);
   }
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animationController, _tween, language) {
+Scaffold _portraitModeOnly(BuildContext context, height, safePadding,
+    _animationController, _tween, language) {
   return Scaffold(
       appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
@@ -101,8 +103,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                               'assets/images/carousel/bannerThree.png',
                               fit: BoxFit.fill,
                             ),
-                          ]
-                      ),
+                          ]),
                     ),
                   ),
                 ),
@@ -117,12 +118,20 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/top-up-via',arguments: TopUpViaView(mib: true, bml: false));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        TopUpViaView(mib: true, bml: false),
+                                  )
+                              );
                             },
-                            child:SizedBox(
+                            child: SizedBox(
                               width: 60,
                               height: 60,
                               child: Image.asset(
@@ -132,7 +141,8 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
                               primary: Colors.white, // <-- Button color
-                              onPrimary: Colors.grey.shade400, // <-- Splash color
+                              onPrimary:
+                                  Colors.grey.shade400, // <-- Splash color
                             ),
                           ),
                         ),
@@ -140,23 +150,31 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           height: 10,
                         ),
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text(AppLocalizations.of(context)!.mib,
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
+                          child: Text(
+                            AppLocalizations.of(context)!.mib,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade600),
+                          ),
                         ),
                       ],
                     ),
-
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.pushNamed(context, '/bonus');
                             },
-                            child:SizedBox(
+                            child: SizedBox(
                               width: 60,
                               height: 60,
                               child: Image.asset(
@@ -166,7 +184,8 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
                               primary: Colors.white, // <-- Button color
-                              onPrimary: Colors.grey.shade400, // <-- Splash color
+                              onPrimary:
+                                  Colors.grey.shade400, // <-- Splash color
                             ),
                           ),
                         ),
@@ -174,9 +193,16 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           height: 10,
                         ),
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text(AppLocalizations.of(context)!.bonus,
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
+                          child: Text(
+                            AppLocalizations.of(context)!.bonus,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade600),
+                          ),
                         ),
                       ],
                     ),
@@ -184,12 +210,20 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/top-up-via',arguments: TopUpViaView(mib: false, bml: true));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        TopUpViaView(mib: false, bml: true),
+                                  )
+                              );
                             },
-                            child:SizedBox(
+                            child: SizedBox(
                               width: 60,
                               height: 60,
                               child: Image.asset(
@@ -199,7 +233,8 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
                               primary: Colors.white, // <-- Button color
-                              onPrimary: Colors.grey.shade400, // <-- Splash color
+                              onPrimary:
+                                  Colors.grey.shade400, // <-- Splash color
                             ),
                           ),
                         ),
@@ -207,9 +242,16 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           height: 10,
                         ),
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text(AppLocalizations.of(context)!.bml,
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
+                          child: Text(
+                            AppLocalizations.of(context)!.bml,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade600),
+                          ),
                         ),
                       ],
                     ),
@@ -217,12 +259,15 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/top-up-via-bml-gateway');
+                              Navigator.pushNamed(
+                                  context, '/top-up-via-bml-gateway');
                             },
-                            child:SizedBox(
+                            child: SizedBox(
                               width: 60,
                               height: 60,
                               child: Image.asset(
@@ -232,7 +277,8 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
                               primary: Colors.white, // <-- Button color
-                              onPrimary: Colors.grey.shade400, // <-- Splash color
+                              onPrimary:
+                                  Colors.grey.shade400, // <-- Splash color
                             ),
                           ),
                         ),
@@ -240,9 +286,16 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                           height: 10,
                         ),
                         ScaleTransition(
-                          scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                          child: Text(AppLocalizations.of(context)!.cashCard,
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey.shade600),),
+                          scale: _tween.animate(CurvedAnimation(
+                              parent: _animationController,
+                              curve: Curves.easeInOutBack)),
+                          child: Text(
+                            AppLocalizations.of(context)!.cashCard,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade600),
+                          ),
                         ),
                       ],
                     ),
@@ -250,10 +303,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                 ),
               ],
             ),
-
           ),
-
         ),
-      )
-    );
+      ));
 }

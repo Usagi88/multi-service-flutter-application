@@ -168,7 +168,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/raastas-reload',arguments: RaastasReloadView(dhiraagu: true, ooredoo: false));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                RaastasReloadView(dhiraagu: true, ooredoo: false)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -243,7 +249,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/raastas-reload',arguments: RaastasReloadView(dhiraagu: false, ooredoo: true));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  RaastasReloadView(dhiraagu: false, ooredoo: true)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -328,7 +340,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/package-recharge',arguments: PackageRechargeView(dhiraagu: true, ooredoo: false));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PackageRechargeView(dhiraagu: true, ooredoo: false)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -403,7 +421,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/package-recharge',arguments: PackageRechargeView(dhiraagu: false, ooredoo: true));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PackageRechargeView(dhiraagu: false, ooredoo: true)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -488,7 +512,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/bill-pay',arguments: BillPayView(dhiraagu: true, ooredoo: false));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  BillPayView(dhiraagu: true, ooredoo: false)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -563,7 +593,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/bill-pay',arguments: BillPayView(dhiraagu: false, ooredoo: true));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  BillPayView(dhiraagu: false, ooredoo: true)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -1116,7 +1152,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/cash-in',arguments: CashInView(dhiraagu: true, ooredoo: false));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CashInView(dhiraagu: true, ooredoo: false)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -1191,7 +1233,13 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(context, '/cash-in',arguments: CashInView(dhiraagu: false, ooredoo: true));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CashInView(dhiraagu: false, ooredoo: true)
+                                          )
+                                      );
                                     },
                                     child: Container(
                                       //width: 166,
@@ -1432,8 +1480,6 @@ Scaffold _portraitModeOnly(BuildContext context, navBarHeight, safePadding, _ani
                                   scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                                   child: GestureDetector(
                                     onTap: () => {
-
-                                      //Navigator.pop(context,true),// It worked for me instead of above line
                                       Navigator.pushNamed(context, '/donate'),
                                     },
                                     child: Container(

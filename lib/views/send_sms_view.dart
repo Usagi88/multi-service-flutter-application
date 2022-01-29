@@ -98,8 +98,9 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                             child: FadeTransition(
                               opacity: _animationController,
                               child: Container(
-                                width: MediaQuery.of(context).size.width > 350 ? 200 : 160,
-                                height: 68,
+                                width: MediaQuery.of(context).size.width > 350 ? 180 : 160,
+                                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+
                                 alignment: Alignment.centerRight,
                                 child: Text(
                                   AppLocalizations.of(context)!.sendSmsFirstText,
@@ -109,7 +110,9 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                               ),
                             ),
                           ),
-                          Spacer(),
+                          SizedBox(
+                            width: 20,
+                          ),
                           SlideTransition(
                             position: Tween<Offset>(
                               begin: Offset(-1, 0),
@@ -118,7 +121,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                             child: FadeTransition(
                               opacity: _animationController,
                               child: Container(
-                                width: MediaQuery.of(context).size.width > 350 ? 145 : 100,
+                                width: MediaQuery.of(context).size.width > 350 ? 135 : 100,
                                 constraints: BoxConstraints(
                                     minHeight: 68
                                 ),
@@ -140,7 +143,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                     Container(
                                       child: GradientIcon(
                                         FontAwesomeIcons.solidEnvelope,
-                                        MediaQuery.of(context).size.width > 350 ? 31.0 : 24.0,
+                                        MediaQuery.of(context).size.width > 350 ? 26.0 : 24.0,
                                         LinearGradient(
                                           colors: <Color>[
                                             Color(0xff3AC170),
@@ -152,7 +155,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                       ),
                                     ),
                                     SizedBox(
-                                      width: MediaQuery.of(context).size.width > 350 ? 16.0 : 12.0,
+                                      width: MediaQuery.of(context).size.width > 350 ? 12.0 : 12.0,
                                     ),
                                     Container(
                                       width: 1,
@@ -531,7 +534,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                           child: FadeTransition(
                             opacity: _animationController,
                             child: Container(
-                              width: MediaQuery.of(context).size.width > 350 ? 145 : 100,
+                              width: MediaQuery.of(context).size.width > 350 ? 135 : 100,
                               constraints: BoxConstraints(
                                   minHeight: 68
                               ),
@@ -553,7 +556,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                   Container(
                                     child: GradientIcon(
                                       FontAwesomeIcons.solidEnvelope,
-                                      MediaQuery.of(context).size.width > 350 ? 31.0 : 24.0,
+                                      MediaQuery.of(context).size.width > 350 ? 26.0 : 24.0,
                                       LinearGradient(
                                         colors: <Color>[
                                           Color(0xff3AC170),
@@ -565,7 +568,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                     ),
                                   ),
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width > 350 ? 16.0 : 12.0,
+                                    width: MediaQuery.of(context).size.width > 350 ? 12.0 : 12.0,
                                   ),
                                   Container(
                                     width: 1,
@@ -621,7 +624,9 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                             ),
                           ),
                         ),
-                        Spacer(),
+                        SizedBox(
+                          width: 20,
+                        ),
                         SlideTransition(
                           position: Tween<Offset>(
                             begin: Offset(1, 0),
@@ -630,8 +635,8 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                           child: FadeTransition(
                             opacity: _animationController,
                             child: Container(
-                              width: MediaQuery.of(context).size.width > 350 ? 200 : 160,
-                              height: 68,
+                              width: MediaQuery.of(context).size.width > 350 ? 180 : 160,
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               alignment: Alignment.centerLeft,
                               child: Text(
                                   AppLocalizations.of(context)!.sendSmsFirstText,

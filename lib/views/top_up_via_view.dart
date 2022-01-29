@@ -80,6 +80,8 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
+    print(widget.bml);
+    print(widget.mib);
     var language = Provider.of<LocaleProvider>(context);
     double height = NavbarWithBackButton().preferredSize.height;
     var safePadding = MediaQuery.of(context).padding.top;
