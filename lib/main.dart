@@ -22,6 +22,7 @@ import 'package:fpapp/views/schedule_payments_view.dart';
 import 'package:fpapp/views/send_sms_view.dart';
 import 'package:fpapp/views/package_recharge_view.dart';
 import 'package:fpapp/views/services_view.dart';
+import 'package:fpapp/views/settings_view.dart';
 import 'package:fpapp/views/slip_view.dart';
 import 'package:fpapp/views/top_up_via_bml_gateway_view.dart';
 import 'package:fpapp/views/top_up_via_view.dart';
@@ -104,6 +105,7 @@ class MyApp extends StatelessWidget {
                 '/maldive-gas': (context) => new MaldiveGasView(),
                 '/donate': (context) => new DonateView(),
                 '/bonus': (context) => new BonusView(),
+                '/settings': (context) => new SettingsView(),
               },
               home: HomeView(),
             );

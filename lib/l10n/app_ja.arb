@@ -219,5 +219,8 @@
   "newCountry": "新しい国",
   "enterNewCountry": "新しい国を入力してください",
   "newPostCode": "新しい郵便番号",
-  "enterNewPostCode": "新しい郵便番号を入力してください"
+  "enterNewPostCode": "新しい郵便番号を入力してください",
+
+
+  "settings": "Settings"
 }

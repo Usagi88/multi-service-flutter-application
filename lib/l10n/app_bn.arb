@@ -218,6 +218,8 @@
   "newCountry": "নতুন দেশ",
   "enterNewCountry": "নতুন দেশে প্রবেশ করুন",
   "newPostCode": "নতুন পোস্ট কোড",
-  "enterNewPostCode": "নতুন পোস্ট কোড লিখুন"
+  "enterNewPostCode": "নতুন পোস্ট কোড লিখুন",
+
+  "settings": "Settings"
 
 }

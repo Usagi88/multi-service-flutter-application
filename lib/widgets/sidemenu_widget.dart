@@ -196,6 +196,25 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
               title: Text(AppLocalizations.of(context)!.exitApp,),
             ),
+            ListTile(
+              leading: GradientIcon(
+                FontAwesomeIcons.cog,
+                24.0,
+                LinearGradient(
+                  colors: <Color>[
+                    Color(0xff3AC170),
+                    Color(0xff25BFA3),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              onTap: () => {
+                Navigator.pop(context),
+                Navigator.pushNamed(context, '/settings'),
+              },
+              title: Text(AppLocalizations.of(context)!.settings),
+            ),
             Align(
               alignment: Alignment.centerLeft,
               child: Container(
@@ -221,7 +240,6 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
     }
 
     return Drawer(
-
       child: ListView(
         children: [
           DrawerHeader(child: Container(
@@ -392,6 +410,25 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.exitApp),
+          ),
+          ListTile(
+            leading: GradientIcon(
+              FontAwesomeIcons.cog,
+              24.0,
+              LinearGradient(
+                colors: <Color>[
+                  Color(0xff3AC170),
+                  Color(0xff25BFA3),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushNamed(context, '/settings'),
+            },
+            title: Text(AppLocalizations.of(context)!.settings),
           ),
           Align(
             alignment: Alignment.centerLeft,

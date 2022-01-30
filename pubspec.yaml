@@ -45,6 +45,7 @@ dependencies:
   circle_list: ^1.0.5
   circle_flags: ^0.0.2
   fialogs: ^2.0.4
+  permission_handler: ^8.3.0
 
 
 

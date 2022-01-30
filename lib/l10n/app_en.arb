@@ -259,5 +259,7 @@
     "newCountry": "New country",
     "enterNewCountry": "Enter new country",
     "newPostCode": "New post code",
-    "enterNewPostCode": "Enter new post code"
+    "enterNewPostCode": "Enter new post code",
+
+    "settings": "Settings"
 }

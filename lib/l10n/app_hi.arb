@@ -218,6 +218,9 @@
     "newCountry": "नया देश",
     "enterNewCountry": "नया देश दर्ज करें",
     "newPostCode": "नया पोस्ट कोड",
-    "enterNewPostCode": "नया पोस्ट कोड दर्ज करें"
+    "enterNewPostCode": "नया पोस्ट कोड दर्ज करें",
+
+
+    "settings": "Settings"
 
 }
