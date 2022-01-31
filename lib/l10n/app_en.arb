@@ -261,5 +261,14 @@
     "newPostCode": "New post code",
     "enterNewPostCode": "Enter new post code",
 
-    "settings": "Settings"
+    "settings": "Settings",
+    "systemAndDevice": "System & Device",
+    "contacts": "Contacts",
+    "storage": "Storage",
+    "camera": "Camera",
+    "sms": "SMS",
+    "location": "Location",
+
+    "changeAccount": "Change Account",
+    "notification": "Notification"
 }

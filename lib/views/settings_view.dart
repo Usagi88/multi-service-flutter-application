@@ -26,12 +26,12 @@ class SettingsView extends StatefulWidget {
 class _SettingsViewState extends State<SettingsView>
     with SingleTickerProviderStateMixin {
   AnimationController? _animationController;
-  bool _toggled = false;
   bool _contactToggled = false;
   bool _storageToggled = false;
   bool _cameraToggled = false;
   bool _smsToggled = false;
   bool _locationToggled = false;
+  bool _notificationToggled = false;
 
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
 
@@ -41,6 +41,7 @@ class _SettingsViewState extends State<SettingsView>
     var camera = await Permission.camera.status;
     var sms = await Permission.sms.status;
     var location = await Permission.locationWhenInUse.status;
+    var notification = await Permission.notification.status;
 
     if (contact.isGranted) {
       setState(() {
@@ -65,6 +66,11 @@ class _SettingsViewState extends State<SettingsView>
     if (location.isGranted) {
       setState(() {
         _locationToggled = true;
+      });
+    }
+    if (notification.isGranted) {
+      setState(() {
+        _notificationToggled = true;
       });
     }
   }
@@ -143,6 +149,21 @@ class _SettingsViewState extends State<SettingsView>
     }
   }
 
+  Future<void> requestNotificationPermission() async {
+    final status = await Permission.notification.request();
+    if (status == PermissionStatus.granted) {
+      _notificationToggled = true;
+      _switchNotificationToggle(_notificationToggled);
+    } else if (status == PermissionStatus.denied) {
+      _locationToggled = false;
+      _switchNotificationToggle(_notificationToggled);
+    } else if (status == PermissionStatus.permanentlyDenied) {
+      _locationToggled = false;
+      _switchNotificationToggle(_notificationToggled);
+      await openAppSettings();
+    }
+  }
+
   @override
   void initState() {
     checkAllPermissionStatus();
@@ -161,39 +182,34 @@ class _SettingsViewState extends State<SettingsView>
     super.dispose();
   }
 
-  _switchToggle() {
-    setState(() {
-      _toggled = !_toggled;
-    });
-  }
-
   _switchCameraToggle(boolValue) {
     setState(() {
       _cameraToggled = boolValue;
     });
   }
-
   _switchStorageToggle(boolValue) {
     setState(() {
       _storageToggled = boolValue;
     });
   }
-
   _switchContactToggle(boolValue) {
     setState(() {
       _contactToggled = boolValue;
     });
   }
-
   _switchSMSToggle(boolValue) {
     setState(() {
       _storageToggled = boolValue;
     });
   }
-
   _switchLocationToggle(boolValue) {
     setState(() {
       _locationToggled = boolValue;
+    });
+  }
+  _switchNotificationToggle(boolValue) {
+    setState(() {
+      _notificationToggled = boolValue;
     });
   }
   @override
@@ -212,6 +228,213 @@ class _SettingsViewState extends State<SettingsView>
   //portrait
   Scaffold _portraitModeOnly(BuildContext context, height, safePadding,
       _animationController, _tween, language) {
+    if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
+      return Scaffold(
+          appBar: NavbarWithBackButton(
+            includeShadow: true,
+          ),
+          drawer: SideMenu(),
+          body: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: SlideTransition(
+                      position: Tween<Offset>(
+                        begin: Offset(1, 0),
+                        end: Offset.zero,
+                      ).animate(_animationController),
+                      child: FadeTransition(
+                          opacity: _animationController,
+                          child: Text(AppLocalizations.of(context)!.systemAndDevice, style: TextStyle(fontWeight: FontWeight.w600),)),
+                    )
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: SwitchListTile(
+                    value: _contactToggled,
+                    title: Text(AppLocalizations.of(context)!.contacts),
+                    secondary: GradientIcon(
+                      FontAwesomeIcons.idCardAlt,
+                      24.0,
+                      LinearGradient(
+                        colors: <Color>[
+                          Color(0xff3AC170),
+                          Color(0xff25BFA3),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    activeColor: Color(0xff28bf9b),
+                    onChanged: (bool value) {
+                      requestContactPermission();
+                    },
+                  ),
+                ),
+              ),
+              SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: SwitchListTile(
+                    value: _storageToggled,
+                    title: Text(AppLocalizations.of(context)!.storage),
+                    secondary: GradientIcon(
+                      FontAwesomeIcons.solidFolder,
+                      24.0,
+                      LinearGradient(
+                        colors: <Color>[
+                          Color(0xff3AC170),
+                          Color(0xff25BFA3),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    activeColor: Color(0xff28bf9b),
+                    onChanged: (bool value) {
+                      requestStoragePermission();
+                    },
+                  ),
+                ),
+              ),
+              SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: SwitchListTile(
+                    value: _cameraToggled,
+                    title: Text(AppLocalizations.of(context)!.camera),
+                    secondary: GradientIcon(
+                      FontAwesomeIcons.camera,
+                      24.0,
+                      LinearGradient(
+                        colors: <Color>[
+                          Color(0xff3AC170),
+                          Color(0xff25BFA3),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    activeColor: Color(0xff28bf9b),
+                    onChanged: (bool value) {
+                      requestCameraPermission();
+                    },
+                  ),
+                ),
+              ),
+              SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: SwitchListTile(
+                    value: _smsToggled,
+                    title: Text(AppLocalizations.of(context)!.sms),
+                    secondary: GradientIcon(
+                      FontAwesomeIcons.commentDots,
+                      24.0,
+                      LinearGradient(
+                        colors: <Color>[
+                          Color(0xff3AC170),
+                          Color(0xff25BFA3),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    activeColor: Color(0xff28bf9b),
+                    onChanged: (bool value) {
+                      requestSMSPermission();
+                    },
+                  ),
+                ),
+              ),
+              SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: SwitchListTile(
+                    value: _locationToggled,
+                    title: Text(AppLocalizations.of(context)!.location),
+                    secondary: GradientIcon(
+                      FontAwesomeIcons.mapMarkerAlt,
+                      24.0,
+                      LinearGradient(
+                        colors: <Color>[
+                          Color(0xff3AC170),
+                          Color(0xff25BFA3),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    activeColor: Color(0xff28bf9b),
+                    onChanged: (bool value) {
+                      requestLocationPermission();
+                    },
+                  ),
+                ),
+              ),
+              SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(1, 0),
+                  end: Offset.zero,
+                ).animate(_animationController),
+                child: FadeTransition(
+                  opacity: _animationController,
+                  child: SwitchListTile(
+                    value: _notificationToggled,
+                    title: Text(AppLocalizations.of(context)!.notification),
+                    secondary: GradientIcon(
+                      FontAwesomeIcons.solidBell,
+                      24.0,
+                      LinearGradient(
+                        colors: <Color>[
+                          Color(0xff3AC170),
+                          Color(0xff25BFA3),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    activeColor: Color(0xff28bf9b),
+                    onChanged: (bool value) {
+                      requestNotificationPermission();
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ));
+    }
+
     return Scaffold(
         appBar: NavbarWithBackButton(
           includeShadow: true,
@@ -226,121 +449,193 @@ class _SettingsViewState extends State<SettingsView>
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: GradientText(
-                    text: 'System & Device',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Roboto'),
-                    gradient: const LinearGradient(colors: [
-                      Color(0xff3AC170),
-                      Color(0xff25BFA3),
-                    ], transform: GradientRotation(math.pi * 0.50))),
+                child: SlideTransition(
+                  position: Tween<Offset>(
+                    begin: Offset(-1, 0),
+                    end: Offset.zero,
+                  ).animate(_animationController),
+                  child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(AppLocalizations.of(context)!.systemAndDevice, style: TextStyle(fontWeight: FontWeight.w600),)),
+                )
               ),
             ),
             SizedBox(
               height: 10,
             ),
-            SwitchListTile(
-              value: _contactToggled,
-              title: Text('Contacts'),
-              secondary: GradientIcon(
-                FontAwesomeIcons.idCardAlt,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(-1, 0),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: SwitchListTile(
+                  value: _contactToggled,
+                  title: Text(AppLocalizations.of(context)!.contacts),
+                  secondary: GradientIcon(
+                    FontAwesomeIcons.idCardAlt,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  activeColor: Color(0xff28bf9b),
+                  onChanged: (bool value) {
+                    requestContactPermission();
+                  },
                 ),
               ),
-              activeColor: Color(0xff28bf9b),
-              onChanged: (bool value) {
-                requestContactPermission();
-              },
             ),
-            SwitchListTile(
-              value: _storageToggled,
-              title: Text('Storage'),
-              secondary: GradientIcon(
-                FontAwesomeIcons.solidFolder,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(-1, 0),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: SwitchListTile(
+                  value: _storageToggled,
+                  title: Text(AppLocalizations.of(context)!.storage),
+                  secondary: GradientIcon(
+                    FontAwesomeIcons.solidFolder,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  activeColor: Color(0xff28bf9b),
+                  onChanged: (bool value) {
+                    requestStoragePermission();
+                  },
                 ),
               ),
-              activeColor: Color(0xff28bf9b),
-              onChanged: (bool value) {
-                requestStoragePermission();
-              },
             ),
-            SwitchListTile(
-              value: _cameraToggled,
-              title: Text('Camera'),
-              secondary: GradientIcon(
-                FontAwesomeIcons.camera,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(-1, 0),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: SwitchListTile(
+                  value: _cameraToggled,
+                  title: Text(AppLocalizations.of(context)!.camera),
+                  secondary: GradientIcon(
+                    FontAwesomeIcons.camera,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  activeColor: Color(0xff28bf9b),
+                  onChanged: (bool value) {
+                    requestCameraPermission();
+                  },
                 ),
               ),
-              activeColor: Color(0xff28bf9b),
-              onChanged: (bool value) {
-                requestCameraPermission();
-              },
             ),
-            SwitchListTile(
-              value: _smsToggled,
-              title: Text('SMS'),
-              secondary: GradientIcon(
-                FontAwesomeIcons.commentDots,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(-1, 0),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: SwitchListTile(
+                  value: _smsToggled,
+                  title: Text(AppLocalizations.of(context)!.sms),
+                  secondary: GradientIcon(
+                    FontAwesomeIcons.commentDots,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  activeColor: Color(0xff28bf9b),
+                  onChanged: (bool value) {
+                    requestSMSPermission();
+                  },
                 ),
               ),
-              activeColor: Color(0xff28bf9b),
-              onChanged: (bool value) {
-                requestSMSPermission();
-              },
             ),
-            SwitchListTile(
-              value: _locationToggled,
-              title: Text('Location'),
-              secondary: GradientIcon(
-                FontAwesomeIcons.mapMarkerAlt,
-                24.0,
-                LinearGradient(
-                  colors: <Color>[
-                    Color(0xff3AC170),
-                    Color(0xff25BFA3),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(-1, 0),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: SwitchListTile(
+                  value: _locationToggled,
+                  title: Text(AppLocalizations.of(context)!.location),
+                  secondary: GradientIcon(
+                    FontAwesomeIcons.mapMarkerAlt,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  activeColor: Color(0xff28bf9b),
+                  onChanged: (bool value) {
+                    requestLocationPermission();
+                  },
                 ),
               ),
-              activeColor: Color(0xff28bf9b),
-              onChanged: (bool value) {
-                requestLocationPermission();
-              },
+            ),
+            SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(-1, 0),
+                end: Offset.zero,
+              ).animate(_animationController),
+              child: FadeTransition(
+                opacity: _animationController,
+                child: SwitchListTile(
+                  value: _notificationToggled,
+                  title: Text(AppLocalizations.of(context)!.notification),
+                  secondary: GradientIcon(
+                    FontAwesomeIcons.solidBell,
+                    24.0,
+                    LinearGradient(
+                      colors: <Color>[
+                        Color(0xff3AC170),
+                        Color(0xff25BFA3),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  activeColor: Color(0xff28bf9b),
+                  onChanged: (bool value) {
+                    requestNotificationPermission();
+                  },
+                ),
+              ),
             ),
           ],
         ));

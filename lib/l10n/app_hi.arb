@@ -221,6 +221,15 @@
     "enterNewPostCode": "नया पोस्ट कोड दर्ज करें",
 
 
-    "settings": "Settings"
+    "settings": "समायोजन",
+    "systemAndDevice": "सिस्टम और डिवाइस",
+    "contacts": "संपर्क",
+    "storage": "भंडारण",
+    "camera": "कैमरा",
+    "sms": "एसएमएस",
+    "location": "स्थान",
+
+    "changeAccount": "खाता परिवर्तन करें",
+    "notification": "अधिसूचना"
 
 }

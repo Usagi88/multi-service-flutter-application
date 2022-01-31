@@ -220,6 +220,15 @@
   "newPostCode": "নতুন পোস্ট কোড",
   "enterNewPostCode": "নতুন পোস্ট কোড লিখুন",
 
-  "settings": "Settings"
+  "settings": "সেটিংস",
+  "systemAndDevice": "সিস্টেম এবং ডিভাইস",
+  "contacts": "পরিচিতি",
+  "storage": "স্টোরেজ",
+  "camera": "ক্যামেরা",
+  "sms": "খুদেবার্তা",
+  "location": "অবস্থান",
+
+  "changeAccount": "অ্যাকাউন্ট পরিবর্তন করুন",
+  "notification": "বিজ্ঞপ্তি"
 
 }

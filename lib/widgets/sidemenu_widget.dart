@@ -1,15 +1,19 @@
+
+
+import 'package:account_picker/account_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
+
+
 import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/provider/locale_provider.dart';
-import 'package:fpapp/views/about_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'language_picker.dart';
 
-class SideMenu extends StatelessWidget with PreferredSizeWidget{
-  const SideMenu({Key? key}) : super(key: key);
+class SideMenu extends StatelessWidget with PreferredSizeWidget {
+  SideMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +25,23 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
 
     return _portraitModeOnly(context, language);
   }
+
   //portrait mode
-  Drawer _portraitModeOnly(BuildContext context, language){
-    if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
+  Drawer _portraitModeOnly(BuildContext context, language) {
+    if (language.locale.toString() == 'dv' ||
+        language.locale.toString() == 'ar') {
       return Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Container(
-              alignment: Alignment.centerRight,
-              child: SizedBox(
-                  height: 34,
-                  child: Image.asset(
-                    'assets/images/fahipay-logo.png',
-                  )),
-            ),
+            DrawerHeader(
+              child: Container(
+                alignment: Alignment.centerRight,
+                child: SizedBox(
+                    height: 34,
+                    child: Image.asset(
+                      'assets/images/fahipay-logo.png',
+                    )),
+              ),
             ),
             ListTile(
               leading: GradientIcon(
@@ -49,7 +56,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.profile,),
+              title: Text(
+                AppLocalizations.of(context)!.profile,
+              ),
               onTap: () => {
                 Navigator.pop(context),
                 Navigator.pushNamed(context, '/profile'),
@@ -68,9 +77,10 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.schedulePayment,),
-              onTap: () =>
-              {
+              title: Text(
+                AppLocalizations.of(context)!.schedulePayment,
+              ),
+              onTap: () => {
                 Navigator.pop(context),
                 Navigator.pushNamed(context, '/scheduled-payments'),
               },
@@ -88,7 +98,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.changePassword,),
+              title: Text(
+                AppLocalizations.of(context)!.changePassword,
+              ),
               onTap: () => {
                 Navigator.pop(context),
                 Navigator.pushNamed(context, '/reset-password'),
@@ -107,7 +119,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.inviteFriends,),
+              title: Text(
+                AppLocalizations.of(context)!.inviteFriends,
+              ),
               onTap: () => {
                 Navigator.pop(context),
                 Navigator.pushNamed(context, '/invite-friends'),
@@ -126,7 +140,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.contactUs, ),
+              title: Text(
+                AppLocalizations.of(context)!.contactUs,
+              ),
               onTap: () => {
                 Navigator.pop(context),
                 Navigator.pushNamed(context, '/contact-us'),
@@ -145,7 +161,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.about,),
+              title: Text(
+                AppLocalizations.of(context)!.about,
+              ),
               onTap: () => {
                 Navigator.pop(context),
                 Navigator.pushNamed(context, '/about'),
@@ -164,7 +182,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.refreshApp,),
+              title: Text(
+                AppLocalizations.of(context)!.refreshApp,
+              ),
             ),
             ListTile(
               leading: GradientIcon(
@@ -179,7 +199,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.logout,),
+              title: Text(
+                AppLocalizations.of(context)!.logout,
+              ),
             ),
             ListTile(
               leading: GradientIcon(
@@ -194,7 +216,27 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
                   end: Alignment.bottomRight,
                 ),
               ),
-              title: Text(AppLocalizations.of(context)!.exitApp,),
+              title: Text(
+                AppLocalizations.of(context)!.exitApp,
+              ),
+            ),
+            ListTile(
+              leading: GradientIcon(
+                FontAwesomeIcons.userFriends,
+                24.0,
+                LinearGradient(
+                  colors: <Color>[
+                    Color(0xff3AC170),
+                    Color(0xff25BFA3),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              onTap: () async {
+                EmailResult? emailResult = await AccountPicker.emailHint();
+              },
+              title: Text(AppLocalizations.of(context)!.changeAccount),
             ),
             ListTile(
               leading: GradientIcon(
@@ -223,12 +265,16 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.changeLanguage,),
+              title: Text(
+                AppLocalizations.of(context)!.changeLanguage,
+              ),
               onTap: () async {
                 // Show PopUp
-                await showDialog(context: context, builder: (BuildContext context) {
-                  return LanguagePickerWidget();
-                });
+                await showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return LanguagePickerWidget();
+                    });
 
                 // Doesn't run
                 Navigator.pop(context);
@@ -242,14 +288,15 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(child: Container(
-            alignment: Alignment.centerLeft,
-            child: SizedBox(
-                height: 34,
-                child: Image.asset(
-                  'assets/images/fahipay-logo.png',
-                )),
-          ),
+          DrawerHeader(
+            child: Container(
+              alignment: Alignment.centerLeft,
+              child: SizedBox(
+                  height: 34,
+                  child: Image.asset(
+                    'assets/images/fahipay-logo.png',
+                  )),
+            ),
           ),
           ListTile(
             leading: GradientIcon(
@@ -284,8 +331,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             title: Text(AppLocalizations.of(context)!.schedulePayment),
-            onTap: () =>
-            {
+            onTap: () => {
               Navigator.pop(context),
               Navigator.pushNamed(context, '/scheduled-payments'),
             },
@@ -413,6 +459,24 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
           ),
           ListTile(
             leading: GradientIcon(
+              FontAwesomeIcons.userFriends,
+              24.0,
+              LinearGradient(
+                colors: <Color>[
+                  Color(0xff3AC170),
+                  Color(0xff25BFA3),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            onTap: () async {
+              EmailResult? emailResult = await AccountPicker.emailHint();
+            },
+            title: Text(AppLocalizations.of(context)!.changeAccount),
+          ),
+          ListTile(
+            leading: GradientIcon(
               FontAwesomeIcons.cog,
               24.0,
               LinearGradient(
@@ -441,9 +505,11 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget{
             title: Text(AppLocalizations.of(context)!.changeLanguage),
             onTap: () async {
               // Show PopUp
-              await showDialog(context: context, builder: (BuildContext context) {
-                return LanguagePickerWidget();
-              });
+              await showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return LanguagePickerWidget();
+                  });
 
               // Doesn't run
               Navigator.pop(context);

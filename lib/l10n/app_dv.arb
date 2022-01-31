@@ -223,6 +223,15 @@
     "enterNewPostCode": "އައު ޕޯސްޓް ކޯޑް ލިޔުއްވާ",
 
 
-    "settings": "Settings"
+    "settings": "ސެޓިންގްސް",
+    "systemAndDevice": "ސިސްޓަމް & ޑިވައިސް",
+    "contacts": "ކޮންޓެކްޓްސް",
+    "storage": "ސްޓޯރޭޖް",
+    "camera": "ކެމަރާ",
+    "sms": "އެސް.އެމް.އެސް",
+    "location": "ލޮކޭޝަން",
+
+    "changeAccount": "އެކައުންޓް ބަދަލުކުރުން",
+    "notification": "ނޯޓިފިކޭޝަން"
 
 }

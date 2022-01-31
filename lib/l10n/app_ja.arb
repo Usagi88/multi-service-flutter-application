@@ -222,5 +222,14 @@
   "enterNewPostCode": "新しい郵便番号を入力してください",
 
 
-  "settings": "Settings"
+  "settings": "セッティング",
+  "systemAndDevice": "システムとデバイス",
+  "contacts": "コンタクト",
+  "storage": "ストレージ",
+  "camera": "カメラ",
+  "sms": "SMS",
+  "location": "ロケーション",
+
+  "changeAccount": "チェーンジ・アカウント",
+  "notification": "通知"
 }
