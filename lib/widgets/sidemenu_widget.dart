@@ -1,6 +1,6 @@
 
 
-import 'package:account_picker/account_picker.dart';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
@@ -9,11 +9,29 @@ import 'package:flutter/services.dart';
 import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/provider/locale_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
+import '../main.dart';
 import 'language_picker.dart';
 
 class SideMenu extends StatelessWidget with PreferredSizeWidget {
   SideMenu({Key? key}) : super(key: key);
+
+  GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ],
+  );
+
+  Future<void> _handleSignIn() async {
+    try {
+      await _googleSignIn.signIn();
+    } catch (error) {
+      print(error);
+    }
+  }
+  Future<void> _handleSignOut() => _googleSignIn.disconnect();
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +40,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+
 
     return _portraitModeOnly(context, language);
   }
@@ -185,6 +204,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               title: Text(
                 AppLocalizations.of(context)!.refreshApp,
               ),
+              onTap: () {
+                RestartWidget.restartApp(context);
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -202,6 +224,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               title: Text(
                 AppLocalizations.of(context)!.logout,
               ),
+              onTap: () {
+                _handleSignOut();
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -219,6 +244,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               title: Text(
                 AppLocalizations.of(context)!.exitApp,
               ),
+              onTap: () {
+                SystemNavigator.pop();
+              },
             ),
             ListTile(
               leading: GradientIcon(
@@ -233,8 +261,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
                   end: Alignment.bottomRight,
                 ),
               ),
-              onTap: () async {
-                EmailResult? emailResult = await AccountPicker.emailHint();
+              onTap: () {
+                //EmailResult? emailResult = await AccountPicker.emailHint();
+                _handleSignIn();
               },
               title: Text(AppLocalizations.of(context)!.changeAccount),
             ),
@@ -426,6 +455,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               ),
             ),
             title: Text(AppLocalizations.of(context)!.refreshApp),
+            onTap: () {
+              RestartWidget.restartApp(context);
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -441,6 +473,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               ),
             ),
             title: Text(AppLocalizations.of(context)!.logout),
+            onTap: () {
+              _handleSignOut();
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -456,6 +491,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               ),
             ),
             title: Text(AppLocalizations.of(context)!.exitApp),
+            onTap: () {
+              SystemNavigator.pop();
+            },
           ),
           ListTile(
             leading: GradientIcon(
@@ -470,8 +508,8 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
                 end: Alignment.bottomRight,
               ),
             ),
-            onTap: () async {
-              EmailResult? emailResult = await AccountPicker.emailHint();
+            onTap: () {
+              _handleSignIn();
             },
             title: Text(AppLocalizations.of(context)!.changeAccount),
           ),

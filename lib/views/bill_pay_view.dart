@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/provider/locale_provider.dart';
@@ -26,11 +27,16 @@ class BillPayView extends StatefulWidget {
   _BillPayViewState createState() => _BillPayViewState();
 }
 
-class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStateMixin{
+class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin<BillPayView>{
+  final FlutterContactPicker _contactPicker = new FlutterContactPicker();
+  Contact? _contact;
   AnimationController? _animationController;
   Tween<double> _tween = Tween(begin: 0.1, end: 1);
   bool? _checked = false;
   bool _isVisible = false;
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -210,7 +216,12 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                         style: TextButton.styleFrom(
                                                           primary: Colors.white,
                                                         ),
-                                                        onPressed: () { },
+                                                        onPressed: () async {
+                                                          Contact? contact = await _contactPicker.selectContact();
+                                                          setState(() {
+                                                            _contact = contact;
+                                                          });
+                                                        },
                                                         child: Text(
                                                           AppLocalizations.of(context)!.pickContact,
                                                           style: TextStyle(
@@ -254,8 +265,27 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                   ).animate(_animationController),
                                                   child: FadeTransition(
                                                     opacity: _animationController,
-                                                    child: TextfieldTextWidget(
-                                                      hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                    child: Container(
+                                                      //height: MediaQuery.of(context).size.height * 0.053,
+                                                      height: 46,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                        color: Color(0xfff2f2f2),
+                                                      ),
+                                                      child: TextFormField(
+                                                        key: Key(_contact.toString()),
+                                                        initialValue: _contact.toString().replaceAll(new RegExp(r'[^0-9]'),''),
+
+                                                        decoration: InputDecoration(
+                                                          contentPadding: EdgeInsets.all(10.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: AppLocalizations.of(context)!.mobileNumber,
+
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -701,7 +731,12 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                         style: TextButton.styleFrom(
                                                           primary: Colors.white,
                                                         ),
-                                                        onPressed: () { },
+                                                        onPressed: () async {
+                                                          Contact? contact = await _contactPicker.selectContact();
+                                                          setState(() {
+                                                            _contact = contact;
+                                                          });
+                                                        },
                                                         child: Text(
                                                           AppLocalizations.of(context)!.pickContact,
                                                           style: TextStyle(
@@ -745,8 +780,27 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                   ).animate(_animationController),
                                                   child: FadeTransition(
                                                     opacity: _animationController,
-                                                    child: TextfieldTextWidget(
-                                                      hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                    child: Container(
+                                                      //height: MediaQuery.of(context).size.height * 0.053,
+                                                      height: 46,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                        color: Color(0xfff2f2f2),
+                                                      ),
+                                                      child: TextFormField(
+                                                        key: Key(_contact.toString()),
+                                                        initialValue: _contact.toString().replaceAll(new RegExp(r'[^0-9]'),''),
+
+                                                        decoration: InputDecoration(
+                                                          contentPadding: EdgeInsets.all(10.0),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Colors.white),
+                                                          ),
+                                                          // Only numbers can be entered
+                                                          hintText: AppLocalizations.of(context)!.mobileNumber,
+
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -1305,7 +1359,12 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                       style: TextButton.styleFrom(
                                                         primary: Colors.white,
                                                       ),
-                                                      onPressed: () { },
+                                                      onPressed: () async {
+                                                        Contact? contact = await _contactPicker.selectContact();
+                                                        setState(() {
+                                                          _contact = contact;
+                                                        });
+                                                      },
                                                       child: Text(
                                                         AppLocalizations.of(context)!.pickContact,
                                                         style: TextStyle(
@@ -1349,8 +1408,27 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                 ).animate(_animationController),
                                                 child: FadeTransition(
                                                   opacity: _animationController,
-                                                  child: TextfieldTextWidget(
-                                                    hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                  child: Container(
+                                                    //height: MediaQuery.of(context).size.height * 0.053,
+                                                    height: 46,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      color: Color(0xfff2f2f2),
+                                                    ),
+                                                    child: TextFormField(
+                                                      key: Key(_contact.toString()),
+                                                      initialValue: _contact.toString().replaceAll(new RegExp(r'[^0-9]'),''),
+
+                                                      decoration: InputDecoration(
+                                                        contentPadding: EdgeInsets.all(10.0),
+                                                        enabledBorder: UnderlineInputBorder(
+                                                          borderSide: BorderSide(color: Colors.white),
+                                                        ),
+                                                        // Only numbers can be entered
+                                                        hintText: AppLocalizations.of(context)!.mobileNumber,
+
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -1796,7 +1874,12 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                       style: TextButton.styleFrom(
                                                         primary: Colors.white,
                                                       ),
-                                                      onPressed: () { },
+                                                      onPressed: () async {
+                                                        Contact? contact = await _contactPicker.selectContact();
+                                                        setState(() {
+                                                          _contact = contact;
+                                                        });
+                                                      },
                                                       child: Text(
                                                         AppLocalizations.of(context)!.pickContact,
                                                         style: TextStyle(
@@ -1840,8 +1923,27 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                 ).animate(_animationController),
                                                 child: FadeTransition(
                                                   opacity: _animationController,
-                                                  child: TextfieldTextWidget(
-                                                    hintText: AppLocalizations.of(context)!.serviceNumber,
+                                                  child: Container(
+                                                    //height: MediaQuery.of(context).size.height * 0.053,
+                                                    height: 46,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                      color: Color(0xfff2f2f2),
+                                                    ),
+                                                    child: TextFormField(
+                                                      key: Key(_contact.toString()),
+                                                      initialValue: _contact.toString().replaceAll(new RegExp(r'[^0-9]'),''),
+
+                                                      decoration: InputDecoration(
+                                                        contentPadding: EdgeInsets.all(10.0),
+                                                        enabledBorder: UnderlineInputBorder(
+                                                          borderSide: BorderSide(color: Colors.white),
+                                                        ),
+                                                        // Only numbers can be entered
+                                                        hintText: AppLocalizations.of(context)!.mobileNumber,
+
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
                                               ),

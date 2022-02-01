@@ -8,8 +8,9 @@ import 'package:provider/provider.dart';
  */
 class TextfieldNumberWidget extends StatelessWidget {
   String hintText;
+  String? insertText;
   TextfieldNumberWidget({Key? key,
-    required this.hintText,
+    required this.hintText, this.insertText
   }) : super(key: key);
 
   @override
@@ -32,19 +33,20 @@ class TextfieldNumberWidget extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           color: Color(0xfff2f2f2),
         ),
-        child: TextField(
+        child: TextFormField(
+          initialValue: insertText != null ? insertText : '',
           keyboardType: TextInputType.number,
           inputFormatters: <TextInputFormatter>[
             FilteringTextInputFormatter.digitsOnly
           ],
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(10.0),
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
-            ),
-            // Only numbers can be entered
-            hintText: hintText,
-            hintStyle: TextStyle(fontSize: 14)
+              contentPadding: EdgeInsets.all(10.0),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white),
+              ),
+              // Only numbers can be entered
+              hintText: hintText,
+              hintStyle: TextStyle(fontSize: 14)
 
           ),
         ),
@@ -58,7 +60,8 @@ class TextfieldNumberWidget extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         color: Color(0xfff2f2f2),
       ),
-      child: TextField(
+      child: TextFormField(
+        initialValue: insertText != null ? insertText : '',
         keyboardType: TextInputType.number,
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly
