@@ -270,5 +270,7 @@
     "location": "Location",
 
     "changeAccount": "Change Account",
-    "notification": "Notification"
+    "notification": "Notification",
+
+    "noOneRegisteredYet": "No one registered from your referral link yet!"
 }

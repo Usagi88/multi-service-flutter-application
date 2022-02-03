@@ -221,19 +221,23 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
                                 ).animate(_animationController),
                                 child: FadeTransition(
                                   opacity: _animationController,
-                                  child: Container(
-                                    width: 46,
-                                    height: 46,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          const Color(0xff3AC170),
-                                          const Color(0xff25BFA3),
-                                        ],
+                                  child: IconButton(
+                                    padding: const EdgeInsets.all(0),
+                                    onPressed: () {},
+                                    icon: Container(
+                                      width: 46,
+                                      height: 46,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            const Color(0xff3AC170),
+                                            const Color(0xff25BFA3),
+                                          ],
+                                        ),
                                       ),
+                                      child: Icon(FontAwesomeIcons.locationArrow, size: 22,color: Colors.white,),
                                     ),
-                                    child: Icon(FontAwesomeIcons.locationArrow, size: 22,color: Colors.white,),
                                   ),
                                 ),
                               ),
@@ -248,6 +252,7 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
           )
       );
     }
+
     return Scaffold(
         appBar: NavbarWithBackButton(),
         drawer: SideMenu(),
@@ -408,19 +413,23 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
                               ).animate(_animationController),
                               child: FadeTransition(
                                 opacity: _animationController,
-                                child: Container(
-                                  width: 46,
-                                  height: 46,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        const Color(0xff3AC170),
-                                        const Color(0xff25BFA3),
-                                      ],
+                                child: IconButton(
+                                  padding: const EdgeInsets.all(0),
+                                  onPressed: () {},
+                                  icon: Container(
+                                    width: 56,
+                                    height: 46,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          const Color(0xff3AC170),
+                                          const Color(0xff25BFA3),
+                                        ],
+                                      ),
                                     ),
+                                    child: Icon(FontAwesomeIcons.locationArrow, size: 22,color: Colors.white,),
                                   ),
-                                  child: Icon(FontAwesomeIcons.locationArrow, size: 22,color: Colors.white,),
                                 ),
                               ),
                             ),

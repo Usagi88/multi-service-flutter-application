@@ -481,11 +481,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                                           ],
                                         ),
                                       ),
-                                      //referral view
+
+                                      //REFERRAL VIEW
                                       SingleChildScrollView(
                                         child: Column(
                                           children: [
-                                            Container(),
+                                            Container(
+                                              child: Text(AppLocalizations.of(context)!.noOneRegisteredYet),
+                                            ),
                                             SizedBox(
                                               height: 20,
                                             ),
@@ -933,11 +936,14 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                                         ],
                                       ),
                                     ),
+
                                     //referral view
                                     SingleChildScrollView(
                                       child: Column(
                                         children: [
-                                          Container(),
+                                          Container(
+                                            child: Text(AppLocalizations.of(context)!.noOneRegisteredYet),
+                                          ),
                                           SizedBox(
                                             height: 20,
                                           ),

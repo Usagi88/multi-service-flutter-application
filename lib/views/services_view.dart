@@ -81,121 +81,121 @@ class _ServicesViewState extends State<ServicesView> with SingleTickerProviderSt
                         opacity: _animationController,
                         child: Container(
                           height: 130,
-                          child: OverflowBox(
-                            minWidth: 0.0,
-                            minHeight: 130.0,
-                            maxHeight: double.infinity,
-                            child: Column(
-                              children: [
-                                Stack(children: <Widget>[
-                                  CarouselSlider(
-                                    items: imgList
-                                        .map((item) => Container(
-                                      child: Image.asset(
-                                        item,
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ))
-                                        .toList(),
-                                    options: CarouselOptions(
-                                        autoPlay: true,
-                                        viewportFraction: 1,
-                                        onPageChanged: (index, reason) {
-                                          setState(() {
-                                            _current = index;
-                                          });
-                                        }),
-                                  ),
-                                  Positioned(
-                                    top: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.47 : MediaQuery.of(context).size.width * 0.45,
-                                    left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.80 : MediaQuery.of(context).size.width * 0.80,
-                                    child: Container(
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: imgList.map((url) {
-                                          int index = imgList.indexOf(url);
-                                          return Container(
-                                            width: 8,
-                                            height: 8,
-                                            margin: EdgeInsets.symmetric(
-                                              vertical: 10,
-                                              horizontal: 3,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: _current == index
-                                                  ? Color(0xff34c07f)
-                                                  : Color(0xffffffff),
-                                            ),
-                                          );
-                                        }).toList(),
-                                      ),
-                                    ),
-                                  )
-                                ]),
-                              ],
+                          child: Stack(children: <Widget>[
+                            CarouselSlider(
+                              items: imgList
+                                  .map((item) => Container(
+                                child: Image.asset(
+                                  item,
+                                  fit: BoxFit.fill,
+                                  width: MediaQuery.of(context).size.width,
+                                ),
+                              )
+                              )
+                                  .toList(),
+                              options: CarouselOptions(
+                                  autoPlay: true,
+                                  height: 130,
+                                  viewportFraction: 1,
+                                  onPageChanged: (index, reason) {
+                                    setState(() {
+                                      _current = index;
+                                    });
+                                  }),
                             ),
-                          ),
+                            Positioned(
+                              top: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.25 : MediaQuery.of(context).size.width * 0.30,
+                              left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.80 : MediaQuery.of(context).size.width * 0.80,
+                              child: Container(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: imgList.map((url) {
+                                    int index = imgList.indexOf(url);
+                                    return Container(
+                                      width: 8,
+                                      height: 8,
+                                      margin: EdgeInsets.symmetric(
+                                        vertical: 10,
+                                        horizontal: 3,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: _current == index
+                                            ? Color(0xff34c07f)
+                                            : Color(0xffffffff),
+                                      ),
+                                    );
+                                  }).toList(),
+                                ),
+                              ),
+                            )
+                          ]),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 70,
+                      height: 20,
                     ),
-                    Row(
-                      children:[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                          child: SlideTransition(
-                            position: Tween<Offset>(
-                              begin: Offset(-1, 0),
-                              end: Offset.zero,
-                            ).animate(_animationController),
-                            child: FadeTransition(
-                              opacity: _animationController,
-                              child: Text(
-                                AppLocalizations.of(context)!.services,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: SlideTransition(
-                            position: Tween<Offset>(
-                              begin: Offset(2, 0),
-                              end: Offset.zero,
-                            ).animate(_animationController),
-                            child: FadeTransition(
-                              opacity: _animationController,
-                              child: const SizedBox(
-                                height: 1.0,
-                                child: const DecoratedBox(
-                                  decoration: const BoxDecoration(
-                                      color: Color(0xffcccccc)
+                    Container(
+                      child: Row(
+                        children:[
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                            child: SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(-1, 0),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: Text(
+                                  AppLocalizations.of(context)!.services,
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        )
-                      ],
+                          Expanded(
+                            flex: 1,
+                            child: SlideTransition(
+                              position: Tween<Offset>(
+                                begin: Offset(2, 0),
+                                end: Offset.zero,
+                              ).animate(_animationController),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: const SizedBox(
+                                  height: 1.0,
+                                  child: const DecoratedBox(
+                                    decoration: const BoxDecoration(
+                                        color: Color(0xffcccccc)
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          )
+                        ],
+                      ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     Container(
+
                         height: MediaQuery.of(context).size.height - 30 - 66 - 130 - navBarHeight - safePadding,
                         child: ListView(
                           physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
                           children: [
+                            SizedBox(
+                              height: 10,
+                            ),
                             Row(
                               children: [
                                 SizedBox(

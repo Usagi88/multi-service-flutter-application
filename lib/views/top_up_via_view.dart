@@ -526,16 +526,19 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                                         )
                                                                     ),
                                                                   ),
-                                                                  GradientIcon(
-                                                                    FontAwesomeIcons.cloudDownloadAlt,
-                                                                    24.0,
-                                                                    LinearGradient(
-                                                                      colors: <Color>[
-                                                                        Color(0xff3AC170),
-                                                                        Color(0xff25BFA3),
-                                                                      ],
-                                                                      //begin: Alignment.topLeft,
-                                                                      //end: Alignment.bottomRight,
+                                                                  IconButton(
+                                                                    onPressed: () {},
+                                                                    icon: GradientIcon(
+                                                                      FontAwesomeIcons.cloudDownloadAlt,
+                                                                      24.0,
+                                                                      LinearGradient(
+                                                                        colors: <Color>[
+                                                                          Color(0xff3AC170),
+                                                                          Color(0xff25BFA3),
+                                                                        ],
+                                                                        //begin: Alignment.topLeft,
+                                                                        //end: Alignment.bottomRight,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                   SizedBox(
@@ -1264,16 +1267,19 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                                         )
                                                                     ),
                                                                   ),
-                                                                  GradientIcon(
-                                                                    FontAwesomeIcons.cloudDownloadAlt,
-                                                                    24.0,
-                                                                    LinearGradient(
-                                                                      colors: <Color>[
-                                                                        Color(0xff3AC170),
-                                                                        Color(0xff25BFA3),
-                                                                      ],
-                                                                      //begin: Alignment.topLeft,
-                                                                      //end: Alignment.bottomRight,
+                                                                  IconButton(
+                                                                    onPressed: () {},
+                                                                    icon: GradientIcon(
+                                                                      FontAwesomeIcons.cloudDownloadAlt,
+                                                                      24.0,
+                                                                      LinearGradient(
+                                                                        colors: <Color>[
+                                                                          Color(0xff3AC170),
+                                                                          Color(0xff25BFA3),
+                                                                        ],
+                                                                        //begin: Alignment.topLeft,
+                                                                        //end: Alignment.bottomRight,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                   SizedBox(
@@ -1932,16 +1938,19 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                                 SizedBox(
                                                                   width: 10,
                                                                 ),
-                                                                GradientIcon(
-                                                                  FontAwesomeIcons.cloudDownloadAlt,
-                                                                  24.0,
-                                                                  LinearGradient(
-                                                                    colors: <Color>[
-                                                                      Color(0xff3AC170),
-                                                                      Color(0xff25BFA3),
-                                                                    ],
-                                                                    //begin: Alignment.topLeft,
-                                                                    //end: Alignment.bottomRight,
+                                                                IconButton(
+                                                                  onPressed: () {},
+                                                                  icon: GradientIcon(
+                                                                    FontAwesomeIcons.cloudDownloadAlt,
+                                                                    24.0,
+                                                                    LinearGradient(
+                                                                      colors: <Color>[
+                                                                        Color(0xff3AC170),
+                                                                        Color(0xff25BFA3),
+                                                                      ],
+                                                                      //begin: Alignment.topLeft,
+                                                                      //end: Alignment.bottomRight,
+                                                                    ),
                                                                   ),
                                                                 ),
                                                                 Expanded(
@@ -2663,16 +2672,19 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                                 SizedBox(
                                                                   width: 10,
                                                                 ),
-                                                                GradientIcon(
-                                                                  FontAwesomeIcons.cloudDownloadAlt,
-                                                                  24.0,
-                                                                  LinearGradient(
-                                                                    colors: <Color>[
-                                                                      Color(0xff3AC170),
-                                                                      Color(0xff25BFA3),
-                                                                    ],
-                                                                    //begin: Alignment.topLeft,
-                                                                    //end: Alignment.bottomRight,
+                                                                IconButton(
+                                                                  onPressed: () {},
+                                                                  icon: GradientIcon(
+                                                                    FontAwesomeIcons.cloudDownloadAlt,
+                                                                    24.0,
+                                                                    LinearGradient(
+                                                                      colors: <Color>[
+                                                                        Color(0xff3AC170),
+                                                                        Color(0xff25BFA3),
+                                                                      ],
+                                                                      //begin: Alignment.topLeft,
+                                                                      //end: Alignment.bottomRight,
+                                                                    ),
                                                                   ),
                                                                 ),
                                                                 Expanded(

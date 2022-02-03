@@ -230,6 +230,8 @@
     "location": "स्थान",
 
     "changeAccount": "खाता परिवर्तन करें",
-    "notification": "अधिसूचना"
+    "notification": "अधिसूचना",
+
+    "noOneRegisteredYet": "आपके रेफ़रल लिंक से अभी तक किसी ने भी पंजीकरण नहीं कराया है!"
 
 }

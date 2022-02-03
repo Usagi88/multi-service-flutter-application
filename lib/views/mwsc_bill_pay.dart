@@ -206,7 +206,7 @@ class _MwscBillPayViewState extends State<MwscBillPayView> with SingleTickerProv
                             opacity: _animationController,
                             child: Container(
                               width: 129,
-                              height: 26,
+                              height: 35,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
@@ -216,7 +216,16 @@ class _MwscBillPayViewState extends State<MwscBillPayView> with SingleTickerProv
                                 ),
 
                               ),
-                              child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                child: TextButton(
+                                  style: TextButton.styleFrom(
+                                    primary: Colors.white,
+                                    minimumSize: Size(129, 35),
+                                  ),
+                                  onPressed: () {
+
+                                  },
+                                  child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400)),
+                                )
                             ),
                           ),
                         ),
@@ -499,7 +508,7 @@ class _MwscBillPayViewState extends State<MwscBillPayView> with SingleTickerProv
                           opacity: _animationController,
                           child: Container(
                             width: 129,
-                            height: 26,
+                            height: 35,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
@@ -509,7 +518,16 @@ class _MwscBillPayViewState extends State<MwscBillPayView> with SingleTickerProv
                               ),
 
                             ),
-                            child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                  primary: Colors.white,
+                                  minimumSize: Size(129, 35),
+                                ),
+                                onPressed: () {
+
+                                },
+                                child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400)),
+                              )
                           ),
                         ),
                       ),

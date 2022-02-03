@@ -231,5 +231,7 @@
   "location": "ロケーション",
 
   "changeAccount": "チェーンジ・アカウント",
-  "notification": "通知"
+  "notification": "通知",
+
+  "noOneRegisteredYet": "あなたの紹介リンクからまだ誰も登録していません！"
 }

@@ -328,8 +328,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                     children:[
                       ScaleTransition(
                         scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                        child: SocialMediaButton(
-                          socialMediaIcon: FontAwesomeIcons.twitter,
+                        child: IconButton(
+                          padding: const EdgeInsets.all(0),
+                          iconSize: 60,
+                          onPressed: () {},
+                          icon: SocialMediaButton(
+                            socialMediaIcon: FontAwesomeIcons.twitter,
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -337,8 +342,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                       ),
                       ScaleTransition(
                         scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                        child: SocialMediaButton(
-                          socialMediaIcon: FontAwesomeIcons.telegramPlane,
+                        child: IconButton(
+                          padding: const EdgeInsets.all(0),
+                          iconSize: 60,
+                          onPressed: () {},
+                          icon: SocialMediaButton(
+                            socialMediaIcon: FontAwesomeIcons.telegramPlane,
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -346,8 +356,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                       ),
                       ScaleTransition(
                         scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                        child: SocialMediaButton(
-                          socialMediaIcon: FontAwesomeIcons.viber,
+                        child: IconButton(
+                          padding: const EdgeInsets.all(0),
+                          iconSize: 60,
+                          onPressed: () {},
+                          icon: SocialMediaButton(
+                            socialMediaIcon: FontAwesomeIcons.viber,
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -355,8 +370,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                       ),
                       ScaleTransition(
                         scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                        child: SocialMediaButton(
-                          socialMediaIcon: FontAwesomeIcons.facebookF,
+                        child: IconButton(
+                          padding: const EdgeInsets.all(0),
+                          iconSize: 60,
+                          onPressed: () {},
+                          icon: SocialMediaButton(
+                            socialMediaIcon: FontAwesomeIcons.facebookF,
+                          ),
                         ),
                       )
                     ],
@@ -610,8 +630,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                   children:[
                     ScaleTransition(
                       scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                      child: SocialMediaButton(
-                        socialMediaIcon: FontAwesomeIcons.twitter,
+                      child: IconButton(
+                        padding: const EdgeInsets.all(0),
+                        iconSize: 60,
+                        onPressed: () {},
+                        icon: SocialMediaButton(
+                          socialMediaIcon: FontAwesomeIcons.twitter,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -619,8 +644,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                     ),
                     ScaleTransition(
                       scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                      child: SocialMediaButton(
-                        socialMediaIcon: FontAwesomeIcons.telegramPlane,
+                      child: IconButton(
+                        padding: const EdgeInsets.all(0),
+                        iconSize: 60,
+                        onPressed: () {},
+                        icon: SocialMediaButton(
+                          socialMediaIcon: FontAwesomeIcons.telegramPlane,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -628,8 +658,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                     ),
                     ScaleTransition(
                       scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                      child: SocialMediaButton(
-                        socialMediaIcon: FontAwesomeIcons.viber,
+                      child: IconButton(
+                        padding: const EdgeInsets.all(0),
+                        iconSize: 60,
+                        onPressed: () {},
+                        icon: SocialMediaButton(
+                          socialMediaIcon: FontAwesomeIcons.viber,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -637,8 +672,13 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                     ),
                     ScaleTransition(
                       scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
-                      child: SocialMediaButton(
-                        socialMediaIcon: FontAwesomeIcons.facebookF,
+                      child: IconButton(
+                        padding: const EdgeInsets.all(0),
+                        iconSize: 60,
+                        onPressed: () {},
+                        icon: SocialMediaButton(
+                          socialMediaIcon: FontAwesomeIcons.facebookF,
+                        ),
                       ),
                     )
                   ],

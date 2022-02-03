@@ -303,7 +303,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                       opacity: _animationController,
                                                       child: Container(
                                                         width: 129,
-                                                        height: 26,
+                                                        height: 35,
                                                         alignment: Alignment.center,
                                                         decoration: BoxDecoration(
                                                           gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
@@ -313,7 +313,16 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                           ),
 
                                                         ),
-                                                        child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                          child: TextButton(
+                                                            style: TextButton.styleFrom(
+                                                              primary: Colors.white,
+                                                              minimumSize: Size(129, 35),
+                                                            ),
+                                                            onPressed: () {
+
+                                                            },
+                                                            child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400)),
+                                                          )
                                                       ),
                                                     ),
                                                   ),
@@ -517,6 +526,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                         scrollDirection: Axis.vertical,
                                                         children: [
                                                           DataTable(
+                                                              dataRowHeight: 80,
                                                               columnSpacing: 0,
                                                               horizontalMargin: 0,
                                                               columns: [
@@ -574,16 +584,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -591,16 +604,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -611,7 +627,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     cells: [
                                                                       DataCell(Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                        child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                       )),
                                                                       DataCell(
                                                                           Padding(
@@ -635,16 +651,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -652,16 +671,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -818,7 +840,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                       opacity: _animationController,
                                                       child: Container(
                                                         width: 129,
-                                                        height: 26,
+                                                        height: 35,
                                                         alignment: Alignment.center,
                                                         decoration: BoxDecoration(
                                                           gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
@@ -828,7 +850,17 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                           ),
 
                                                         ),
-                                                        child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                          child: TextButton(
+                                                            style: TextButton.styleFrom(
+                                                              primary: Colors.white,
+                                                              minimumSize: Size(129, 35),
+                                                            ),
+                                                            onPressed: () {
+
+                                                            },
+                                                            child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400)),
+                                                          )
+
                                                       ),
                                                     ),
                                                   ),
@@ -1032,6 +1064,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                         scrollDirection: Axis.vertical,
                                                         children: [
                                                           DataTable(
+                                                              dataRowHeight: 80,
                                                               columnSpacing: 0,
                                                               horizontalMargin: 0,
                                                               columns: [
@@ -1089,16 +1122,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1106,16 +1142,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1126,7 +1165,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     cells: [
                                                                       DataCell(Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                        child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                       )),
                                                                       DataCell(
                                                                           Padding(
@@ -1150,16 +1189,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1167,16 +1209,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1446,7 +1491,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                     opacity: _animationController,
                                                     child: Container(
                                                       width: 129,
-                                                      height: 26,
+                                                      height: 35,
                                                       alignment: Alignment.center,
                                                       decoration: BoxDecoration(
                                                         gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
@@ -1456,7 +1501,16 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                         ),
 
                                                       ),
-                                                      child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                        child: TextButton(
+                                                          style: TextButton.styleFrom(
+                                                            primary: Colors.white,
+                                                            minimumSize: Size(129, 35),
+                                                          ),
+                                                          onPressed: () {
+
+                                                          },
+                                                          child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400)),
+                                                        )
                                                     ),
                                                   ),
                                                 ),
@@ -1660,6 +1714,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                       scrollDirection: Axis.vertical,
                                                       children: [
                                                         DataTable(
+                                                            dataRowHeight: 80,
                                                             columnSpacing: 0,
                                                             horizontalMargin: 0,
                                                             columns: [
@@ -1717,16 +1772,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1734,16 +1792,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1754,7 +1815,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                   cells: [
                                                                     DataCell(Padding(
                                                                       padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                     )),
                                                                     DataCell(
                                                                         Padding(
@@ -1778,16 +1839,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1795,16 +1859,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1961,7 +2028,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                     opacity: _animationController,
                                                     child: Container(
                                                       width: 129,
-                                                      height: 26,
+                                                      height: 35,
                                                       alignment: Alignment.center,
                                                       decoration: BoxDecoration(
                                                         gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
@@ -1971,7 +2038,16 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                         ),
 
                                                       ),
-                                                      child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400),),
+                                                        child: TextButton(
+                                                          style: TextButton.styleFrom(
+                                                            primary: Colors.white,
+                                                            minimumSize: Size(129, 35),
+                                                          ),
+                                                          onPressed: () {
+
+                                                          },
+                                                          child: Text(AppLocalizations.of(context)!.checkBalance,style: TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.w400)),
+                                                        )
                                                     ),
                                                   ),
                                                 ),
@@ -2175,6 +2251,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                       scrollDirection: Axis.vertical,
                                                       children: [
                                                         DataTable(
+                                                            dataRowHeight: 80,
                                                             columnSpacing: 0,
                                                             horizontalMargin: 0,
                                                             columns: [
@@ -2232,16 +2309,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2249,16 +2329,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2269,7 +2352,7 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                   cells: [
                                                                     DataCell(Padding(
                                                                       padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                     )),
                                                                     DataCell(
                                                                         Padding(
@@ -2293,16 +2376,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2310,16 +2396,19 @@ class _BillPayViewState extends State<BillPayView> with SingleTickerProviderStat
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),

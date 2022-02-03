@@ -489,6 +489,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                         scrollDirection: Axis.vertical,
                                                         children: [
                                                           DataTable(
+                                                              dataRowHeight: 80,
                                                               columnSpacing: 0,
                                                               horizontalMargin: 0,
                                                               columns: [
@@ -546,16 +547,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -563,16 +567,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -583,7 +590,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     cells: [
                                                                       DataCell(Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                        child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                       )),
                                                                       DataCell(
                                                                           Padding(
@@ -607,16 +614,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -624,16 +634,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -975,6 +988,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                         scrollDirection: Axis.vertical,
                                                         children: [
                                                           DataTable(
+                                                              dataRowHeight: 80,
                                                               columnSpacing: 0,
                                                               horizontalMargin: 0,
                                                               columns: [
@@ -1032,16 +1046,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1049,16 +1066,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1069,7 +1089,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     cells: [
                                                                       DataCell(Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                        child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                       )),
                                                                       DataCell(
                                                                           Padding(
@@ -1093,16 +1113,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.trash,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.trash,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1110,16 +1133,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                       DataCell(
                                                                         Padding(
                                                                           padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                          child: GradientIcon(
-                                                                            FontAwesomeIcons.locationArrow,
-                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                            LinearGradient(
-                                                                              colors: <Color>[
-                                                                                Color(0xff3AC170),
-                                                                                Color(0xff25BFA3),
-                                                                              ],
-                                                                              begin: Alignment.topLeft,
-                                                                              end: Alignment.bottomRight,
+                                                                          child: IconButton(
+                                                                            onPressed: () {},
+                                                                            icon: GradientIcon(
+                                                                              FontAwesomeIcons.locationArrow,
+                                                                              MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                              LinearGradient(
+                                                                                colors: <Color>[
+                                                                                  Color(0xff3AC170),
+                                                                                  Color(0xff25BFA3),
+                                                                                ],
+                                                                                begin: Alignment.topLeft,
+                                                                                end: Alignment.bottomRight,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1578,6 +1604,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                       scrollDirection: Axis.vertical,
                                                       children: [
                                                         DataTable(
+                                                            dataRowHeight: 80,
                                                             columnSpacing: 0,
                                                             horizontalMargin: 0,
                                                             columns: [
@@ -1635,16 +1662,21 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {
+
+                                                                          },
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1652,16 +1684,21 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {
+
+                                                                          },
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1672,7 +1709,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                   cells: [
                                                                     DataCell(Padding(
                                                                       padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                     )),
                                                                     DataCell(
                                                                         Padding(
@@ -1696,16 +1733,21 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {
+
+                                                                          },
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1713,16 +1755,21 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {
+
+                                                                          },
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2064,6 +2111,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                       scrollDirection: Axis.vertical,
                                                       children: [
                                                         DataTable(
+                                                            dataRowHeight: 80,
                                                             columnSpacing: 0,
                                                             horizontalMargin: 0,
                                                             columns: [
@@ -2121,16 +2169,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2138,16 +2189,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2158,7 +2212,7 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                   cells: [
                                                                     DataCell(Padding(
                                                                       padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                                                      child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                                                     )),
                                                                     DataCell(
                                                                         Padding(
@@ -2182,16 +2236,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.trash,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2199,16 +2256,19 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                     DataCell(
                                                                       Padding(
                                                                         padding: const EdgeInsets.symmetric(horizontal:4.0),
-                                                                        child: GradientIcon(
-                                                                          FontAwesomeIcons.locationArrow,
-                                                                          MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
-                                                                          LinearGradient(
-                                                                            colors: <Color>[
-                                                                              Color(0xff3AC170),
-                                                                              Color(0xff25BFA3),
-                                                                            ],
-                                                                            begin: Alignment.topLeft,
-                                                                            end: Alignment.bottomRight,
+                                                                        child: IconButton(
+                                                                          onPressed: () {},
+                                                                          icon: GradientIcon(
+                                                                            FontAwesomeIcons.locationArrow,
+                                                                            MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                                                                            LinearGradient(
+                                                                              colors: <Color>[
+                                                                                Color(0xff3AC170),
+                                                                                Color(0xff25BFA3),
+                                                                              ],
+                                                                              begin: Alignment.topLeft,
+                                                                              end: Alignment.bottomRight,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),

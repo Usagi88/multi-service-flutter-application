@@ -85,64 +85,59 @@ class _HomeViewState extends State<HomeView>
                     opacity: _animationController,
                     child: Container(
                       height: 130,
-                      child: OverflowBox(
-                        minWidth: 0.0,
-                        minHeight: 130.0,
-                        maxHeight: double.infinity,
-                        child: Column(
-                          children: [
-                            Stack(children: <Widget>[
-                              CarouselSlider(
-                                items: imgList
-                                    .map((item) => Container(
-                                  child: Image.asset(
-                                    item,
-                                    fit: BoxFit.fill,
-                                  ),
-                                ))
-                                    .toList(),
-                                options: CarouselOptions(
-                                    autoPlay: true,
-                                    viewportFraction: 1,
-                                    onPageChanged: (index, reason) {
-                                      setState(() {
-                                        _current = index;
-                                      });
-                                    }),
-                              ),
-                              Positioned(
-                                top: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.47 : MediaQuery.of(context).size.width * 0.45,
-                                left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.80 : MediaQuery.of(context).size.width * 0.80,
-                                child: Container(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: imgList.map((url) {
-                                      int index = imgList.indexOf(url);
-                                      return Container(
-                                        width: 8,
-                                        height: 8,
-                                        margin: EdgeInsets.symmetric(
-                                          vertical: 10,
-                                          horizontal: 3,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: _current == index
-                                              ? Color(0xff34c07f)
-                                              : Color(0xffffffff),
-                                        ),
-                                      );
-                                    }).toList(),
-                                  ),
-                                ),
-                              )
-                            ]),
-                          ],
+                      child: Stack(children: <Widget>[
+                        CarouselSlider(
+                          items: imgList
+                              .map((item) => Container(
+                            child: Image.asset(
+                              item,
+                              fit: BoxFit.fill,
+                              width: MediaQuery.of(context).size.width,
+                            ),
+                          )
+                          )
+                              .toList(),
+                          options: CarouselOptions(
+                              autoPlay: true,
+                              height: 130,
+                              viewportFraction: 1,
+                              onPageChanged: (index, reason) {
+                                setState(() {
+                                  _current = index;
+                                });
+                              }),
                         ),
-                      ),
+                        Positioned(
+                          top: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.25 : MediaQuery.of(context).size.width * 0.30,
+                          left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.80 : MediaQuery.of(context).size.width * 0.80,
+                          child: Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: imgList.map((url) {
+                                int index = imgList.indexOf(url);
+                                return Container(
+                                  width: 8,
+                                  height: 8,
+                                  margin: EdgeInsets.symmetric(
+                                    vertical: 10,
+                                    horizontal: 3,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: _current == index
+                                        ? Color(0xff34c07f)
+                                        : Color(0xffffffff),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        )
+                      ]),
                     ),
                   ),
                 ),
+
                 SlideTransition(
                   position: Tween<Offset>(
                     begin: Offset(0, 1),
@@ -150,19 +145,17 @@ class _HomeViewState extends State<HomeView>
                   ).animate(_animationController),
                   child: FadeTransition(
                     opacity: _animationController,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 55.0),
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 33,
-                        child: Text(
-                          'K.Male - Fajr 04:47',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff666666),
-                              fontFamily: 'Roboto'),
-                        ),
+                    child: Container(
+                      alignment: Alignment.center,
+                      color: Colors.white,
+                      height: 33,
+                      child: Text(
+                        'K.Male - Fajr 04:47',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff666666),
+                            fontFamily: 'Roboto'),
                       ),
                     ),
                   ),
@@ -528,64 +521,59 @@ class _HomeViewState extends State<HomeView>
                   opacity: _animationController,
                   child: Container(
                     height: 130,
-                    child: OverflowBox(
-                      minWidth: 0.0,
-                      minHeight: 130.0,
-                      maxHeight: double.infinity,
-                      child: Column(
-                        children: [
-                          Stack(children: <Widget>[
-                            CarouselSlider(
-                              items: imgList
-                                  .map((item) => Container(
-                                        child: Image.asset(
-                                          item,
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ))
-                                  .toList(),
-                              options: CarouselOptions(
-                                  autoPlay: true,
-                                  viewportFraction: 1,
-                                  onPageChanged: (index, reason) {
-                                    setState(() {
-                                      _current = index;
-                                    });
-                                  }),
-                            ),
-                            Positioned(
-                              top: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.47 : MediaQuery.of(context).size.width * 0.45,
-                              left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.80 : MediaQuery.of(context).size.width * 0.80,
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: imgList.map((url) {
-                                    int index = imgList.indexOf(url);
-                                    return Container(
-                                      width: 8,
-                                      height: 8,
-                                      margin: EdgeInsets.symmetric(
-                                        vertical: 10,
-                                        horizontal: 3,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: _current == index
-                                            ? Color(0xff34c07f)
-                                            : Color(0xffffffff),
-                                      ),
-                                    );
-                                  }).toList(),
-                                ),
-                              ),
-                            )
-                          ]),
-                        ],
+                    child: Stack(children: <Widget>[
+                      CarouselSlider(
+                        items: imgList
+                            .map((item) => Container(
+                          child: Image.asset(
+                            item,
+                            fit: BoxFit.fill,
+                            width: MediaQuery.of(context).size.width,
+                          ),
+                        )
+                        )
+                            .toList(),
+                        options: CarouselOptions(
+                            autoPlay: true,
+                            height: 130,
+                            viewportFraction: 1,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                _current = index;
+                              });
+                            }),
                       ),
-                    ),
+                      Positioned(
+                        top: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.25 : MediaQuery.of(context).size.width * 0.30,
+                        left: MediaQuery.of(context).size.width > 320 ? MediaQuery.of(context).size.width * 0.80 : MediaQuery.of(context).size.width * 0.80,
+                        child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: imgList.map((url) {
+                              int index = imgList.indexOf(url);
+                              return Container(
+                                width: 8,
+                                height: 8,
+                                margin: EdgeInsets.symmetric(
+                                  vertical: 10,
+                                  horizontal: 3,
+                                ),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: _current == index
+                                      ? Color(0xff34c07f)
+                                      : Color(0xffffffff),
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      )
+                    ]),
                   ),
                 ),
               ),
+
               SlideTransition(
                 position: Tween<Offset>(
                   begin: Offset(0, 1),
@@ -593,18 +581,16 @@ class _HomeViewState extends State<HomeView>
                 ).animate(_animationController),
                 child: FadeTransition(
                   opacity: _animationController,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 55.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 33,
-                      child: Text(
-                        'K.Male - Fajr 04:47',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff666666),
-                        ),
+                  child: Container(
+                    alignment: Alignment.center,
+                    color: Colors.white,
+                    height: 33,
+                    child: Text(
+                      'K.Male - Fajr 04:47',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff666666),
                       ),
                     ),
                   ),

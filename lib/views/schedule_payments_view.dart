@@ -357,6 +357,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                             scrollDirection: Axis.vertical,
                             children: [
                               DataTable(
+                                  dataRowHeight: 80,
                                   columnSpacing: 0,
                                   horizontalMargin: 0,
                                   columns: [
@@ -420,7 +421,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                                         cells: [
                                           DataCell(Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                            child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                           )),
                                           DataCell(Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -444,7 +445,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                                         cells: [
                                           DataCell(Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                            child: Text("3",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                           )),
                                           DataCell(Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -468,7 +469,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                                         cells: [
                                           DataCell(Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                            child: Text("4",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                           )),
                                           DataCell(Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -787,6 +788,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                           scrollDirection: Axis.vertical,
                           children: [
                             DataTable(
+                                dataRowHeight: 80,
                                 columnSpacing: 0,
                                 horizontalMargin: 0,
                                 columns: [
@@ -850,7 +852,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                                       cells: [
                                         DataCell(Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                          child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                         )),
                                         DataCell(Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -874,7 +876,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                                       cells: [
                                         DataCell(Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                          child: Text("3",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                         )),
                                         DataCell(Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -898,7 +900,7 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                                       cells: [
                                         DataCell(Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                          child: Text("4",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                                         )),
                                         DataCell(Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
