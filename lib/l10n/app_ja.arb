@@ -233,5 +233,10 @@
   "changeAccount": "チェーンジ・アカウント",
   "notification": "通知",
 
-  "noOneRegisteredYet": "あなたの紹介リンクからまだ誰も登録していません！"
+  "noOneRegisteredYet": "あなたの紹介リンクからまだ誰も登録していません！",
+
+  "wholeSaleReload": "Wholesale Reload",
+  "wholeSaleRaastas": "Wholesale Raastas",
+  "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
+  "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas."
 }

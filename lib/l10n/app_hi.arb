@@ -232,6 +232,11 @@
     "changeAccount": "खाता परिवर्तन करें",
     "notification": "अधिसूचना",
 
-    "noOneRegisteredYet": "आपके रेफ़रल लिंक से अभी तक किसी ने भी पंजीकरण नहीं कराया है!"
+    "noOneRegisteredYet": "आपके रेफ़रल लिंक से अभी तक किसी ने भी पंजीकरण नहीं कराया है!",
+
+    "wholeSaleReload": "Wholesale Reload",
+    "wholeSaleRaastas": "Wholesale Raastas",
+    "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
+    "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas."
 
 }

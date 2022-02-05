@@ -27,6 +27,7 @@ import 'package:fpapp/views/slip_view.dart';
 import 'package:fpapp/views/top_up_via_bml_gateway_view.dart';
 import 'package:fpapp/views/top_up_via_view.dart';
 import 'package:fpapp/views/transaction_history_full.dart';
+import 'package:fpapp/views/wholesale_view.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -106,6 +107,7 @@ class MyApp extends StatelessWidget {
             '/donate': (context) => new DonateView(),
             '/bonus': (context) => new BonusView(),
             '/settings': (context) => new SettingsView(),
+            '/wholesale': (context) => new WholesaleView(),
           },
           home: HomeView(),
         );

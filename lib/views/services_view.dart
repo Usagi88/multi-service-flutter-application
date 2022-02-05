@@ -7,6 +7,7 @@ import 'package:fpapp/classes/custom_carousel_pro.dart';
 import 'package:fpapp/views/bill_pay_view.dart';
 import 'package:fpapp/views/cash_in_view.dart';
 import 'package:fpapp/views/raastas_reload_view.dart';
+import 'package:fpapp/views/wholesale_view.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/service_card_widget.dart';
@@ -1156,6 +1157,178 @@ class _ServicesViewState extends State<ServicesView> with SingleTickerProviderSt
                                             Expanded(
                                               child: Text(
                                                 AppLocalizations.of(context)!.maldiveGas,
+                                                style: TextStyle(
+                                                    fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
+                                                    color: Colors.grey.shade600,
+                                                    fontWeight: FontWeight.w400
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 2,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                //DHIRAAGU RELOAD
+                                Expanded(
+                                  child: ScaleTransition(
+                                    scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    WholesaleView(dhiraagu: true, ooredoo: false)
+                                            )
+                                        );
+                                      },
+                                      child: Container(
+                                        //width: 166,
+                                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                        height: 84,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey.withOpacity(0.3),
+                                              spreadRadius: 1,
+                                              blurRadius: 4,
+                                              offset: Offset(0, 2), // changes position of shadow
+                                            ),
+                                          ],
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            SizedBox(
+                                              width: 8,
+                                            ),
+                                            Container(
+                                              height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                              width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/images/dhiraagu-logo.png'),
+                                                  fit: BoxFit.fill,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                              child: VerticalDivider(
+                                                thickness: 1,
+                                                color: Colors.grey.shade400,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context).size.width > 320 ? 5 : 2,
+                                            ),
+                                            Expanded(
+                                              child: Text(
+                                                AppLocalizations.of(context)!.wholeSaleReload,
+                                                style: TextStyle(
+                                                    fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
+                                                    color: Colors.grey.shade600,
+                                                    fontWeight: FontWeight.w400
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 2,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                //OOREDOO RAASTAS
+                                Expanded(
+                                  child: ScaleTransition(
+                                    scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    WholesaleView(dhiraagu: false, ooredoo: true)
+                                            )
+                                        );
+                                      },
+                                      child: Container(
+                                        //width: 166,
+                                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                        height: 84,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey.withOpacity(0.3),
+                                              spreadRadius: 1,
+                                              blurRadius: 4,
+                                              offset: Offset(0, 2), // changes position of shadow
+                                            ),
+                                          ],
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            SizedBox(
+                                              width: 8,
+                                            ),
+                                            Container(
+                                              height: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                              width: MediaQuery.of(context).size.width > 350 ? 50 : 42,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/images/ooredoo-logo.png'),
+                                                  fit: BoxFit.fill,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                              child: VerticalDivider(
+                                                thickness: 1,
+                                                color: Colors.grey.shade400,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context).size.width > 320 ? 5 : 2,
+                                            ),
+                                            Expanded(
+                                              child: Text(
+                                                AppLocalizations.of(context)!.wholeSaleRaastas,
                                                 style: TextStyle(
                                                     fontSize: MediaQuery.of(context).size.width > 350 ? 12 : 11,
                                                     color: Colors.grey.shade600,

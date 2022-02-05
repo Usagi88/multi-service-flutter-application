@@ -142,7 +142,7 @@ class _AddCashViewState extends State<AddCashView>
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: MediaQuery.of(context).size.width > 320 ? 20 : 0,
                   ),
                   CircleList(
                     origin: Offset(0, 0),
@@ -156,6 +156,7 @@ class _AddCashViewState extends State<AddCashView>
                                 parent: _animationController,
                                 curve: Curves.easeInOutBack)),
                             child: ElevatedButton(
+
                               onPressed: () {
                                 Navigator.push(
                                     context,
@@ -166,14 +167,16 @@ class _AddCashViewState extends State<AddCashView>
                                 );
                               },
                               child: SizedBox(
-                                width: 60,
-                                height: 60,
+                                width: 50,
+                                height: 50,
                                 child: Image.asset(
                                   'assets/images/icon/mib.png',
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
+                                padding: EdgeInsets.all(MediaQuery.of(context).size.width > 320 ? 22 : 10,),
+                                elevation: 1.0,
                                 primary: Colors.white, // <-- Button color
                                 onPrimary:
                                 Colors.grey.shade400, // <-- Splash color
@@ -209,14 +212,15 @@ class _AddCashViewState extends State<AddCashView>
                                 Navigator.pushNamed(context, '/bonus');
                               },
                               child: SizedBox(
-                                width: 60,
-                                height: 60,
+                                width: 50,
+                                height: 50,
                                 child: Image.asset(
                                   'assets/images/icon/bonus.png',
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
+                                padding: EdgeInsets.all(MediaQuery.of(context).size.width > 320 ? 22 : 10,),
                                 primary: Colors.white, // <-- Button color
                                 onPrimary:
                                 Colors.grey.shade400, // <-- Splash color
@@ -249,23 +253,19 @@ class _AddCashViewState extends State<AddCashView>
                                 curve: Curves.easeInOutBack)),
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          TopUpViaView(mib: false, bml: true),
-                                    )
-                                );
+                                Navigator.pushNamed(
+                                    context, '/top-up-via-bml-gateway');
                               },
                               child: SizedBox(
-                                width: 60,
-                                height: 60,
+                                width: 50,
+                                height: 50,
                                 child: Image.asset(
-                                  'assets/images/icon/bml.png',
+                                  'assets/images/icon/cashcard.png',
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
+                                padding: EdgeInsets.all(MediaQuery.of(context).size.width > 320 ? 22 : 10,),
                                 primary: Colors.white, // <-- Button color
                                 onPrimary:
                                 Colors.grey.shade400, // <-- Splash color
@@ -280,7 +280,7 @@ class _AddCashViewState extends State<AddCashView>
                                 parent: _animationController,
                                 curve: Curves.easeInOutBack)),
                             child: Text(
-                              AppLocalizations.of(context)!.bml,
+                              AppLocalizations.of(context)!.cashCard,
                               style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
@@ -298,18 +298,24 @@ class _AddCashViewState extends State<AddCashView>
                                 curve: Curves.easeInOutBack)),
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(
-                                    context, '/top-up-via-bml-gateway');
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          TopUpViaView(mib: false, bml: true),
+                                    )
+                                );
                               },
                               child: SizedBox(
-                                width: 60,
-                                height: 60,
+                                width: 50,
+                                height: 50,
                                 child: Image.asset(
-                                  'assets/images/icon/cashcard.png',
+                                  'assets/images/icon/bml.png',
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
+                                padding: EdgeInsets.all(MediaQuery.of(context).size.width > 320 ? 22 : 10,),
                                 primary: Colors.white, // <-- Button color
                                 onPrimary:
                                 Colors.grey.shade400, // <-- Splash color
@@ -324,7 +330,7 @@ class _AddCashViewState extends State<AddCashView>
                                 parent: _animationController,
                                 curve: Curves.easeInOutBack)),
                             child: Text(
-                              AppLocalizations.of(context)!.cashCard,
+                              AppLocalizations.of(context)!.bml,
                               style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,

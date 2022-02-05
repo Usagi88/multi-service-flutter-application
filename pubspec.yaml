@@ -45,10 +45,9 @@ dependencies:
   circle_list: ^1.0.5
   circle_flags: ^0.0.2
   fialogs: ^2.0.4
-  permission_handler: ^8.3.0
-  google_sign_in: ^5.2.3
-  flutter_native_contact_picker: ^0.0.3
   carousel_slider: ^4.0.0
+  permission_handler: ^8.3.0
+  flutter_native_contact_picker: ^0.0.3
 
 
 

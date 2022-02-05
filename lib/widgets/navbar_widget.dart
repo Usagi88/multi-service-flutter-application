@@ -4,9 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/services.dart';
 import 'package:fpapp/classes/radiant_gradient_mask.dart';
 
-
-
-class Navbar extends StatelessWidget with PreferredSizeWidget{
+class Navbar extends StatelessWidget with PreferredSizeWidget {
   const Navbar({Key? key}) : super(key: key);
 
   @override
@@ -19,7 +17,7 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
   }
 
   //portrait
-  AppBar _portraitModeOnly(BuildContext context){
+  AppBar _portraitModeOnly(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
@@ -42,13 +40,17 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
         height: 26,
         child: SizedBox(
             child: Image.asset(
-              'assets/images/fahipay-logo.png',
-            )),
+          'assets/images/fahipay-logo.png',
+        )),
       ),
       actions: [
         RadiantGradientMask(
           child: IconButton(
-            icon: SvgPicture.asset("assets/images/icon/qrCodeIconSVG.svg"),
+            icon: Container(
+                width: 20,
+                height: 20,
+                child:
+                    SvgPicture.asset("assets/images/icon/qrCodeIconSVG.svg")),
             onPressed: () {
               Navigator.of(context).pushNamed('/scan-qr-code');
             },
@@ -56,7 +58,12 @@ class Navbar extends StatelessWidget with PreferredSizeWidget{
         ),
         RadiantGradientMask(
           child: IconButton(
-            icon: SvgPicture.asset("assets/images/icon/liveChatIconSVG.svg"),
+            icon: Container(
+                width: 24,
+                height: 24,
+                child:
+                    SvgPicture.asset("assets/images/icon/liveChatIconSVG.svg")),
+            iconSize: 11,
             onPressed: () {
               Navigator.of(context).pushNamed('/live-chat');
             },

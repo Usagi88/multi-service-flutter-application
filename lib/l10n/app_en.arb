@@ -272,5 +272,10 @@
     "changeAccount": "Change Account",
     "notification": "Notification",
 
-    "noOneRegisteredYet": "No one registered from your referral link yet!"
+    "noOneRegisteredYet": "No one registered from your referral link yet!",
+
+    "wholeSaleReload": "Wholesale Reload",
+    "wholeSaleRaastas": "Wholesale Raastas",
+    "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
+    "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas."
 }

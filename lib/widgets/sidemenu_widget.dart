@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/provider/locale_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+
 import 'package:provider/provider.dart';
 import '../main.dart';
 import 'language_picker.dart';
@@ -17,21 +17,9 @@ import 'language_picker.dart';
 class SideMenu extends StatelessWidget with PreferredSizeWidget {
   SideMenu({Key? key}) : super(key: key);
 
-  GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: [
-      'email',
-      'https://www.googleapis.com/auth/contacts.readonly',
-    ],
-  );
 
-  Future<void> _handleSignIn() async {
-    try {
-      await _googleSignIn.signIn();
-    } catch (error) {
-      print(error);
-    }
-  }
-  Future<void> _handleSignOut() => _googleSignIn.disconnect();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -225,7 +213,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
                 AppLocalizations.of(context)!.logout,
               ),
               onTap: () {
-                _handleSignOut();
+
               },
             ),
             ListTile(
@@ -263,7 +251,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               ),
               onTap: () {
                 //EmailResult? emailResult = await AccountPicker.emailHint();
-                _handleSignIn();
+
               },
               title: Text(AppLocalizations.of(context)!.changeAccount),
             ),
@@ -474,7 +462,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
             ),
             title: Text(AppLocalizations.of(context)!.logout),
             onTap: () {
-              _handleSignOut();
+
             },
           ),
           ListTile(
@@ -509,7 +497,7 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               ),
             ),
             onTap: () {
-              _handleSignIn();
+
             },
             title: Text(AppLocalizations.of(context)!.changeAccount),
           ),

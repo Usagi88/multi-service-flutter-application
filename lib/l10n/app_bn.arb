@@ -231,6 +231,11 @@
   "changeAccount": "অ্যাকাউন্ট পরিবর্তন করুন",
   "notification": "বিজ্ঞপ্তি",
 
-  "noOneRegisteredYet": "আপনার রেফারেল লিঙ্ক থেকে এখনও কেউ নিবন্ধিত!"
+  "noOneRegisteredYet": "আপনার রেফারেল লিঙ্ক থেকে এখনও কেউ নিবন্ধিত!",
+
+  "wholeSaleReload": "Wholesale Reload",
+  "wholeSaleRaastas": "Wholesale Raastas",
+  "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
+  "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas."
 
 }
