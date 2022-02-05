@@ -242,6 +242,12 @@
 
   "paymentToMerchantFirstText": "একজন বণিককে অর্থপ্রদান করতে, QR কোড স্ক্যান করুন এবং বণিক দ্বারা তৈরি করা হয়েছে৷",
   "merchantName": "ব্যবসায়ীর নাম",
-  "pay": "বেতন"
+  "pay": "বেতন",
+
+  "paymentRequest": "Payment Request",
+  "from": "From",
+  "note": "Note",
+  "expiresIn": "Expires in",
+  "reject": "Reject"
 
 }

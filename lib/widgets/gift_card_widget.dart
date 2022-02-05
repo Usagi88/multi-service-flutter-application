@@ -465,6 +465,7 @@ class GiftCardWidget extends StatelessWidget {
         return Stack();
       }
     }
+
     if(itunes == true && psn != true && netflix != true){//if it is itunes
       return Stack(
         overflow: Overflow.visible,

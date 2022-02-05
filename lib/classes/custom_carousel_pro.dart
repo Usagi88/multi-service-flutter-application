@@ -25,6 +25,7 @@ class Carousel extends StatefulWidget {
   final List? images;
 
   //All the images on this Carousel.
+  // ignore: prefer_typing_uninitialized_variables
   final defaultImage;
 
   //The transition animation timing curve. Default is [Curves.ease]
@@ -102,7 +103,8 @@ class Carousel extends StatefulWidget {
   //On image change event, passes previous image index and current image index as arguments
   final void Function(int, int)? onImageChange;
 
-  Carousel({
+  // ignore: use_key_in_widget_constructors
+  const Carousel({
     this.images,
     this.animationCurve = Curves.ease,
     this.animationDuration = const Duration(milliseconds: 300),
@@ -139,7 +141,7 @@ class Carousel extends StatefulWidget {
 class CarouselState extends State<Carousel> {
   Timer? timer;
   int _currentImageIndex = 0;
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
 
   @override
   void initState() {
@@ -185,7 +187,7 @@ class CarouselState extends State<Carousel> {
           return Container(
             decoration: BoxDecoration(
               borderRadius: widget.borderRadius
-                  ? BorderRadius.all(widget.radius ?? Radius.circular(8.0))
+                  ? BorderRadius.all(widget.radius ?? const Radius.circular(8.0))
                   : null,
               image: DecorationImage(
                 //colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
@@ -218,7 +220,7 @@ class CarouselState extends State<Carousel> {
         } else if (netImage is FadeInImage) {
           return ClipRRect(
             borderRadius: widget.borderRadius
-                ? BorderRadius.all(widget.radius ?? Radius.circular(8.0))
+                ? BorderRadius.all(widget.radius ?? const Radius.circular(8.0))
                 : null,
             child: Container(
                 decoration: BoxDecoration(
@@ -248,7 +250,7 @@ class CarouselState extends State<Carousel> {
           ? Container(
         decoration: BoxDecoration(
           borderRadius: widget.borderRadius
-              ? BorderRadius.all(widget.radius ?? Radius.circular(8.0))
+              ? BorderRadius.all(widget.radius ?? const Radius.circular(8.0))
               : null,
           image: DecorationImage(
             //colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
@@ -310,32 +312,30 @@ class CarouselState extends State<Carousel> {
 
     return Stack(
       children: <Widget>[
-        Container(
-          child: Builder(
-            builder: (_) {
-              Widget pageView = PageView(
-                physics: AlwaysScrollableScrollPhysics(),
-                controller: _controller,
-                children: listImages,
-                onPageChanged: (currentPage) {
-                  if (widget.onImageChange != null) {
-                    widget.onImageChange!(_currentImageIndex, currentPage);
-                  }
+        Builder(
+          builder: (_) {
+            Widget pageView = PageView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              controller: _controller,
+              children: listImages,
+              onPageChanged: (currentPage) {
+                if (widget.onImageChange != null) {
+                  widget.onImageChange!(_currentImageIndex, currentPage);
+                }
 
-                  _currentImageIndex = currentPage;
-                },
-              );
+                _currentImageIndex = currentPage;
+              },
+            );
 
-              if (widget.onImageTap == null) {
-                return pageView;
-              }
+            if (widget.onImageTap == null) {
+              return pageView;
+            }
 
-              return GestureDetector(
-                child: pageView,
-                onTap: () => widget.onImageTap!(_currentImageIndex),
-              );
-            },
-          ),
+            return GestureDetector(
+              child: pageView,
+              onTap: () => widget.onImageTap!(_currentImageIndex),
+            );
+          },
         ),
         widget.showIndicator
             ? Positioned(
@@ -345,15 +345,13 @@ class CarouselState extends State<Carousel> {
           right: right,
           child: Container(
             decoration: BoxDecoration(
-              color: widget.dotBgColor == null
-                  ? Colors.grey[800]!.withOpacity(0.5)
-                  : widget.dotBgColor,
+              color: widget.dotBgColor ?? Colors.grey[800]!.withOpacity(0.5),
               borderRadius: widget.borderRadius
                   ? (widget.noRadiusForIndicator
                   ? null
                   : BorderRadius.only(
-                  bottomLeft: widget.radius ?? Radius.circular(8.0),
-                  bottomRight: widget.radius ?? Radius.circular(8.0)))
+                  bottomLeft: widget.radius ?? const Radius.circular(8.0),
+                  bottomRight: widget.radius ?? const Radius.circular(8.0)))
                   : null,
             ),
             padding: EdgeInsets.all(widget.indicatorBgPadding),
@@ -386,7 +384,7 @@ class CarouselState extends State<Carousel> {
 /// An indicator showing the currently selected page of a PageController
 class DotsIndicator extends AnimatedWidget {
   DotsIndicator(
-      {
+      {Key? key,
         this.controller,
         this.itemCount,
         this.onPageSelected,
@@ -395,7 +393,7 @@ class DotsIndicator extends AnimatedWidget {
         this.dotSize,
         this.dotIncreaseSize,
         this.dotSpacing})
-      : super(listenable: controller!);
+      : super(key: key, listenable: controller!);
 
   // The PageController that this DotsIndicator is representing.
   final PageController? controller;
@@ -430,13 +428,13 @@ class DotsIndicator extends AnimatedWidget {
     );
     double zoom = 1.0 + (dotIncreaseSize! - 1.0) * selectedness;
     final dotColor = zoom > 1.0 ? increasedColor : color;
-    return Container(
+    return SizedBox(
       width: dotSpacing,
       child: Center(
         child: Material(
           color: dotColor,
           type: MaterialType.circle,
-          child: Container(
+          child: SizedBox(
             width: dotSize! * zoom,
             height: dotSize! * zoom,
             child: InkWell(
@@ -448,6 +446,7 @@ class DotsIndicator extends AnimatedWidget {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

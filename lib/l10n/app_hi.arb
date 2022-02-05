@@ -243,6 +243,12 @@
 
     "paymentToMerchantFirstText": "मर्चेंट को भुगतान करने के लिए, क्यूआर कोड को स्कैन करें और मर्चेंट द्वारा जेनरेट किया गया।",
     "merchantName": "व्यापारी का नाम",
-    "pay": "वेतन"
+    "pay": "वेतन",
+
+    "paymentRequest": "Payment Request",
+    "from": "From",
+    "note": "Note",
+    "expiresIn": "Expires in",
+    "reject": "Reject"
 
 }

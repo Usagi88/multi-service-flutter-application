@@ -244,5 +244,11 @@
 
   "paymentToMerchantFirstText": "マーチャントに支払うには、QRコードをスキャンし、マーチャントによって生成されます。",
   "merchantName": "マーチャント名",
-  "pay": "支払い"
+  "pay": "支払い",
+
+  "paymentRequest": "Payment Request",
+  "from": "From",
+  "note": "Note",
+  "expiresIn": "Expires in",
+  "reject": "Reject"
 }

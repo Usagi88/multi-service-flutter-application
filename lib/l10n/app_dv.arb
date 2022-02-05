@@ -245,6 +245,12 @@
 
     "paymentToMerchantFirstText": "މަރޗަންޓަކަށް ފައިސާ ދެއްކުމަށް، ކިޔު.އާރު ކޯޑް ސްކޭން ކުރައްވާ!",
     "merchantName": "މަރޗަންޓްގެ ނަން",
-    "pay": "ފައިސާ ދައްކާ"
+    "pay": "ފައިސާ ދައްކާ",
+
+    "paymentRequest": "Payment Request",
+    "from": "From",
+    "note": "Note",
+    "expiresIn": "Expires in",
+    "reject": "Reject"
 
 }
