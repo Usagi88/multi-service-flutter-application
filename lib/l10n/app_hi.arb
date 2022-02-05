@@ -17,7 +17,7 @@
     "socialMediaHandles": "सोशल मीडिया हैंडल",
     "qrScan": "क्यूआर स्कैन",
     "pickContact": "संपर्क चुनें",
-    "emailOrContactNumber": "ईमेल या संपर्क नंबर",
+    "emailOrMobileNumber": "ईमेल या संपर्क नंबर",
     "amount": "राशि",
     "submit": "प्रस्तुत करना",
     "disabled": "Disabled",
@@ -236,7 +236,13 @@
 
     "wholeSaleReload": "Wholesale Reload",
     "wholeSaleRaastas": "Wholesale Raastas",
-    "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
-    "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas."
+    "wholeSaleViewDhiraaguFirstText": "धीरागु बिजनेस रीलोड नंबर और रीलोड भेजने के लिए राशि दर्ज करें।",
+    "wholeSaleViewOoredooFirstText": "ऊरेडू बिजनेस रास्ता नंबर और रास्ता भेजने के लिए राशि दर्ज करें।",
+
+    "transfer": "स्थानांतरण",
+
+    "paymentToMerchantFirstText": "मर्चेंट को भुगतान करने के लिए, क्यूआर कोड को स्कैन करें और मर्चेंट द्वारा जेनरेट किया गया।",
+    "merchantName": "व्यापारी का नाम",
+    "pay": "वेतन"
 
 }

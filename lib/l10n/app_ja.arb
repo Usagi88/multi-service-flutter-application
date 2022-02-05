@@ -18,7 +18,7 @@
   "socialMediaHandles": "ソーシャルメディアハンドル",
   "qrScan": "QRスキャン",
   "pickContact": "連絡先を選択",
-  "emailOrContactNumber": "メールアドレス / 携帯電話番号",
+  "emailOrMobileNumber": "メールアドレス / 携帯電話番号",
   "amount": "金額",
   "submit": "提出する",
   "disabled": "Disabled",
@@ -237,6 +237,12 @@
 
   "wholeSaleReload": "Wholesale Reload",
   "wholeSaleRaastas": "Wholesale Raastas",
-  "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
-  "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas."
+  "wholeSaleViewDhiraaguFirstText": "Dhiraagu Business Reloadの番号と金額を入力して、リロードを送信します。",
+  "wholeSaleViewOoredooFirstText": "Ooredoo Business Raastasの番号と金額を入力して、raastasを送信します。",
+
+  "transfer": "移行",
+
+  "paymentToMerchantFirstText": "マーチャントに支払うには、QRコードをスキャンし、マーチャントによって生成されます。",
+  "merchantName": "マーチャント名",
+  "pay": "支払い"
 }

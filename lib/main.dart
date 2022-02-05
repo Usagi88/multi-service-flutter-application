@@ -13,6 +13,7 @@ import 'package:fpapp/views/home_view.dart';
 import 'package:fpapp/views/invite_friends_view.dart';
 import 'package:fpapp/views/live_chat_view.dart';
 import 'package:fpapp/views/maldive_gas_view.dart';
+import 'package:fpapp/views/payment_to_merchant_view.dart';
 import 'package:fpapp/views/profile_view.dart';
 import 'package:fpapp/views/register_view.dart';
 import 'package:fpapp/views/reset_password_view.dart';
@@ -108,6 +109,7 @@ class MyApp extends StatelessWidget {
             '/bonus': (context) => new BonusView(),
             '/settings': (context) => new SettingsView(),
             '/wholesale': (context) => new WholesaleView(),
+            '/payment-to-merchant': (context) => new PaymentToMerchantView(),
           },
           home: HomeView(),
         );

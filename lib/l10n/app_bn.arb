@@ -17,7 +17,7 @@
   "socialMediaHandles": "সোশ্যাল মিডিয়া হ্যান্ডলগুলি",
   "qrScan": "QR স্ক্যান",
   "pickContact": "যোগাযোগ বাছুন",
-  "emailOrContactNumber": "ইমেল বা যোগাযোগ নম্বর",
+  "emailOrMobileNumber": "ইমেল বা যোগাযোগ নম্বর",
   "amount": "পরিমাণ",
   "submit": "জমা",
   "disabled": "Disabled",
@@ -235,7 +235,13 @@
 
   "wholeSaleReload": "Wholesale Reload",
   "wholeSaleRaastas": "Wholesale Raastas",
-  "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
-  "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas."
+  "wholeSaleViewDhiraaguFirstText": "রিলোড পাঠাতে ধীরাগু বিজনেস রিলোড নম্বর এবং পরিমাণ লিখুন।",
+  "wholeSaleViewOoredooFirstText": "ওরেডু বিজনেস রাসটাস নম্বর এবং রাসটা পাঠানোর পরিমাণ লিখুন।",
+
+  "transfer": "স্থানান্তর",
+
+  "paymentToMerchantFirstText": "একজন বণিককে অর্থপ্রদান করতে, QR কোড স্ক্যান করুন এবং বণিক দ্বারা তৈরি করা হয়েছে৷",
+  "merchantName": "ব্যবসায়ীর নাম",
+  "pay": "বেতন"
 
 }

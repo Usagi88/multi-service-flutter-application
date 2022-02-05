@@ -11,7 +11,6 @@ import 'package:flutter/services.dart';
 import 'package:fpapp/widgets/textfield_number_widget.dart';
 import 'package:fpapp/widgets/textfield_text_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 class FahisendView extends StatefulWidget {
@@ -126,12 +125,43 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                       ),
                     ),
                     SizedBox(
-                      height: 56,
+                      height: 30,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Row(
                         children: [
+                          SlideTransition(
+                            position: Tween<Offset>(
+                              begin: Offset(1, 0),
+                              end: Offset.zero,
+                            ).animate(_animationController),
+                            child: FadeTransition(
+                              opacity: _animationController,
+                              child: Container(
+                                  height: 46,
+                                  width: MediaQuery.of(context).size.width * 0.43,
+                                  constraints: BoxConstraints(
+                                      maxWidth: 154
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                    gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
+                                  ),
+                                  child: TextButton.icon(
+                                      icon: Text(AppLocalizations.of(context)!.qrScan, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
+                                      label: Padding(
+                                        padding: const EdgeInsets.only(bottom: 4.0),
+                                        child: Icon(FontAwesomeIcons.qrcode, color: Colors.white, size: 22,),
+                                      ),
+                                      onPressed: () {
+
+                                      }
+                                  )
+                              ),
+                            ),
+                          ),
+                          Spacer(),
                           SlideTransition(
                             position: Tween<Offset>(
                               begin: Offset(-1, 0),
@@ -150,36 +180,11 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                                     gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
                                   ),
                                   child: TextButton.icon(
-                                      icon: Text(AppLocalizations.of(context)!.qrScan, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400,fontFamily: 'Roboto'),),
-                                      label: Icon(FontAwesomeIcons.qrcode, color: Colors.white, size: 22,),
-                                      onPressed: () {
-
-                                      }
-                                  )
-                              ),
-                            ),
-                          ),
-                          Spacer(),
-                          SlideTransition(
-                            position: Tween<Offset>(
-                              begin: Offset(2, 0),
-                              end: Offset.zero,
-                            ).animate(_animationController),
-                            child: FadeTransition(
-                              opacity: _animationController,
-                              child: Container(
-                                  height: 46,
-                                  width: MediaQuery.of(context).size.width * 0.43,
-                                  constraints: BoxConstraints(
-                                      maxWidth: 154
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                    gradient: LinearGradient(colors: [Color(0xff3AC170), Color(0xff25BFA3)]),
-                                  ),
-                                  child: TextButton.icon(
                                       icon: Text(AppLocalizations.of(context)!.pickContact, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
-                                      label: Icon(FontAwesomeIcons.phoneAlt, color: Colors.white, size: 22),
+                                      label: Padding(
+                                        padding: const EdgeInsets.only(bottom: 4.0),
+                                        child: Icon(FontAwesomeIcons.phoneAlt, color: Colors.white, size: 22),
+                                      ),
                                       onPressed: () {
 
                                       }
@@ -191,29 +196,69 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                       ),
                     ),
                     SizedBox(
-                      height: 76,
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Align(
+                          alignment: Alignment.centerRight,
+                          child: SlideTransition(
+                            position: Tween<Offset>(
+                              begin: Offset(1, 0),
+                              end: Offset.zero,
+                            ).animate(_animationController),
+                            child: FadeTransition(
+                              opacity: _animationController,
+                              child: Text(
+                                AppLocalizations.of(context)!.emailOrMobileNumber,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                            ),
+                          )
+                      ),
+                    ),
+                    SizedBox(
+                      height: 7,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: SlideTransition(
                         position: Tween<Offset>(
-                          begin: Offset(-1, 0),
+                          begin: Offset(1, 0),
                           end: Offset.zero,
                         ).animate(_animationController),
                         child: FadeTransition(
                             opacity: _animationController,
-                            child: TextfieldTextWidget(hintText: AppLocalizations.of(context)!.emailOrContactNumber)
+                            child: TextfieldTextWidget(hintText: AppLocalizations.of(context)!.emailOrMobileNumber)
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 14,
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Align(
+                          alignment: Alignment.centerRight,
+                          child: SlideTransition(
+                            position: Tween<Offset>(
+                              begin: Offset(1, 0),
+                              end: Offset.zero,
+                            ).animate(_animationController),
+                            child: FadeTransition(
+                              opacity: _animationController,
+                              child: Text(
+                                AppLocalizations.of(context)!.amount,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                            ),
+                          )
+                      ),
+                    ),
+                    SizedBox(
+                      height: 7,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: SlideTransition(
                         position: Tween<Offset>(
-                          begin: Offset(2, 0),
+                          begin: Offset(1, 0),
                           end: Offset.zero,
                         ).animate(_animationController),
                         child: FadeTransition(
@@ -225,14 +270,14 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                       ),
                     ),
                     SizedBox(
-                      height: 14,
+                      height: 20,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: ScaleTransition(
                         scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                         child: ButtonWidget(
-                          buttonText: AppLocalizations.of(context)!.submit,
+                          buttonText: AppLocalizations.of(context)!.transfer,
                         ),
                       ),
                     ),
@@ -313,7 +358,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ),
             ),
             SizedBox(
-              height: 56,
+              height: 30,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -378,7 +423,27 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ),
             ),
             SizedBox(
-              height: 76,
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(
+                        AppLocalizations.of(context)!.emailOrMobileNumber,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                    ),
+                  )
+              ),
+            ),
+            SizedBox(
+              height: 7,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -389,12 +454,32 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                 ).animate(_animationController),
                 child: FadeTransition(
                     opacity: _animationController,
-                    child: TextfieldTextWidget(hintText: AppLocalizations.of(context)!.emailOrContactNumber)
+                    child: TextfieldTextWidget(hintText: AppLocalizations.of(context)!.emailOrMobileNumber)
                 ),
               ),
             ),
             SizedBox(
-              height: 14,
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                      opacity: _animationController,
+                      child: Text(
+                        AppLocalizations.of(context)!.amount,style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                    ),
+                  )
+              ),
+            ),
+            SizedBox(
+              height: 7,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -412,14 +497,14 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
               ),
             ),
             SizedBox(
-              height: 14,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ScaleTransition(
                 scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack)),
                 child: ButtonWidget(
-                  buttonText: AppLocalizations.of(context)!.submit,
+                  buttonText: AppLocalizations.of(context)!.transfer,
                 ),
               ),
             ),
