@@ -15,6 +15,7 @@ import 'package:fpapp/views/live_chat_view.dart';
 import 'package:fpapp/views/maldive_gas_view.dart';
 import 'package:fpapp/views/payment_to_merchant_view.dart';
 import 'package:fpapp/views/profile_view.dart';
+import 'package:fpapp/views/proof_verification_view.dart';
 import 'package:fpapp/views/register_view.dart';
 import 'package:fpapp/views/reset_password_view.dart';
 import 'package:fpapp/views/rol_bill_pay_view.dart';
@@ -110,8 +111,9 @@ class MyApp extends StatelessWidget {
             '/settings': (context) => new SettingsView(),
             '/wholesale': (context) => new WholesaleView(),
             '/payment-to-merchant': (context) => new PaymentToMerchantView(),
+            '/proof-verification': (context) => new ProofVerificationView(),
           },
-          home: HomeView(),
+          home: ProofVerificationView(),
         );
       }),
     );

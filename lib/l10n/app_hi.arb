@@ -253,6 +253,12 @@
 
     "areYouSureRejectPayment": "क्या आप वाकई इस भुगतान को अस्वीकार करना चाहते हैं?",
     "areYouSureAcceptPayment": "क्या आप वाकई इस भुगतान को स्वीकार करना चाहते हैं?",
-    "yes": "Yes"
+    "yes": "Yes",
+
+    "proofVerificationViewFirstText": "अपने FahiPay खाते को सत्यापित करने के लिए, कृपया अपने आईडी कार्ड, पासपोर्ट या वर्क परमिट की एक स्पष्ट तस्वीर अपलोड करें!",
+    "idPassportWorkpermitFrontside": "आईडी/पासपोर्ट/वर्क परमिट सामने की ओर",
+    "idPassportWorkpermitBackside": "आईडी/पासपोर्ट/वर्क परमिट बैक साइड",
+    "chooseImageUpload": "अपलोड करने के लिए छवि चुनें",
+    "upload": "डालना"
 
 }

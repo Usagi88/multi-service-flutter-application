@@ -293,5 +293,11 @@
 
     "areYouSureRejectPayment": "Are you sure you want to reject this payment?",
     "areYouSureAcceptPayment": "Are you sure you want to accept this payment?",
-    "yes": "Yes"
+    "yes": "Yes",
+
+    "proofVerificationViewFirstText": "To verify your FahiPay account, please upload a clear photo of your ID card, passport or work permit!",
+    "idPassportWorkpermitFrontside": "ID/Passport/Work permit front side",
+    "idPassportWorkpermitBackside": "ID/Passport/Work permit back side",
+    "chooseImageUpload": "Choose image to upload",
+    "upload": "Upload"
 }

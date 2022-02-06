@@ -254,5 +254,11 @@
 
   "areYouSureRejectPayment": "この支払いを拒否してもよろしいですか？",
   "areYouSureAcceptPayment": "この支払いを受け入れてもよろしいですか？",
-  "yes": "Yes"
+  "yes": "Yes",
+
+  "proofVerificationViewFirstText": "FahiPayアカウントを確認するには、IDカード、パスポート、または就労許可証の鮮明な写真をアップロードしてください。",
+  "idPassportWorkpermitFrontside": "ID /パスポート/労働許可証の表側",
+  "idPassportWorkpermitBackside": "ID /パスポート/労働許可証の裏側",
+  "chooseImageUpload": "アップロードする",
+  "upload": "アップロード"
 }
