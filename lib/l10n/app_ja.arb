@@ -250,5 +250,9 @@
   "from": "From",
   "note": "Note",
   "expiresIn": "Expires in",
-  "reject": "Reject"
+  "reject": "Reject",
+
+  "areYouSureRejectPayment": "この支払いを拒否してもよろしいですか？",
+  "areYouSureAcceptPayment": "この支払いを受け入れてもよろしいですか？",
+  "yes": "Yes"
 }

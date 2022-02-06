@@ -248,6 +248,10 @@
   "from": "From",
   "note": "Note",
   "expiresIn": "Expires in",
-  "reject": "Reject"
+  "reject": "Reject",
+
+  "areYouSureRejectPayment": "আপনি কি এই অর্থপ্রদান প্রত্যাখ্যান করার বিষয়ে নিশ্চিত?",
+  "areYouSureAcceptPayment": "আপনি কি এই অর্থপ্রদান গ্রহণ করার বিষয়ে নিশ্চিত?",
+  "yes": "Yes"
 
 }

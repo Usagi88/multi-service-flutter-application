@@ -249,6 +249,10 @@
     "from": "From",
     "note": "Note",
     "expiresIn": "Expires in",
-    "reject": "Reject"
+    "reject": "Reject",
+
+    "areYouSureRejectPayment": "क्या आप वाकई इस भुगतान को अस्वीकार करना चाहते हैं?",
+    "areYouSureAcceptPayment": "क्या आप वाकई इस भुगतान को स्वीकार करना चाहते हैं?",
+    "yes": "Yes"
 
 }

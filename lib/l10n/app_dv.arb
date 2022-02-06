@@ -251,6 +251,10 @@
     "from": "From",
     "note": "Note",
     "expiresIn": "Expires in",
-    "reject": "Reject"
+    "reject": "ރިޖެކްޓް",
+
+    "areYouSureRejectPayment": "ޕޭމަންޓް ރިޖެކްޓް ކުރަން ބޭނުން؟",
+    "areYouSureAcceptPayment": "ޕޭމަންޓް އެކްސެޕްޓް ކުރަން ބޭނުން؟",
+    "yes": "އާން"
 
 }

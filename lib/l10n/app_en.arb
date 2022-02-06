@@ -289,6 +289,9 @@
     "from": "From",
     "note": "Note",
     "expiresIn": "Expires in",
-    "reject": "Reject"
+    "reject": "Reject",
 
+    "areYouSureRejectPayment": "Are you sure you want to reject this payment?",
+    "areYouSureAcceptPayment": "Are you sure you want to accept this payment?",
+    "yes": "Yes"
 }
