@@ -113,7 +113,7 @@ class MyApp extends StatelessWidget {
             '/payment-to-merchant': (context) => new PaymentToMerchantView(),
             '/proof-verification': (context) => new ProofVerificationView(),
           },
-          home: ProofVerificationView(),
+          home: SettingsView(),
         );
       }),
     );

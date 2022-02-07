@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -75,90 +76,91 @@ class _SettingsViewState extends State<SettingsView>
     }
   }
 
-  Future<void> requestContactPermission() async {
+  Future<void> requestContactPermission(bool value) async {
     final status = await Permission.contacts.request();
     if (status == PermissionStatus.granted) {
-      _contactToggled = true;
+      _contactToggled = value;
       _switchContactToggle(_contactToggled);
     } else if (status == PermissionStatus.denied) {
-      _contactToggled = false;
+      _contactToggled = value;
       _switchContactToggle(_contactToggled);
     } else if (status == PermissionStatus.permanentlyDenied) {
-      _contactToggled = false;
+      _contactToggled = value;
       _switchContactToggle(_contactToggled);
       await openAppSettings();
     }
   }
-  Future<void> requestStoragePermission() async {
+
+  Future<void> requestStoragePermission(bool value) async {
     final status = await Permission.storage.request();
     if (status == PermissionStatus.granted) {
-      _storageToggled = true;
+      _storageToggled = value;
       _switchStorageToggle(_storageToggled);
     } else if (status == PermissionStatus.denied) {
-      _storageToggled = false;
+      _storageToggled = value;
       _switchStorageToggle(_storageToggled);
     } else if (status == PermissionStatus.permanentlyDenied) {
-      _storageToggled = false;
+      _storageToggled = value;
       _switchStorageToggle(_storageToggled);
       await openAppSettings();
     }
   }
 
-  Future<void> requestCameraPermission() async {
+  Future<void> requestCameraPermission(bool value) async {
     final status = await Permission.camera.request();
     if (status == PermissionStatus.granted) {
-      _cameraToggled = true;
+      _cameraToggled = value;
       _switchCameraToggle(_cameraToggled);
     } else if (status == PermissionStatus.denied) {
-      _cameraToggled = false;
+      _cameraToggled = value;
       _switchCameraToggle(_cameraToggled);
     } else if (status == PermissionStatus.permanentlyDenied) {
-      _cameraToggled = false;
+      _cameraToggled = value;
       _switchCameraToggle(_cameraToggled);
       await openAppSettings();
     }
   }
 
-  Future<void> requestSMSPermission() async {
+  Future<void> requestSMSPermission(bool value) async {
     final status = await Permission.sms.request();
     if (status == PermissionStatus.granted) {
-      _smsToggled = true;
+      _smsToggled = value;
       _switchSMSToggle(_smsToggled);
     } else if (status == PermissionStatus.denied) {
-      _smsToggled = false;
+      _smsToggled = value;
       _switchSMSToggle(_smsToggled);
     } else if (status == PermissionStatus.permanentlyDenied) {
-      _smsToggled = false;
+      _smsToggled = value;
       _switchSMSToggle(_smsToggled);
       await openAppSettings();
     }
   }
 
-  Future<void> requestLocationPermission() async {
+  Future<void> requestLocationPermission(bool value) async {
     final status = await Permission.locationWhenInUse.request();
     if (status == PermissionStatus.granted) {
-      _locationToggled = true;
+      _locationToggled = value;
       _switchLocationToggle(_locationToggled);
     } else if (status == PermissionStatus.denied) {
-      _locationToggled = false;
+      _locationToggled = value;
       _switchLocationToggle(_locationToggled);
     } else if (status == PermissionStatus.permanentlyDenied) {
-      _locationToggled = false;
+      _locationToggled = value;
       _switchLocationToggle(_locationToggled);
       await openAppSettings();
     }
   }
 
-  Future<void> requestNotificationPermission() async {
+  Future<void> requestNotificationPermission(bool value) async {
     final status = await Permission.notification.request();
     if (status == PermissionStatus.granted) {
-      _notificationToggled = true;
+      _notificationToggled = value;
       _switchNotificationToggle(_notificationToggled);
     } else if (status == PermissionStatus.denied) {
-      _locationToggled = false;
+      _locationToggled = value;
       _switchNotificationToggle(_notificationToggled);
     } else if (status == PermissionStatus.permanentlyDenied) {
-      _locationToggled = false;
+      _locationToggled = value;
       _switchNotificationToggle(_notificationToggled);
       await openAppSettings();
     }
@@ -182,36 +184,84 @@ class _SettingsViewState extends State<SettingsView>
     super.dispose();
   }
 
-  _switchCameraToggle(boolValue) {
-    setState(() {
-      _cameraToggled = boolValue;
-    });
+  _switchContactToggle(boolValue) async {
+    if (boolValue) {
+      setState(() {
+        _contactToggled = boolValue;
+      });
+    } else {
+      setState(() {
+        _contactToggled = boolValue;
+      });
+      await openAppSettings();
+    }
   }
-  _switchStorageToggle(boolValue) {
-    setState(() {
-      _storageToggled = boolValue;
-    });
+
+  _switchStorageToggle(boolValue) async {
+    if (boolValue) {
+      setState(() {
+        _storageToggled = boolValue;
+      });
+    } else {
+      setState(() {
+        _storageToggled = boolValue;
+      });
+      await openAppSettings();
+    }
   }
-  _switchContactToggle(boolValue) {
-    setState(() {
-      _contactToggled = boolValue;
-    });
+
+  _switchCameraToggle(boolValue) async {
+    if (boolValue) {
+      setState(() {
+        _cameraToggled = boolValue;
+      });
+    } else {
+      setState(() {
+        _cameraToggled = boolValue;
+      });
+      await openAppSettings();
+    }
   }
-  _switchSMSToggle(boolValue) {
-    setState(() {
-      _storageToggled = boolValue;
-    });
+
+  _switchSMSToggle(boolValue) async {
+    if (boolValue) {
+      setState(() {
+        _storageToggled = boolValue;
+      });
+    } else {
+      setState(() {
+        _storageToggled = boolValue;
+      });
+      await openAppSettings();
+    }
   }
-  _switchLocationToggle(boolValue) {
-    setState(() {
-      _locationToggled = boolValue;
-    });
+
+  _switchLocationToggle(boolValue) async {
+    if (boolValue) {
+      setState(() {
+        _locationToggled = boolValue;
+      });
+    } else {
+      setState(() {
+        _locationToggled = boolValue;
+      });
+      await openAppSettings();
+    }
   }
-  _switchNotificationToggle(boolValue) {
-    setState(() {
-      _notificationToggled = boolValue;
-    });
+
+  _switchNotificationToggle(boolValue) async {
+    if (boolValue) {
+      setState(() {
+        _notificationToggled = boolValue;
+      });
+    } else {
+      setState(() {
+        _notificationToggled = boolValue;
+      });
+      await openAppSettings();
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     var language = Provider.of<LocaleProvider>(context);
@@ -228,6 +278,7 @@ class _SettingsViewState extends State<SettingsView>
   //portrait
   Scaffold _portraitModeOnly(BuildContext context, height, safePadding,
       _animationController, _tween, language) {
+
     if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
       return Scaffold(
           appBar: NavbarWithBackButton(
@@ -281,7 +332,10 @@ class _SettingsViewState extends State<SettingsView>
                     ),
                     activeColor: Color(0xff28bf9b),
                     onChanged: (bool value) {
-                      requestContactPermission();
+                      setState(() {
+                        _switchContactToggle(value);
+                      });
+                      requestContactPermission(value);
                     },
                   ),
                 ),
@@ -310,7 +364,10 @@ class _SettingsViewState extends State<SettingsView>
                     ),
                     activeColor: Color(0xff28bf9b),
                     onChanged: (bool value) {
-                      requestStoragePermission();
+                      setState(() {
+                        _switchStorageToggle(value);
+                      });
+                      requestStoragePermission(value);
                     },
                   ),
                 ),
@@ -339,7 +396,10 @@ class _SettingsViewState extends State<SettingsView>
                     ),
                     activeColor: Color(0xff28bf9b),
                     onChanged: (bool value) {
-                      requestCameraPermission();
+                      setState(() {
+                        _switchCameraToggle(value);
+                      });
+                      requestCameraPermission(value);
                     },
                   ),
                 ),
@@ -368,7 +428,10 @@ class _SettingsViewState extends State<SettingsView>
                     ),
                     activeColor: Color(0xff28bf9b),
                     onChanged: (bool value) {
-                      requestSMSPermission();
+                      setState(() {
+                        _switchSMSToggle(value);
+                      });
+                      requestSMSPermission(value);
                     },
                   ),
                 ),
@@ -397,7 +460,10 @@ class _SettingsViewState extends State<SettingsView>
                     ),
                     activeColor: Color(0xff28bf9b),
                     onChanged: (bool value) {
-                      requestLocationPermission();
+                      setState(() {
+                        _switchLocationToggle(value);
+                      });
+                      requestLocationPermission(value);
                     },
                   ),
                 ),
@@ -426,7 +492,10 @@ class _SettingsViewState extends State<SettingsView>
                     ),
                     activeColor: Color(0xff28bf9b),
                     onChanged: (bool value) {
-                      requestNotificationPermission();
+                      setState(() {
+                        _switchNotificationToggle(value);
+                      });
+                      requestNotificationPermission(value);
                     },
                   ),
                 ),
@@ -448,17 +517,19 @@ class _SettingsViewState extends State<SettingsView>
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Align(
-                alignment: Alignment.centerLeft,
-                child: SlideTransition(
-                  position: Tween<Offset>(
-                    begin: Offset(-1, 0),
-                    end: Offset.zero,
-                  ).animate(_animationController),
-                  child: FadeTransition(
-                      opacity: _animationController,
-                      child: Text(AppLocalizations.of(context)!.systemAndDevice, style: TextStyle(fontWeight: FontWeight.w600),)),
-                )
-              ),
+                  alignment: Alignment.centerLeft,
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(-1, 0),
+                      end: Offset.zero,
+                    ).animate(_animationController),
+                    child: FadeTransition(
+                        opacity: _animationController,
+                        child: Text(
+                          AppLocalizations.of(context)!.systemAndDevice,
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        )),
+                  )),
             ),
             SizedBox(
               height: 10,
@@ -487,7 +558,10 @@ class _SettingsViewState extends State<SettingsView>
                   ),
                   activeColor: Color(0xff28bf9b),
                   onChanged: (bool value) {
-                    requestContactPermission();
+                    setState(() {
+                      _switchContactToggle(value);
+                    });
+                    requestContactPermission(value);
                   },
                 ),
               ),
@@ -516,7 +590,10 @@ class _SettingsViewState extends State<SettingsView>
                   ),
                   activeColor: Color(0xff28bf9b),
                   onChanged: (bool value) {
-                    requestStoragePermission();
+                    setState(() {
+                      _switchStorageToggle(value);
+                    });
+                    requestStoragePermission(value);
                   },
                 ),
               ),
@@ -545,7 +622,10 @@ class _SettingsViewState extends State<SettingsView>
                   ),
                   activeColor: Color(0xff28bf9b),
                   onChanged: (bool value) {
-                    requestCameraPermission();
+                    setState(() {
+                      _switchCameraToggle(value);
+                    });
+                    requestCameraPermission(value);
                   },
                 ),
               ),
@@ -574,7 +654,10 @@ class _SettingsViewState extends State<SettingsView>
                   ),
                   activeColor: Color(0xff28bf9b),
                   onChanged: (bool value) {
-                    requestSMSPermission();
+                    setState(() {
+                      _switchSMSToggle(value);
+                    });
+                    requestSMSPermission(value);
                   },
                 ),
               ),
@@ -603,7 +686,10 @@ class _SettingsViewState extends State<SettingsView>
                   ),
                   activeColor: Color(0xff28bf9b),
                   onChanged: (bool value) {
-                    requestLocationPermission();
+                    setState(() {
+                      _switchLocationToggle(value);
+                    });
+                    requestLocationPermission(value);
                   },
                 ),
               ),
@@ -632,7 +718,10 @@ class _SettingsViewState extends State<SettingsView>
                   ),
                   activeColor: Color(0xff28bf9b),
                   onChanged: (bool value) {
-                    requestNotificationPermission();
+                    setState(() {
+                      _switchNotificationToggle(value);
+                    });
+                    requestNotificationPermission(value);
                   },
                 ),
               ),
