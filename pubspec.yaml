@@ -48,6 +48,7 @@ dependencies:
   carousel_slider: ^4.0.0
   permission_handler: ^8.3.0
   flutter_native_contact_picker: ^0.0.3
+  qr_code_scanner: ^0.6.1
 
 
 
