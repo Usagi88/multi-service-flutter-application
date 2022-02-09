@@ -338,7 +338,7 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
                                     ],
                                   ),
                                 ),
-                                child: Icon(FontAwesomeIcons.phoneAlt, size: 24,color: Colors.white,),
+                                child: Icon(FontAwesomeIcons.phoneAlt, size: 18,color: Colors.white,),
                               ),
                             ),
                           )

@@ -131,7 +131,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Container(
-                height: MediaQuery.of(context).size.height - (height + safePadding + 224),
+                height: MediaQuery.of(context).size.height - (height + safePadding + 204),
                 width: MediaQuery.of(context).size.width,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),

@@ -351,149 +351,140 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                       ).animate(_animationController),
                       child: FadeTransition(
                         opacity: _animationController,
-                        child: Container(
-                          height: 200,
-                          child: ListView(
-                            scrollDirection: Axis.vertical,
-                            children: [
-                              DataTable(
-                                  dataRowHeight: 80,
-                                  columnSpacing: 0,
-                                  horizontalMargin: 0,
-                                  columns: [
-                                    DataColumn(label:
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 8.0),
-                                      child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
-                                    )
-                                    ),
-                                    DataColumn(
-                                        label: Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                          child: Text(AppLocalizations.of(context)!.service,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
-                                        )
-                                    ),
-                                    DataColumn(label:
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Text(AppLocalizations.of(context)!.number,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,),),
-                                    )
-                                    ),
-                                    DataColumn(label:
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Text(AppLocalizations.of(context)!.amount,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,),),
-                                    )
-                                    ),
-                                    DataColumn(label:
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Text(AppLocalizations.of(context)!.day,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,),),
-                                    )
-                                    ),
-                                  ],
-                                  rows: [
-                                    DataRow(
-                                        cells: [
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                        ]
-                                    ),
-                                    DataRow(
-                                        cells: [
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                        ]
-                                    ),
-                                    DataRow(
-                                        cells: [
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("3",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                        ]
-                                    ),
-                                    DataRow(
-                                        cells: [
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("4",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                          DataCell(Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                            child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                          )),
-                                        ]
-                                    ),
-                                  ]
+                        child: DataTable(
+                            dataRowHeight: 80,
+                            columnSpacing: 0,
+                            horizontalMargin: 0,
+                            columns: [
+                              DataColumn(label:
+                              Padding(
+                                padding: const EdgeInsets.only(right: 8.0),
+                                child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
+                              )
+                              ),
+                              DataColumn(
+                                  label: Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                    child: Text(AppLocalizations.of(context)!.service,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
+                                  )
+                              ),
+                              DataColumn(label:
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(AppLocalizations.of(context)!.number,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,),),
+                              )
+                              ),
+                              DataColumn(label:
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(AppLocalizations.of(context)!.amount,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,),),
+                              )
+                              ),
+                              DataColumn(label:
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(AppLocalizations.of(context)!.day,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,),),
+                              )
                               ),
                             ],
-
-                          ),
+                            rows: [
+                              DataRow(
+                                  cells: [
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                  ]
+                              ),
+                              DataRow(
+                                  cells: [
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                  ]
+                              ),
+                              DataRow(
+                                  cells: [
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("3",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                  ]
+                              ),
+                              DataRow(
+                                  cells: [
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("4",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                    DataCell(Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                    )),
+                                  ]
+                              ),
+                            ]
                         ),
                       ),
                     ),
@@ -782,149 +773,140 @@ class _ScheduledPaymentsViewState extends State<ScheduledPaymentsView> with Sing
                     ).animate(_animationController),
                     child: FadeTransition(
                       opacity: _animationController,
-                      child: Container(
-                        height: 200,
-                        child: ListView(
-                          scrollDirection: Axis.vertical,
-                          children: [
-                            DataTable(
-                                dataRowHeight: 80,
-                                columnSpacing: 0,
-                                horizontalMargin: 0,
-                                columns: [
-                                  DataColumn(label:
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
-                                    child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
-                                  )
-                                  ),
-                                  DataColumn(
-                                      label: Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: Text(AppLocalizations.of(context)!.service,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
-                                      )
-                                  ),
-                                  DataColumn(label:
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                    child: Text(AppLocalizations.of(context)!.number,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
-                                  )
-                                  ),
-                                  DataColumn(label:
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                    child: Text(AppLocalizations.of(context)!.amount,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
-                                  )
-                                  ),
-                                  DataColumn(label:
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                    child: Text(AppLocalizations.of(context)!.day,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
-                                  )
-                                  ),
-                                ],
-                                rows: [
-                                  DataRow(
-                                      cells: [
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                      ]
-                                  ),
-                                  DataRow(
-                                      cells: [
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                      ]
-                                  ),
-                                  DataRow(
-                                      cells: [
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("3",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                      ]
-                                  ),
-                                  DataRow(
-                                      cells: [
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("4",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                        DataCell(Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                          child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
-                                        )),
-                                      ]
-                                  ),
-                                ]
+                      child: DataTable(
+                          dataRowHeight: 80,
+                          columnSpacing: 0,
+                          horizontalMargin: 0,
+                          columns: [
+                            DataColumn(label:
+                            Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: Text("#",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
+                            )
+                            ),
+                            DataColumn(
+                                label: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                  child: Text(AppLocalizations.of(context)!.service,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600),),
+                                )
+                            ),
+                            DataColumn(label:
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text(AppLocalizations.of(context)!.number,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                            )
+                            ),
+                            DataColumn(label:
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text(AppLocalizations.of(context)!.amount,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                            )
+                            ),
+                            DataColumn(label:
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text(AppLocalizations.of(context)!.day,style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                            )
                             ),
                           ],
-
-                        ),
+                          rows: [
+                            DataRow(
+                                cells: [
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("1",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                ]
+                            ),
+                            DataRow(
+                                cells: [
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("2",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                ]
+                            ),
+                            DataRow(
+                                cells: [
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("3",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                ]
+                            ),
+                            DataRow(
+                                cells: [
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("4",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("Dhiraagu bill pay",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("123",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("500.00",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                  DataCell(Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text("18/1/2022",style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                                  )),
+                                ]
+                            ),
+                          ]
                       ),
                     ),
                   ),

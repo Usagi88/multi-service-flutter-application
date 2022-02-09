@@ -48,7 +48,7 @@ class ReceiveMessage extends StatelessWidget {
                           bottomRight: Radius.circular(18),
                         ),
                       ),
-                      margin: const EdgeInsets.only(bottom: 30.0, top: 4.0),
+                      margin: const EdgeInsets.only(bottom: 10.0,top: 4.0),
                       padding: const EdgeInsets.all(10.0),
                       child: IntrinsicWidth(
                         child: Column(
@@ -126,7 +126,7 @@ class ReceiveMessage extends StatelessWidget {
                         bottomRight: Radius.circular(18),
                       ),
                     ),
-                    margin: const EdgeInsets.only(bottom: 30.0, top: 4.0),
+                    margin: const EdgeInsets.only(bottom: 10.0,top: 4.0),
                     padding: const EdgeInsets.all(10.0),
                     child: IntrinsicWidth(
                       child: Column(

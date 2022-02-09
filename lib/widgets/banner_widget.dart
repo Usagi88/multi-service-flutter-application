@@ -35,7 +35,7 @@ class BannerWidget extends StatelessWidget {
   Positioned _portraitModeOnly(BuildContext context, language){
     if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
       return Positioned(
-        top: 15,
+        top: 10,
         left: 0,
         right: MediaQuery.of(context).size.width > 350 ? MediaQuery.of(context).size.width * 0.20 : MediaQuery.of(context).size.width * 0.16,
         //top: 15,
@@ -51,7 +51,7 @@ class BannerWidget extends StatelessWidget {
                   child: Container(
                     //color: Colors.grey,
                     width: 80,
-                    height: 100,
+                    height: 80,
                     child: IconButton(
                       icon: Icon(bannerIcon, color: Colors.white, size: 50),
                       onPressed: () {
@@ -275,7 +275,7 @@ class BannerWidget extends StatelessWidget {
       );
     }
     return Positioned(
-      top: 15,
+      top: 10,
       left: MediaQuery.of(context).size.width > 350 ? MediaQuery.of(context).size.width * 0.20 : MediaQuery.of(context).size.width * 0.16,
       right: 0,
       //top: 15,
@@ -289,7 +289,7 @@ class BannerWidget extends StatelessWidget {
               child: Container(
                 //color: Colors.grey,
                 width: 80,
-                height: 100,
+                height: 80,
                 child: IconButton(
                 icon: Icon(bannerIcon, color: Colors.white, size: 50),
                   onPressed: () {

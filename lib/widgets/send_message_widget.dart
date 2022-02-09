@@ -42,7 +42,7 @@ class SendMessage extends StatelessWidget {
                     ConstrainedBox(
                       constraints: BoxConstraints(maxWidth: maxBubbleWidth),
                       child: Container(
-                        margin: const EdgeInsets.only(bottom: 30.0,top: 4.0),
+                        margin: const EdgeInsets.only(bottom: 10.0,top: 4.0),
                         constraints: BoxConstraints(
                             minWidth: 100
                         ),
@@ -90,6 +90,7 @@ class SendMessage extends StatelessWidget {
         ],
       );
     }
+
     return Column(
       children: [
         Align(
@@ -108,7 +109,7 @@ class SendMessage extends StatelessWidget {
                   ConstrainedBox(
                     constraints: BoxConstraints(maxWidth: maxBubbleWidth),
                     child: Container(
-                      margin: const EdgeInsets.only(bottom: 30.0,top: 4.0),
+                      margin: const EdgeInsets.only(bottom: 10.0,top: 4.0),
                       constraints: BoxConstraints(
                           minWidth: 100
                       ),

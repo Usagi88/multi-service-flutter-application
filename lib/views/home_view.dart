@@ -161,12 +161,16 @@ class _HomeViewState extends State<HomeView>
                   ),
                 ),
                 Stack(children: <Widget>[
-                  Container(
-                    height: 236,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/banner.png'),
-                        fit: BoxFit.fill,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 34.0),
+                    child: Container(
+                      height: 165,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/banner.png'),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
@@ -177,7 +181,7 @@ class _HomeViewState extends State<HomeView>
                     animationController: _animationController,
                   ),
                   Positioned(
-                    top: 130,
+                    top: 90,
                     left: 0,
                     right: 0,
                     child: Row(
@@ -495,9 +499,7 @@ class _HomeViewState extends State<HomeView>
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+
               ],
             ),
           ),
@@ -597,12 +599,16 @@ class _HomeViewState extends State<HomeView>
                 ),
               ),
               Stack(children: <Widget>[
-                Container(
-                  height: 236,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/banner.png'),
-                      fit: BoxFit.fill,
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 34.0),
+                  child: Container(
+                    height: 165,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/banner.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -613,7 +619,7 @@ class _HomeViewState extends State<HomeView>
                   animationController: _animationController,
                 ),
                 Positioned(
-                  top: 130,
+                  top: 90,
                   left: 0,
                   right: 0,
                   child: Row(
@@ -930,9 +936,7 @@ class _HomeViewState extends State<HomeView>
                   ),
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+
             ],
           ),
         ),
