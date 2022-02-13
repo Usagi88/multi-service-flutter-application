@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/provider/locale_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:fpapp/widgets/account_picker.dart';
 
 import 'package:provider/provider.dart';
 import '../main.dart';
@@ -496,8 +497,16 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
                 end: Alignment.bottomRight,
               ),
             ),
-            onTap: () {
+            onTap: () async {
+              // Show PopUp
+              await showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AccountPickerWidget();
+                  });
 
+              // Doesn't run
+              Navigator.pop(context);
             },
             title: Text(AppLocalizations.of(context)!.changeAccount),
           ),
