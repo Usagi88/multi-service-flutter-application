@@ -250,9 +250,16 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
                   end: Alignment.bottomRight,
                 ),
               ),
-              onTap: () {
-                //EmailResult? emailResult = await AccountPicker.emailHint();
+              onTap: () async {
+                // Show PopUp
+                await showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AccountPickerWidget();
+                    });
 
+                // Doesn't run
+                Navigator.pop(context);
               },
               title: Text(AppLocalizations.of(context)!.changeAccount),
             ),

@@ -75,7 +75,278 @@ class _AccountPickerWidgetState extends State<AccountPickerWidget> with SingleTi
   //portrait
   ScaleTransition _portraitModeOnly(BuildContext context, language, _animationController, _tween){
     if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
+      return ScaleTransition(
+        scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.elasticOut)),
+        child: AlertDialog(
+          title: Row(
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(AppLocalizations.of(context)!.manageAccount,style: TextStyle(fontWeight: FontWeight.w700,),),
+              ),
+              Spacer(),
+              IconButton(
+                onPressed:() {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return StatefulBuilder(
+                        builder: (context, setState) {
+                          return AlertDialog(
+                            title: Column(
+                              children: [
+                                const Icon(
+                                  FontAwesomeIcons.exclamationTriangle,
+                                  color: Colors.orangeAccent,
+                                  size: 74.0,
+                                ),
+                              ],
+                            ),
+                            content: Text(
+                              AppLocalizations.of(context)!.areYouSureRemoveAccount,
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight:
+                                  FontWeight.w400,
+                              ),
+                            ),
+                            actions: [
+                              Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    child: SizedBox(
+                                      height: 44,
+                                      child: TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text(AppLocalizations.of(context)!.yes),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: SizedBox(
+                                      height: 44,
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () =>
+                                        {Navigator.pop(context)},
+                                        child: Text(
+                                          AppLocalizations.of(context)!.cancel,
+                                          style: TextStyle(
+                                              color: Colors.red),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          );
+                        },
+                      );
+                    },
+                  );
+                },
+                icon: GradientIcon(
+                  FontAwesomeIcons.minusCircle,
+                  22.0,
+                  LinearGradient(
+                    colors: <Color>[
+                      Color(0xff3AC170),
+                      Color(0xff25BFA3),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),)
+            ],
+          ),
+          content: Container(
+              width: 300.0, // Change as per your requirement
+              constraints: BoxConstraints(
+                  maxHeight: 300
+              ),
+              child:  ListView.separated(
+                separatorBuilder: (context, index) => Divider(
+                  color: Colors.grey.shade400,
+                ),
+                itemCount: accounts.length + 1,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  if(accounts.length  == index){
+                    return ListTile(
+                      leading: GradientIcon(
+                        FontAwesomeIcons.userPlus,
+                        MediaQuery.of(context).size.width > 350 ? 24.0 : 18.0,
+                        LinearGradient(
+                          colors: <Color>[
+                            Color(0xff3AC170),
+                            Color(0xff25BFA3),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                      ),
+                      title: Text(AppLocalizations.of(context)!.addAnotherAccount),
+                      contentPadding: const EdgeInsets.all(0),
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return StatefulBuilder(
+                              builder: (context, setState) {
+                                return AlertDialog(
+                                  title: Column(
+                                    children: [
+                                      Text(
+                                        AppLocalizations.of(context)!.email,
+                                        style: TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        AppLocalizations.of(context)!.enterNewEmail,
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    ],
+                                  ),
+                                  content: Container(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        TextFormField(
+                                            decoration: InputDecoration( hintText: AppLocalizations.of(context)!.email)
+                                        ),
+                                        TextFormField(
+                                          obscureText: _passwordVisible,
+                                          decoration: InputDecoration(
+                                              labelText: AppLocalizations.of(context)!.password,
+                                              suffixIcon: IconButton(
+                                                  icon: _passwordVisible
+                                                      ? Icon(FontAwesomeIcons
+                                                      .eye)
+                                                      : Icon(FontAwesomeIcons
+                                                      .eyeSlash),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      _togglePasswordVisibility();
+                                                    });
+                                                    print(_passwordVisible);
+                                                  })),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  actions: <Widget>[
+                                    Row(
+                                      children: <Widget>[
+                                        Expanded(
+                                          child: SizedBox(
+                                            height: 44,
+                                            child: TextButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: Text(AppLocalizations.of(context)!.ok),
+                                            ),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: SizedBox(
+                                            height: 44,
+                                            child: TextButton(
+                                              style: TextButton.styleFrom(
+                                                  primary: Colors.red),
+                                              onPressed: () =>
+                                              {Navigator.pop(context)},
+                                              child: Text(
+                                                AppLocalizations.of(context)!.cancel,
+                                                style: TextStyle(
+                                                    color: Colors.red),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
 
+                                  ],
+                                );
+                              },
+                            );
+                          },
+                        );
+
+                      },
+                    );
+                  }else{
+                    return RadioListTile(
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      contentPadding: const EdgeInsets.all(0),
+                      activeColor: Color(0xff27bf9c),
+                      title: Text(accounts[index]['name']!, style: TextStyle(fontFamily: 'Roboto'),),
+                      secondary: Image(
+                        image: AssetImage('assets/images/icon/pearl.png'),
+                        width: 34,
+                        height: 34,
+                        fit: BoxFit.cover,
+
+                      ),
+                      value: index,
+                      groupValue: value,
+                      onChanged: (ind) {
+                        setState(() => value = ind as int);
+                      },
+                      subtitle: Text(accounts[index]['email']!, style: TextStyle(fontFamily: 'Roboto')),
+                    );
+                  }
+
+                },
+
+              )
+          ),
+          actions: [
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: SizedBox(
+                    height: 44,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(AppLocalizations.of(context)!.ok),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: SizedBox(
+                    height: 44,
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                          primary: Colors.red),
+                      onPressed: () =>
+                      {Navigator.pop(context)},
+                      child: Text(
+                        AppLocalizations.of(context)!.cancel,
+                        style: TextStyle(
+                            color: Colors.red),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      );
     }
     return ScaleTransition(
       scale: _tween.animate(CurvedAnimation(parent: _animationController, curve: Curves.elasticOut)),
