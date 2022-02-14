@@ -118,17 +118,6 @@ class _AccountPickerWidgetState extends State<AccountPickerWidget> with SingleTi
                                   child: SizedBox(
                                     height: 44,
                                     child: TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(AppLocalizations.of(context)!.yes),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: SizedBox(
-                                    height: 44,
-                                    child: TextButton(
                                       style: TextButton.styleFrom(
                                           primary: Colors.red),
                                       onPressed: () =>
@@ -141,7 +130,17 @@ class _AccountPickerWidgetState extends State<AccountPickerWidget> with SingleTi
                                     ),
                                   ),
                                 ),
-
+                                Expanded(
+                                  child: SizedBox(
+                                    height: 44,
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(AppLocalizations.of(context)!.yes),
+                                    ),
+                                  ),
+                                ),
                               ],
                             )
                           ],
