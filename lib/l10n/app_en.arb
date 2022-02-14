@@ -299,5 +299,10 @@
     "idPassportWorkpermitFrontside": "ID/Passport/Work permit front side",
     "idPassportWorkpermitBackside": "ID/Passport/Work permit back side",
     "chooseImageUpload": "Choose image to upload",
-    "upload": "Upload"
+    "upload": "Upload",
+
+    "manageAccount": "Manage Account",
+    "removeAccount": "Remove account",
+    "addAnotherAccount": "Add another account",
+    "areYouSureRemoveAccount": "Are you sure you want to remove account?"
 }

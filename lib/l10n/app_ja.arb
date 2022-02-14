@@ -260,5 +260,10 @@
   "idPassportWorkpermitFrontside": "ID /パスポート/労働許可証の表側",
   "idPassportWorkpermitBackside": "ID /パスポート/労働許可証の裏側",
   "chooseImageUpload": "アップロードする",
-  "upload": "アップロード"
+  "upload": "アップロード",
+
+  "manageAccount": "アカウントの管理",
+  "removeAccount": "アカウントを削除",
+  "addAnotherAccount": "別のアカウントを追加する",
+  "areYouSureRemoveAccount": "アカウントを削除してもよろしいですか？"
 }

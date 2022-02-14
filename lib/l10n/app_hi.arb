@@ -259,6 +259,11 @@
     "idPassportWorkpermitFrontside": "आईडी/पासपोर्ट/वर्क परमिट सामने की ओर",
     "idPassportWorkpermitBackside": "आईडी/पासपोर्ट/वर्क परमिट बैक साइड",
     "chooseImageUpload": "अपलोड करने के लिए छवि चुनें",
-    "upload": "डालना"
+    "upload": "डालना",
+
+    "manageAccount": "खाते का प्रबंधन करें",
+    "removeAccount": "खाता हटाएं",
+    "addAnotherAccount": "एक और खाता जोड़ें",
+    "areYouSureRemoveAccount": "क्या आप वाकई खाता हटाना चाहते हैं?"
 
 }

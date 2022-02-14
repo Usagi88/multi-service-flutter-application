@@ -258,6 +258,11 @@
   "idPassportWorkpermitFrontside": "আইডি/পাসপোর্ট/ওয়ার্ক পারমিট সামনের দিকে",
   "idPassportWorkpermitBackside": "আইডি/পাসপোর্ট/ওয়ার্ক পারমিটের পিছনে",
   "chooseImageUpload": "আপলোড করার জন্য ছবি নির্বাচন করুন",
-  "upload": "আপলোড করুন"
+  "upload": "আপলোড করুন",
+
+  "manageAccount": "অ্যাকাউন্ট পরিচালনা",
+  "removeAccount": "অ্যাকাউন্ট অপসারণ",
+  "addAnotherAccount": "অন্য অ্যাকাউন্ট যোগ করুন",
+  "areYouSureRemoveAccount": "আপনি কি অ্যাকাউন্ট সরানোর বিষয়ে নিশ্চিত?"
 
 }
