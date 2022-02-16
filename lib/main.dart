@@ -30,6 +30,7 @@ import 'package:fpapp/views/slip_view.dart';
 import 'package:fpapp/views/top_up_via_bml_gateway_view.dart';
 import 'package:fpapp/views/top_up_via_view.dart';
 import 'package:fpapp/views/transaction_history_full.dart';
+import 'package:fpapp/views/web_view.dart';
 import 'package:fpapp/views/wholesale_view.dart';
 import 'package:provider/provider.dart';
 
@@ -113,6 +114,7 @@ class MyApp extends StatelessWidget {
             '/wholesale': (context) => new WholesaleView(),
             '/payment-to-merchant': (context) => new PaymentToMerchantView(),
             '/proof-verification': (context) => new ProofVerificationView(),
+            '/web-view': (context) => new WebViewFile()
           },
           home: HomeView(),
         );

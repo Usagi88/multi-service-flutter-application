@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpapp/classes/gradient_icon.dart';
 import 'package:fpapp/provider/locale_provider.dart';
+import 'package:fpapp/views/web_view.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
@@ -331,7 +332,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                         child: IconButton(
                           padding: const EdgeInsets.all(0),
                           iconSize: 60,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        WebViewFile(url: "https://twitter.com/fahipay")
+                                )
+                            );
+                          },
                           icon: SocialMediaButton(
                             socialMediaIcon: FontAwesomeIcons.twitter,
                           ),
@@ -345,7 +354,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                         child: IconButton(
                           padding: const EdgeInsets.all(0),
                           iconSize: 60,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        WebViewFile(url: "https://fahipay telegram")
+                                )
+                            );
+                          },
                           icon: SocialMediaButton(
                             socialMediaIcon: FontAwesomeIcons.telegramPlane,
                           ),
@@ -359,7 +376,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                         child: IconButton(
                           padding: const EdgeInsets.all(0),
                           iconSize: 60,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        WebViewFile(url: "viber://public?id=fahipay")
+                                )
+                            );
+                          },
                           icon: SocialMediaButton(
                             socialMediaIcon: FontAwesomeIcons.viber,
                           ),
@@ -373,7 +398,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                         child: IconButton(
                           padding: const EdgeInsets.all(0),
                           iconSize: 60,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        WebViewFile(url: "https://www.facebook.com/fahipay/")
+                                )
+                            );
+                          },
                           icon: SocialMediaButton(
                             socialMediaIcon: FontAwesomeIcons.facebookF,
                           ),
@@ -633,7 +666,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                       child: IconButton(
                         padding: const EdgeInsets.all(0),
                         iconSize: 60,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      WebViewFile(url: "https://twitter.com/fahipay")
+                              )
+                          );
+                        },
                         icon: SocialMediaButton(
                           socialMediaIcon: FontAwesomeIcons.twitter,
                         ),
@@ -647,7 +688,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                       child: IconButton(
                         padding: const EdgeInsets.all(0),
                         iconSize: 60,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      WebViewFile(url: "https://fahipay telegram")
+                              )
+                          );
+                        },
                         icon: SocialMediaButton(
                           socialMediaIcon: FontAwesomeIcons.telegramPlane,
                         ),
@@ -661,7 +710,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                       child: IconButton(
                         padding: const EdgeInsets.all(0),
                         iconSize: 60,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      WebViewFile(url: "viber://public?id=fahipay")
+                              )
+                          );
+                        },
                         icon: SocialMediaButton(
                           socialMediaIcon: FontAwesomeIcons.viber,
                         ),
@@ -675,7 +732,15 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                       child: IconButton(
                         padding: const EdgeInsets.all(0),
                         iconSize: 60,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      WebViewFile(url: "https://www.facebook.com/fahipay/")
+                              )
+                          );
+                        },
                         icon: SocialMediaButton(
                           socialMediaIcon: FontAwesomeIcons.facebookF,
                         ),
