@@ -56,6 +56,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<LocaleProvider>(builder: (context, locale, child) {
         var lang = locale.locale;
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
               fontFamily: lang.toString() == 'dv' ? 'Faruma' : null,
               /*

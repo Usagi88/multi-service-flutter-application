@@ -189,8 +189,7 @@ class _ServicesViewState extends State<ServicesView> with SingleTickerProviderSt
                       height: 20,
                     ),
                     Container(
-
-                        height: MediaQuery.of(context).size.height - 30 - 66 - 130 - navBarHeight - safePadding,
+                        height: MediaQuery.of(context).size.height - 30 - 46 - 130 - navBarHeight - safePadding,
                         child: ListView(
                           physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
                           children: [

@@ -45,9 +45,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
               child: Container(
                 alignment: Alignment.centerRight,
                 child: SizedBox(
-                    height: 34,
+                    height: 64,
                     child: Image.asset(
-                      'assets/images/fahipay-logo.png',
+                      'assets/images/logo-placeholder.png',
                     )),
               ),
             ),
@@ -317,9 +317,9 @@ class SideMenu extends StatelessWidget with PreferredSizeWidget {
             child: Container(
               alignment: Alignment.centerLeft,
               child: SizedBox(
-                  height: 34,
+                  height: 64,
                   child: Image.asset(
-                    'assets/images/fahipay-logo.png',
+                    'assets/images/logo-placeholder.png',
                   )),
             ),
           ),

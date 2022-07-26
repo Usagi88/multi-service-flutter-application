@@ -44,10 +44,10 @@ class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget {
           centerTitle: true,
           title: Container(
             alignment: Alignment.center,
-            height: 26,
+            height: 46,
             child: SizedBox(
                 child: Image.asset(
-              'assets/images/fahipay-logo.png',
+              'assets/images/logo-placeholder.png',
             )),
           ),
           actions: [
@@ -102,10 +102,10 @@ class NavbarWithBackButton extends StatelessWidget with PreferredSizeWidget {
           centerTitle: true,
           title: Container(
             alignment: Alignment.center,
-            height: 26,
+            height: 46,
             child: SizedBox(
                 child: Image.asset(
-              'assets/images/fahipay-logo.png',
+              'assets/images/logo-placeholder.png',
             )),
           ),
           actions: [

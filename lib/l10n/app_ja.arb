@@ -45,7 +45,7 @@
   "howItWorks": "使い方",
   "inviteYourFriends": "友達を招待しましょう！",
   "inviteYourFriendsTwo": "紹介リンクを共有するだけです！",
-  "joinAndUse": "友達が参加してFahiPayを使用します！",
+  "joinAndUse": "友達が参加してAppを使用します！",
   "joinAndUseTwo": "あなたの友達はMVR10.00を受け取ります",
   "earnMoney": "お金を稼ぐ！",
   "earnMoneyTwo": "MVR10.00を受け取ります",
@@ -84,7 +84,7 @@
   "shareReceipt": "領収書を共有します",
   "saveReceipt": "領収書をセーブします",
 
-  "topUpViaBmlFirsText": "BML支払いゲートウェイを介してfahipayに追加する金額を入力します ",
+  "topUpViaBmlFirsText": "BML支払いゲートウェイを介してAppに追加する金額を入力します ",
   "processingFee": "手数料",
   "total": "合計",
   "topUpViaBmlButtonText": "BMLゲートウェイに進みます",
@@ -133,7 +133,7 @@
   "selectAPackage": "パッケージを選択",
   "selectAService": "サービスを選択してください",
 
-  "scheduledPaymentsViewFirstText": "このサービスで簡単に月々の自動支払いができます。 自動支払いは、FahiPayアカウントに十分な残高がある場合にのみ機能します",
+  "scheduledPaymentsViewFirstText": "このサービスで簡単に月々の自動支払いができます。 自動支払いは、Appアカウントに十分な残高がある場合にのみ機能します",
   "paymentDayOfMonth": "月の支払い日",
   "serviceNumber": "サービス番号",
   "service": "サービス",
@@ -177,7 +177,7 @@
   "sendDonation": "寄付を送る",
   "esfiya": "エスフィヤ",
   "dhivehiMv": "DhivehiMv",
-  "donateSecondText" : "注：FahiPayを通じて寄付を受け取りたい場合は、4007004に電話してください。",
+  "donateSecondText" : "注：Appを通じて寄付を受け取りたい場合は、4007004に電話してください。",
 
   "ooredooRaastas": "Ooredoo Raastas",
   "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
@@ -256,7 +256,7 @@
   "areYouSureAcceptPayment": "この支払いを受け入れてもよろしいですか？",
   "yes": "Yes",
 
-  "proofVerificationViewFirstText": "FahiPayアカウントを確認するには、IDカード、パスポート、または就労許可証の鮮明な写真をアップロードしてください。",
+  "proofVerificationViewFirstText": "Appアカウントを確認するには、IDカード、パスポート、または就労許可証の鮮明な写真をアップロードしてください。",
   "idPassportWorkpermitFrontside": "ID /パスポート/労働許可証の表側",
   "idPassportWorkpermitBackside": "ID /パスポート/労働許可証の裏側",
   "chooseImageUpload": "アップロードする",

@@ -158,11 +158,9 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
                                 SizedBox(
                                   height: 10.0,
                                 ),
-                                SendMessage(message: "Hello", time: "19:12",),
-                                ReceiveMessage(message: "In order for user to deposit into fahipay you have to ",time: "19:12",),
-                                SendMessage(message: "Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on", time: "19:12",),
-                                SendMessage(message: "Hello, i need your help on deposit", time: "19:12",),
-
+                                SendMessage(message: "Hello I need your help with depositing", time: "19:12",),
+                                ReceiveMessage(message: "In order for user to deposit into account you have to do this ",time: "19:12"),
+                                SizedBox(height: 20,),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
                                   child: MerchantPaymentWidget(
@@ -361,11 +359,9 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
                               SizedBox(
                                 height: 10.0,
                               ),
-                              SendMessage(message: "Hello", time: "19:12",),
-                              ReceiveMessage(message: "In order for user to deposit into fahipay you have to ",time: "19:12",),
-                              SendMessage(message: "Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on Hello, i need your help on", time: "19:12",),
-                              SendMessage(message: "Hello, i need your help on deposit", time: "19:12",),
-
+                              SendMessage(message: "Hello I need your help with depositing", time: "19:12",),
+                              ReceiveMessage(message: "In order for user to deposit into account you have to do this ",time: "19:12"),
+                              SizedBox(height: 20,),
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                                 child: MerchantPaymentWidget(
@@ -386,6 +382,7 @@ class _LiveChatViewState extends State<LiveChatView> with SingleTickerProviderSt
 
                       ),
                     ),
+
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Row(

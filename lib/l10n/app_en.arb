@@ -83,7 +83,7 @@
     },
     "inviteYourFriends": "Invite your friends!",
     "inviteYourFriendsTwo": "Simply Share your referral link!",
-    "joinAndUse": "Your friends join and use FahiPay!",
+    "joinAndUse": "Your friends join and use the app!",
     "joinAndUseTwo": "Your Friend gets MVR 10.00",
     "earnMoney": "Earn money!",
     "earnMoneyTwo": "You earn MVR 10.00",
@@ -122,7 +122,7 @@
     "shareReceipt": "Share Receipt",
     "saveReceipt": "Save Receipt",
 
-    "topUpViaBmlFirsText": "Enter the amount you wish to add to fahipay via BML payment gateway",
+    "topUpViaBmlFirsText": "Enter the amount you wish to add to account via BML payment gateway",
     "processingFee": "Processing Fee",
     "total": "Total",
     "topUpViaBmlButtonText": "Proceed to BML Gateway",
@@ -171,7 +171,7 @@
     "selectAPackage": "Select a package",
     "selectAService": "Select a service",
 
-    "scheduledPaymentsViewFirstText": "You can easily make an automatic monthly payment with this service. The automatic payment will work only if you have sufficient balance in FahiPay account",
+    "scheduledPaymentsViewFirstText": "You can easily make an automatic monthly payment with this service. The automatic payment will work only if you have sufficient balance in account",
     "paymentDayOfMonth": "Payment day of month",
     "serviceNumber": "Service number",
     "service": "Service",
@@ -216,7 +216,7 @@
     "sendDonation": "Send Donation",
     "esfiya": "Esfiya",
     "dhivehiMv": "DhivehiMv",
-    "donateSecondText" : "Note: Call 4007004 if you would like to receive donations through FahiPay.",
+    "donateSecondText" : "Note: Call 4007004 if you would like to receive donations through account.",
 
     "ooredooRaastas": "Ooredoo Raastas",
     "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
@@ -295,7 +295,7 @@
     "areYouSureAcceptPayment": "Are you sure you want to accept this payment?",
     "yes": "Yes",
 
-    "proofVerificationViewFirstText": "To verify your FahiPay account, please upload a clear photo of your ID card, passport or work permit!",
+    "proofVerificationViewFirstText": "To verify your account, please upload a clear photo of your ID card, passport or work permit!",
     "idPassportWorkpermitFrontside": "ID/Passport/Work permit front side",
     "idPassportWorkpermitBackside": "ID/Passport/Work permit back side",
     "chooseImageUpload": "Choose image to upload",

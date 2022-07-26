@@ -18,14 +18,15 @@ class ReceiveMessage extends StatelessWidget {
         super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+      BuildContext context) {
     var language = Provider.of<LocaleProvider>(context);
     if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
       return Column(
         children: [
           Align(
               alignment: Alignment.centerLeft,
-              child: Text('Fahipay Helpdesk',style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+              child: Text('Helpdesk',style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
           ),
 
           LayoutBuilder(
@@ -93,7 +94,7 @@ class ReceiveMessage extends StatelessWidget {
       children: [
         Align(
             alignment: Alignment.centerLeft,
-            child: Text('Fahipay Helpdesk',style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w400),)
+            child: Text('Helpdesk',style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w400),)
         ),
 
         LayoutBuilder(

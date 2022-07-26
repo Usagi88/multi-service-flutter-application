@@ -145,7 +145,7 @@ class _ProfileViewState extends State<ProfileView>
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com',
+                        child: Text('test@gmail.com',
                             style: TextStyle(fontFamily: 'Roboto'))),
                   ),
                   trailing: SlideTransition(
@@ -493,7 +493,7 @@ class _ProfileViewState extends State<ProfileView>
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com',
+                        child: Text('Nowhere',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                             ))),
@@ -598,7 +598,7 @@ class _ProfileViewState extends State<ProfileView>
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com',
+                        child: Text('K. Malé',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                             ))),
@@ -703,7 +703,7 @@ class _ProfileViewState extends State<ProfileView>
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com',
+                        child: Text('Maldives',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                             ))),
@@ -808,7 +808,7 @@ class _ProfileViewState extends State<ProfileView>
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text('Hussain.shafiu@gmail.com',
+                        child: Text('20002',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                             ))),
@@ -975,7 +975,7 @@ class _ProfileViewState extends State<ProfileView>
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')),
+                      child: Text('test@gmail.com')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -1142,7 +1142,7 @@ class _ProfileViewState extends State<ProfileView>
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')),
+                      child: Text('7676767')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -1306,7 +1306,7 @@ class _ProfileViewState extends State<ProfileView>
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')),
+                      child: Text('Nowhere')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -1404,7 +1404,7 @@ class _ProfileViewState extends State<ProfileView>
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')),
+                      child: Text('K. Malé')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -1502,7 +1502,7 @@ class _ProfileViewState extends State<ProfileView>
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')),
+                      child: Text('Maldives')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(
@@ -1600,7 +1600,7 @@ class _ProfileViewState extends State<ProfileView>
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text('Hussain.shafiu@gmail.com')),
+                      child: Text('20002')),
                 ),
                 trailing: SlideTransition(
                   position: Tween<Offset>(

@@ -44,7 +44,7 @@
   "howItWorks": "কিভাবে এটা কাজ করে",
   "inviteYourFriends": "আপনার বন্ধুদের আমন্ত্রণ জানান!",
   "inviteYourFriendsTwo": "শুধু আপনার রেফারেল লিঙ্ক শেয়ার করুন!",
-  "joinAndUse": "আপনার বন্ধুরা যোগ দিন এবং FahiPay ব্যবহার করুন!",
+  "joinAndUse": "আপনার বন্ধুরা যোগ দিন এবং app ব্যবহার করুন!",
   "joinAndUseTwo": "আপনার বন্ধু MVR 10.00 পায়৷",
   "earnMoney": "টাকা রোজগার করা!",
   "earnMoneyTwo": "আপনি MVR 10.00 উপার্জন করেন",
@@ -83,7 +83,7 @@
   "shareReceipt": "শেয়ার রসিদ",
   "saveReceipt": "রসিদ সংরক্ষণ করুন",
 
-  "topUpViaBmlFirsText": "BML পেমেন্ট গেটওয়ের মাধ্যমে আপনি fahipay-এ যে পরিমাণ যোগ করতে চান তা লিখুন",
+  "topUpViaBmlFirsText": "BML পেমেন্ট গেটওয়ের মাধ্যমে আপনি app-এ যে পরিমাণ যোগ করতে চান তা লিখুন",
   "processingFee": "প্রসেসিং ফি",
   "total": "মোট",
   "topUpViaBmlButtonText": "BML গেটওয়েতে এগিয়ে যান",
@@ -132,7 +132,7 @@
   "selectAPackage": "একটি প্যাকেজ নির্বাচন করুন",
   "selectAService": "একটি পরিষেবা নির্বাচন করুন",
 
-  "scheduledPaymentsViewFirstText": "আপনি এই পরিষেবার মাধ্যমে সহজেই একটি স্বয়ংক্রিয় মাসিক অর্থপ্রদান করতে পারেন। আপনার FahiPay অ্যাকাউন্টে পর্যাপ্ত ব্যালেন্স থাকলেই স্বয়ংক্রিয় অর্থপ্রদান কাজ করবে",
+  "scheduledPaymentsViewFirstText": "আপনি এই পরিষেবার মাধ্যমে সহজেই একটি স্বয়ংক্রিয় মাসিক অর্থপ্রদান করতে পারেন। আপনার app অ্যাকাউন্টে পর্যাপ্ত ব্যালেন্স থাকলেই স্বয়ংক্রিয় অর্থপ্রদান কাজ করবে",
   "paymentDayOfMonth": "মাসের পেমেন্টের দিন",
   "serviceNumber": "পরিষেবা নম্বর",
   "service": "সেবা",
@@ -176,7 +176,7 @@
   "sendDonation": "অনুদান পাঠান",
   "esfiya": "নির্বিচারে",
   "dhivehiMv": "ধিমভ",
-  "donateSecondText" : "দ্রষ্টব্য: আপনি যদি FahiPay-এর মাধ্যমে অনুদান পেতে চান তাহলে 4007004 এ কল করুন।",
+  "donateSecondText" : "দ্রষ্টব্য: আপনি যদি app-এর মাধ্যমে অনুদান পেতে চান তাহলে 4007004 এ কল করুন।",
 
   "ooredooRaastas": "Ooredoo Raastas",
   "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
@@ -254,7 +254,7 @@
   "areYouSureAcceptPayment": "আপনি কি এই অর্থপ্রদান গ্রহণ করার বিষয়ে নিশ্চিত?",
   "yes": "Yes",
 
-  "proofVerificationViewFirstText": "আপনার FahiPay অ্যাকাউন্ট যাচাই করতে, অনুগ্রহ করে আপনার আইডি কার্ড, পাসপোর্ট বা ওয়ার্ক পারমিটের একটি পরিষ্কার ছবি আপলোড করুন!",
+  "proofVerificationViewFirstText": "আপনার app অ্যাকাউন্ট যাচাই করতে, অনুগ্রহ করে আপনার আইডি কার্ড, পাসপোর্ট বা ওয়ার্ক পারমিটের একটি পরিষ্কার ছবি আপলোড করুন!",
   "idPassportWorkpermitFrontside": "আইডি/পাসপোর্ট/ওয়ার্ক পারমিট সামনের দিকে",
   "idPassportWorkpermitBackside": "আইডি/পাসপোর্ট/ওয়ার্ক পারমিটের পিছনে",
   "chooseImageUpload": "আপলোড করার জন্য ছবি নির্বাচন করুন",

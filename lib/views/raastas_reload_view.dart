@@ -534,11 +534,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                                 children: [
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                 ]
                                                                             ),
@@ -601,11 +601,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                                 children: [
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                 ]
                                                                             ),
@@ -1033,11 +1033,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                                 children: [
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                 ]
                                                                             ),
@@ -1100,11 +1100,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                                 children: [
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                   Align(
                                                                                       alignment: Alignment.centerRight,
-                                                                                      child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                      child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                   ),
                                                                                 ]
                                                                             ),
@@ -1649,11 +1649,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),
@@ -1720,11 +1720,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),
@@ -2156,11 +2156,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),
@@ -2223,11 +2223,11 @@ class _RaastasReloadViewState extends State<RaastasReloadView> with SingleTicker
                                                                               children: [
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("7566561", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("7676767", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                                 Align(
                                                                                     alignment: Alignment.centerLeft,
-                                                                                    child: Text("Hussain Shafiu", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
+                                                                                    child: Text("Ali", style: TextStyle(fontSize: MediaQuery.of(context).size.width > 350 ? 14 : 12, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),)
                                                                                 ),
                                                                               ]
                                                                           ),

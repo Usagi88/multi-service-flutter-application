@@ -199,7 +199,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text("4007004",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Roboto'),)
+                        child: Text("300001",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Roboto'),)
                     ),
                   ),
                 ),
@@ -233,7 +233,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text("info@fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Roboto'),)
+                        child: Text("info@test.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Roboto'),)
                     ),
                   ),
                 ),
@@ -267,7 +267,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                     ).animate(_animationController),
                     child: FadeTransition(
                         opacity: _animationController,
-                        child: Text("www.fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Roboto'),)
+                        child: Text("www.test.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Roboto'),)
                     ),
                   ),
                 ),
@@ -337,7 +337,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        WebViewFile(url: "https://twitter.com/fahipay")
+                                        WebViewFile(url: "https://twitter.com/")
                                 )
                             );
                           },
@@ -359,7 +359,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        WebViewFile(url: "https://fahipay telegram")
+                                        WebViewFile(url: "https://www.google.com/search?q=telegram")
                                 )
                             );
                           },
@@ -381,7 +381,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        WebViewFile(url: "viber://public?id=fahipay")
+                                        WebViewFile(url: "https://www.google.com/search?q=viber")
                                 )
                             );
                           },
@@ -403,7 +403,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        WebViewFile(url: "https://www.facebook.com/fahipay/")
+                                        WebViewFile(url: "https://www.facebook.com/")
                                 )
                             );
                           },
@@ -533,7 +533,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text("4007004",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
+                      child: Text("300001",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
                   ),
                 ),
               ),
@@ -567,7 +567,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text("info@fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
+                      child: Text("info@test.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
                   ),
                 ),
               ),
@@ -601,7 +601,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                   ).animate(_animationController),
                   child: FadeTransition(
                       opacity: _animationController,
-                      child: Text("www.fahipay.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
+                      child: Text("www.test.mv",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),)
                   ),
                 ),
               ),
@@ -671,7 +671,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      WebViewFile(url: "https://twitter.com/fahipay")
+                                      WebViewFile(url: "https://twitter.com/")
                               )
                           );
                         },
@@ -693,7 +693,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      WebViewFile(url: "https://fahipay telegram")
+                                      WebViewFile(url: "https://www.google.com/search?q=telegram")
                               )
                           );
                         },
@@ -715,7 +715,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      WebViewFile(url: "viber://public?id=fahipay")
+                                      WebViewFile(url: "https://www.google.com/search?q=viber")
                               )
                           );
                         },
@@ -737,7 +737,7 @@ class _ContactUsViewState extends State<ContactUsView> with TickerProviderStateM
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      WebViewFile(url: "https://www.facebook.com/fahipay/")
+                                      WebViewFile(url: "https://www.facebook.com/")
                               )
                           );
                         },

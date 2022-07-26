@@ -31,8 +31,7 @@ class GiftCardWidget extends StatelessWidget {
     if (language.locale.toString() == 'dv' || language.locale.toString() == 'ar'){
       if(itunes == true && psn != true && netflix != true){//if it is itunes
         return Stack(
-          overflow: Overflow.visible,
-          children: <Widget>[
+          clipBehavior: Clip.none, children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Container(
@@ -198,8 +197,7 @@ class GiftCardWidget extends StatelessWidget {
         );
       }else if(psn == true && itunes != true && netflix != true){//if it is psn
         return Stack(
-          overflow: Overflow.visible,
-          children: <Widget>[
+          clipBehavior: Clip.none, children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Container(
@@ -363,8 +361,7 @@ class GiftCardWidget extends StatelessWidget {
         );
       }else if(netflix == true && psn != true && itunes != true){//if it is netflix
         return Stack(
-          overflow: Overflow.visible,
-          children: <Widget>[
+          clipBehavior: Clip.none, children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Container(
@@ -468,8 +465,7 @@ class GiftCardWidget extends StatelessWidget {
 
     if(itunes == true && psn != true && netflix != true){//if it is itunes
       return Stack(
-        overflow: Overflow.visible,
-        children: <Widget>[
+        clipBehavior: Clip.none, children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
@@ -635,8 +631,7 @@ class GiftCardWidget extends StatelessWidget {
       );
     }else if(psn == true && itunes != true && netflix != true){//if it is psn
       return Stack(
-        overflow: Overflow.visible,
-        children: <Widget>[
+        clipBehavior: Clip.none, children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
@@ -800,8 +795,7 @@ class GiftCardWidget extends StatelessWidget {
       );
     }else if(netflix == true && psn != true && itunes != true){//if it is netflix
       return Stack(
-        overflow: Overflow.visible,
-        children: <Widget>[
+        clipBehavior: Clip.none, children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
