@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 //class that makes icons have gradient. Used in ListTile
 class GradientIcon extends StatelessWidget {
-  GradientIcon(
+  const GradientIcon(
       this.icon,
       this.size,
-      this.gradient,
-      );
+      this.gradient, {Key? key}
+      ) : super(key: key);
 
   final IconData icon;
   final double size;
@@ -17,8 +17,8 @@ class GradientIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShaderMask(
       child: SizedBox(
-        width: size * 1.2,
-        height: size * 1.2,
+        width: size * 1.6,
+        height: size * 1.6,
         child: Icon(
           icon,
           size: size,

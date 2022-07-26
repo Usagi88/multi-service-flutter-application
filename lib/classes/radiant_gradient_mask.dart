@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //class that makes icons have gradient. Used in navbar/appbar
 class RadiantGradientMask extends StatelessWidget {
   final Widget child;
-  RadiantGradientMask({Key? key,
+  const RadiantGradientMask({Key? key,
     required this.child
   }) : super(key: key);
   @override

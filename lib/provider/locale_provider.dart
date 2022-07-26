@@ -8,14 +8,14 @@ class LocaleProvider extends ChangeNotifier {
   void changeLocale(Locale newLocale) {
     if(newLocale == Locale('en')){
       _locale = Locale('en');
-    }else if(newLocale == Locale('ar')){
-      _locale = Locale('ar');
     }else if(newLocale == Locale('hi')){
       _locale = Locale('hi');
     }else if(newLocale == Locale('ja')){
       _locale = Locale('ja');
     }else if(newLocale == Locale('dv')){
       _locale = Locale('dv');
+    }else if(newLocale == Locale('bn')){
+      _locale = Locale('bn');
     }
 
     notifyListeners();

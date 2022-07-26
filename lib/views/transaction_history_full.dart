@@ -53,8 +53,8 @@ class _TransactionHistoryFullViewState extends State<TransactionHistoryFullView>
 //portrait
 Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animationController, _tween) {
   return Scaffold(
-    appBar: NavbarWithBackButton(),
     drawer: SideMenu(),
+    appBar: NavbarWithBackButton(),
     body: SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -131,7 +131,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Container(
-                height: MediaQuery.of(context).size.height - (height + safePadding + 224),
+                height: MediaQuery.of(context).size.height - (height + safePadding + 204),
                 width: MediaQuery.of(context).size.width,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -139,6 +139,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                     children: [
                       FPCard(
                         fpCardColor: 0xffE03838,
+                        image: 'assets/images/icon/refund.png',
                         title: AppLocalizations.of(context)!.refundedTransaction,
                         date: '19 June 2021  -  17:30',
                         amount: 532,
@@ -149,6 +150,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xff0CAF39,
+                        image: 'assets/images/icon/addcash.png',
                         title: AppLocalizations.of(context)!.cashDeposit,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
@@ -159,6 +161,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
+                        image: 'assets/images/icon/services.png',
                         title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 120.50,
@@ -169,6 +172,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
+                        image: 'assets/images/icon/services.png',
                         title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 520,
@@ -179,6 +183,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
+                        image: 'assets/images/icon/services.png',
                         title: AppLocalizations.of(context)!.dhiraaguReload,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
@@ -189,6 +194,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xffE03838,
+                        image: 'assets/images/icon/refund.png',
                         title: AppLocalizations.of(context)!.refundedTransaction,
                         date: '19 June 2021  -  17:30',
                         amount: 532,
@@ -199,6 +205,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xff0CAF39,
+                        image: 'assets/images/icon/addcash.png',
                         title: AppLocalizations.of(context)!.cashDeposit,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,
@@ -209,6 +216,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
+                        image: 'assets/images/icon/services.png',
                         title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 120.50,
@@ -219,6 +227,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
+                        image: 'assets/images/icon/services.png',
                         title: AppLocalizations.of(context)!.serviceRecharge,
                         date: '19 June 2021  -  17:30',
                         amount: 520,
@@ -229,6 +238,7 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding, _animation
                       ),
                       FPCard(
                         fpCardColor: 0xffFFA26B,
+                        image: 'assets/images/icon/services.png',
                         title: AppLocalizations.of(context)!.dhiraaguReload,
                         date: '19 June 2021  -  17:30',
                         amount: 31912.29,

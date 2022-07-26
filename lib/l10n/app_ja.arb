@@ -18,7 +18,7 @@
   "socialMediaHandles": "ソーシャルメディアハンドル",
   "qrScan": "QRスキャン",
   "pickContact": "連絡先を選択",
-  "emailOrContactNumber": "メールアドレス / 携帯電話番号",
+  "emailOrMobileNumber": "メールアドレス / 携帯電話番号",
   "amount": "金額",
   "submit": "提出する",
   "disabled": "Disabled",
@@ -45,7 +45,7 @@
   "howItWorks": "使い方",
   "inviteYourFriends": "友達を招待しましょう！",
   "inviteYourFriendsTwo": "紹介リンクを共有するだけです！",
-  "joinAndUse": "友達が参加してFahiPayを使用します！",
+  "joinAndUse": "友達が参加してAppを使用します！",
   "joinAndUseTwo": "あなたの友達はMVR10.00を受け取ります",
   "earnMoney": "お金を稼ぐ！",
   "earnMoneyTwo": "MVR10.00を受け取ります",
@@ -84,7 +84,7 @@
   "shareReceipt": "領収書を共有します",
   "saveReceipt": "領収書をセーブします",
 
-  "topUpViaBmlFirsText": "BML支払いゲートウェイを介してfahipayに追加する金額を入力します ",
+  "topUpViaBmlFirsText": "BML支払いゲートウェイを介してAppに追加する金額を入力します ",
   "processingFee": "手数料",
   "total": "合計",
   "topUpViaBmlButtonText": "BMLゲートウェイに進みます",
@@ -111,8 +111,8 @@
 
   "transactionHistory": "取引履歴",
 
-  "serviceDetailsViewDhiraaguFirstText": "リロードを送信するdhiraagu番号と金額を入力します。",
-  "serviceDetailsViewOoredooFirstText": "ラースタズを送信するOoredoo番号と金額を入力します。",
+  "packageRechargeViewDhiraaguFirstText": "dhiraagu番号を入力し、再充電するパッケージを選択します",
+  "packageRechargeViewOoredooFirstText": "オレドー番号を入力し、充電するパッケージを選択してください",
   "dhiraagu": "Dhiraagu",
   "ooredoo": "Ooredoo",
   "sendReload": "リロードを送信",
@@ -128,5 +128,142 @@
   "country": "国",
   "postCode": "郵便番号",
 
-  "transactionDetails": "取引の詳細"
+  "transactionDetails": "取引の詳細",
+
+  "selectAPackage": "パッケージを選択",
+  "selectAService": "サービスを選択してください",
+
+  "scheduledPaymentsViewFirstText": "このサービスで簡単に月々の自動支払いができます。 自動支払いは、Appアカウントに十分な残高がある場合にのみ機能します",
+  "paymentDayOfMonth": "月の支払い日",
+  "serviceNumber": "サービス番号",
+  "service": "サービス",
+  "number": "番号",
+  "day": "日",
+
+  "reloadFirstText": "リロードを送信するdhiraagu番号と金額を入力します。",
+  "raastasFirstText": "ラースタズを送信するOoredoo番号と金額を入力します。",
+
+  "dhiraaguBillPayFirstText": "Dhiraaguのサービス番号とお支払い金額を入力してください。",
+  "ooredooBillPayFirstText": "Ooredooのサービス番号と支払い金額を入力します。",
+  "payBill": "請求書を支払う",
+  "checkBalance": "バランスチェック",
+
+  "buyPackage": "パッケージを購入する",
+
+  "dhiraaguCashInFirstText": "Dhiraaguの番号と金額を入力してDhiraaguPayの現金を支払います。",
+  "ooredooCashInFirstText": "M-faisaaの現金で支払うOoredoo番号と金額を入力します。",
+  "cashIn": "現金で",
+
+  "rolPayBillFirstText" : "ROL番号を入力し、支払う請求書を選択します",
+  "accountNumber" : "口座番号",
+  "nameToSave": "保存する名前",
+
+  "pubgFirstText" : "プレーヤーIDを入力し、PUBGUCを購入するパッケージを選択します。",
+  "playerID": "プレイヤーID",
+  "pubgSecondText": "UCは5〜30分以内に配達されます。 この取引は返金不可です",
+
+  "mwscPayBillFirstText" : "MWSCアカウント番号、メーター番号、および請求額を入力します。",
+  "meterNumber": "メーター番号",
+
+  "medianetPayBillFirstText" : "MediaNetアカウント番号、所有者のID番号を入力し、請求書を支払うパッケージを選択します。",
+  "ownerIDCardNum": "所有者のIDカード番号",
+  "medianetPayBillSecondText" : "メディアネット決済は、Vilimale '、Hulhumale'フェーズ2およびマルチスクリーンユーザーにはご利用いただけません。",
+
+  "maldiveGasFirstText" : "モルディブガスの口座番号を入力してください。 NID番号とガスを注文するパッケージを選択します",
+  "orderGas": "ガスを注文する",
+
+  "donateFirstText" : "寄付する受取人を選択してください",
+  "selectADonee": "ドニーを選択",
+  "sendDonation": "寄付を送る",
+  "esfiya": "エスフィヤ",
+  "dhivehiMv": "DhivehiMv",
+  "donateSecondText" : "注：Appを通じて寄付を受け取りたい場合は、4007004に電話してください。",
+
+  "ooredooRaastas": "Ooredoo Raastas",
+  "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
+  "ooredooPackageRecharge": "Ooredoo Package Recharge",
+  "dhiraaguBillPay": "Dhiraagu Bill Pay",
+  "ooredooBillPay": "Ooredoo Bill Pay",
+  "rol": "Raajje Online Bill Pay",
+  "giftCards": "Gift Cards",
+  "pubgUC": "PUBG UC",
+  "mwscBillPay": "MWSC Bill Pay",
+  "medianetBillPay": "MediaNet Bill Pay",
+  "maldiveGas": "Maldive Gas",
+  "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
+  "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
+  "sendSMS": "Send SMS",
+  "donate": "Donate",
+
+  "mib": "MIB",
+  "bml": "BML",
+  "bonus": "BONUS",
+  "cashCard": "CASH CARD",
+
+  "bonusViewFirstText": "交換したいポイント数を入力してください。",
+  "numberOfPoints": "ポイント数",
+  "redeem": "償還",
+
+  "password": "パスワード",
+  "pleaseEnterYourPassword": "パスワードを入力してください",
+  "cancel": "キャンセル",
+  "ok": "Ok",
+  "newEmail": "新しいメール",
+  "enterNewEmail": "新しいメールアドレスを入力してください",
+  "newMobileNumber": "新しい携帯電話番号",
+  "enterNewMobileNumber": "新しい携帯電話番号を入力してください",
+  "newAddress": "新しいアドレス",
+  "enterNewAddress": "新しい住所を入力してください",
+  "newIslandCity": "新しい島/都市",
+  "enterNewIslandCity": "新しい島/都市を入力してください",
+  "newCountry": "新しい国",
+  "enterNewCountry": "新しい国を入力してください",
+  "newPostCode": "新しい郵便番号",
+  "enterNewPostCode": "新しい郵便番号を入力してください",
+
+
+  "settings": "セッティング",
+  "systemAndDevice": "システムとデバイス",
+  "contacts": "コンタクト",
+  "storage": "ストレージ",
+  "camera": "カメラ",
+  "sms": "SMS",
+  "location": "ロケーション",
+
+  "changeAccount": "チェーンジ・アカウント",
+  "notification": "通知",
+
+  "noOneRegisteredYet": "あなたの紹介リンクからまだ誰も登録していません！",
+
+  "wholeSaleReload": "Wholesale Reload",
+  "wholeSaleRaastas": "Wholesale Raastas",
+  "wholeSaleViewDhiraaguFirstText": "Dhiraagu Business Reloadの番号と金額を入力して、リロードを送信します。",
+  "wholeSaleViewOoredooFirstText": "Ooredoo Business Raastasの番号と金額を入力して、raastasを送信します。",
+
+  "transfer": "移行",
+
+  "paymentToMerchantFirstText": "マーチャントに支払うには、QRコードをスキャンし、マーチャントによって生成されます。",
+  "merchantName": "マーチャント名",
+  "pay": "支払い",
+
+  "paymentRequest": "Payment Request",
+  "from": "From",
+  "note": "Note",
+  "expiresIn": "Expires in",
+  "reject": "Reject",
+
+  "areYouSureRejectPayment": "この支払いを拒否してもよろしいですか？",
+  "areYouSureAcceptPayment": "この支払いを受け入れてもよろしいですか？",
+  "yes": "Yes",
+
+  "proofVerificationViewFirstText": "Appアカウントを確認するには、IDカード、パスポート、または就労許可証の鮮明な写真をアップロードしてください。",
+  "idPassportWorkpermitFrontside": "ID /パスポート/労働許可証の表側",
+  "idPassportWorkpermitBackside": "ID /パスポート/労働許可証の裏側",
+  "chooseImageUpload": "アップロードする",
+  "upload": "アップロード",
+
+  "manageAccount": "アカウントの管理",
+  "removeAccount": "アカウントを削除",
+  "addAnotherAccount": "別のアカウントを追加する",
+  "areYouSureRemoveAccount": "アカウントを削除してもよろしいですか？"
 }

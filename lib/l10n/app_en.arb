@@ -18,7 +18,7 @@
 
     "qrScan": "QR Scan",
     "pickContact": "Pick Contact",
-    "emailOrContactNumber": "Email or Contact Number",
+    "emailOrMobileNumber": "Receiver Email or mobile number",
     "amount": "Amount",
     "submit": "Submit",
 
@@ -83,7 +83,7 @@
     },
     "inviteYourFriends": "Invite your friends!",
     "inviteYourFriendsTwo": "Simply Share your referral link!",
-    "joinAndUse": "Your friends join and use FahiPay!",
+    "joinAndUse": "Your friends join and use the app!",
     "joinAndUseTwo": "Your Friend gets MVR 10.00",
     "earnMoney": "Earn money!",
     "earnMoneyTwo": "You earn MVR 10.00",
@@ -122,7 +122,7 @@
     "shareReceipt": "Share Receipt",
     "saveReceipt": "Save Receipt",
 
-    "topUpViaBmlFirsText": "Enter the amount you wish to add to fahipay via BML payment gateway",
+    "topUpViaBmlFirsText": "Enter the amount you wish to add to account via BML payment gateway",
     "processingFee": "Processing Fee",
     "total": "Total",
     "topUpViaBmlButtonText": "Proceed to BML Gateway",
@@ -149,8 +149,8 @@
 
     "transactionHistory": "Transaction History",
 
-    "serviceDetailsViewDhiraaguFirstText": "Enter the dhiraagu number and amount to send reload.",
-    "serviceDetailsViewOoredooFirstText": "Enter the Ooredoo number and amount to send raastas.",
+    "packageRechargeViewDhiraaguFirstText": "Enter the dhiraagu number and select a package to recharge",
+    "packageRechargeViewOoredooFirstText": "Enter the ooredoo number and select a package to recharge",
     "dhiraagu": "Dhiraagu",
     "ooredoo": "Ooredoo",
     "sendReload": "Send Reload",
@@ -166,5 +166,143 @@
     "country": "Country",
     "postCode": "Post Code",
 
-    "transactionDetails": "Transaction Details"
+    "transactionDetails": "Transaction Details",
+
+    "selectAPackage": "Select a package",
+    "selectAService": "Select a service",
+
+    "scheduledPaymentsViewFirstText": "You can easily make an automatic monthly payment with this service. The automatic payment will work only if you have sufficient balance in account",
+    "paymentDayOfMonth": "Payment day of month",
+    "serviceNumber": "Service number",
+    "service": "Service",
+    "number": "Number",
+    "day": "Day",
+
+
+    "reloadFirstText": "Enter the Dhiraagu number and amount to send reload.",
+    "raastasFirstText": "Enter the Ooredoo number and amount to send raastas.",
+
+    "dhiraaguBillPayFirstText": "Enter the Dhiraagu service number and amount to pay bill.",
+    "ooredooBillPayFirstText": "Enter the Ooredoo service number and amount to pay bill.",
+    "payBill": "Pay bill",
+    "checkBalance": "Check Balance",
+
+    "buyPackage": "Buy Package",
+
+    "dhiraaguCashInFirstText": "Enter the Dhiraagu number and amount to pay Dhiraagu Pay cash in.",
+    "ooredooCashInFirstText": "Enter the Ooredoo number and amount to pay M-faisaa cash in.",
+    "cashIn": "Cash In",
+
+    "rolPayBillFirstText" : "Enter the ROL number and select bill to pay",
+    "accountNumber" : "Account Number",
+    "nameToSave": "Name to save",
+
+    "pubgFirstText" : "Enter the player ID and select a package to buy PUBG UC.",
+    "playerID": "Player ID",
+    "pubgSecondText": "UC will be delivered within 5 to 30 minutes. This transaction is non-refundable",
+
+    "mwscPayBillFirstText" : "Enter MWSC account number, meter number and amount to pay bill.",
+    "meterNumber": "Meter Number",
+
+    "medianetPayBillFirstText" : "Enter MediaNet account number, owner's ID number and select a package to pay bill.",
+    "ownerIDCardNum": "Owner's ID Card number",
+    "medianetPayBillSecondText" : "Medianet payments are NOT available for Vilimale', Hulhumale' phase 2 and multiscreen users.",
+
+    "maldiveGasFirstText" : "Enter Maldive Gas account number. NID number and select a package to order Gas",
+    "orderGas": "Order Gas",
+
+    "donateFirstText" : "Select the recipient to donate",
+    "selectADonee": "Select a donee",
+    "sendDonation": "Send Donation",
+    "esfiya": "Esfiya",
+    "dhivehiMv": "DhivehiMv",
+    "donateSecondText" : "Note: Call 4007004 if you would like to receive donations through account.",
+
+    "ooredooRaastas": "Ooredoo Raastas",
+    "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
+    "ooredooPackageRecharge": "Ooredoo Package Recharge",
+    "dhiraaguBillPay": "Dhiraagu Bill Pay",
+    "ooredooBillPay": "Ooredoo Bill Pay",
+    "rol": "Raajje Online Bill Pay",
+    "giftCards": "Gift Cards",
+    "pubgUC": "PUBG UC",
+    "mwscBillPay": "MWSC Bill Pay",
+    "medianetBillPay": "MediaNet Bill Pay",
+    "maldiveGas": "Maldive Gas",
+    "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
+    "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
+    "sendSMS": "Send SMS",
+    "donate": "Donate",
+
+    "mib": "MIB",
+    "bml": "BML",
+    "bonus": "BONUS",
+    "cashCard": "CASH CARD",
+
+    "bonusViewFirstText": "Enter the number of points you wish to redeem.",
+    "numberOfPoints": "Number of Points",
+    "redeem": "Redeem",
+
+
+    "password": "Password",
+    "pleaseEnterYourPassword": "Please enter your password",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "newEmail": "New email",
+    "enterNewEmail": "Enter new email address",
+    "newMobileNumber": "New mobile number",
+    "enterNewMobileNumber": "Enter new mobile number",
+    "newAddress": "New address",
+    "enterNewAddress": "Enter new address",
+    "newIslandCity": "New island/city",
+    "enterNewIslandCity": "Enter new island/city",
+    "newCountry": "New country",
+    "enterNewCountry": "Enter new country",
+    "newPostCode": "New post code",
+    "enterNewPostCode": "Enter new post code",
+
+    "settings": "Settings",
+    "systemAndDevice": "System & Device",
+    "contacts": "Contacts",
+    "storage": "Storage",
+    "camera": "Camera",
+    "sms": "SMS",
+    "location": "Location",
+
+    "changeAccount": "Change Account",
+    "notification": "Notification",
+
+    "noOneRegisteredYet": "No one registered from your referral link yet!",
+
+    "wholeSaleReload": "Wholesale Reload",
+    "wholeSaleRaastas": "Wholesale Raastas",
+    "wholeSaleViewDhiraaguFirstText": "Enter the Dhiraagu Business Reload number and amount to send reload.",
+    "wholeSaleViewOoredooFirstText": "Enter the Ooredoo Business Raastas number and amount to send raastas.",
+
+    "transfer": "Transfer",
+
+    "paymentToMerchantFirstText": "To pay to a merchant, scan QR code and generated by merchant.",
+    "merchantName": "Merchant Name",
+    "pay": "Pay",
+
+    "paymentRequest": "Payment Request",
+    "from": "From",
+    "note": "Note",
+    "expiresIn": "Expires in",
+    "reject": "Reject",
+
+    "areYouSureRejectPayment": "Are you sure you want to reject this payment?",
+    "areYouSureAcceptPayment": "Are you sure you want to accept this payment?",
+    "yes": "Yes",
+
+    "proofVerificationViewFirstText": "To verify your account, please upload a clear photo of your ID card, passport or work permit!",
+    "idPassportWorkpermitFrontside": "ID/Passport/Work permit front side",
+    "idPassportWorkpermitBackside": "ID/Passport/Work permit back side",
+    "chooseImageUpload": "Choose image to upload",
+    "upload": "Upload",
+
+    "manageAccount": "Manage Account",
+    "removeAccount": "Remove account",
+    "addAnotherAccount": "Add another account",
+    "areYouSureRemoveAccount": "Are you sure you want to remove account?"
 }

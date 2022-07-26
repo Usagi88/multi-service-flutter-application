@@ -17,7 +17,7 @@
     "socialMediaHandles": "सोशल मीडिया हैंडल",
     "qrScan": "क्यूआर स्कैन",
     "pickContact": "संपर्क चुनें",
-    "emailOrContactNumber": "ईमेल या संपर्क नंबर",
+    "emailOrMobileNumber": "ईमेल या संपर्क नंबर",
     "amount": "राशि",
     "submit": "प्रस्तुत करना",
     "disabled": "Disabled",
@@ -44,7 +44,7 @@
     "howItWorks": "यह काम किस प्रकार करता है",
     "inviteYourFriends": "अपने दोस्तों को आमंत्रित करो!",
     "inviteYourFriendsTwo": "बस अपना रेफ़रल लिंक साझा करें!",
-    "joinAndUse": "आपके मित्र शामिल हों और FahiPay का उपयोग करें!",
+    "joinAndUse": "आपके मित्र शामिल हों और app का उपयोग करें!",
     "joinAndUseTwo": "आपके मित्र को एमवीआर 10.00 . मिलता है",
     "earnMoney": "पैसे कमाएं!",
     "earnMoneyTwo": "आप एमवीआर 10.00 . कमाते हैं",
@@ -83,7 +83,7 @@
     "shareReceipt": "शेयर रसीद",
     "saveReceipt": "रसीद सहेजें",
 
-    "topUpViaBmlFirsText": "वह राशि दर्ज करें जिसे आप BML भुगतान गेटवे के माध्यम से fahipay में जोड़ना चाहते हैं",
+    "topUpViaBmlFirsText": "वह राशि दर्ज करें जिसे आप BML भुगतान गेटवे के माध्यम से app में जोड़ना चाहते हैं",
     "processingFee": "प्रक्रमण संसाधन शुल्क",
     "total": "कुल",
     "topUpViaBmlButtonText": "बीएमएल गेटवे के लिए आगे बढ़ें",
@@ -110,8 +110,8 @@
 
     "transactionHistory": "ट्रांजेक्शन इतिहास",
 
-    "serviceDetailsViewDhiraaguFirstText": "पुनः लोड भेजने के लिए धीरागु संख्या और राशि दर्ज करें।",
-    "serviceDetailsViewOoredooFirstText": "रास्ता भेजने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
+    "packageRechargeViewDhiraaguFirstText": "धीरागु नंबर दर्ज करें और रिचार्ज करने के लिए एक पैकेज चुनें",
+    "packageRechargeViewOoredooFirstText": "ooredoo नंबर दर्ज करें और रिचार्ज करने के लिए एक पैकेज चुनें",
     "dhiraagu": "Dhiraagu",
     "ooredoo": "Ooredoo",
     "sendReload": "Send Reload",
@@ -127,5 +127,143 @@
     "country": "देश",
     "postCode": "पोस्ट कोड",
 
-    "transactionDetails": "लेनदेन का विवरण"
+    "transactionDetails": "लेनदेन का विवरण",
+
+    "selectAPackage": "एक पैकेज चुनें",
+    "selectAService": "एक सेवा का चयन करें",
+
+    "scheduledPaymentsViewFirstText": "आप इस सेवा के साथ आसानी से स्वचालित मासिक भुगतान कर सकते हैं। स्वचालित भुगतान तभी काम करेगा जब आपके पास app खाते में पर्याप्त शेष राशि होगी",
+    "paymentDayOfMonth": "महीने का भुगतान दिवस",
+    "serviceNumber": "सेवा संख्या",
+    "service": "सेवा",
+    "number": "संख्या",
+    "day": "दिन",
+
+    "reloadFirstText": "पुनः लोड भेजने के लिए धीरागु संख्या और राशि दर्ज करें।",
+    "raastasFirstText": "रास्ता भेजने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
+
+    "dhiraaguBillPayFirstText": "धीरागु सेवा संख्या दर्ज करें और बिल का भुगतान करने के लिए राशि दर्ज करें।",
+    "ooredooBillPayFirstText": "ऊरेडू सेवा संख्या और बिल का भुगतान करने की राशि दर्ज करें।",
+    "payBill": "पैसा भरो",
+    "checkBalance": "बकाया जाँचो",
+
+    "buyPackage": "पैकेज खरीदें",
+
+    "dhiraaguCashInFirstText": "धीरागु का भुगतान करने के लिए धीरागु नंबर और राशि दर्ज करें नकद भुगतान करें।",
+    "ooredooCashInFirstText": "एम-फैसा कैश इन का भुगतान करने के लिए ऊरेडू नंबर और राशि दर्ज करें।",
+    "cashIn": "नकद में",
+
+    "rolPayBillFirstText" : "रोल नंबर दर्ज करें और भुगतान करने के लिए बिल का चयन करें",
+    "accountNumber" : "खाता संख्या",
+    "nameToSave": "बचाने के लिए नाम",
+
+    "pubgFirstText" : "प्लेयर आईडी दर्ज करें और PUBG UC खरीदने के लिए एक पैकेज चुनें।",
+    "playerID": "प्लेयर आईडी",
+    "pubgSecondText": "UC 5 से 30 मिनट में डिलीवर हो जाएगा। यह लेनदेन अप्रतिदेय है",
+
+    "mwscPayBillFirstText" : "बिल का भुगतान करने के लिए MWSC खाता संख्या, मीटर संख्या और राशि दर्ज करें।",
+    "meterNumber": "मीटर संख्या",
+
+    "medianetPayBillFirstText" : "MediaNet खाता संख्या, स्वामी का आईडी नंबर दर्ज करें और बिल का भुगतान करने के लिए एक पैकेज का चयन करें।",
+    "ownerIDCardNum": "मालिक का आईडी कार्ड नंबर",
+    "medianetPayBillSecondText" : "Vilimale', Hulhumale' चरण 2 और मल्टीस्क्रीन उपयोगकर्ताओं के लिए Medianet भुगतान उपलब्ध नहीं हैं।",
+
+    "maldiveGasFirstText" : "मालदीव गैस खाता संख्या दर्ज करें। NID नंबर और गैस ऑर्डर करने के लिए पैकेज चुनें",
+    "orderGas": "ऑर्डर गैस",
+
+    "donateFirstText" : "दान करने के लिए प्राप्तकर्ता का चयन करें",
+    "selectADonee": "एक दीदी का चयन करें",
+    "sendDonation": "दान भेजें",
+    "esfiya": "मनमाने ढंग से",
+    "dhivehiMv": "धीवहिंव",
+    "donateSecondText" : "नोट: यदि आप app के माध्यम से दान प्राप्त करना चाहते हैं तो 4007004 पर कॉल करें।",
+
+    "ooredooRaastas": "Ooredoo Raastas",
+    "dhiraaguPackageRecharge": "Dhiraagu Package Recharge",
+    "ooredooPackageRecharge": "Ooredoo Package Recharge",
+    "dhiraaguBillPay": "Dhiraagu Bill Pay",
+    "ooredooBillPay": "Ooredoo Bill Pay",
+    "rol": "Raajje Online Bill Pay",
+    "giftCards": "Gift Cards",
+    "pubgUC": "PUBG UC",
+    "mwscBillPay": "MWSC Bill Pay",
+    "medianetBillPay": "MediaNet Bill Pay",
+    "maldiveGas": "Maldive Gas",
+    "dhiraaguPayCashIn": "Dhiraagu Pay Cash In",
+    "ooredooMFaisa": "Ooredoo M-faisaa Cash In",
+    "sendSMS": "Send SMS",
+    "donate": "Donate",
+
+    "mib": "MIB",
+    "bml": "BML",
+    "bonus": "BONUS",
+    "cashCard": "CASH CARD",
+
+    "bonusViewFirstText": "जितने अंक आप भुनाना चाहते हैं, उतने अंक दर्ज करें।",
+    "numberOfPoints": "बिंदुओं की संख्या",
+    "redeem": "एवज",
+
+    "password": "कुंजिका",
+    "pleaseEnterYourPassword": "अपना पासवर्ड दर्ज करें",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "newEmail": "नई ईमेल",
+    "enterNewEmail": "नया ईमेल पता दर्ज करें",
+    "newMobileNumber": "नया मोबाइल नंबर",
+    "enterNewMobileNumber": "नया मोबाइल नंबर दर्ज करें",
+    "newAddress": "नया पता",
+    "enterNewAddress": "नया पता दर्ज करें",
+    "newIslandCity": "नया द्वीप/शहर",
+    "enterNewIslandCity": "नया द्वीप/शहर दर्ज करें",
+    "newCountry": "नया देश",
+    "enterNewCountry": "नया देश दर्ज करें",
+    "newPostCode": "नया पोस्ट कोड",
+    "enterNewPostCode": "नया पोस्ट कोड दर्ज करें",
+
+
+    "settings": "समायोजन",
+    "systemAndDevice": "सिस्टम और डिवाइस",
+    "contacts": "संपर्क",
+    "storage": "भंडारण",
+    "camera": "कैमरा",
+    "sms": "एसएमएस",
+    "location": "स्थान",
+
+    "changeAccount": "खाता परिवर्तन करें",
+    "notification": "अधिसूचना",
+
+    "noOneRegisteredYet": "आपके रेफ़रल लिंक से अभी तक किसी ने भी पंजीकरण नहीं कराया है!",
+
+    "wholeSaleReload": "Wholesale Reload",
+    "wholeSaleRaastas": "Wholesale Raastas",
+    "wholeSaleViewDhiraaguFirstText": "धीरागु बिजनेस रीलोड नंबर और रीलोड भेजने के लिए राशि दर्ज करें।",
+    "wholeSaleViewOoredooFirstText": "ऊरेडू बिजनेस रास्ता नंबर और रास्ता भेजने के लिए राशि दर्ज करें।",
+
+    "transfer": "स्थानांतरण",
+
+    "paymentToMerchantFirstText": "मर्चेंट को भुगतान करने के लिए, क्यूआर कोड को स्कैन करें और मर्चेंट द्वारा जेनरेट किया गया।",
+    "merchantName": "व्यापारी का नाम",
+    "pay": "वेतन",
+
+    "paymentRequest": "Payment Request",
+    "from": "From",
+    "note": "Note",
+    "expiresIn": "Expires in",
+    "reject": "Reject",
+
+    "areYouSureRejectPayment": "क्या आप वाकई इस भुगतान को अस्वीकार करना चाहते हैं?",
+    "areYouSureAcceptPayment": "क्या आप वाकई इस भुगतान को स्वीकार करना चाहते हैं?",
+    "yes": "Yes",
+
+    "proofVerificationViewFirstText": "अपने app खाते को सत्यापित करने के लिए, कृपया अपने आईडी कार्ड, पासपोर्ट या वर्क परमिट की एक स्पष्ट तस्वीर अपलोड करें!",
+    "idPassportWorkpermitFrontside": "आईडी/पासपोर्ट/वर्क परमिट सामने की ओर",
+    "idPassportWorkpermitBackside": "आईडी/पासपोर्ट/वर्क परमिट बैक साइड",
+    "chooseImageUpload": "अपलोड करने के लिए छवि चुनें",
+    "upload": "डालना",
+
+    "manageAccount": "खाते का प्रबंधन करें",
+    "removeAccount": "खाता हटाएं",
+    "addAnotherAccount": "एक और खाता जोड़ें",
+    "areYouSureRemoveAccount": "क्या आप वाकई खाता हटाना चाहते हैं?"
+
 }

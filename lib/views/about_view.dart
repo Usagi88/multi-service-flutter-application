@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fpapp/classes/gradient_text.dart';
+import 'package:fpapp/provider/locale_provider.dart';
 import 'package:fpapp/widgets/navbar_widget.dart';
 import 'package:fpapp/widgets/navbar_with_back_button_widget.dart';
 import 'package:fpapp/widgets/sidemenu_widget.dart';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class AboutView extends StatelessWidget {
   const AboutView({Key? key}) : super(key: key);
@@ -13,17 +15,17 @@ class AboutView extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = Navbar().preferredSize.height;
     var safePadding = MediaQuery.of(context).padding.top;
+    var now = new DateTime.now();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return _portraitModeOnly(context, height, safePadding);
+    return _portraitModeOnly(context, height, safePadding, now);
   }
-
 }
 
 //portrait
-Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
+Scaffold _portraitModeOnly(BuildContext context, height, safePadding, now) {
   return Scaffold(
       appBar: NavbarWithBackButton(),
       drawer: SideMenu(),
@@ -42,12 +44,12 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                 child: Column(
                     children: [
                       Container(
-                        height: 34,
+                        height: 64,
                         width: 152,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                                'assets/images/fahipay-logo.png'),
+                                'assets/images/logo-placeholder.png'),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -62,8 +64,8 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                         height: 10,
                       ),
                       GradientText(
-                          text: 'FAHIPAY PVT LTD',
-                          style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),
+                          text: 'TEST PVT LTD',
+                          style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700, fontFamily: 'Roboto'),
                           gradient: const LinearGradient(
                               colors: [
                                 Color(0xff3AC170),
@@ -72,10 +74,10 @@ Scaffold _portraitModeOnly(BuildContext context, height, safePadding) {
                               transform: GradientRotation(math.pi * 0.50)
                           )
                       ),
-                      Text('App Version 1.0.1', style: TextStyle(color: Colors.grey.shade600, fontSize: 14, fontWeight: FontWeight.w400)),
+                      Text('App Version 1.0.1', style: TextStyle(color: Colors.grey.shade600, fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Roboto')),
                       Spacer(),
-                      Text('2021 Copyright',style: TextStyle(color: Colors.grey.shade600, fontSize: 14,fontWeight: FontWeight.w400),),
-                      Text('All rights reserved',style: TextStyle(color: Colors.grey.shade600, fontSize: 14,fontWeight: FontWeight.w400),),
+                      Text(now.year.toString()+' Copyright',style: TextStyle(color: Colors.grey.shade600, fontSize: 14,fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
+                      Text('All rights reserved',style: TextStyle(color: Colors.grey.shade600, fontSize: 14,fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                     ]
                 ),
               ),
