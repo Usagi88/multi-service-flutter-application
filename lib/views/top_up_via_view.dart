@@ -325,7 +325,7 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                               borderSide: BorderSide(color: Colors.white),
                                                             ),
                                                             // Only numbers can be entered
-                                                            hintText: 'Fahipay PVT LTD',
+                                                            hintText: 'Test PVT LTD',
                                                             hintStyle: TextStyle(fontFamily: 'Roboto'),
                                                             suffixIcon: Container(
                                                               width: 11,
@@ -1085,7 +1085,7 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                               borderSide: BorderSide(color: Colors.white),
                                                             ),
                                                             // Only numbers can be entered
-                                                            hintText: 'Fahipay PVT LTD',
+                                                            hintText: 'Test PVT LTD',
                                                             hintStyle: TextStyle(fontFamily: 'Roboto'),
                                                             suffixIcon: Container(
                                                               width: 11,
@@ -1706,7 +1706,7 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                             borderSide: BorderSide(color: Colors.white),
                                                           ),
                                                           // Only numbers can be entered
-                                                          hintText: 'Fahipay PVT LTD',
+                                                          hintText: 'Test PVT LTD',
                                                           suffixIcon: Container(
                                                             width: 11,
                                                             height: 46,
@@ -2453,7 +2453,7 @@ class _TopUpViaViewState extends State<TopUpViaView> with SingleTickerProviderSt
                                                             borderSide: BorderSide(color: Colors.white),
                                                           ),
                                                           // Only numbers can be entered
-                                                          hintText: 'Fahipay PVT LTD',
+                                                          hintText: 'Test PVT LTD',
                                                           suffixIcon: Container(
                                                             width: 11,
                                                             height: 46,
