@@ -108,7 +108,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                                'assets/images/fahipay-logo.png'),
+                                'assets/images/logo-placeholder.png'),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -311,7 +311,7 @@ Scaffold _portraitModeOnly(BuildContext context, _animationController, _tween, l
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                              'assets/images/fahipay-logo.png'),
+                              'assets/images/logo-placeholder.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
