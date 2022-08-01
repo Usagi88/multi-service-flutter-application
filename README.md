@@ -33,10 +33,5 @@ It's an android app for mobile recharge & paying bills of other services. This i
 * Donate
 * BML/MIB/Cash Card/Bonus
 
-
+### Preview of app
 https://user-images.githubusercontent.com/65016084/182212401-8e908251-86f7-4538-9e39-f54294064b60.mp4
-
-
-![output](https://user-images.githubusercontent.com/65016084/181087630-b4e616dc-10dc-439b-ad62-b422972a8a9e.gif)
-
-![output](https://user-images.githubusercontent.com/65016084/181095502-a339b8aa-bb06-4bf8-aad5-3b0ef7228e16.gif)
