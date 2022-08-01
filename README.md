@@ -1,21 +1,41 @@
-# fpapp
+## What is this?
+It's an android app for mobile recharge & paying bills of other services. This is a front-end work of said app.
 
-A new Flutter application.
+## Requirements
+* Android Studio
+* Flutter
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## How to use?
+1. Git clone the project
+2. Run **pub get**
+4. Either use a real phone or virtual phone and then run the project
+5. **Optional:** APK has been made already. It can be downloaded from this github repository's **Releases**. Warning: MI phones may see it as a virus.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+* QR Scanner
+* Live Chat
+* Change Password
+* Profile
+* Change Language
+* Change Account
+* Settings & Permission
+* In-app browser
+* Dhiraagu/Ooredoo Recharge
+* ROL bill pay
+* Maldive Gas package
+* PUBG UC
+* MWSC Bill Pay
+* Schedule Payment
+* Send MSS
+* Donate
+* BML/MIB/Cash Card/Bonus
 
-[![Watch the video](https://user-images.githubusercontent.com/65016084/181086349-df472d57-21d8-4cdb-a087-189fe94e86ef.webm)
+
+https://user-images.githubusercontent.com/65016084/182212401-8e908251-86f7-4538-9e39-f54294064b60.mp4
+
 
 ![output](https://user-images.githubusercontent.com/65016084/181087630-b4e616dc-10dc-439b-ad62-b422972a8a9e.gif)
 
